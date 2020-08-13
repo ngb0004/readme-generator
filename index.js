@@ -1,6 +1,6 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
-const axios = require("axios");
+//const axios = require("axios");
 
 inquirer
     .prompt([
@@ -20,8 +20,15 @@ inquirer
         message: "Enter usage information: ",
         name: "usage"
     },
+    {   
+        type: 'list',
+        name: 'license',
+        message: 'choose what license you have: ',
+        choices: ['ISC', 'MIT', 'GPL', 'MPL'],
+        default: "ISC"
+    },
     {
-        message: "Enter contribution Guidelines",
+        message: "Enter contributers: ",
         name: "contributions"
     },
     {
@@ -38,7 +45,7 @@ inquirer
     }
     ])
     .then(function(response) {
-        console.log(response)
+        //console.log(response)
 
         
 
@@ -73,7 +80,11 @@ ${response.usage}
 <a name="license"></a>
 ## License
 
-${response.license}
+License: ${response.license}
+
+Permission to use, copy, modify, and/or distribute this software for any purpose 
+with or without fee is hereby granted, provided that the above copyright notice 
+and this permission notice appear in all copies.
 
 <a name="contributing"></a>
 ## Contributions
