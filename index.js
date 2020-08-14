@@ -100,11 +100,12 @@ ${response.tests}
 ## Questions
 
 GitHub profile: https://github.com/${response.username}
+
 Contact me at with any additional questions: ${response.email}
         
 
 `
-        fs.writeFile("README.md", readme, function(err){
+        fs.writeFile("generatedREADME.md", readme, function(err){
             if (err) {
                 throw err
             }
