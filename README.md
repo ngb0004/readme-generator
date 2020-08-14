@@ -4,7 +4,13 @@
 ## Description
 
 This JavaScript file has prompts that need to be filled out in order to create a professional README.md file that you can use for your projects. 
-        
+
+![Example Image](./content/readme.png)
+
+
+Video: https://youtu.be/hGd3mPmdS4Y
+
+
 ## Table of contents 
 1. [ Description. ](#description)
 2. [ Installation. ](#installation)
