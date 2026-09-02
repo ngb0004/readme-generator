@@ -166,7 +166,9 @@ class YahooClient:
     def price_history(self, ticker: str, max_age_days: float = 1.0) -> pd.DataFrame:
         """Daily bars with split/dividend-adjusted close, full available history.
 
-        Returns a frame indexed by naive date with columns close/adjclose/volume.
+        Returns a frame indexed by naive date with open/high/low/close/adjclose/
+        volume. The intraday columns are what make a direct test of buying vs
+        selling pressure possible, rather than inferring it from the close alone.
         """
         cached = self.cache.get("prices", ticker, max_age_days)
         if cached is None:
@@ -190,6 +192,9 @@ class YahooClient:
         adj = res["indicators"].get("adjclose", [{}])[0].get("adjclose")
         df = pd.DataFrame(
             {
+                "open": quote.get("open"),
+                "high": quote.get("high"),
+                "low": quote.get("low"),
                 "close": quote.get("close"),
                 "volume": quote.get("volume"),
                 "adjclose": adj if adj is not None else quote.get("close"),
@@ -261,35 +266,53 @@ class YahooClient:
     # ----------------------------------------------------------- ownership
 
     def institutional_ownership(self, ticker: str, max_age_days: float = 30.0) -> dict:
-        """Current institutional ownership snapshot.
+        """Current ownership snapshot: level, concentration, and company size.
+
+        Total institutional percentage is a poor proxy for "institutions can move
+        this stock". Apple is ~66% institutional but spread across ~7,700
+        holders whose top ten hold barely a third; no single exit matters. A
+        company whose top ten holders own 60% is a different animal entirely.
+        So we also return top-10 concentration, the holder count, and market cap.
 
         NOTE: this is a *today* snapshot, not point-in-time history. See the
-        README's bias section -- this is the study's main methodological
-        weakness, not an implementation detail we can fix from this source.
+        README's bias section -- the study's main methodological weakness, not
+        an implementation detail we can fix from this source.
         """
-        cached = self.cache.get("ownership", ticker, max_age_days)
+        cached = self.cache.get("ownership2", ticker, max_age_days)
         if cached is None:
             crumb = self._ensure_crumb()
             url = (
                 f"https://query1.finance.yahoo.com/v10/finance/quoteSummary/{ticker}"
-                f"?modules=majorHoldersBreakdown&crumb={crumb}"
+                f"?modules=majorHoldersBreakdown,institutionOwnership,price,"
+                f"defaultKeyStatistics&crumb={crumb}"
             )
             cached = self._request("GET", url).json()
-            self.cache.put("ownership", ticker, cached)
+            self.cache.put("ownership2", ticker, cached)
 
+        empty = {"ticker": ticker, "inst_pct": None, "inst_count": None,
+                 "top10_pct": None, "market_cap": None, "float_shares": None}
         result = ((cached.get("quoteSummary") or {}).get("result") or [None])[0]
         if not result:
-            return {"ticker": ticker, "inst_pct": None, "inst_count": None}
-        mhb = result.get("majorHoldersBreakdown") or {}
+            return empty
 
-        def raw(key: str):
-            v = mhb.get(key)
+        def raw(section: str, key: str):
+            v = (result.get(section) or {}).get(key)
             return v.get("raw") if isinstance(v, dict) else v
 
+        holders = (result.get("institutionOwnership") or {}).get("ownershipList") or []
+        top10 = sum(
+            h.get("pctHeld", {}).get("raw", 0.0) or 0.0
+            for h in holders
+            if isinstance(h.get("pctHeld"), dict)
+        )
         return {
             "ticker": ticker,
-            "inst_pct": raw("institutionsPercentHeld"),
-            "inst_float_pct": raw("institutionsFloatPercentHeld"),
-            "insider_pct": raw("insidersPercentHeld"),
-            "inst_count": raw("institutionsCount"),
+            "inst_pct": raw("majorHoldersBreakdown", "institutionsPercentHeld"),
+            "inst_float_pct": raw("majorHoldersBreakdown", "institutionsFloatPercentHeld"),
+            "insider_pct": raw("majorHoldersBreakdown", "insidersPercentHeld"),
+            "inst_count": raw("majorHoldersBreakdown", "institutionsCount"),
+            "top10_pct": top10 if holders else None,
+            "n_top_holders": len(holders),
+            "market_cap": raw("price", "marketCap"),
+            "float_shares": raw("defaultKeyStatistics", "floatShares"),
         }

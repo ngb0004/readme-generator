@@ -98,17 +98,31 @@ def build_events(
     min_abs_estimate: float = 0.05,
     min_price: float = 5.0,
     timing_policy: str = "infer",
+    vol_baseline: int = 25,
 ) -> pd.DataFrame:
     """Build one row per earnings event with forward returns already aligned.
 
     Emits, for k in 1..horizon: `ret_d{k}` (return earned on day k),
-    `car_d{k}` (cumulative from the pre-event close), and the market-adjusted
-    equivalents `aret_d{k}` / `acar_d{k}`.
+    `car_d{k}` (cumulative from the pre-event close), the market-adjusted
+    equivalents `aret_d{k}` / `acar_d{k}`, and two columns that test the
+    theory's *mechanism* rather than its supposed price consequence:
+
+      relvol_d{k}   volume that day over the stock's own pre-event median
+      clv_d{k}      close location value, ((C-L)-(H-C))/(H-L) in [-1, +1]
+
+    CLV is a standard proxy for where the pressure was: near +1 the stock was
+    bought up into the close, near -1 it was sold off into it. If institutions
+    really unload for four days and repurchase on the fifth, that has to leave
+    a footprint in these two columns whether or not it moves the net price.
     """
     if earnings.empty or prices.empty:
         return pd.DataFrame()
 
     px = prices["adjclose"].astype(float)
+    vol = prices["volume"].astype(float) if "volume" in prices else None
+    has_ohlc = {"high", "low"}.issubset(prices.columns)
+    hi_s = prices["high"].astype(float) if has_ohlc else None
+    lo_s = prices["low"].astype(float) if has_ohlc else None
     # Returns use the adjusted series; anything compared against a dollar
     # figure (EPS, a penny-stock filter) must use the nominal close.
     raw_close = prices["close"].astype(float)
@@ -156,6 +170,18 @@ def build_events(
             "pre_ret_pre": float(px.iloc[anchor] / px.iloc[anchor - pre_window] - 1.0),
         }
 
+        # Pre-event "normal" volume, measured well before the release so the
+        # run-up into earnings does not contaminate the baseline.
+        base_vol = np.nan
+        if vol is not None:
+            lo_i = max(anchor - vol_baseline, 0)
+            hi_i = max(anchor - 5, lo_i + 1)
+            sample = vol.iloc[lo_i:hi_i].to_numpy(dtype=float)
+            sample = sample[np.isfinite(sample) & (sample > 0)]
+            if sample.size >= 10:
+                base_vol = float(np.median(sample))
+        rec["baseline_volume"] = base_vol
+
         window = px.iloc[anchor : pos + horizon].to_numpy(dtype=float)
         mwin = (
             mkt.iloc[anchor : pos + horizon].to_numpy(dtype=float)
@@ -172,6 +198,18 @@ def build_events(
                 m_ret = mwin[k] / mwin[k - 1] - 1.0
                 rec[f"aret_d{k}"] = rec[f"ret_d{k}"] - m_ret
                 rec[f"acar_d{k}"] = rec[f"car_d{k}"] - (mwin[k] / mwin[0] - 1.0)
+
+            day_i = anchor + k
+            if vol is not None and np.isfinite(base_vol):
+                v = float(vol.iloc[day_i])
+                rec[f"relvol_d{k}"] = v / base_vol if np.isfinite(v) else np.nan
+            if has_ohlc:
+                h, l = float(hi_s.iloc[day_i]), float(lo_s.iloc[day_i])
+                c = float(prices["close"].astype(float).iloc[day_i])
+                rng = h - l
+                rec[f"clv_d{k}"] = (
+                    ((c - l) - (h - c)) / rng if np.isfinite(rng) and rng > 0 else np.nan
+                )
         records.append(rec)
 
     return pd.DataFrame(records)

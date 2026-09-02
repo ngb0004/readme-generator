@@ -1,0 +1,28 @@
+{
+  "n_tests_in_battery": 24,
+  "heterogeneity": {
+    "n_tickers": 789,
+    "sd_of_tstats": 1.0429358163522167,
+    "sd_expected_under_null": 1.0,
+    "p_overdispersion": 0.04279677440349699,
+    "frac_significant_positive": 0.032953105196451206,
+    "frac_expected_under_null": 0.025,
+    "p_excess_positive": 0.0975747453053984
+  },
+  "power": {
+    "day5": {
+      "n": 31708,
+      "n_clusters": 5191,
+      "observed_bps": 1.7309327508627226,
+      "se_bps": 1.5368899070387407,
+      "mde_bps_at_80pct_power": 4.306365519522552
+    },
+    "dip_1_4": {
+      "n": 31708,
+      "n_clusters": 5191,
+      "observed_bps": 43.46578326268646,
+      "se_bps": 4.252178202241378,
+      "mde_bps_at_80pct_power": 11.91460332268034
+    }
+  }
+}

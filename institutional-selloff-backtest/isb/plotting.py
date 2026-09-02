@@ -31,8 +31,9 @@ GRID = "#e6e5e0"
 
 
 def _cohorts(events: pd.DataFrame) -> list[tuple[str, pd.DataFrame]]:
-    hi = events[events["passes_screen"]] if "passes_screen" in events else events
-    lo = events[~events["passes_screen"]] if "passes_screen" in events else events.iloc[0:0]
+    from .backtest import _split_by_screen
+
+    hi, lo = _split_by_screen(events)
     return [
         ("Beat, high inst. (theory)", hi[hi["bucket"] == BEAT]),
         ("Beat, low inst. (control)", lo[lo["bucket"] == BEAT]),
@@ -169,6 +170,130 @@ def plot_car(
     fig.tight_layout(rect=[0, 0.022, 0.795, 1])
 
     out = Path(out_dir) / "car_profile.png"
+    fig.savefig(out, facecolor=SURFACE)
+    plt.close(fig)
+    return out
+
+
+def plot_mechanism(
+    events: pd.DataFrame,
+    horizon: int,
+    pop_day: int,
+    out_dir: str | Path,
+) -> Path | None:
+    """Chart the order-flow footprint the theory requires but the data lack.
+
+    This is the direct test. The theory is a claim about institutions trading,
+    so it predicts a specific signature: heavy selling pressure for four days,
+    then a burst of volume and buying pressure on day 5. Both panels show what
+    is actually there instead.
+    """
+    try:
+        import matplotlib
+
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except ImportError:
+        log.warning("matplotlib not installed; skipping chart")
+        return None
+
+    from .backtest import _split_by_screen
+    from .events import BEAT
+
+    hi, _ = _split_by_screen(events)
+    cohort = hi[hi["bucket"] == BEAT]
+    if cohort.empty:
+        return None
+
+    days = list(range(1, horizon + 1))
+    clusters = cohort["day1_date"].to_numpy()
+    vol, clv, clv_lo, clv_hi = [], [], [], []
+    for k in days:
+        v = cohort.get(f"relvol_d{k}", pd.Series(dtype=float)).to_numpy(dtype=float)
+        v = v[np.isfinite(v)]
+        vol.append(float(np.median(v)) if v.size else np.nan)
+        c = cohort.get(f"clv_d{k}", pd.Series(dtype=float)).to_numpy(dtype=float)
+        clv.append(float(np.nanmean(c)))
+        lo, hi_ = stats.bootstrap_ci(c, clusters, n_boot=1500)
+        clv_lo.append(lo / 1e4)
+        clv_hi.append(hi_ / 1e4)
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10.5, 9.0), dpi=160)
+    fig.patch.set_facecolor(SURFACE)
+    colors = [SERIES[0] if k == pop_day else INK_MUTED for k in days]
+
+    ax1.bar(days, vol, color=colors, width=0.62, zorder=3)
+    ax1.plot(days, vol, color=INK_2, lw=1.4, ls=(0, (4, 3)), zorder=4)
+    ax1.axhline(1.0, color=INK_MUTED, lw=1, ls=":", zorder=2)
+    ax1.annotate(
+        "the stock's normal volume",
+        xy=(horizon - 0.5, 1.0), xytext=(horizon - 0.5, max(vol) * 0.72),
+        ha="center", va="bottom", fontsize=8, color=INK_MUTED,
+        arrowprops=dict(arrowstyle="-", color=INK_MUTED, lw=0.9, shrinkA=2, shrinkB=2),
+    )
+    ax1.annotate(
+        f"A buy-back on day {pop_day} would spike volume here.\nInstead it sits exactly on the decay curve.",
+        xy=(pop_day, vol[pop_day - 1]),
+        xytext=(pop_day + 0.7, max(vol) * 0.72),
+        fontsize=8.5, color=INK_2,
+        arrowprops=dict(arrowstyle="-", color=INK_MUTED, lw=1, shrinkA=2, shrinkB=4),
+    )
+    ax1.set_title(
+        "Trading volume after the report, relative to the stock's own normal",
+        fontsize=13, color=INK, loc="left", pad=10,
+    )
+    ax1.set_ylabel("Median volume (1.0 = normal)", fontsize=9.5, color=INK_2)
+
+    err = np.vstack([np.array(clv) - np.array(clv_lo), np.array(clv_hi) - np.array(clv)])
+    ax2.bar(days, clv, color=colors, width=0.62, zorder=3)
+    ax2.errorbar(days, clv, yerr=err, fmt="none", ecolor=INK_2, elinewidth=1.1,
+                 capsize=3, zorder=4)
+    headroom = float(np.nanmax(clv_hi)) * 1.95
+    ax2.set_ylim(top=headroom)
+    ax2.annotate(
+        "The theory needs days 1-4 BELOW zero -- institutions selling.\n"
+        "Every one of them is above it: these stocks are bought, not sold.",
+        xy=(0.85, headroom * 0.95), ha="left", va="top",
+        fontsize=8.5, color=INK_2,
+    )
+    ax2.annotate(
+        f"day {pop_day} is the\nsmallest of the ten",
+        xy=(pop_day, float(clv_hi[pop_day - 1]) + headroom * 0.02),
+        xytext=(pop_day, headroom * 0.60),
+        ha="center", va="bottom", fontsize=8.5, color=INK_2,
+        arrowprops=dict(arrowstyle="-", color=INK_MUTED, lw=1, shrinkA=3, shrinkB=3),
+    )
+    ax2.set_title(
+        "Where the pressure was: close location within each day's range",
+        fontsize=13, color=INK, loc="left", pad=10,
+    )
+    ax2.set_ylabel("Buying pressure  (+ = closed near high)", fontsize=9.5, color=INK_2)
+    ax2.set_xlabel(
+        "Trading days after the report (day 1 = first tradeable session)",
+        fontsize=9.5, color=INK_2,
+    )
+
+    for ax in (ax1, ax2):
+        ax.set_facecolor(SURFACE)
+        ax.grid(axis="y", color=GRID, lw=0.8, zorder=0)
+        ax.set_axisbelow(True)
+        ax.set_xticks(days)
+        ax.set_xlim(0.4, horizon + 0.6)
+        ax.tick_params(colors=INK_2, labelsize=8.5, length=0)
+        for side in ("top", "right", "left"):
+            ax.spines[side].set_visible(False)
+        ax.spines["bottom"].set_color(GRID)
+    ax2.axhline(0, color=INK_MUTED, lw=1, zorder=2)
+
+    fig.text(
+        0.008, 0.012,
+        f"Theory cohort: n={len(cohort):,} earnings events, "
+        f"{cohort['day1_date'].min().date()} to {cohort['day1_date'].max().date()}. "
+        f"Blue = day {pop_day}, the predicted buy-back day. Source: Yahoo Finance.",
+        fontsize=7.5, color=INK_MUTED,
+    )
+    fig.tight_layout(rect=[0, 0.022, 0.99, 1], h_pad=3.0)
+    out = Path(out_dir) / "mechanism_profile.png"
     fig.savefig(out, facecolor=SURFACE)
     plt.close(fig)
     return out

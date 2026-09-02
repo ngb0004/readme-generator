@@ -27,6 +27,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     g = p.add_argument_group("universe")
     g.add_argument("--universe-file", help="CSV with a 'ticker' column; default is the S&P 500")
+    g.add_argument(
+        "--index", default="sp500",
+        help="comma-separated indices to pull: sp500, sp400 (mid), sp600 (small). "
+             "Mid and small caps are where institutional selling can plausibly "
+             "move a price at all.",
+    )
     g.add_argument("--limit", type=int, help="cap the number of tickers (for quick runs)")
     g.add_argument(
         "--no-removed",
@@ -42,6 +48,12 @@ def build_parser() -> argparse.ArgumentParser:
     g.add_argument(
         "--ownership-csv",
         help="point-in-time ownership override: columns ticker,inst_pct (percent)",
+    )
+    g.add_argument(
+        "--screen-by", default="inst_pct",
+        choices=["inst_pct", "top10_pct", "inst_float_pct"],
+        help="what the threshold applies to. top10_pct screens on how "
+             "concentrated the holding is rather than how institutional it is.",
     )
 
     g = p.add_argument_group("event definition")
@@ -73,6 +85,12 @@ def build_parser() -> argparse.ArgumentParser:
     g.add_argument("--no-cache", action="store_true")
     g.add_argument("--workers", type=int, default=6)
     g.add_argument("--chart", action="store_true", help="write a CAR chart to the output dir")
+    g.add_argument(
+        "--probe", action="store_true",
+        help="run the pre-registered battery: ownership/concentration/size "
+             "gradients, the direct volume-and-pressure test of the mechanism, "
+             "per-stock heterogeneity, and a power analysis",
+    )
     g.add_argument("-v", "--verbose", action="store_true")
     return p
 
@@ -109,7 +127,10 @@ def main(argv: list[str] | None = None) -> int:
 
     # ---------------------------------------------------------- universe
     log.info("Building universe...")
-    universe = load_universe(args.universe_file, include_removed=not args.no_removed)
+    indexes = tuple(i.strip() for i in args.index.split(",") if i.strip())
+    universe = load_universe(
+        args.universe_file, include_removed=not args.no_removed, indexes=indexes
+    )
     if args.limit:
         universe = universe.head(args.limit)
     tickers = universe["ticker"].tolist()
@@ -121,11 +142,14 @@ def main(argv: list[str] | None = None) -> int:
         ownership["inst_pct"] = pd.to_numeric(ownership["inst_pct"], errors="coerce") / 100.0
     else:
         ownership = fetch_ownership(client, tickers, workers=args.workers)
-    screened = apply_ownership_screen(universe, ownership, args.min_inst_pct / 100.0)
+    screened = apply_ownership_screen(
+        universe, ownership, args.min_inst_pct / 100.0, screen_col=args.screen_by
+    )
     n_pass = int(screened["passes_screen"].sum())
     log.info(
-        "  %d/%d have ownership data; %d are >= %.0f%% institutionally held",
-        int(screened["inst_pct"].notna().sum()), len(screened), n_pass, args.min_inst_pct,
+        "  %d/%d have ownership data; %d clear %s >= %.0f%%",
+        int(screened[args.screen_by].notna().sum()), len(screened), n_pass,
+        args.screen_by, args.min_inst_pct,
     )
     if n_pass == 0:
         log.error("No tickers clear the ownership screen; nothing to test.")
@@ -141,10 +165,15 @@ def main(argv: list[str] | None = None) -> int:
         log.error("No events could be built.")
         return 1
 
-    events = events.merge(
-        screened[["ticker", "inst_pct", "passes_screen"]], on="ticker", how="left"
-    )
-    events["passes_screen"] = events["passes_screen"].fillna(False)
+    carry = [
+        c for c in ("ticker", "inst_pct", "top10_pct", "inst_count", "market_cap",
+                    "index", "passes_screen")
+        if c in screened.columns
+    ]
+    events = events.merge(screened[carry], on="ticker", how="left")
+    # Distinguish "screened out" from "we have no ownership record at all".
+    events["has_ownership"] = events[args.screen_by].notna()
+    events["passes_screen"] = events["passes_screen"].fillna(False).astype(bool)
 
     if args.require_known_timing:
         events = events[events["timing_quality"] != "unknown"]
@@ -225,6 +254,65 @@ def main(argv: list[str] | None = None) -> int:
         print(f"\nSensitivity to the beat/crush boundary (day {args.pop_day}):")
         print(sweep.to_string(index=False, float_format=lambda v: f"{v:,.3f}"))
 
+    if args.probe:
+        from . import probe as pr
+
+        battery = pr.run_battery(
+            events, args.pop_day, args.dip_through, args.horizon, ret_prefix
+        )
+        print("\n" + "=" * 78)
+        print(f"PRE-REGISTERED BATTERY  --  {battery['n_tests_in_battery']} tests, "
+              f"corrected together")
+        print("=" * 78)
+        titles = {
+            "institutional_pct": "By institutional ownership (the theory's own variable)",
+            "top10_concentration": "By top-10 holder concentration (can a few funds move it?)",
+            "holder_count": "By number of institutional holders (fewer = more coordinated)",
+            "market_cap": "By company size (small caps are easier to push around)",
+            "by_index": "By index slice",
+        }
+        for key, title in titles.items():
+            tbl = battery["tables"].get(key)
+            if tbl is None or tbl.empty:
+                continue
+            print(f"\n{title}:")
+            print(tbl.to_string(index=False, float_format=lambda v: f"{v:,.3f}"))
+            tbl.to_csv(out_dir / f"probe_{key}.csv", index=False)
+
+        vs = battery["tables"].get("volume_signature")
+        if vs is not None and not vs.empty:
+            print("\nDirect test of the mechanism -- order flow, not price:")
+            print("  clv_mean is close-location value: negative = sold into the close,")
+            print("  positive = bought up into it. Theory needs days 1-4 negative and "
+                  f"day {args.pop_day} positive with elevated volume.")
+            print(vs.to_string(index=False, float_format=lambda v: f"{v:,.4f}"))
+            vs.to_csv(out_dir / "probe_volume_signature.csv", index=False)
+
+        het = battery.get("heterogeneity") or {}
+        if het.get("n_tickers", 0) >= 20:
+            print(f"\nPer-stock heterogeneity -- does it work for *some* names? "
+                  f"({het['n_tickers']} tickers with >=20 events)")
+            print(f"  spread of per-stock t-stats: {het['sd_of_tstats']:.3f} "
+                  f"(1.000 expected if no stock has an effect), "
+                  f"over-dispersion p={het['p_overdispersion']:.3f}")
+            print(f"  share of stocks significantly positive: "
+                  f"{het['frac_significant_positive']:.1%} "
+                  f"(2.5% expected by chance), p={het['p_excess_positive']:.3f}")
+
+        power = battery.get("power") or {}
+        if power:
+            print("\nPower -- what this sample could have detected:")
+            for name, pw in power.items():
+                print(f"  {name}: observed {pw['observed_bps']:+.1f} bps, "
+                      f"se {pw['se_bps']:.1f} bps -> could detect "
+                      f"{pw['mde_bps_at_80pct_power']:.1f} bps at 80% power "
+                      f"(n={pw['n']:,})")
+        (out_dir / "probe.json").write_text(
+            json.dumps(
+                {k: v for k, v in battery.items() if k != "tables"}, indent=2, default=str
+            )
+        )
+
     events.to_csv(out_dir / "events.csv", index=False)
     profile.to_csv(out_dir / "daily_profile.csv", index=False)
     cohorts.to_csv(out_dir / "cohorts.csv", index=False)
@@ -236,10 +324,14 @@ def main(argv: list[str] | None = None) -> int:
           f"result.json to {out_dir}/")
 
     if args.chart:
-        from .plotting import plot_car
-        path = plot_car(events, args.horizon, args.pop_day, ret_prefix, out_dir)
-        if path:
-            print(f"Wrote {path}")
+        from .plotting import plot_car, plot_mechanism
+
+        for path in (
+            plot_car(events, args.horizon, args.pop_day, ret_prefix, out_dir),
+            plot_mechanism(events, args.horizon, args.pop_day, out_dir),
+        ):
+            if path:
+                print(f"Wrote {path}")
     return 0
 
 

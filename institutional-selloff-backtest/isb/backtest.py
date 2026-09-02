@@ -236,8 +236,9 @@ def mechanism_test(
     if "passes_screen" not in events or pop_col not in events:
         return {}
     beats = events[events["bucket"] == BEAT]
-    hi = beats[beats["passes_screen"]][pop_col].to_numpy(dtype=float)
-    lo = beats[~beats["passes_screen"]][pop_col].to_numpy(dtype=float)
+    hi_df, lo_df = _split_by_screen(beats)
+    hi = hi_df[pop_col].to_numpy(dtype=float)
+    lo = lo_df[pop_col].to_numpy(dtype=float)
     return {
         "n_high_inst": int(np.isfinite(hi).sum()),
         "n_low_inst": int(np.isfinite(lo).sum()),
@@ -252,6 +253,23 @@ def _one_sided(desc: dict, negative: bool) -> float:
         return float("nan")
     in_direction = (t < 0) if negative else (t > 0)
     return float(p / 2 if in_direction else 1 - p / 2)
+
+
+def _split_by_screen(events: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Split into pass / fail cohorts, keeping unknown-ownership names out of both.
+
+    A delisted or thinly-covered ticker has no ownership record at all. Letting
+    it fall through into the "low institutional" bucket would quietly fill the
+    control group with names whose ownership we simply do not know.
+    """
+    if "passes_screen" not in events:
+        return events, events.iloc[0:0]
+    known = (
+        events["has_ownership"]
+        if "has_ownership" in events
+        else events["passes_screen"].notna()
+    )
+    return events[events["passes_screen"]], events[~events["passes_screen"] & known]
 
 
 def cohort_comparisons(
@@ -280,8 +298,7 @@ def cohort_comparisons(
             }
         )
 
-    hi = events[events["passes_screen"]] if "passes_screen" in events else events
-    lo = events[~events["passes_screen"]] if "passes_screen" in events else events.iloc[0:0]
+    hi, lo = _split_by_screen(events)
 
     add("BEAT + high inst. (the theory)", hi[hi["bucket"] == BEAT])
     add("BEAT + low inst. (control)", lo[lo["bucket"] == BEAT])

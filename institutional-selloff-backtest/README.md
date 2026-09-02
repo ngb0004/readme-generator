@@ -138,7 +138,7 @@ and only three endpoints are needed.
 
 ---
 
-# Results
+# Results — round 1: the theory as stated
 
 Run of record: **503 S&P 500 tickers, 45,797 earnings events, 1993–2025**, of
 which **14,766 events** across 494 tickers form the theory's cohort (≥80%
@@ -227,3 +227,121 @@ wrong, the high/low split is noisier than it should be, which would blunt a real
 institutional effect. Re-running with `--ownership-csv` and real 13F-derived
 history is the honest way to close that gap — but note that H1 and H2b fail on
 their own terms regardless of how the cohort is split.
+
+---
+
+# Results — round 2: looking where the theory should work best
+
+A null result on large caps is a weak test of this particular theory, for a
+reason worth stating plainly: **the S&P 500 is the worst possible place to look
+for it.** If institutions dumping stock moves a price, that happens in a company
+where one fund owns 8% of a thin float — not in Apple, where 7,749 institutions
+hold shares and the top ten together hold barely a third. Round 1 tested the
+mechanism where it is least able to operate.
+
+So round 2 widens the search and, more importantly, tests the mechanism
+*directly*. Universe extended to **2,151 tickers** across the S&P 500, 400 and
+600 — including **788 names historically removed from those indices**, which
+partly repairs the survivorship problem. **123,007 earnings events; 31,708 in the
+theory's cohort.**
+
+```bash
+python3 -m isb --index sp500,sp400,sp600 --probe --chart
+```
+
+Every test below was declared before it was run and is corrected across the
+whole battery. That discipline matters: after a null result it is very easy to
+keep slicing until something clears p<0.05, and with 24 slices something usually
+does.
+
+## The headline is unchanged at 2× the sample
+
+| | Prediction | Result |
+|---|---|---|
+| **H1** | dip over days 1–4 | **+43.5 bps**, p < 0.001 — wrong direction |
+| **H2** | day 5 positive | +1.7 bps, p = 0.26 |
+| **H2b** | day 5 beats its neighbours | −1.1 bps, p = 0.50 |
+
+## There is no gradient in anything
+
+If institutional selling drives the effect, it must get *stronger* where
+institutions dominate. It doesn't move at all:
+
+| Split | Day-5 return across buckets (bps) | Gradient? |
+|---|---|---|
+| Institutional ownership (<50% → ≥90%) | +2.3, −18.7, −3.6, −1.0, +3.5, +2.0 | none |
+| Top-10 holder concentration (Q1→Q5) | +0.5, +1.3, +0.4, +2.0, +0.8 | none |
+| Number of holders (few → many) | +1.7, +0.4, −1.0, +2.1, +2.0 | none |
+| Market cap (small → large) | +0.6, +1.1, −1.0, +2.7, +1.4 | none |
+| Index (small / mid / large) | +2.1 / +1.4 / +1.9 | none |
+
+**Not one of the 24 tests survives correction** (lowest adjusted p = 0.89). The
+small-cap slice, where the mechanism is most plausible, looks exactly like the
+mega-cap slice.
+
+## The decisive test: there is no institutional footprint at all
+
+![Order-flow signature](results/mechanism_profile.png)
+
+This is the test that settles it, and it doesn't depend on prices. The theory is
+a claim about *order flow* — institutions sell for four days, then buy back on
+the fifth. That has to leave a footprint in volume and in where each day closes
+within its range, whether or not the net price moves.
+
+**Volume decays smoothly and never bumps.** 2.05× normal on day 1, then 1.49,
+1.29, 1.20, **1.15 on day 5**, 1.11, 1.08 … Day 5 sits exactly on the decay
+curve. A coordinated repurchase by the largest holders of a stock cannot happen
+without volume, and there is no volume.
+
+**The pressure runs the wrong way every single day.** Close-location value is
+*positive* on all ten days (p < 0.001) — these stocks are being bought up into
+the close, not sold off. The theory needs days 1–4 negative. And day 5, the
+supposed buy-back day, has the *smallest* buying pressure of the ten.
+
+So the mechanism isn't merely failing to show up in prices. It isn't in the order
+flow either, which is where it would have to be first.
+
+## What the study could have detected
+
+| Quantity | Observed | Detectable at 80% power |
+|---|---|---|
+| Day-5 return | +1.7 bps | **4.3 bps** |
+| Days 1–4 cumulative | +43.5 bps | 11.9 bps |
+
+So this is not "we couldn't tell". Any day-5 effect larger than about **4 basis
+points — four hundredths of one percent** — would have shown up. For scale, you'd
+need something on the order of 20–50 bps before it survived spreads and
+commissions. An effect small enough to hide from this sample is far too small to
+trade.
+
+## The one thing that flickered — and why it isn't evidence
+
+Per-stock heterogeneity was the only test in the battery to come near
+significance: across 789 tickers with ≥20 events each, the spread of per-stock
+t-statistics was 1.043 against 1.000 expected under the null (p = 0.043), and
+3.3% of stocks looked significantly positive against 2.5% expected (p = 0.098).
+
+Reported for completeness, but it should not be read as support. An excess of
+0.8 percentage points is what mild residual within-ticker correlation produces on
+its own; it is one marginal result out of 24 pre-registered tests, which is fewer
+than chance alone would predict; and it does not survive correction. Chasing the
+specific tickers behind it would be exactly the mistake this battery was built to
+prevent — with 789 names, some will always look good.
+
+## Where the theory could still, honestly, be hiding
+
+Two gaps remain, and neither is closed by this data:
+
+1. **Point-in-time ownership.** The screen still uses a current snapshot, so the
+   high/low split is noisier than it should be. Real 13F-derived history would
+   sharpen it (`--ownership-csv`). But note the ownership *gradient* is flat
+   across six buckets — for measurement error to be hiding a real effect, it
+   would have to be flattening every one of them.
+2. **Intraday timing.** All of this is close-to-close. If institutions sell into
+   the day-1 open and repurchase at the day-5 close, minute-bar data would show
+   it and daily bars would not. That requires a paid intraday feed; Yahoo only
+   serves recent intraday history.
+
+Beyond those, the result is about as clean as this kind of question gets: no
+price effect, no gradient in any variable the mechanism depends on, and no
+footprint in the order flow the mechanism is made of.
