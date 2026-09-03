@@ -312,6 +312,20 @@ def main(argv: list[str] | None = None) -> int:
                       f"se {pw['se_bps']:.1f} bps -> could detect "
                       f"{pw['mde_bps_at_80pct_power']:.1f} bps at 80% power "
                       f"(n={pw['n']:,})")
+        for w in (1, 2, 4):
+            ct = pr.conditional_on_drop(
+                events, drop_through=w, pop_day=args.pop_day,
+                ret_prefix=ret_prefix, beat_max_pct=args.beat_max_pct,
+            )
+            if ct.empty:
+                continue
+            ct.to_csv(out_dir / f"conditional_drop_d{w}.csv", index=False)
+            if w == args.dip_through or w == 4:
+                print(f"\nConditional form -- only beats that actually DROPPED through "
+                      f"day {w}.\nSelecting on the drop guarantees a bounce, so the "
+                      f"control rows are the whole test:")
+                print(ct.to_string(index=False, float_format=lambda v: f"{v:,.2f}"))
+
         grid = bt.sweep_beat_grid(
             events, [0.0, 1.0, 2.0, 3.0, 5.0],
             [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 50.0],

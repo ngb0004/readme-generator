@@ -380,3 +380,75 @@ pair of values anyone has in mind, the answer is already in the table
   narrowest, +153 bps at the widest).
 
 The definition of a beat was never what this rested on.
+
+---
+
+# Appendix: the conditional form — "beat but still dropped"
+
+A later clarification sharpened the claim: it is not that beats dip and then pop,
+it is that **beats which actually fell** then recover on day 5. That is a
+narrower and genuinely different population, so it gets its own test
+(`results/conditional_drop_d*.csv`).
+
+**Selecting on the outcome manufactures a bounce.** Any set of stocks chosen
+*because* they just fell will tend to rise afterwards — bid-ask bounce plus the
+ordinary correction of overreaction. So a positive day 5 here is guaranteed in
+advance and proves nothing on its own. Only the controls can separate the theory
+from the artefact.
+
+Conditioning on having dropped through day 4 (n = 14,759 of the 31,734):
+
+| Cohort | n | Mean drop | Day 5 | p |
+|---|---|---|---|---|
+| **Beat + high inst. (the theory)** | 14,759 | −415 bps | **+4.40 bps** | **0.018** |
+| Beat + low inst. (control) | 2,966 | −375 bps | +2.87 bps | 0.39 |
+| Crush + high inst. (control) | 13,346 | −481 bps | +3.41 bps | 0.22 |
+| Miss + high inst. (control) | 21,612 | −556 bps | +0.75 bps | 0.73 |
+
+This is the first significant day-5 result in the whole project. It does not
+survive its two controls:
+
+1. **It is not specific to institutions.** Crushes that dropped bounce +3.41;
+   lightly-held beats that dropped bounce +2.87. The theory cohort's edge over
+   crushes is **+0.98 bps (p = 0.70)** and over lightly-held beats **+1.52 bps
+   (p = 0.67)**. Everything that falls, bounces, by about the same amount.
+2. **It is not a day-5 event.** Day 5 is +4.40, day 6 is +2.48, day 7 is +3.24.
+   Day 5 minus the average of days 6–7 is **+1.54 bps, p = 0.50**. It is a slow
+   drift back up over most of a week, not a buy-back on the fifth day.
+
+## Size-specific thresholds don't change it either
+
+| Slice | n | Day 5 | vs days 6–7 |
+|---|---|---|---|
+| Small cap, 10% band | 2,710 | +4.64 (p=0.31) | +4.59 (p=0.39) |
+| Mid cap, 10% band | 5,227 | +4.73 (p=0.12) | +1.05 (p=0.78) |
+| Large cap, 10% band | 6,822 | +4.05 (p=0.07) | +0.70 (p=0.80) |
+| Large cap, 5% band | 4,116 | +6.34 (p=0.01) | +2.74 (p=0.38) |
+
+The small-cap-at-10% case — the specific one named — is not significant.
+
+## And the bounce is not tradeable
+
+The rule is implementable (the day-4 drop is observable before you buy), so it is
+worth pricing honestly. Buy at the day-4 close, sell at the day-5 close:
+
+| | |
+|---|---|
+| Gross edge | +4.40 bps per trade |
+| Win rate | 50.3% |
+| Volatility | 181 bps — **41× the edge** |
+
+| Round-trip cost | Net | p |
+|---|---|---|
+| 2 bps | +2.40 | 0.20 |
+| **5 bps** | **−0.60** | 0.75 |
+| 10 bps | −5.60 | 0.003 |
+| 20 bps | −15.60 | <0.001 |
+
+A retail round-trip is roughly 5–10 bps of spread on a liquid large cap and
+20–50 bps on a small cap. The edge is gone at 5 bps and reliably negative at 10.
+
+**The fair summary:** the conditional form is the closest this theory has come to
+being right, and the refinement did move the number. But what it found is
+mean reversion — a thing that happens to every stock that falls, institutional or
+not, spread across days 5 to 7 — and it is smaller than the cost of trading it.

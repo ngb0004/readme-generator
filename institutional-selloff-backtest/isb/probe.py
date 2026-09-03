@@ -263,3 +263,83 @@ def run_battery(
         "heterogeneity": ticker_heterogeneity(events, pop_day, ret_prefix),
         "power": power_analysis(cohort, pop_day, dip_through, ret_prefix),
     }
+
+
+def conditional_on_drop(
+    events: pd.DataFrame,
+    drop_through: int = 4,
+    pop_day: int = 5,
+    ret_prefix: str = "aret",
+    beat_max_pct: float = 10.0,
+) -> pd.DataFrame:
+    """Test the *conditional* form: among beats that actually fell, do they recover?
+
+    This is a materially different claim from "beats dip then pop". It selects on
+    the outcome -- keep only the events where the stock did drop -- and then asks
+    what happens next.
+
+    **Selecting on the outcome creates a bounce for free.** Any set of stocks
+    picked because they just fell will tend to rise next, from bid-ask bounce and
+    from the ordinary correction of overreaction. So the day-5 number for this
+    cohort is guaranteed to look positive, and on its own proves nothing at all.
+
+    The only thing that can distinguish the theory from that artefact is the
+    contrast: apply the identical conditioning to stocks the theory says should
+    NOT behave this way (lightly-held beats, misses, crushes). If they all bounce
+    equally, the bounce is mechanical. The theory needs the institutional cohort
+    to bounce *more*.
+    """
+    from .backtest import _split_by_screen
+    from .events import CRUSH, MISS
+
+    car_col = f"{'acar' if ret_prefix == 'aret' else 'car'}_d{drop_through}"
+    pop_col = f"{ret_prefix}_d{pop_day}"
+    if car_col not in events or pop_col not in events:
+        return pd.DataFrame()
+
+    labelled = events.copy()
+    labelled["bucket"] = [
+        "beat" if 0 < s <= beat_max_pct else ("crush" if s > beat_max_pct else "miss")
+        for s in labelled["surprise_pct"].to_numpy(dtype=float)
+    ]
+    hi, lo = _split_by_screen(labelled)
+
+    cohorts = [
+        ("Beat + high inst. (the theory)", hi[hi["bucket"] == "beat"]),
+        ("Beat + low inst. (control)", lo[lo["bucket"] == "beat"]),
+        ("Crush + high inst. (control)", hi[hi["bucket"] == CRUSH]),
+        ("Miss + high inst. (control)", hi[hi["bucket"] == MISS]),
+    ]
+
+    rows = []
+    for label, sub in cohorts:
+        dropped = sub[sub[car_col] < 0]
+        if len(dropped) < 50:
+            continue
+        clusters = dropped["day1_date"].to_numpy()
+        pop = stats.describe(dropped[pop_col].to_numpy(dtype=float), clusters)
+        lo_ci, hi_ci = stats.bootstrap_ci(
+            dropped[pop_col].to_numpy(dtype=float), clusters, n_boot=2000
+        )
+        # Days 6 and 7 say whether day 5 is a distinct event or just the front of
+        # a general drift back up.
+        after = {}
+        for k in (pop_day + 1, pop_day + 2):
+            col = f"{ret_prefix}_d{k}"
+            if col in dropped:
+                after[f"day{k}_bps"] = float(
+                    np.nanmean(dropped[col].to_numpy(dtype=float)) * 1e4
+                )
+        rows.append({
+            "cohort": label,
+            "n_dropped": len(dropped),
+            "pct_of_cohort": 100.0 * len(dropped) / max(len(sub), 1),
+            "mean_drop_bps": float(np.nanmean(dropped[car_col].to_numpy(dtype=float)) * 1e4),
+            f"day{pop_day}_bps": pop["mean_bps"],
+            f"day{pop_day}_p": pop["p_value"],
+            f"day{pop_day}_ci_lo": lo_ci,
+            f"day{pop_day}_ci_hi": hi_ci,
+            f"day{pop_day}_win_rate": pop["win_rate"],
+            **after,
+        })
+    return pd.DataFrame(rows)
