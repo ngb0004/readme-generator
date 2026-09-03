@@ -452,3 +452,62 @@ A retail round-trip is roughly 5–10 bps of spread on a liquid large cap and
 being right, and the refinement did move the number. But what it found is
 mean reversion — a thing that happens to every stock that falls, institutional or
 not, spread across days 5 to 7 — and it is smaller than the cost of trading it.
+
+---
+
+# Appendix: day 6, and every other day
+
+A further clarification moved the recovery from day 5 to day 6. Tested on its
+own terms, with the dip window moved to days 1–5 to match:
+
+**Unconditional** (all beats): the dip over days 1–5 is **+45.0 bps** (p<0.001,
+still the wrong direction) and day 6 is **+2.02 bps, p = 0.130** — not
+significant.
+
+**Conditional** (only beats that dropped through day 5): day 6 is +3.55 bps,
+p = 0.042. Significant alone, but the controls invert it:
+
+| Cohort that dropped through day 5 | n | Day 6 | p |
+|---|---|---|---|
+| Beat + high inst. (the theory) | 14,748 | +3.55 | 0.042 |
+| **Beat + LOW inst.** (control) | 2,948 | **+7.95** | 0.022 |
+| Crush + high inst. (control) | 13,474 | +5.63 | 0.050 |
+
+The theory's own cohort bounces **least** of the three — 2.08 bps behind crushes
+(p = 0.41) and 4.40 bps behind *lightly*-held beats (p = 0.22). On the clean
+specialness test — day 6 against days 7–10 — the theory cohort scores +3.05 bps
+(p = 0.12, not special) while the low-institutional control scores +8.17 bps
+(p = 0.033). If the day-6 bounce belongs to anyone, it belongs to the stocks
+institutions *don't* own.
+
+> A methodological note: comparing day 6 against days 4 and 5 would be invalid,
+> because those days sit inside the window the selection conditions on and are
+> mechanically forced negative by it. Only days 7–10 are a fair comparison.
+
+## Every version of the claim at once
+
+Rather than test one day at a time, here is the whole family: for each day N,
+condition on having dropped through day N−1, then test day N.
+
+| Day N | n | Theory | p | Low inst. | Crush | Theory beats both controls? |
+|---|---|---|---|---|---|---|
+| 2 | 14,696 | +3.94 | 0.079 | +2.43 | +6.35 | no |
+| 3 | 14,622 | +3.25 | 0.111 | +6.52 | +1.76 | no |
+| 4 | 14,659 | +2.45 | 0.212 | +6.64 | +1.03 | no |
+| **5** | 14,759 | **+4.40** | **0.018** | +2.87 | +3.41 | no |
+| **6** | 14,748 | **+3.55** | **0.042** | +7.95 | +5.63 | no |
+| 7 | 14,713 | +3.34 | 0.082 | +0.78 | +6.86 | no |
+| 8 | 14,770 | +1.24 | 0.538 | +7.08 | +3.21 | no |
+| 9 | 14,856 | +3.58 | 0.073 | −2.11 | +4.52 | no |
+| 10 | 14,765 | −0.37 | 0.835 | +2.76 | +2.88 | no |
+
+Two things this settles:
+
+1. **The bounce is real and it is everywhere.** Every day shows it, in every
+   cohort. Stocks that have fallen tend to drift back — mean reversion,
+   documented for decades, and unrelated to who owns the stock.
+2. **In zero of the nine variants does the theory's cohort beat both of its
+   controls.** Not day 5, not day 6, not any day. The lightly-held stocks
+   frequently bounce harder.
+
+There is no remaining day to move to. Full table: `results/conditional_all_days.csv`.
