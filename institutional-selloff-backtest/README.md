@@ -511,3 +511,92 @@ Two things this settles:
    frequently bounce harder.
 
 There is no remaining day to move to. Full table: `results/conditional_all_days.csv`.
+
+---
+
+# Results — round 3: the rule as its author actually trades it
+
+The theory's author supplied the complete rule, and it differs from everything
+tested above in three ways that matter:
+
+| | As specified |
+|---|---|
+| Ownership | **≥75%** institutional (not 80%) |
+| Beat | a strong beat, explicitly **avoiding crushes** — "they don't sell into crushes, they hold" |
+| Drop | must fall the **next market day**, starting in the aftermarket after the call |
+| Path | falls for **5 market days**, turns up on **day 6** |
+| Entry | after the 5-day fall |
+| Exit | **3% trailing stop**, ridden up |
+| Success | **≥3% gain** per trade |
+| Instrument | **shares only** — no options, no leverage |
+| Sector | **AI names only**, "not even adjacent" |
+
+Two of those invalidate the earlier tests rather than the theory:
+
+**It is a swing trade, not a one-day bet.** Every test above measured a single
+day's return. This holds until a trailing stop fires — a median of 5 days,
+sometimes 20. A trailing stop cuts losers at a fixed distance and lets winners
+run, which produces a *negative median and a positive mean*: many small losses
+and occasional large wins. That is precisely the shape a discretionary trader
+remembers as "it works", and none of the earlier machinery could see it.
+
+**Shares only, which is good news for the method** — the share-price analysis
+above is the right instrument after all, and the IV-crush hypothesis is dead.
+
+## The control this needs
+
+A trailing stop on a stock in a violent uptrend makes money *whenever* you
+enter. Semiconductor and AI names from 2023 on are the strongest uptrend in the
+market. So the question is not whether the rule made money — it did — but
+whether **entering after the earnings drop beats entering on a random day in the
+same stock over the same period.**
+
+`isb/strategy.py`; reproduce with `scripts/run_his_rule.py`.
+
+| | His rule | Random entry, same stocks | Edge | p |
+|---|---|---|---|---|
+| Full history (n=371) | +0.46% | +0.52% | **−0.06 pp** | 0.86 |
+| AI era, 2023+ (n=55) | +1.46% | +1.12% | +0.34 pp | 0.73 |
+
+And across every variant of the rule, each against its own matched control:
+
+| Variant | n | His rule | Random | Edge | p |
+|---|---|---|---|---|---|
+| Buy day-5 close, 3% stop | 371 | +0.46% | +0.38% | +0.08 | 0.89 |
+| Buy day 6, 3% stop | 371 | +0.16% | +1.75% | **−1.59** | **0.02** |
+| Must drop through day 5 | 280 | +0.50% | +0.81% | −0.30 | 0.59 |
+| Buy day 6, drop through day 5 | 280 | +0.28% | +0.96% | −0.68 | 0.24 |
+| 5% stop | 371 | +0.98% | +1.83% | −0.85 | 0.33 |
+| 8% stop | 371 | +1.68% | +3.08% | −1.40 | 0.24 |
+| Beat ≤10% only | 244 | +0.26% | +1.44% | −1.18 | 0.08 |
+| 2023+, drop through day 5 | 43 | +1.16% | +1.52% | −0.36 | 0.76 |
+
+**The edge is negative in seven of eight variants, and the one statistically
+significant result is significantly *worse* than random.** The strategy's
+returns are real; they belong entirely to the trailing stop and the trend, not
+to the earnings setup. Any entry day would have done as well or better.
+
+## Two findings he can actually use
+
+**The 3% stop is too tight for these names.** Look down the stop column: at 3%
+the random benchmark returns +0.38%, at 5% it returns +1.83%, at 8% it returns
++3.08%. AI semis routinely swing 5% in a session, so a 3% trail exits on noise
+before the move develops. Widening the stop roughly doubles the return, and it
+is the single highest-value change available.
+
+**His own ownership screen excludes the biggest AI name.** At ≥75%
+institutional, NVDA (71.5%), SMCI, PLTR, ANET and INTC are all screened out.
+
+## Limits of this round
+
+- **Yahoo's earnings data stops around May 2025**, so his most recent trades —
+  likely where his conviction comes from — are outside the coverage. Prices run
+  to the present; earnings metadata does not.
+- **n=55 in the AI era.** His lived sample is smaller still, which is exactly
+  how a trailing stop's occasional 15–25% winner becomes a remembered pattern.
+- **The AI universe is our list, not his** (19 names: NVDA, AMD, AVGO, MU, MRVL,
+  SMCI, PLTR, WDC, SNDK, VRT, ANET, LRCX, AMAT, KLAC, QCOM, INTC, MPWR, COHR,
+  ONTO). A different list would move the numbers, though not by enough to turn
+  a −0.06 pp edge into a real one.
+- **SNDK has one earnings record** in the data (2025 spin-off), so it cannot
+  contribute.
