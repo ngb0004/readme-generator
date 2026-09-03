@@ -59,6 +59,9 @@ def build_parser() -> argparse.ArgumentParser:
     g = p.add_argument_group("event definition")
     g.add_argument("--beat-max-pct", type=float, default=10.0,
                    help="upper edge of 'beat but didn't crush', in percent surprise")
+    g.add_argument("--beat-min-pct", type=float, default=0.0,
+                   help="lower edge of a beat: surprises within +/- this count as "
+                        "in-line rather than a beat")
     g.add_argument("--pop-day", type=int, default=5, help="the day the theory predicts a rise")
     g.add_argument("--dip-through", type=int, default=4,
                    help="the dip is measured cumulatively from day 1 through this day")
@@ -181,7 +184,9 @@ def main(argv: list[str] | None = None) -> int:
         events = events[events["day1_date"] >= pd.Timestamp(args.start)]
     if args.end:
         events = events[events["day1_date"] <= pd.Timestamp(args.end)]
-    events = label_events(events, beat_max_pct=args.beat_max_pct)
+    events = label_events(
+        events, beat_max_pct=args.beat_max_pct, inline_tol_pct=args.beat_min_pct
+    )
     log.info(
         "  %d events, %d tickers, %s to %s",
         len(events), events["ticker"].nunique(),
@@ -307,6 +312,22 @@ def main(argv: list[str] | None = None) -> int:
                       f"se {pw['se_bps']:.1f} bps -> could detect "
                       f"{pw['mde_bps_at_80pct_power']:.1f} bps at 80% power "
                       f"(n={pw['n']:,})")
+        grid = bt.sweep_beat_grid(
+            events, [0.0, 1.0, 2.0, 3.0, 5.0],
+            [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 50.0],
+            args.pop_day, args.dip_through, ret_prefix,
+        )
+        if not grid.empty:
+            grid.to_csv(out_dir / "beat_grid.csv", index=False)
+            n_pop = int((grid["pop_p"] < 0.05).sum())
+            n_dip = int((grid["dip_bps"] < 0).sum())
+            print(f"\nBeat/crush threshold grid -- every combination of where a beat "
+                  f"starts and\nwhere a crush begins ({len(grid)} cells), so the "
+                  f"definition cannot be the thing that matters:")
+            print(f"  day-{args.pop_day} pop significant in {n_pop}/{len(grid)} cells "
+                  f"(best raw p={grid['pop_p'].min():.3f})")
+            print(f"  dip days 1-{args.dip_through} negative in {n_dip}/{len(grid)} cells")
+
         (out_dir / "probe.json").write_text(
             json.dumps(
                 {k: v for k, v in battery.items() if k != "tables"}, indent=2, default=str

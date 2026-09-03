@@ -309,6 +309,50 @@ def cohort_comparisons(
     return pd.DataFrame(rows)
 
 
+def sweep_beat_grid(
+    events: pd.DataFrame,
+    mins: list[float],
+    maxes: list[float],
+    pop_day: int = 5,
+    dip_through: int = 4,
+    ret_prefix: str = "aret",
+) -> pd.DataFrame:
+    """Test every plausible pair of (beat floor, crush ceiling).
+
+    "Beat" has a precise meaning -- actual EPS above consensus -- but there is no
+    standard number at which a beat becomes a "crush". Rather than argue about
+    the boundary, this sweeps a grid of both edges at once, so whatever pair of
+    values someone has in mind, the answer for it is already in the table.
+    """
+    pop_col = f"{ret_prefix}_d{pop_day}"
+    car_col = f"{'acar' if ret_prefix == 'aret' else 'car'}_d{dip_through}"
+    rows = []
+    for lo in mins:
+        for hi in maxes:
+            if hi <= lo:
+                continue
+            labelled = label_events(events, beat_max_pct=hi, inline_tol_pct=lo)
+            sub = labelled[labelled["bucket"] == BEAT]
+            if "passes_screen" in sub:
+                sub = sub[sub["passes_screen"]]
+            if len(sub) < 100:
+                continue
+            clusters = sub["day1_date"].to_numpy()
+            pop = stats.describe(sub[pop_col].to_numpy(dtype=float), clusters)
+            dip = stats.describe(sub[car_col].to_numpy(dtype=float), clusters)
+            rows.append({
+                "beat_min_pct": lo, "beat_max_pct": hi, "n": pop["n"],
+                "dip_bps": dip["mean_bps"], "dip_p": dip["p_value"],
+                "pop_bps": pop["mean_bps"], "pop_p": pop["p_value"],
+                "pop_win_rate": pop["win_rate"],
+            })
+    out = pd.DataFrame(rows)
+    if not out.empty:
+        adj = stats.adjust_pvalues(out["pop_p"].tolist())
+        out["pop_p_bh"] = adj["bh"]
+    return out
+
+
 def sweep_beat_band(
     events: pd.DataFrame,
     bands: list[float],

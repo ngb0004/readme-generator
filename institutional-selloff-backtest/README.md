@@ -345,3 +345,38 @@ Two gaps remain, and neither is closed by this data:
 Beyond those, the result is about as clean as this kind of question gets: no
 price effect, no gradient in any variable the mechanism depends on, and no
 footprint in the order flow the mechanism is made of.
+
+---
+
+# Appendix: the beat/crush threshold cannot rescue it
+
+"Beat" is a precise term — reported EPS above consensus — and the surprise
+percentage has a standard formula, `(actual − estimate) / |estimate|`, which is
+what this study uses. "Crush" is colloquial and has **no standard numeric
+threshold**; in an earnings context the word most often refers to something else
+entirely (*IV crush*, the collapse in implied volatility after an announcement,
+which is about options pricing rather than share-price direction).
+
+Rather than argue about where the line sits, `--probe` sweeps a grid over both
+edges at once — where a beat starts, and where it becomes a crush — so whatever
+pair of values anyone has in mind, the answer is already in the table
+(`results/beat_grid.csv`, 34 cells, cohort sizes 8,103–58,679 events).
+
+**Day-5 return (bps), by beat floor (rows) and crush ceiling (columns):**
+
+| floor \ ceiling | 5% | 10% | 15% | 20% | 25% | 30% | 50% |
+|---|---|---|---|---|---|---|---|
+| **0%** | 1.33 | 1.73 | 1.27 | 0.91 | 0.95 | 0.74 | 0.60 |
+| **1%** | 1.67 | 1.93 | 1.41 | 1.02 | 1.05 | 0.84 | 0.69 |
+| **2%** | 2.53 | 2.36 | 1.68 | 1.22 | 1.24 | 1.00 | 0.82 |
+| **3%** | 1.67 | 2.02 | 1.34 | 0.88 | 0.94 | 0.69 | 0.53 |
+| **5%** | — | 2.21 | 1.23 | 0.67 | 0.76 | 0.46 | 0.31 |
+
+- **0 of 34 cells** show a significant day-5 pop. The best raw p-value anywhere
+  in the grid is 0.147 — and that is before correcting for having looked at 34
+  of them.
+- **0 of 34 cells** show the predicted dip. Every combination drifts *up* over
+  days 1–4, and the wider the band, the more it drifts up (+2 bps at the
+  narrowest, +153 bps at the widest).
+
+The definition of a beat was never what this rested on.
