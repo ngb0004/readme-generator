@@ -4,6 +4,14 @@
   "format": "short",
   "max_runtime_s": 60,
   "tested_variable": "baseline (first video - nothing to compare against yet)",
+  "composition": "V001",
+  "thumbnail": {
+    "lines": [
+      "TWO MEN DIED",
+      "OVER THIS."
+    ],
+    "claims_from": "hook-1"
+  },
   "source": {
     "publisher": "U.S. Chemical Safety and Hazard Investigation Board (CSB)",
     "title": "Case Study: Confined Space Entry - Worker and Would-be Rescuer Asphyxiated. Valero Energy Corporation Refinery, Delaware City, DE, November 5, 2005",
@@ -258,6 +266,11 @@
           "claim": "Red danger tape on the studs was the only warning on the manway (shown, not narrated).",
           "page": 14,
           "quote": "the red tape was the only warning on the manway"
+        },
+        {
+          "claim": "The purge vented straight onto the work platform (shown as the plume over the manway, not narrated).",
+          "page": 12,
+          "quote": "the reactor was on a nitrogen purge that vented directly onto the work platform area"
         }
       ]
     },
@@ -362,6 +375,11 @@
           "claim": "Loss of consciousness follows after only one or two breaths.",
           "page": 11,
           "quote": "After only one or two breaths the oxygen concentration in the blood drops dangerously low"
+        },
+        {
+          "claim": "The first man was found on the tray, five feet below the manway (shown, not narrated).",
+          "page": 4,
+          "quote": "saw two victims lying motionless inside the reactor on the tray five feet below the manway"
         }
       ]
     },

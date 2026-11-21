@@ -77,6 +77,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 - **Procedure required a barricade and warning signs before the purge started.** (p. 12): "The procedures required operators to install a barricade and post warning signs at all equipment access points"
 - **The permit was to install the top elbow.** (p. 3): "top elbow"
 - **Red danger tape on the studs was the only warning on the manway (shown, not narrated).** (p. 14): "the red tape was the only warning on the manway"
+- **The purge vented straight onto the work platform (shown as the plume over the manway, not narrated).** (p. 12): "the reactor was on a nitrogen purge that vented directly onto the work platform area"
 
 ## hidden-2 (hidden_cause)
 
@@ -115,6 +116,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 - **Collapse comes within one or two breaths.** (p. 9): "he would collapse from a lack of oxygen within one or two breaths"
 - **Loss of consciousness follows after only one or two breaths.** (p. 11): "After only one or two breaths the oxygen concentration in the blood drops dangerously low"
+- **The first man was found on the tray, five feet below the manway (shown, not narrated).** (p. 4): "saw two victims lying motionless inside the reactor on the tray five feet below the manway"
 
 ## reveal-4 (reveal)
 

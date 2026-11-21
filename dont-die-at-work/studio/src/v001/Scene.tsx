@@ -1,6 +1,6 @@
 import React from 'react';
 import {useThree} from '@react-three/fiber';
-import {Camera} from '../engine/cam';
+import {Camera, CamState} from '../engine/cam';
 import {Figure, handPos} from '../engine/Figure';
 import {FrameSync} from '../engine/sync';
 import {H} from '../engine/theme';
@@ -20,8 +20,8 @@ const Exposure: React.FC<{value: number}> = ({value}) => {
 };
 
 /** The whole 3D film as a function of time. */
-export const Scene: React.FC<{time: number}> = ({time: t}) => {
-  const d = direct(t);
+export const Scene: React.FC<{time: number; cam?: CamState}> = ({time: t, cam}) => {
+  const d = {...direct(t), ...(cam ? {cam} : {})};
   // Point sprites are sized in pixels; keep them the same world size at any focal length.
   const fovScale = (H / (2 * Math.tan((d.cam.fov * Math.PI) / 360))) * 0.0024;
 

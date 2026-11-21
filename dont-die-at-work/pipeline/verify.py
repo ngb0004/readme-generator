@@ -181,6 +181,18 @@ def verify_script(video: Path, gate: Gate) -> dict:
         for n in sorted(numbers_in(text, skip_bare_one=True)):
             gate.check(n in allowed,
                        f"[{bid}] number {n:g} appears in the script but in none of the quotes it cites")
+    # Thumbnail text makes claims too: it borrows the quotes of the beat it names.
+    thumb = script.get("thumbnail")
+    if thumb:
+        by_id = {b.get("id"): b for b in beats}
+        src_beat = by_id.get(thumb.get("claims_from"))
+        if gate.check(bool(src_beat and src_beat.get("claims")), "[thumbnail] claims_from must name a sourced beat"):
+            text = " | ".join(thumb.get("lines", []))
+            allowed = numbers_in(normalise(" ".join(c.get("quote", "") for c in src_beat["claims"])), skip_bare_one=False)
+            for n in sorted(numbers_in(text, skip_bare_one=True)):
+                gate.check(n in allowed, f"[thumbnail] number {n:g} is not in the quotes of {thumb['claims_from']}")
+            for name in banned:
+                gate.check(name not in text.lower(), f"[thumbnail] names a victim: '{name}'")
     return script
 
 

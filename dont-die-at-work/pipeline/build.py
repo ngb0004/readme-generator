@@ -13,7 +13,7 @@ Steps, in order:
   sound    score, effects and the final mix               -> assets/score.wav, mix.wav
   frames   render the picture (slow: ~2 s/frame without a GPU) -> render/frames/
   mux      encode, add audio, normalise loudness          -> render/final.mp4
-  thumb    still for the thumbnail                        -> render/thumbnail.jpg
+  thumb    render the thumbnail composition               -> render/thumbnail.jpg
   gate     runtime and format check on the final file (fails the build if over the limit)
 """
 from __future__ import annotations
@@ -44,7 +44,6 @@ def main() -> int:
     ap.add_argument("--only", choices=STEPS)
     ap.add_argument("--frames", default="all", help='frame ranges to (re)render, e.g. "0-299,700-760"')
     ap.add_argument("--comp", default=None, help="Remotion composition id (default: from script.json)")
-    ap.add_argument("--thumb-at", type=float, default=None, help="seconds into the film to take the thumbnail from")
     args = ap.parse_args()
 
     video = args.video.resolve()
@@ -87,10 +86,10 @@ def main() -> int:
                 "-movflags", "+faststart", "-shortest", render / "final.mp4",
             ])
         elif step == "thumb":
-            at = args.thumb_at if args.thumb_at is not None else script.get("thumbnail_at_s", 1.0)
-            src = frames / f"f{round(at * FPS):05d}.jpg"
-            shutil.copyfile(src, render / "thumbnail.jpg")
-            print(f"thumbnail <- {src.name} ({at:.2f}s)")
+            tmp = render / ".thumb"
+            run(["node", "tools/stills.mjs", f"{comp}Thumb", tmp, "1", "0"], cwd=STUDIO)
+            shutil.move(next(tmp.glob("*.jpg")), render / "thumbnail.jpg")
+            shutil.rmtree(tmp)
         elif step == "gate":
             run([PY, "pipeline/verify.py", video, "--final"])
 
