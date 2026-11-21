@@ -111,8 +111,8 @@ def load_pages(pdf: Path) -> list[str]:
     return [normalise(page.extract_text() or "") for page in PdfReader(str(pdf)).pages]
 
 
-def verify_script(video: Path, gate: Gate) -> dict:
-    script_path = video / "script.json"
+def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
+    script_path = video / name
     if not gate.check(script_path.exists(), f"missing {script_path}"):
         return {}
     script = json.loads(script_path.read_text())
@@ -249,11 +249,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("video", type=Path, help="path to the video folder, e.g. videos/001-...")
     ap.add_argument("--final", action="store_true", help="also gate the rendered video (runtime, size)")
+    ap.add_argument("--script", default="script.json", help="check a draft instead, e.g. script-v2-draft.json (no claim map is written)")
     args = ap.parse_args()
 
     gate = Gate()
-    script = verify_script(args.video, gate)
-    if script and not gate.failures:
+    script = verify_script(args.video, gate, args.script)
+    if script and not gate.failures and args.script == "script.json":
         write_claim_map(args.video, script)
     if script and args.final:
         verify_render(args.video, script, gate)
