@@ -15,3 +15,7 @@ studio/public/current/
 # Intermediate renders (final.mp4 and thumbnail are kept)
 videos/*/render/frames/
 videos/*/render/video-only.mp4
+
+# Regenerated in seconds by `build.py --from sound`; the final mix is inside final.mp4
+videos/*/assets/score.wav
+videos/*/assets/mix.wav

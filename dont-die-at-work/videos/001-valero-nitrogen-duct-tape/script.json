@@ -59,7 +59,8 @@
       "gap_after": 0.34,
       "onscreen": [
         "THE AIR YOU BREATHE",
-        "78% NITROGEN"
+        "78%",
+        "NITROGEN"
       ],
       "claims": [
         {
@@ -83,7 +84,8 @@
         "NOV 5, 2005",
         "DELAWARE CITY, DE",
         "NIGHT SHIFT",
-        "THE JOB: REINSTALL THE TOP ELBOW"
+        "THE JOB",
+        "REINSTALL THE TOP ELBOW"
       ],
       "claims": [
         {
@@ -125,6 +127,11 @@
           "claim": "The pipe goes on the reactor's top manway.",
           "page": 4,
           "quote": "Pipe assembly connects 12-inch diameter process pipe to the reactor top manway"
+        },
+        {
+          "claim": "Reconstruction geometry: the manway opening is 24 inches (other dimensions from Figures 6 and 7, which are images).",
+          "page": 5,
+          "quote": "Because the manway opening was only 24 inches"
         }
       ]
     },
@@ -134,8 +141,9 @@
       "narration": "Someone spots a roll of duct tape, five feet down inside. It can't stay there.",
       "gap_after": 0.18,
       "onscreen": [
+        "DUCT TAPE",
         "5 FT",
-        "DUCT TAPE"
+        "CAN'T STAY"
       ],
       "claims": [
         {
@@ -196,8 +204,12 @@
       "gap_after": 0.24,
       "onscreen": [
         "SAFE WORK PERMIT",
-        "NITROGEN PURGE",
+        "INSTALL TOP ELBOW",
+        "NITROGEN PURGE OR INERTED?",
+        "YES",
+        "NO",
         "N/A",
+        "NITROGEN",
         "NO WARNING SIGN",
         "NO BARRICADE"
       ],
@@ -226,6 +238,26 @@
           "claim": "Nitrogen was venting out through the manway.",
           "page": 9,
           "quote": "The nitrogen purge gas was slowly venting out of the reactor through the manway"
+        },
+        {
+          "claim": "The permit form has a 'nitrogen purge or inerted' Yes/No/NA box.",
+          "page": 17,
+          "quote": "\"nitrogen purge or inerted\" (Yes/No/NA) status"
+        },
+        {
+          "claim": "Procedure required a barricade and warning signs before the purge started.",
+          "page": 12,
+          "quote": "The procedures required operators to install a barricade and post warning signs at all equipment access points"
+        },
+        {
+          "claim": "The permit was to install the top elbow.",
+          "page": 3,
+          "quote": "top elbow"
+        },
+        {
+          "claim": "Red danger tape on the studs was the only warning on the manway (shown, not narrated).",
+          "page": 14,
+          "quote": "the red tape was the only warning on the manway"
         }
       ]
     },
@@ -235,9 +267,13 @@
       "narration": "No smell. No color. Almost no oxygen.",
       "gap_after": 0.4,
       "onscreen": [
-        "OXYGEN",
-        "21% NORMAL AIR",
-        "19.5% MINIMUM SAFE",
+        "NO SMELL",
+        "NO COLOR",
+        "OXYGEN INSIDE",
+        "21%",
+        "NORMAL AIR",
+        "19.5%",
+        "MINIMUM SAFE",
         "NEAR ZERO"
       ],
       "claims": [
@@ -269,7 +305,8 @@
       "narration": "The first man tries standing. Then kneeling.",
       "gap_after": 0.32,
       "onscreen": [
-        "CSB: HE LIKELY SAT ON THE LEDGE"
+        "CSB: HE LIKELY SAT",
+        "ON THE LEDGE"
       ],
       "claims": [
         {
@@ -281,6 +318,11 @@
           "claim": "CSB concluded he likely sat on the narrow ledge.",
           "page": 8,
           "quote": "the CSB concluded that the first victim likely stepped over the manway studs and then sat on the narrow ledge"
+        },
+        {
+          "claim": "The ledge between the studs and the opening.",
+          "page": 9,
+          "quote": "The first victim most likely sat on the narrow reactor manway ledge between the studs and the opening to get closer to the tape"
         }
       ]
     },
@@ -290,7 +332,8 @@
       "narration": "Nobody saw him go in.",
       "gap_after": 0.45,
       "onscreen": [
-        "NOBODY SAW HIM GO IN"
+        "NOBODY SAW HIM",
+        "GO IN."
       ],
       "claims": [
         {
@@ -306,7 +349,8 @@
       "narration": "In that air, one or two breaths and you're down.",
       "gap_after": 0.36,
       "onscreen": [
-        "1-2 BREATHS"
+        "1-2",
+        "BREATHS"
       ],
       "claims": [
         {
@@ -342,6 +386,11 @@
           "claim": "He succumbed within a few breaths.",
           "page": 10,
           "quote": "Within a few breaths the foreman was the second victim to succumb to oxygen deprivation"
+        },
+        {
+          "claim": "The foreman and the contract administrator looked through the manway first (shown, not narrated).",
+          "page": 4,
+          "quote": "saw the boilermaker foreman (the second victim) and the nightshift contract administrator looking through the manway into R1"
         }
       ]
     },
@@ -351,7 +400,8 @@
       "narration": "A third man reaches the ladder. He stops, and radios for help.",
       "gap_after": 0.24,
       "onscreen": [
-        "THE MOMENT IT COULD'VE BEEN STOPPED",
+        "THE MOMENT IT",
+        "COULD'VE BEEN STOPPED",
         "STAY OUT",
         "RADIO IT IN"
       ],
@@ -374,13 +424,19 @@
       "narration": "Responders arrive in under two minutes.",
       "gap_after": 0.36,
       "onscreen": [
-        "UNDER 2 MIN"
+        "UNDER",
+        "2 MIN"
       ],
       "claims": [
         {
           "claim": "Emergency responders reached the platform in less than two minutes.",
           "page": 4,
           "quote": "arrived on the platform in less than two minutes"
+        },
+        {
+          "claim": "Responders wore breathing apparatus (shown, not narrated).",
+          "page": 5,
+          "quote": "A Valero operator put on his self-contained breathing air respirator then entered the reactor"
         }
       ]
     },
@@ -390,9 +446,10 @@
       "narration": "Never follow someone into a tank. Call it in.",
       "gap_after": 0.45,
       "onscreen": [
-        "39% OF CONFINED-SPACE DEATHS IN ONE STUDY",
+        "39%",
+        "OF CONFINED-SPACE DEATHS IN ONE STUDY",
         "WERE WOULD-BE RESCUERS",
-        "NEVER FOLLOW THEM IN"
+        "NEVER FOLLOW THEM IN."
       ],
       "claims": [
         {
@@ -413,11 +470,12 @@
       "narration": "Two men never came home. We tell their story so no other family goes through this.",
       "gap_after": 0.36,
       "onscreen": [
-        "IN MEMORY OF THE TWO MEN WHO DIED",
-        "DELAWARE CITY, NOVEMBER 5, 2005",
-        "ONE DIED TRYING TO SAVE THE OTHER",
-        "NEARLY 10 YEARS IN REFINERIES",
-        "MORE THAN 25"
+        "IN MEMORY OF",
+        "THE TWO MEN WHO DIED",
+        "DELAWARE CITY · NOVEMBER 5, 2005",
+        "A worker with nearly 10 years in refineries.",
+        "His foreman, with more than 25.",
+        "One died trying to save the other."
       ],
       "claims": [
         {
@@ -453,7 +511,9 @@
       "narration": "Don't die at work today.",
       "gap_after": 0.0,
       "onscreen": [
-        "DON'T DIE AT WORK TODAY"
+        "DON'T DIE",
+        "AT WORK",
+        "TODAY."
       ],
       "exempt": "signoff",
       "claims": []

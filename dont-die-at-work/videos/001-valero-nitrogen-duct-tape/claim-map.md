@@ -20,7 +20,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > And what killed them, you're breathing right now.
 >
-> On screen: THE AIR YOU BREATHE / 78% NITROGEN
+> On screen: THE AIR YOU BREATHE / 78% / NITROGEN
 
 - **They died of nitrogen asphyxiation.** (p. 2): "nitrogen asphyxiation death of two"
 - **Nitrogen is 78 percent of the air we breathe.** (p. 2): "Nitrogen, which makes up 78 percent of the air we breathe, is non-toxic"
@@ -29,7 +29,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > Night shift at a Delaware refinery. A crew has to reinstall a pipe on top of this reactor.
 >
-> On screen: NOV 5, 2005 / DELAWARE CITY, DE / NIGHT SHIFT / THE JOB: REINSTALL THE TOP ELBOW
+> On screen: NOV 5, 2005 / DELAWARE CITY, DE / NIGHT SHIFT / THE JOB / REINSTALL THE TOP ELBOW
 
 - **Date of the incident.** (p. 2): "November 5, 2005, nitrogen asphyxiation death of two"
 - **It happened at a refinery in Delaware City, Delaware.** (p. 2): "refinery in Delaware City, Delaware"
@@ -39,12 +39,13 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 - **The vessel was the hydrocracker reactor, R1.** (p. 2): "reactor (R1)"
 - **The work included reinstalling the stud nuts (bolting).** (p. 8): "reinstalling the stud nuts and washers"
 - **The pipe goes on the reactor's top manway.** (p. 4): "Pipe assembly connects 12-inch diameter process pipe to the reactor top manway"
+- **Reconstruction geometry: the manway opening is 24 inches (other dimensions from Figures 6 and 7, which are images).** (p. 5): "Because the manway opening was only 24 inches"
 
 ## buildup-2 (buildup)
 
 > Someone spots a roll of duct tape, five feet down inside. It can't stay there.
 >
-> On screen: 5 FT / DUCT TAPE
+> On screen: DUCT TAPE / 5 FT / CAN'T STAY
 
 - **A pipefitter pointed out the roll of duct tape.** (p. 4): "a Matrix pipefitter told them that a roll of duct tape was lying on the"
 - **It was about five feet below the opening.** (p. 4): "about five feet below the opening"
@@ -65,19 +66,23 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > But their permit left one thing out: the reactor is full of nitrogen. No warning sign. No barricade.
 >
-> On screen: SAFE WORK PERMIT / NITROGEN PURGE / N/A / NO WARNING SIGN / NO BARRICADE
+> On screen: SAFE WORK PERMIT / INSTALL TOP ELBOW / NITROGEN PURGE OR INERTED? / YES / NO / N/A / NITROGEN / NO WARNING SIGN / NO BARRICADE
 
 - **The boilermakers' permit did not tell them about the nitrogen purge.** (p. 7): "safe work permit did not inform them that the reactor was on nitrogen purge"
 - **The nitrogen purge status on the permit was marked N/A.** (p. 3): "the nitrogen purge status was marked "N/A" on the permit even though the reactor continued to be purged with nitrogen"
 - **The reactor was nitrogen-filled.** (p. 4): "Nobody saw him enter the nitrogen-filled reactor"
 - **No nitrogen warning sign or barricade was in place.** (p. 2): "a nitrogen purge warning sign and barricade were not in place in the work area"
 - **Nitrogen was venting out through the manway.** (p. 9): "The nitrogen purge gas was slowly venting out of the reactor through the manway"
+- **The permit form has a 'nitrogen purge or inerted' Yes/No/NA box.** (p. 17): ""nitrogen purge or inerted" (Yes/No/NA) status"
+- **Procedure required a barricade and warning signs before the purge started.** (p. 12): "The procedures required operators to install a barricade and post warning signs at all equipment access points"
+- **The permit was to install the top elbow.** (p. 3): "top elbow"
+- **Red danger tape on the studs was the only warning on the manway (shown, not narrated).** (p. 14): "the red tape was the only warning on the manway"
 
 ## hidden-2 (hidden_cause)
 
 > No smell. No color. Almost no oxygen.
 >
-> On screen: OXYGEN / 21% NORMAL AIR / 19.5% MINIMUM SAFE / NEAR ZERO
+> On screen: NO SMELL / NO COLOR / OXYGEN INSIDE / 21% / NORMAL AIR / 19.5% / MINIMUM SAFE / NEAR ZERO
 
 - **Nitrogen is odorless and colorless.** (p. 11): "nitrogen, which is odorless, tasteless, and colorless"
 - **Oxygen inside the reactor was near zero.** (p. 5): "the oxygen concentration was near zero"
@@ -88,16 +93,17 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > The first man tries standing. Then kneeling.
 >
-> On screen: CSB: HE LIKELY SAT ON THE LEDGE
+> On screen: CSB: HE LIKELY SAT / ON THE LEDGE
 
 - **He tried standing, then kneeling.** (p. 8): "He tried from a standing position next to the manway and then, apparently to get closer, tried kneeling on the platform next to the manway"
 - **CSB concluded he likely sat on the narrow ledge.** (p. 8): "the CSB concluded that the first victim likely stepped over the manway studs and then sat on the narrow ledge"
+- **The ledge between the studs and the opening.** (p. 9): "The first victim most likely sat on the narrow reactor manway ledge between the studs and the opening to get closer to the tape"
 
 ## reveal-2 (reveal)
 
 > Nobody saw him go in.
 >
-> On screen: NOBODY SAW HIM GO IN
+> On screen: NOBODY SAW HIM / GO IN.
 
 - **Nobody saw him enter; whether he fell or went in on purpose is unknown.** (p. 4): "Nobody saw him enter the nitrogen-filled reactor, but he either fell in or intentionally went into the reactor"
 
@@ -105,7 +111,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > In that air, one or two breaths and you're down.
 >
-> On screen: 1-2 BREATHS
+> On screen: 1-2 / BREATHS
 
 - **Collapse comes within one or two breaths.** (p. 9): "he would collapse from a lack of oxygen within one or two breaths"
 - **Loss of consciousness follows after only one or two breaths.** (p. 11): "After only one or two breaths the oxygen concentration in the blood drops dangerously low"
@@ -117,12 +123,13 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 - **The foreman grabbed a ladder and climbed into the reactor.** (p. 10): "the foreman grabbed a nearby ladder, shoved it down the manway, and quickly climbed in the reactor"
 - **He was trying to rescue his co-worker.** (p. 1): "His co-worker, the crew foreman, was asphyxiated while attempting to rescue him"
 - **He succumbed within a few breaths.** (p. 10): "Within a few breaths the foreman was the second victim to succumb to oxygen deprivation"
+- **The foreman and the contract administrator looked through the manway first (shown, not narrated).** (p. 4): "saw the boilermaker foreman (the second victim) and the nightshift contract administrator looking through the manway into R1"
 
 ## stop-1 (stoppable_moment)
 
 > A third man reaches the ladder. He stops, and radios for help.
 >
-> On screen: THE MOMENT IT COULD'VE BEEN STOPPED / STAY OUT / RADIO IT IN
+> On screen: THE MOMENT IT / COULD'VE BEEN STOPPED / STAY OUT / RADIO IT IN
 
 - **The contract administrator approached the ladder, hesitated, and radioed for help.** (p. 4): "saw the nightshift contract administrator approach the ladder, hesitate, and then heard him urgently call for help on his radio"
 - **Staying out and radioing was the trained response that would have kept the foreman alive.** (p. 10): "he would have immediately announced the emergency on the radio and remained on the platform, safely away from the manway until qualified emergency response personnel arrived"
@@ -131,15 +138,16 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > Responders arrive in under two minutes.
 >
-> On screen: UNDER 2 MIN
+> On screen: UNDER / 2 MIN
 
 - **Emergency responders reached the platform in less than two minutes.** (p. 4): "arrived on the platform in less than two minutes"
+- **Responders wore breathing apparatus (shown, not narrated).** (p. 5): "A Valero operator put on his self-contained breathing air respirator then entered the reactor"
 
 ## lesson-1 (lesson)
 
 > Never follow someone into a tank. Call it in.
 >
-> On screen: 39% OF CONFINED-SPACE DEATHS IN ONE STUDY / WERE WOULD-BE RESCUERS / NEVER FOLLOW THEM IN
+> On screen: 39% / OF CONFINED-SPACE DEATHS IN ONE STUDY / WERE WOULD-BE RESCUERS / NEVER FOLLOW THEM IN.
 
 - **Only trained, equipped personnel should attempt a rescue.** (p. 16): "Only qualified and trained personnel equipped with the necessary safety equipment should attempt a rescue"
 - **In one study 39 percent of confined-space deaths were would-be rescuers.** (p. 10): "of 88 total confined space entry fatalities, 34 workers (39 percent) died while attempting to rescue a co-worker"
@@ -148,7 +156,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > Two men never came home. We tell their story so no other family goes through this.
 >
-> On screen: IN MEMORY OF THE TWO MEN WHO DIED / DELAWARE CITY, NOVEMBER 5, 2005 / ONE DIED TRYING TO SAVE THE OTHER / NEARLY 10 YEARS IN REFINERIES / MORE THAN 25
+> On screen: IN MEMORY OF / THE TWO MEN WHO DIED / DELAWARE CITY · NOVEMBER 5, 2005 / A worker with nearly 10 years in refineries. / His foreman, with more than 25. / One died trying to save the other.
 
 - **Both men died.** (p. 5): "transported to the hospital where they were pronounced dead"
 - **Two died; the second was attempting a rescue.** (p. 1): "asphyxiation death of two contractor employees"
@@ -160,6 +168,6 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 > Don't die at work today.
 >
-> On screen: DON'T DIE AT WORK TODAY
+> On screen: DON'T DIE / AT WORK / TODAY.
 
 *No factual claim (signoff).*
