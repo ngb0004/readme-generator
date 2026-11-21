@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Downloaded models (re-fetch with pipeline/fetch_models.sh)
+models/
+
+# Remotion / node
+studio/node_modules/
+studio/out/
+studio/.remotion/
+studio/public/current/
+
+# Intermediate renders (final.mp4 and thumbnail are kept)
+videos/*/render/frames/
+videos/*/render/video-only.mp4

@@ -1,0 +1,7 @@
+# Don't Die at Work Today - pipeline dependencies
+pypdf>=6.0          # source report text extraction (claim verification)
+numpy>=2.0
+scipy>=1.14         # sound design filters
+soundfile>=0.12     # wav io
+kokoro-onnx>=0.4.9  # narrator voice (Kokoro-82M, Apache-2.0, runs locally)
+faster-whisper>=1.1 # word-level caption timing + pronunciation QA

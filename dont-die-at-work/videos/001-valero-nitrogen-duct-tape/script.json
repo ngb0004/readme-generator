@@ -1,0 +1,180 @@
+{
+  "id": "001-valero-nitrogen-duct-tape",
+  "title": "Two Men Died Over a Roll of Duct Tape",
+  "format": "short",
+  "max_runtime_s": 60,
+  "tested_variable": "baseline (first video - nothing to compare against yet)",
+  "source": {
+    "publisher": "U.S. Chemical Safety and Hazard Investigation Board (CSB)",
+    "title": "Case Study: Confined Space Entry - Worker and Would-be Rescuer Asphyxiated. Valero Energy Corporation Refinery, Delaware City, DE, November 5, 2005",
+    "report_no": "2006-02-I-DE",
+    "published": "2006-11-02",
+    "url": "https://www.csb.gov/assets/1/20/Valero_Case_Study.pdf",
+    "landing_page": "https://www.csb.gov/valero-delaware-city-refinery-asphyxiation-incident/",
+    "file": "source/csb-valero-case-study-2006-02-I-DE.pdf",
+    "sha256": "61852aabebcf21a75fa8241cb4b12373cf61c9e240c13ba0d6f2b528e02ddb7c",
+    "retrieved": "2026-11-21"
+  },
+  "do_not_name": [],
+  "voice": {"engine": "kokoro-onnx", "voice": "am_michael", "speed": 1.0, "lang": "en-us"},
+  "beats": [
+    {
+      "id": "hook-1",
+      "section": "hook",
+      "narration": "Two men died over this roll of duct tape.",
+      "onscreen": [],
+      "claims": [
+        {"claim": "Two workers died.", "page": 1, "quote": "asphyxiation death of two contractor employees"},
+        {"claim": "The first was trying to get a roll of tape out of the vessel.", "page": 1, "quote": "in an attempt to retrieve a roll of tape from inside the vessel, was overcome by nitrogen, collapsed in the vessel, and died"},
+        {"claim": "The second died trying to rescue him.", "page": 1, "quote": "was asphyxiated while attempting to rescue him"},
+        {"claim": "It was a roll of duct tape.", "page": 4, "quote": "a roll of duct tape was lying on the"}
+      ]
+    },
+    {
+      "id": "hook-2",
+      "section": "hook",
+      "narration": "And what killed them, you're breathing right now.",
+      "onscreen": ["THE AIR YOU BREATHE", "78% NITROGEN"],
+      "claims": [
+        {"claim": "They died of nitrogen asphyxiation.", "page": 2, "quote": "nitrogen asphyxiation death of two"},
+        {"claim": "Nitrogen is 78 percent of the air we breathe.", "page": 2, "quote": "Nitrogen, which makes up 78 percent of the air we breathe, is non-toxic"}
+      ]
+    },
+    {
+      "id": "buildup-1",
+      "section": "buildup",
+      "narration": "November 2005. Night shift at a Delaware refinery. A crew is about to bolt a pipe back onto this reactor.",
+      "onscreen": ["NOV 5, 2005", "DELAWARE CITY, DE", "NIGHT SHIFT", "THE JOB: REINSTALL THE TOP ELBOW"],
+      "claims": [
+        {"claim": "Date of the incident.", "page": 2, "quote": "November 5, 2005, nitrogen asphyxiation death of two"},
+        {"claim": "It happened at a refinery in Delaware City, Delaware.", "page": 2, "quote": "refinery in Delaware City, Delaware"},
+        {"claim": "It was a night-shift crew.", "page": 3, "quote": "Matrix nightshift boilermaker crew"},
+        {"claim": "They were preparing to reassemble a pipe on the vessel.", "page": 1, "quote": "preparing to reassemble a pipe on a pressure vessel"},
+        {"claim": "The job was to install the top elbow.", "page": 3, "quote": "top elbow"},
+        {"claim": "The vessel was the hydrocracker reactor, R1.", "page": 2, "quote": "reactor (R1)"},
+        {"claim": "The work included reinstalling the stud nuts (bolting).", "page": 8, "quote": "reinstalling the stud nuts and washers"}
+      ]
+    },
+    {
+      "id": "buildup-2",
+      "section": "buildup",
+      "narration": "Someone spots a roll of duct tape, five feet down inside. It can't stay.",
+      "onscreen": ["5 FT", "DUCT TAPE"],
+      "claims": [
+        {"claim": "A pipefitter pointed out the roll of duct tape.", "page": 4, "quote": "a Matrix pipefitter told them that a roll of duct tape was lying on the"},
+        {"claim": "It was about five feet below the opening.", "page": 4, "quote": "about five feet below the opening"},
+        {"claim": "Cleanliness criteria meant it could not be left inside.", "page": 4, "quote": "reactor cleanliness criteria prohibited leaving the tape inside the reactor"}
+      ]
+    },
+    {
+      "id": "buildup-3",
+      "section": "buildup",
+      "narration": "Going in means a permit and a delay. So they make a wire hook.",
+      "onscreen": ["ENTRY PERMIT", "TRAINED CREW", "DELAY", "15-FT WIRE HOOK"],
+      "claims": [
+        {"claim": "Entry would need a trained crew and an entry permit.", "page": 4, "quote": "knew entry would require a specially trained and equipped crew and confined space"},
+        {"claim": "That would delay the work.", "page": 4, "quote": "which would delay their work, possibly beyond the end of their work shift"},
+        {"claim": "They decided to make a long wire hook instead.", "page": 4, "quote": "they decided to make a long wire hook"},
+        {"claim": "The wire was fifteen feet long.", "page": 5, "quote": "Fifteen foot wire with hook formed on end"}
+      ]
+    },
+    {
+      "id": "hidden-1",
+      "section": "hidden_cause",
+      "narration": "But their permit left something out: the reactor was full of nitrogen. No warning sign. No barricade.",
+      "onscreen": ["SAFE WORK PERMIT", "NITROGEN PURGE", "N/A", "NO WARNING SIGN", "NO BARRICADE"],
+      "claims": [
+        {"claim": "The boilermakers' permit did not tell them about the nitrogen purge.", "page": 7, "quote": "safe work permit did not inform them that the reactor was on nitrogen purge"},
+        {"claim": "The nitrogen purge status on the permit was marked N/A.", "page": 3, "quote": "the nitrogen purge status was marked \"N/A\" on the permit even though the reactor continued to be purged with nitrogen"},
+        {"claim": "The reactor was nitrogen-filled.", "page": 4, "quote": "Nobody saw him enter the nitrogen-filled reactor"},
+        {"claim": "No nitrogen warning sign or barricade was in place.", "page": 2, "quote": "a nitrogen purge warning sign and barricade were not in place in the work area"},
+        {"claim": "Nitrogen was venting out through the manway.", "page": 9, "quote": "The nitrogen purge gas was slowly venting out of the reactor through the manway"}
+      ]
+    },
+    {
+      "id": "hidden-2",
+      "section": "hidden_cause",
+      "narration": "No smell. No color. Almost no oxygen.",
+      "onscreen": ["OXYGEN", "21% NORMAL AIR", "19.5% MINIMUM SAFE", "NEAR ZERO"],
+      "claims": [
+        {"claim": "Nitrogen is odorless and colorless.", "page": 11, "quote": "nitrogen, which is odorless, tasteless, and colorless"},
+        {"claim": "Oxygen inside the reactor was near zero.", "page": 5, "quote": "the oxygen concentration was near zero"},
+        {"claim": "Normal air is about 21 percent oxygen.", "page": 2, "quote": "The normal oxygen concentration in air is about 21 percent"},
+        {"claim": "19.5 percent is the minimum safe level.", "page": 3, "quote": "19.5 Minimum safe level"}
+      ]
+    },
+    {
+      "id": "reveal-1",
+      "section": "reveal",
+      "narration": "The first man tries standing. Then kneeling. Nobody saw him go in. In that air, one or two breaths and you're down.",
+      "onscreen": ["CSB: HE LIKELY SAT ON THE LEDGE", "NOBODY SAW HIM GO IN", "1-2 BREATHS"],
+      "claims": [
+        {"claim": "He tried standing, then kneeling.", "page": 8, "quote": "He tried from a standing position next to the manway and then, apparently to get closer, tried kneeling on the platform next to the manway"},
+        {"claim": "Nobody saw him enter; whether he fell or went in on purpose is unknown.", "page": 4, "quote": "Nobody saw him enter the nitrogen-filled reactor, but he either fell in or intentionally went into the reactor"},
+        {"claim": "CSB concluded he likely sat on the narrow ledge.", "page": 8, "quote": "the CSB concluded that the first victim likely stepped over the manway studs and then sat on the narrow ledge"},
+        {"claim": "Collapse comes within one or two breaths.", "page": 9, "quote": "he would collapse from a lack of oxygen within one or two breaths"}
+      ]
+    },
+    {
+      "id": "reveal-2",
+      "section": "reveal",
+      "narration": "His foreman grabs a ladder and climbs down to save him. A few breaths later, he's down too.",
+      "onscreen": [],
+      "claims": [
+        {"claim": "The foreman grabbed a ladder and climbed into the reactor.", "page": 10, "quote": "the foreman grabbed a nearby ladder, shoved it down the manway, and quickly climbed in the reactor"},
+        {"claim": "He was trying to rescue his co-worker.", "page": 1, "quote": "His co-worker, the crew foreman, was asphyxiated while attempting to rescue him"},
+        {"claim": "He succumbed within a few breaths.", "page": 10, "quote": "Within a few breaths the foreman was the second victim to succumb to oxygen deprivation"}
+      ]
+    },
+    {
+      "id": "stop-1",
+      "section": "stoppable_moment",
+      "narration": "A third man reaches the ladder. He stops, and radios for help.",
+      "onscreen": ["THE MOMENT IT COULD'VE BEEN STOPPED", "STAY OUT", "RADIO IT IN"],
+      "claims": [
+        {"claim": "The contract administrator approached the ladder, hesitated, and radioed for help.", "page": 4, "quote": "saw the nightshift contract administrator approach the ladder, hesitate, and then heard him urgently call for help on his radio"},
+        {"claim": "Staying out and radioing was the trained response that would have kept the foreman alive.", "page": 10, "quote": "he would have immediately announced the emergency on the radio and remained on the platform, safely away from the manway until qualified emergency response personnel arrived"}
+      ]
+    },
+    {
+      "id": "stop-2",
+      "section": "stoppable_moment",
+      "narration": "Responders arrive in under two minutes.",
+      "onscreen": ["UNDER 2 MIN"],
+      "claims": [
+        {"claim": "Emergency responders reached the platform in less than two minutes.", "page": 4, "quote": "arrived on the platform in less than two minutes"}
+      ]
+    },
+    {
+      "id": "lesson-1",
+      "section": "lesson",
+      "narration": "Never follow someone into a tank. Call it in.",
+      "onscreen": ["39% OF CONFINED-SPACE DEATHS IN ONE STUDY", "WERE WOULD-BE RESCUERS", "NEVER FOLLOW THEM IN"],
+      "claims": [
+        {"claim": "Only trained, equipped personnel should attempt a rescue.", "page": 16, "quote": "Only qualified and trained personnel equipped with the necessary safety equipment should attempt a rescue"},
+        {"claim": "In one study 39 percent of confined-space deaths were would-be rescuers.", "page": 10, "quote": "of 88 total confined space entry fatalities, 34 workers (39 percent) died while attempting to rescue a co-worker"}
+      ]
+    },
+    {
+      "id": "tribute-1",
+      "section": "tribute",
+      "narration": "Two men never came home. One died trying to save the other. We tell their story so no other family goes through this.",
+      "onscreen": ["IN MEMORY OF THE TWO MEN WHO DIED", "DELAWARE CITY, NOVEMBER 5, 2005", "NEARLY 10 YEARS IN REFINERIES", "MORE THAN 25"],
+      "claims": [
+        {"claim": "Both men died.", "page": 5, "quote": "transported to the hospital where they were pronounced dead"},
+        {"claim": "Two died; the second was attempting a rescue.", "page": 1, "quote": "asphyxiation death of two contractor employees"},
+        {"claim": "The foreman died attempting to rescue the first worker.", "page": 1, "quote": "was asphyxiated while attempting to rescue him"},
+        {"claim": "Their experience.", "page": 10, "quote": "The first victim had nearly ten years experience working in refineries; the second had more than 25"},
+        {"claim": "Date and place.", "page": 2, "quote": "November 5, 2005, nitrogen asphyxiation death of two"}
+      ]
+    },
+    {
+      "id": "signoff",
+      "section": "signoff",
+      "narration": "Don't die at work today.",
+      "onscreen": ["DON'T DIE AT WORK TODAY"],
+      "exempt": "signoff",
+      "claims": []
+    }
+  ]
+}
