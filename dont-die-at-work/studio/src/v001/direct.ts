@@ -65,8 +65,8 @@ export const CAM: CamKey[] = [
   {at: T.lesson, cut: true, p: [0.0, 8.6, 1.9], t: [0, 0, 0.42], fov: 30},
   {at: T.tribute, p: [0.0, 7.4, 1.6], t: [0, 0, 0.4], fov: 30, ease: E.out},
   // TRIBUTE
-  {at: T.tribute, cut: true, p: [1.75, 1.25, 2.3], t: [-0.62, 0.2, 0.52], fov: 44},
-  {at: T.end, p: [1.5, 1.14, 2.12], t: [-0.62, 0.17, 0.52], fov: 44, ease: E.lin},
+  {at: T.tribute, cut: true, p: [1.75, 1.25, 2.3], t: [-0.62, 0.11, 0.52], fov: 44},
+  {at: T.end, p: [1.5, 1.14, 2.12], t: [-0.62, 0.08, 0.52], fov: 44, ease: E.lin},
 ];
 
 export const cameraAt = (t: number): CamState => camAt(t, CAM, 1);

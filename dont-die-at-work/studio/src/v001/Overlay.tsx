@@ -354,10 +354,12 @@ export const Overlay: React.FC<{time: number}> = ({time: t}) => {
         </div>
       ) : null}
 
-      <Captions time={t} beats={BEATS} hide={hideCaption} />
+      <Captions time={t} beats={BEATS} hide={hideCaption} yFor={captionY} />
     </div>
   );
 };
 
 // "Nobody saw him go in" and the sign-off are set as full-screen type instead of captions.
 const hideCaption = (id: string) => id === 'reveal-2' || id === 'signoff';
+// In the tribute the captions sit lower, clear of the two hard hats.
+const captionY = (id: string) => (id === 'tribute-1' ? 1336 : undefined);
