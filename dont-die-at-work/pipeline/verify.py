@@ -45,10 +45,14 @@ APPROVED_HOSTS = {
     "wwwn.cdc.gov": "NIOSH FACE (CDC)",
 }
 
-# Hook, incident, hidden cause, the moment it could've been stopped, how you
-# don't die - then the tribute and the sign-off. "buildup" and "reveal" are the
-# two halves of the incident, split around the hidden cause.
-TEMPLATE = ["hook", "buildup", "hidden_cause", "reveal", "stoppable_moment", "lesson", "tribute", "signoff"]
+# Hook, line and sinker. Every video must contain each of these sections; it opens
+# on the hook and closes on the tribute and the sign-off. What happens in between,
+# and in what order, is a storytelling decision, not a rule.
+#   mechanism         where the hazard came from and why nobody sensed it
+#   incident          what happened, played out
+#   stoppable_moment  the moment it could have been stopped
+#   lesson            how you don't die
+REQUIRED = {"hook", "mechanism", "incident", "stoppable_moment", "lesson", "tribute", "signoff"}
 EXEMPT_ALLOWED = {"signoff"}
 
 UNITS = {
@@ -117,29 +121,38 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
         return {}
     script = json.loads(script_path.read_text())
 
-    # 1. Source ---------------------------------------------------------------
-    src = script.get("source", {})
-    host = urlparse(src.get("url", "")).hostname or ""
-    gate.check(host in APPROVED_HOSTS,
-               f"source url host '{host}' is not an approved publisher (CSB, OSHA, NIOSH FACE)")
-    pdf = video / src.get("file", "__missing__")
-    pages: list[str] = []
-    if gate.check(pdf.exists(), f"source report not saved with the project: {pdf}"):
-        digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
-        gate.check(digest == src.get("sha256"),
-                   f"source report checksum changed: {digest} != {src.get('sha256')}")
-        pages = load_pages(pdf)
+    # 1. Sources --------------------------------------------------------------
+    # The first source is the incident report; any others are background documents.
+    sources = script.get("sources") or ([{"id": "case", **script["source"]}] if script.get("source") else [])
+    gate.check(bool(sources), "script names no source document")
+    docs: dict[str, list[str]] = {}
+    for src in sources:
+        sid = src.get("id", "?")
+        host = urlparse(src.get("url", "")).hostname or ""
+        gate.check(host in APPROVED_HOSTS,
+                   f"[{sid}] source url host '{host}' is not an approved publisher (CSB, OSHA, NIOSH FACE)")
+        pdf = video / src.get("file", "__missing__")
+        docs[sid] = []
+        if gate.check(pdf.exists(), f"[{sid}] source document not saved with the project: {pdf}"):
+            digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+            gate.check(digest == src.get("sha256"),
+                       f"[{sid}] source document checksum changed: {digest} != {src.get('sha256')}")
+            docs[sid] = load_pages(pdf)
+    default_src = sources[0].get("id", "?") if sources else "?"
 
     beats = script.get("beats", [])
     gate.check(bool(beats), "script has no beats")
 
-    # 5. Template order -------------------------------------------------------
+    # 5. Template -------------------------------------------------------------
     order: list[str] = []
     for beat in beats:
         if not order or order[-1] != beat.get("section"):
             order.append(beat.get("section"))
-    gate.check(order == TEMPLATE,
-               f"sections are {order}; the template requires {TEMPLATE}")
+    have = set(order)
+    gate.check(have >= REQUIRED, f"missing section(s): {sorted(REQUIRED - have)}")
+    gate.check(have <= REQUIRED, f"unknown section(s): {sorted(have - REQUIRED)}")
+    gate.check(order[:1] == ["hook"], "the video must open on the hook")
+    gate.check(order[-2:] == ["tribute", "signoff"], "the video must close on the tribute, then the sign-off")
 
     banned = [n.lower() for n in script.get("do_not_name", [])]
 
@@ -169,12 +182,16 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
         cited = ""
         for claim in claims:
             quote, page = claim.get("quote", ""), claim.get("page", 0)
+            sid = claim.get("src", default_src)
+            pages = docs.get(sid)
             cited += " " + quote
+            if not gate.check(pages is not None, f"[{bid}] claim cites unknown source '{sid}'"):
+                continue
             if not gate.check(bool(quote) and 1 <= page <= len(pages),
-                              f"[{bid}] claim '{claim.get('claim')}' has no quote or a bad page ({page})"):
+                              f"[{bid}] claim '{claim.get('claim')}' has no quote or a bad page ({sid} p.{page})"):
                 continue
             gate.check(normalise(quote) in pages[page - 1],
-                       f"[{bid}] quote not found on page {page}: \"{quote}\"")
+                       f"[{bid}] quote not found in {sid} on page {page}: \"{quote}\"")
 
         # 4. Every number is in a cited quote ---------------------------------
         allowed = numbers_in(normalise(cited), skip_bare_one=False)
@@ -197,18 +214,21 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
 
 
 def write_claim_map(video: Path, script: dict) -> None:
-    src = script["source"]
+    sources = script.get("sources") or [{"id": "case", **script["source"]}]
     out = [
         f"# Claim-to-source map: {script['title']}",
         "",
         "Generated by `pipeline/verify.py` from `script.json`. Do not edit by hand.",
         "",
-        f"**Source:** {src['publisher']}, *{src['title']}*, report no. {src['report_no']} ({src['published']}).",
-        f"<{src['url']}>",
-        "",
-        f"Saved copy: `{src['file']}` (sha256 `{src['sha256'][:16]}...`). Page numbers are PDF pages.",
+        "## Sources",
         "",
     ]
+    for src in sources:
+        out.append(f"- **{src['id']}**: {src['publisher']}, *{src['title']}*, no. {src['report_no']} ({src['published']}). "
+                   f"<{src['url']}>  ")
+        out.append(f"  Saved copy: `{src['file']}` (sha256 `{src['sha256'][:16]}...`). Page numbers are PDF pages.")
+    out.append("")
+    default = sources[0]["id"]
     for beat in script["beats"]:
         out.append(f"## {beat['id']} ({beat['section']})")
         out.append("")
@@ -220,7 +240,7 @@ def write_claim_map(video: Path, script: dict) -> None:
         if beat.get("exempt"):
             out.append(f"*No factual claim ({beat['exempt']}).*")
         for claim in beat.get("claims", []):
-            out.append(f"- **{claim['claim']}** (p. {claim['page']}): \"{claim['quote']}\"")
+            out.append(f"- **{claim['claim']}** ({claim.get('src', default)} p. {claim['page']}): \"{claim['quote']}\"")
         out.append("")
     (video / "claim-map.md").write_text("\n".join(out))
 

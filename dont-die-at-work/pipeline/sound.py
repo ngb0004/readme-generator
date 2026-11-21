@@ -6,6 +6,9 @@ nothing to clear and nothing that can trigger a copyright claim. Everything is
 placed on the film's cue sheet (assets/cues.json), which comes from the same
 word timings that drive the picture.
 
+The instruments live here; each video places them itself in
+videos/<id>/arrangement.py.
+
 Outputs, in videos/<id>/assets/:
   score.wav   stereo music + effects
   mix.wav     narration + score, ducked under the voice
@@ -108,7 +111,13 @@ def tick(f=1900.0):
     return np.sin(2 * np.pi * f * t) * np.exp(-t / 0.008)
 
 
-def drone(dur: float, cues: dict) -> np.ndarray:
+def curve(t: np.ndarray, points: list[tuple[float, float]]) -> np.ndarray:
+    pts = sorted(points)
+    return np.interp(t, [p[0] for p in pts], [p[1] for p in pts])
+
+
+def drone(dur: float, points: list[tuple[float, float]]) -> np.ndarray:
+    """Low bed under everything. `points` is its level over time: (seconds, 0..1)."""
     t = t_axis(dur)
     out = np.zeros((len(t), 2))
     for ch, det in ((0, 1.0), (1, 1.004)):
@@ -117,24 +126,23 @@ def drone(dur: float, cues: dict) -> np.ndarray:
             s += a * np.sin(2 * np.pi * f * det * t + ch) * (0.72 + 0.28 * np.sin(2 * np.pi * lf * t + f))
         rumble = lp(rng.standard_normal(len(t)), 90, 3) * 2.2
         out[:, ch] = s * 0.22 + rumble * 0.25
-    # dynamics: present for the hook, pulls back, swells into the reveal, gone for the black
-    def lvl(x):
-        pts = [(0, 0.9), (cues["est"], 0.9), (cues["est"] + 0.6, 0.55), (cues["permit"], 0.6), (cues["nitrogen"], 1.0),
-               (cues["first"], 0.85), (cues["black"] - 0.05, 1.0), (cues["black"], 0.0), (cues["air"], 0.0), (cues["air"] + 0.4, 0.75),
-               (cues["few"], 0.8), (cues["downToo"] + 0.6, 0.35), (cues["third"], 0.6), (cues["lesson"], 0.7),
-               (cues["tribute"], 0.25), (cues["signoff"], 0.3), (cues["end"] - 0.25, 0.3), (cues["end"], 0.0)]
-        return np.interp(x, [p[0] for p in pts], [p[1] for p in pts])
-    return out * lvl(t)[:, None]
+    return out * curve(t, points)[:, None]
 
 
-def tension(dur: float, cues: dict) -> np.ndarray:
+def tension(dur: float, points: list[tuple[float, float]]) -> np.ndarray:
     """A thin, beating high tone: unease you feel more than hear."""
     t = t_axis(dur)
     tone = np.sin(2 * np.pi * 1480 * t) + np.sin(2 * np.pi * 1487 * t) + 0.5 * np.sin(2 * np.pi * 2217 * t)
-    pts = [(0, 0), (cues["permit"], 0), (cues["nitrogen"], 0.5), (cues["smell"], 0.35), (cues["first"], 0.55), (cues["black"], 1.0),
-           (cues["black"] + 0.02, 0.0), (cues["air"] + 0.2, 0.35), (cues["climbs"], 0.6), (cues["downToo"], 0.9), (cues["downToo"] + 0.7, 0.0), (dur, 0)]
-    e = np.interp(t, [p[0] for p in pts], [p[1] for p in pts])
+    e = curve(t, points)
     return np.stack([tone * e, np.roll(tone, 40) * e], axis=1) * 0.012
+
+
+def breath(dur=0.9) -> np.ndarray:
+    """One slow inhale: air through a narrowing band."""
+    t = t_axis(dur)
+    k = t / dur
+    n = bp(rng.standard_normal(len(t)), 500, 2600)
+    return n * np.sin(np.pi * k) ** 1.5 * (0.6 + 0.4 * k)
 
 
 def pad(dur: float) -> np.ndarray:
@@ -160,50 +168,15 @@ def radio() -> np.ndarray:
 
 
 # ---------------------------------------------------------------- arrangement
-def score(cues: dict) -> np.ndarray:
+def score(video: Path, cues: dict, timings: dict) -> np.ndarray:
+    """Each video arranges the instruments itself, in videos/<id>/arrangement.py."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("arrangement", video / "arrangement.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
     end = cues["end"]
     tr = Track(end)
-    tr.buf[: int(end * SR)] += drone(end, cues) * 0.4
-    tr.buf[: int(end * SR)] += tension(end, cues)
-
-    # impacts on the moments that matter
-    for name, gain, body in (
-        ("@0.02", 1.0, 0.7), ("hook2", 0.7, 0.5), ("est", 0.85, 0.8), ("five", 0.75, 0.5), ("delay", 0.55, 0.35),
-        ("permit", 0.6, 0.4), ("nitrogen", 1.0, 0.9), ("oxygen+0.34", 0.9, 0.7), ("black", 1.0, 1.1), ("down", 0.7, 0.6),
-        ("climbs", 0.6, 0.4), ("downToo+0.3", 1.0, 1.2), ("third+0.12", 0.9, 0.6), ("lesson+0.12", 0.9, 0.7),
-    ):
-        at = float(name[1:]) if name.startswith("@") else cues[name.split("+")[0]] + (float(name.split("+")[1]) if "+" in name else 0)
-        tr.add(at, boom(body=body), gain * 0.5)
-
-    # air on the cuts
-    for name in ("hook2", "est", "job", "spot", "five", "hook", "permit", "full", "noSign", "smell", "first", "air", "foreman", "climbs", "few", "third", "responders", "lesson", "tribute"):
-        tr.add(cues[name] - 0.2, whoosh(), 0.085)
-
-    # the build into the reveal, and into the blackout
-    tr.add(cues["nitrogen"] - 1.4, riser(1.4), 0.16)
-    tr.add(cues["black"] - 0.9, riser(0.9, 300, 2200), 0.13)
-
-    # a pulse under the attempts; it stops dead when nobody is watching
-    beat = heartbeat()
-    at, gap = cues["first"] + 0.1, 0.72
-    while at < cues["black"] - 0.3:
-        tr.add(at, beat, 0.33)
-        gap *= 0.955
-        at += gap
-    # and comes back slower, then slower, then not at all
-    at, gap = cues["air"] + 0.35, 0.95
-    while at < cues["downToo"] + 0.2:
-        tr.add(at, beat, 0.3 * (1 if at < cues["few"] else 0.8))
-        gap *= 1.07
-        at += gap
-
-    # small interface sounds for the graphics
-    for name in ("spot", "five", "cant", "hook", "leftOut", "noSign", "noBarr", "smell", "color", "sit", "breath1", "breath2", "stops", "radios"):
-        tr.add(cues[name] + 0.12, tick(1500 if name in ("cant", "noSign", "noBarr") else 2100), 0.05, pan=0.3)
-    tr.add(cues["radios"] + 0.05, radio(), 0.13, pan=0.35)
-
-    # tribute and sign-off
-    tr.add(cues["tribute"] - 0.1, pad(end - cues["tribute"] + 0.1), 1.0)
+    mod.arrange(tr, cues, timings, sys.modules[__name__])
     return tr.buf[: int(end * SR)]
 
 
@@ -239,7 +212,7 @@ def main() -> int:
     gain = sosfiltfilt(butter(1, 3, "low", fs=SR, output="sos"), gain)
     voice = np.tanh(voice * gain * 1.5) / 1.5
 
-    music = score(cues)
+    music = score(args.video, cues, json.loads((assets / "timings.json").read_text()))
     sf.write(assets / "score.wav", music * 0.9, SR, subtype="PCM_16")
 
     # the score steps back whenever he is talking

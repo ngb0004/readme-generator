@@ -1,25 +1,21 @@
-import {Look, Pose, STAND, mix, pose, walk} from '../engine/Figure';
-import {E, Ease, V3, clamp, lerp, lerp3, ramp} from '../engine/time';
-import {TAPE, TRAY_Y} from './dims';
-import {LADDER_IN, LADDER_LEN} from './Props';
+import {HIP, Look2D, Pose2D, mix, pose, walk} from '../engine2d/Pictogram';
+import {C} from '../engine/theme';
+import {E, Ease, clamp, lerp, ramp} from '../engine/time';
+import {TRAY_Y} from './dims';
 import {T} from './timeline';
 
-const F = -0.02; // deck
-const HALF = Math.PI / 2;
-const TRAY = TRAY_Y + 0.06; // on top of the bubble caps
-const face = (x: number, z: number, tx = 0, tz = 0) => Math.atan2(tx - x, tz - z);
-
-export const LOOKS: Record<string, Look> = {
-  A: {suit: '#2a3b5c', vest: '#ff7417', hat: '#ffd21f'}, // the first man
-  B: {suit: '#2a3b5c', vest: '#cfe01a', hat: '#f3f5f8'}, // his foreman
-  C: {suit: '#434b5a', vest: '#ff7417', hat: '#3585ea'}, // the contract administrator
-  P: {suit: '#2a3b5c', vest: '#cfe01a', hat: '#43c06f'}, // the pipefitter who saw the tape
-  R: {suit: '#23272e', vest: '#f0c61c', hat: '#e3362b', tank: true}, // emergency responders
+export const LOOKS: Record<string, Look2D> = {
+  A: {color: C.yellow, band: '#0b0f16'}, // the first man
+  B: {color: '#eef2f8', band: '#93a1b8'}, // his foreman
+  C: {color: '#7ea6e8'}, // the contract administrator
+  P: {color: '#86cfa0'}, // the pipefitter who saw the tape
+  R: {color: '#ff7a45', tank: '#e7ebf2'}, // emergency responders, on air
+  X: {color: '#6f86a8'}, // other crews, in the days before
 };
 
-type Key = {at: number; p: Pose; dur?: number; ease?: Ease};
-/** Hold each pose until the next key, then blend into it over `dur`. */
-const seq = (t: number, keys: Key[]): Pose => {
+const TRAY = TRAY_Y + 0.06; // top of the bubble caps
+type Key = {at: number; p: Pose2D; dur?: number; ease?: Ease};
+const seq = (t: number, keys: Key[]): Pose2D => {
   let cur = keys[0].p;
   for (let i = 1; i < keys.length; i++) {
     const k = keys[i];
@@ -28,169 +24,180 @@ const seq = (t: number, keys: Key[]): Pose => {
   }
   return cur;
 };
-/** Nobody stands perfectly still. */
-const alive = (p: Pose, t: number, seed: number): Pose => ({
+const alive = (p: Pose2D, t: number, seed: number): Pose2D => ({
   ...p,
-  spine: p.spine + Math.sin(t * 1.5 + seed) * 0.012,
-  headYaw: p.headYaw + Math.sin(t * 0.6 + seed * 2.1) * 0.05,
-  lSh: p.lSh + Math.sin(t * 1.5 + seed) * 0.012,
-  rSh: p.rSh + Math.sin(t * 1.5 + seed + 1) * 0.012,
+  lean: p.lean + Math.sin(t * 1.4 + seed) * 0.9,
+  head: p.head + Math.sin(t * 0.7 + seed * 2.1) * 2.2,
+  armA: p.armA + Math.sin(t * 1.4 + seed) * 1.2,
 });
 
-// ------------------------------------------------------------------ A, the first man
-const A_AT = {x: -1.0, y: F, z: -0.08, yaw: HALF};
-const A_STAND = pose({...A_AT});
-const A_LOOK = pose({...A_AT, x: -0.94, spine: 0.34, head: 0.55, lSh: 0.2, rSh: 0.15});
-const A_TALK = pose({...A_AT, yaw: HALF - 0.25, headYaw: -0.3, rSh: 0.55, rEl: 1.0, rShOut: 0.2, spine: 0.06});
-const A_FISH = pose({...A_AT, x: -0.9, hip: 0.95, spine: 0.44, head: 0.5, lSh: 1.02, lShOut: 0.03, lEl: 0.5, rSh: 0.84, rShOut: 0.03, rEl: 0.8, lKn: 0.14, rKn: 0.14, lHip: 0.12, rHip: -0.1});
-const A_KNEEL = pose({...A_AT, x: -1.13, hip: 0.535, spine: 0.6, head: 0.42, lHip: 1.45, lKn: 1.45, rHip: 0.05, rKn: 1.6, lSh: 1.2, lEl: 0.35, rSh: 1.0, rEl: 0.5});
-const A_SIT = pose({x: -0.385, y: 0, z: 0, yaw: HALF, hip: 0.115, spine: 0.52, head: 0.5, lHip: 1.5, lKn: 1.42, rHip: 1.5, rKn: 1.42, lHipOut: 0.06, rHipOut: 0.06, lSh: -0.25, lShOut: 0.4, lEl: 0.25, rSh: 0.95, rShOut: 0.0, rEl: 0.15});
-const A_DOWN = pose({x: -0.3, y: TRAY, z: -0.42, yaw: 0.12, hip: 0.19, roll: 1.5, spine: 0.22, head: 0.3, lHip: 0.6, lKn: 0.85, rHip: 0.3, rKn: 0.5, lSh: 0.7, lShOut: 0.1, lEl: 0.95, rSh: 0.35, rEl: 0.55});
+// ------------------------------------------------------------------ A, the first man (faces right)
+const A_WORK = pose({x: -1.02, lean: 16, head: 22, armA: 44, foreA: 30, armB: 36, foreB: 36});
+const A_STAND = pose({x: -1.05});
+const A_LOOKUP = pose({x: -1.08, lean: -5, head: -24, armA: 4, armB: -6});
+const A_LOOKDOWN = pose({x: -0.98, lean: 22, head: 30, armA: 20, foreA: 10, armB: 10, foreB: 10});
+const A_TALK = pose({x: -1.05, lean: 4, head: -4, armA: 36, foreA: 72, armB: 4});
+const A_BEND = pose({x: -1.08, lean: 12, head: 26, armA: 34, foreA: 66, armB: 28, foreB: 74});
+const A_FISH = pose({x: -1.0, lean: 24, head: 26, armA: 58, foreA: 26, armB: 44, foreB: 30, legA: 10, shinA: -6, legB: -12, shinB: 4});
+const A_KNEEL = pose({x: -1.16, y: 0.5, lean: 36, head: 22, armA: 72, foreA: 10, armB: 62, foreB: 14, legA: 82, shinA: -82, legB: 4, shinB: -88});
+const A_SIT = pose({x: -0.4, y: 0.12, lean: 34, head: 30, armA: 30, foreA: -8, armB: -38, foreB: 22, legA: 84, shinA: -82, legB: 76, shinB: -80});
+const A_DOWN = pose({x: -0.82, y: TRAY + 0.14, rot: -90, lean: 0, head: 8, armA: 24, foreA: 30, armB: -12, foreB: 14, legA: 12, shinA: -22, legB: -8, shinB: -8});
 
-export const actorA = (t: number): Pose => {
-  if (t >= T.air) return A_DOWN;
+export const actorA = (t: number): Pose2D => {
+  if (t >= T.i7 - 0.6) return A_DOWN;
   const p = seq(t, [
-    {at: 0, p: A_LOOK},
-    {at: T.est, p: A_STAND, dur: 0.01},
-    {at: T.spot, p: A_LOOK, dur: 0.5},
-    {at: T.goingIn, p: A_TALK, dur: 0.5},
-    {at: T.hook - 0.5, p: A_FISH, dur: 0.6},
+    {at: 0, p: A_WORK},
+    {at: T.i1 - 0.1, p: A_LOOKUP, dur: 0.01},
+    {at: T.i2 - 0.1, p: A_LOOKDOWN, dur: 0.5},
+    {at: T.i3, p: A_TALK, dur: 0.5},
+    {at: T.wire - 0.2, p: A_BEND, dur: 0.45},
+    {at: T.fishing - 0.25, p: A_FISH, dur: 0.5},
     {at: T.kneel, p: A_KNEEL, dur: 0.42},
-    {at: T.sit, p: A_SIT, dur: 0.5, ease: E.inOutQuad},
+    {at: T.sits - 0.55, p: A_SIT, dur: 0.75, ease: E.inOutQuad},
   ]);
-  // stepping over the studs on the way to the ledge
-  const over = Math.sin(clamp((t - T.sit) / 0.5) * Math.PI);
-  return alive({...p, y: p.y + over * 0.34}, t, 1);
+  const over = Math.sin(clamp((t - (T.sits - 0.55)) / 0.75) * Math.PI);
+  const turning = t < T.h3 ? Math.sin(t * 5.2) * 5 : 0; // working a wrench in the opening shot
+  return alive({...p, y: p.y + over * 0.42, foreA: p.foreA + turning}, t, 1);
 };
 
-// ------------------------------------------------------------------ B, the foreman
-const B_AT = {x: 1.06, y: F, z: -0.34, yaw: face(1.06, -0.34)};
-const B_STAND = pose({...B_AT, lSh: 0.1, rSh: 0.1});
-const B_TALK = pose({...B_AT, headYaw: 0.25, lSh: 0.5, lEl: 1.1, lShOut: 0.25});
-const B_WATCH = pose({...B_AT, spine: 0.16, head: 0.36, lSh: 0.3, lEl: 1.5, rSh: 0.3, rEl: 1.5, lShOut: -0.25, rShOut: -0.25});
-const B_PEER = pose({...B_AT, x: 0.9, z: -0.2, yaw: face(0.9, -0.2), spine: 0.62, head: 0.6, lSh: 0.5, rSh: 0.5, lKn: 0.2, rKn: 0.2, hip: 0.94});
-const B_REACH = pose({x: 1.25, y: F, z: -1.0, yaw: 2.6, spine: 0.5, head: 0.3, lSh: 1.0, rSh: 1.0, lEl: 0.3, rEl: 0.3, lKn: 0.25, rKn: 0.25, hip: 0.93});
-const B_CARRY = pose({x: 0.98, y: F, z: -0.16, yaw: face(0.98, -0.16) - 0.05, spine: 0.1, head: 0.2, lSh: 1.35, rSh: 1.35, lEl: 0.7, rEl: 0.7});
-const B_SHOVE = pose({x: 0.92, y: F, z: -0.12, yaw: face(0.92, -0.12) - 0.05, spine: 0.5, head: 0.5, lSh: 0.9, rSh: 0.9, lEl: 0.2, rEl: 0.2, lKn: 0.3, rKn: 0.3, hip: 0.92});
-const B_FLOOR = pose({x: 0.46, y: TRAY, z: 0.34, yaw: face(0.46, 0.34, -0.3, -0.42), spine: 0.12, head: 0.3});
-const B_STOOP = pose({x: 0.3, y: TRAY, z: 0.2, yaw: face(0.3, 0.2, -0.3, -0.42), spine: 0.75, head: 0.3, lSh: 1.1, rSh: 1.1, lEl: 0.2, rEl: 0.2, lKn: 0.5, rKn: 0.5, lHip: 0.5, rHip: 0.4, hip: 0.86});
-const B_SAG = pose({x: 0.36, y: TRAY, z: 0.26, yaw: face(0.3, 0.2, -0.3, -0.42), hip: 0.5, spine: 0.9, head: 0.75, lHip: 1.3, lKn: 1.7, rHip: 0.2, rKn: 1.6, lSh: 0.5, rSh: 0.4, lEl: 0.2, rEl: 0.2});
-const B_DOWN = pose({x: 0.66, y: TRAY, z: 0.46, yaw: -0.25, hip: 0.19, roll: -1.52, spine: 0.24, head: 0.3, lHip: 0.22, lKn: 0.4, rHip: 0.42, rKn: 0.62, lSh: 0.3, lEl: 0.5, rSh: 0.9, rShOut: 0.05, rEl: 0.35});
+// ------------------------------------------------------------------ B, the foreman (faces left)
+const B_WORK = pose({x: 1.12, lean: 14, head: 20, armA: 40, foreA: 34, armB: 30, foreB: 40});
+const B_STAND = pose({x: 1.2});
+const B_LOOKUP = pose({x: 1.22, lean: -4, head: -22});
+const B_TALK = pose({x: 1.2, lean: 3, armA: 42, foreA: 58});
+const B_WATCH = pose({x: 1.28, lean: 4, head: 12, armA: 14, foreA: 96, armB: 6, foreB: 100});
+const B_PEER = pose({x: 0.98, y: HIP - 0.04, lean: 40, head: 26, armA: 34, foreA: 8, armB: 22, foreB: 10, legA: 8, shinA: -10, legB: -10, shinB: -4});
+const B_FREEZE = pose({x: 0.98, lean: 24, head: 32, armA: 16, foreA: 24, armB: 8, foreB: 18});
+const B_GRAB = pose({x: 1.2, lean: -8, head: -10, armA: -46, foreA: -18, armB: -58, foreB: -8});
+const B_CARRY = pose({x: 0.98, lean: 12, head: 10, armA: 96, foreA: 26, armB: 84, foreB: 30});
+const B_FLOOR = pose({x: 0.34, y: TRAY + HIP, lean: 8, head: 20});
+const B_STOOP = pose({x: 0.3, y: TRAY + HIP - 0.1, lean: 58, head: 14, armA: 72, foreA: 8, armB: 60, foreB: 8, legA: 16, shinA: -30, legB: -10, shinB: -20});
+const B_SAG = pose({x: 0.42, y: TRAY + 0.5, lean: 66, head: 30, armA: 60, foreA: 10, armB: 40, foreB: 10, legA: 80, shinA: -84, legB: 6, shinB: -88});
+const B_DOWN = pose({x: 1.02, y: TRAY + 0.14, rot: -90, lean: 0, head: 10, armA: 30, foreA: 26, armB: -10, foreB: 12, legA: 22, shinA: -52, legB: 4, shinB: -30});
 
-const ladderX = (y: number) => LADDER_IN.pos[0] - (y - LADDER_IN.pos[1]) * Math.sin(LADDER_IN.rot[2]);
+/** Where the ladder ends up: down through the manway, feet on the tray. (x at height y) */
+export const LADDER = {top: [-0.1, 1.62] as [number, number], foot: [-0.27, TRAY] as [number, number]};
+const ladderX = (y: number) => lerp(LADDER.foot[0], LADDER.top[0], (y - LADDER.foot[1]) / (LADDER.top[1] - LADDER.foot[1]));
 
-export const actorB = (t: number): Pose => {
+export const actorB = (t: number): Pose2D => {
   if (t < T.climbs) {
     return alive(
       seq(t, [
-        {at: 0, p: B_PEER},
-        {at: T.est, p: B_STAND, dur: 0.01},
-        {at: T.goingIn, p: B_TALK, dur: 0.5},
-        {at: T.hook, p: B_WATCH, dur: 0.6},
-        {at: T.foreman - 0.25, p: B_PEER, dur: 0.3, ease: E.out},
-        {at: T.grabs - 0.22, p: B_REACH, dur: 0.34, ease: E.inOutQuad},
-        {at: T.grabs + 0.2, p: B_CARRY, dur: 0.42, ease: E.inOutQuad},
-        {at: T.climbs - 0.34, p: B_SHOVE, dur: 0.22, ease: E.in},
+        {at: 0, p: B_WORK},
+        {at: T.i1 - 0.1, p: B_LOOKUP, dur: 0.01},
+        {at: T.i2, p: B_STAND, dur: 0.5},
+        {at: T.i3, p: B_TALK, dur: 0.5},
+        {at: T.wire, p: B_WATCH, dur: 0.6},
+        {at: T.i7 - 0.2, p: B_PEER, dur: 0.01},
+        {at: T.i8, p: B_FREEZE, dur: 0.9, ease: E.out},
+        {at: T.i9 + 0.05, p: B_GRAB, dur: 0.3, ease: E.inOutQuad},
+        {at: T.i9 + 0.5, p: B_CARRY, dur: 0.4, ease: E.inOutQuad},
       ]),
       t, 2,
     );
   }
-  // over the studs, onto the ladder, and down
   const mount = ramp(t, T.climbs, T.climbs + 0.5, E.inOutQuad);
-  const descend = ramp(t, T.climbs + 0.42, T.few + 0.1, E.inOutQuad);
-  if (t < T.few + 0.1) {
-    const feet = lerp(lerp(F, 0.66, Math.sin(mount * HALF)), TRAY, descend);
-    const x = lerp(B_SHOVE.x, ladderX(feet + 0.9) + 0.25, mount);
-    const ph = t * 3.4;
-    const s = Math.sin(ph * Math.PI * 2);
+  const descend = ramp(t, T.climbs + 0.42, T.i10 + 0.25, E.inOutQuad);
+  if (t < T.i10 + 0.25) {
+    const feet = lerp(lerp(0, 0.68, Math.sin(mount * Math.PI * 0.5)), TRAY, descend);
+    const s = Math.sin(t * 3.4 * Math.PI * 2);
     const climb = pose({
-      x, y: feet, z: lerp(B_SHOVE.z, -0.02, mount), yaw: -HALF, hip: 0.9, spine: 0.16, head: 0.5,
-      lSh: 2.0 + s * 0.35, rSh: 2.0 - s * 0.35, lEl: 0.75 - s * 0.3, rEl: 0.75 + s * 0.3, lShOut: 0.1, rShOut: 0.1,
-      lHip: 0.75 + s * 0.45, rHip: 0.75 - s * 0.45, lKn: 1.15 + s * 0.5, rKn: 1.15 - s * 0.5,
+      x: lerp(B_CARRY.x, ladderX(feet + 0.9) + 0.26, mount), y: feet + HIP - 0.06, lean: 8, head: 16,
+      armA: 150 + s * 16, foreA: -34 - s * 12, armB: 150 - s * 16, foreB: -34 + s * 12,
+      legA: 44 + s * 26, shinA: -62 - s * 24, legB: 44 - s * 26, shinB: -62 + s * 24,
     });
-    return mix(B_SHOVE, climb, ramp(t, T.climbs, T.climbs + 0.3));
+    return mix(B_CARRY, climb, ramp(t, T.climbs, T.climbs + 0.3));
   }
-  // on the tray: he turns to his man, reaches, and goes down
-  const base = pose({x: ladderX(TRAY + 0.9) + 0.25, y: TRAY, z: -0.02, yaw: -HALF, hip: 0.9, spine: 0.16, head: 0.5, lSh: 2.0, rSh: 2.0, lEl: 0.75, rEl: 0.75, lHip: 0.75, rHip: 0.75, lKn: 1.15, rKn: 1.15});
+  const base = pose({x: ladderX(TRAY + 0.9) + 0.26, y: TRAY + HIP - 0.06, lean: 8, head: 16, armA: 150, foreA: -34, armB: 150, foreB: -34, legA: 44, shinA: -62, legB: 44, shinB: -62});
   return seq(t, [
     {at: 0, p: base},
-    {at: T.few + 0.1, p: B_FLOOR, dur: 0.4},
-    {at: T.few + 0.5, p: B_STOOP, dur: 0.5},
-    {at: T.downToo - 0.25, p: B_SAG, dur: 0.5, ease: E.in},
-    {at: T.downToo + 0.2, p: B_DOWN, dur: 0.55, ease: E.inOutQuad},
+    {at: T.i10 + 0.25, p: B_FLOOR, dur: 0.35},
+    {at: T.i10 + 0.6, p: B_STOOP, dur: 0.5},
+    {at: T.lying - 0.35, p: B_SAG, dur: 0.5, ease: E.in},
+    {at: T.lying + 0.1, p: B_DOWN, dur: 0.6, ease: E.inOutQuad},
   ]);
 };
 
-// ------------------------------------------------------------------ C, the contract administrator
-const C_HOME = pose({x: 1.86, y: F, z: -1.5, yaw: face(1.86, -1.5)});
-const C_PEER = pose({x: 0.42, y: F, z: -0.95, yaw: face(0.42, -0.95), spine: 0.55, head: 0.6, lSh: 0.4, rSh: 0.4, hip: 0.94, lKn: 0.2, rKn: 0.2});
-const C_BACK = pose({x: 1.5, y: F, z: -1.2, yaw: face(1.5, -1.2), spine: 0.05, head: 0.15});
-const C_NEAR = pose({x: 0.98, y: F, z: 0.02, yaw: face(0.98, 0.02, -0.15, 0)});
-const C_REACH = pose({...C_NEAR, x: 0.9, spine: 0.34, head: 0.45, rSh: 1.25, rEl: 0.25, lSh: 0.3, lKn: 0.16, rKn: 0.16});
-const C_STOP = pose({...C_NEAR, x: 1.1, spine: -0.1, head: 0.35, rSh: 0.5, rEl: 1.1, lSh: -0.2, lShOut: 0.3, lEl: 0.4});
-const C_RADIO = pose({...C_NEAR, x: 1.12, yaw: C_NEAR.yaw + 0.45, spine: -0.03, head: -0.05, headYaw: -0.4, rSh: 0.75, rShOut: 0.25, rEl: 2.3, lSh: 0.5, lShOut: 0.35, lEl: 0.5});
+// ------------------------------------------------------------------ C, the contract administrator (faces left)
+const C_AWAY = pose({x: 2.55});
+const C_PEER = pose({x: 1.72, lean: 30, head: 24, armA: 20, foreA: 10});
+const C_BACK = pose({x: 2.3, lean: -2});
+const C_NEAR = pose({x: 0.92, lean: 6});
+const C_REACH = pose({x: 0.86, lean: 22, head: 18, armA: 78, foreA: 12});
+const C_STOP = pose({x: 1.04, lean: -8, head: 14, armA: 34, foreA: 60, armB: -14});
+const C_RADIO = pose({x: 1.06, lean: -2, head: -6, armA: 38, foreA: 118, armB: 6});
 
-export const actorC = (t: number): Pose => {
+export const actorC = (t: number): Pose2D => {
   const p = seq(t, [
-    {at: 0, p: C_HOME},
-    {at: T.foreman - 0.6, p: C_PEER, dur: 0.5},
-    {at: T.grabs + 0.05, p: C_BACK, dur: 0.55},
-    {at: T.third + 0.2, p: C_NEAR, dur: T.reaches + 0.45 - (T.third + 0.2), ease: E.inOutQuad},
-    {at: T.reaches + 0.4, p: C_REACH, dur: 0.38},
-    {at: T.stops, p: C_STOP, dur: 0.3, ease: E.out},
-    {at: T.radios - 0.2, p: C_RADIO, dur: 0.38},
+    {at: 0, p: C_AWAY},
+    {at: T.i7 - 0.2, p: C_PEER, dur: 0.01},
+    {at: T.i9 + 0.1, p: C_BACK, dur: 0.6},
+    {at: T.l3 - 0.3, p: C_NEAR, dur: 1.2, ease: E.inOutQuad},
+    {at: T.l3 + 1.0, p: C_REACH, dur: 0.4},
+    {at: T.doNot + 0.25, p: C_STOP, dur: 0.3, ease: E.out},
+    {at: T.callIt - 0.15, p: C_RADIO, dur: 0.38},
   ]);
-  const walking = Math.min(ramp(t, T.third + 0.2, T.third + 0.5), 1 - ramp(t, T.reaches + 0.15, T.reaches + 0.45));
-  return alive(walking > 0.01 ? mix(p, walk(p, (t - T.third) * 1.9, 1), walking) : p, t, 3);
+  const walking = Math.min(ramp(t, T.l3 - 0.3, T.l3 - 0.05), 1 - ramp(t, T.l3 + 0.6, T.l3 + 0.9));
+  return alive(walking > 0.01 ? mix(p, walk(p, t * 1.9, 1), walking) : p, t, 3);
 };
 
-// ------------------------------------------------------------------ P, the pipefitter who spotted the tape
-const P_HOME = pose({x: -0.3, y: F, z: -1.12, yaw: face(-0.3, -1.12, 0, 0.3)});
-const P_POINT = pose({...P_HOME, z: -1.02, spine: 0.4, head: 0.55, rSh: 1.0, rShOut: 0.08, rEl: 0.08, lSh: 0.2});
-const P_AWAY = pose({x: -2.5, y: F, z: -1.2, yaw: face(-2.5, -1.2), lSh: 0.3, lEl: 1.5, rSh: 0.3, rEl: 1.5, lShOut: -0.25, rShOut: -0.25});
-
-export const actorP = (t: number): Pose => {
+// ------------------------------------------------------------------ P, the pipefitter who spotted the tape (faces right)
+export const actorP = (t: number): Pose2D => {
+  const away = pose({x: -4.4});
+  const here = pose({x: -1.92});
+  const point = pose({x: -1.86, lean: 14, head: 20, armA: 60, foreA: 6});
   const p = seq(t, [
-    {at: 0, p: P_HOME},
-    {at: T.spot - 0.2, p: P_POINT, dur: 0.45},
-    {at: T.goingIn + 0.3, p: P_AWAY, dur: 1.9, ease: E.inOutQuad},
+    {at: 0, p: away},
+    {at: T.i2 - 1.5, p: here, dur: 1.2, ease: E.out},
+    {at: T.i2 + 0.1, p: point, dur: 0.4},
+    {at: T.i3 - 0.2, p: away, dur: 1.6, ease: E.in},
   ]);
-  const walking = Math.min(ramp(t, T.goingIn + 0.3, T.goingIn + 0.6), 1 - ramp(t, T.goingIn + 1.8, T.goingIn + 2.2));
-  return alive(walking > 0.01 ? mix(p, walk(p, t * 1.8, 1), walking) : p, t, 4);
+  const walking = Math.max(Math.min(ramp(t, T.i2 - 1.5, T.i2 - 1.3), 1 - ramp(t, T.i2 - 0.6, T.i2 - 0.3)), ramp(t, T.i3 - 0.1, T.i3 + 0.2));
+  return alive(walking > 0.01 ? mix(p, walk(p, t * 2, 1), walking) : p, t, 4);
 };
 
-// ------------------------------------------------------------------ responders
-export const responders = (t: number): Pose[] => {
-  const k = ramp(t, T.responders - 0.2, T.responders + 1.9, E.out);
-  const ends: [V3, V3][] = [
-    [[-0.9, F, -3.6], [-0.86, F, -0.66]],
-    [[0.7, F, -3.9], [0.2, F, -1.12]],
-  ];
-  return ends.map(([from, to], i) => {
-    const [x, y, z] = lerp3(from, to, k);
-    const base = pose({x, y, z, yaw: face(x, z), spine: 0.12, head: 0.2});
-    const stride = 1 - ramp(t, T.responders + 1.5, T.responders + 1.9);
+// ------------------------------------------------------------------ responders (face left), breathing air on their backs
+export const responders = (t: number): Pose2D[] => {
+  const k = ramp(t, T.i11 - 0.1, T.i11 + 1.9, E.out);
+  return [[4.4, 1.5], [5.2, 2.35]].map(([from, to], i) => {
+    const base = pose({x: lerp(from, to, k), lean: 6, head: 8});
+    const stride = 1 - ramp(t, T.i11 + 1.5, T.i11 + 1.9);
     return mix(base, walk(base, t * 2.3 + i * 0.5, 1), stride);
   });
 };
 
-// ------------------------------------------------------------------ props
-export const ladderAt = (t: number): {pos: V3; rot: V3} => {
-  const rest: {pos: V3; rot: V3} = {pos: [1.5, F + 0.05, -1.75], rot: [HALF, 0, HALF - 0.25]};
-  const held: {pos: V3; rot: V3} = {pos: [-0.14, 2.05, -0.04], rot: [0, 0, -0.09]};
-  const a = ramp(t, T.grabs + 0.05, T.climbs - 0.34, E.inOutQuad);
-  const b = ramp(t, T.climbs - 0.34, T.climbs - 0.04, E.in);
-  const lift = Math.sin(a * Math.PI) * 0.5;
-  const p1 = lerp3(rest.pos, held.pos, a);
-  const r1 = lerp3(rest.rot, held.rot, a);
-  return {pos: lerp3([p1[0], p1[1] + lift, p1[2]], LADDER_IN.pos, b), rot: lerp3(r1, LADDER_IN.rot, b)};
+// ------------------------------------------------------------------ the days before: other crews come and go
+export const crews = (t: number): {p: Pose2D; left: boolean}[] => {
+  const u = t - T.n1;
+  const pass = (start: number, from: number, to: number, work: Partial<Pose2D>, left: boolean) => {
+    const inK = ramp(u, start, start + 1.0, E.inOutQuad);
+    const outK = ramp(u, start + 2.1, start + 3.1, E.inOutQuad);
+    const x = lerp(lerp(from, to, inK), from, outK);
+    const working = Math.min(ramp(u, start + 0.95, start + 1.2), 1 - ramp(u, start + 1.95, start + 2.15));
+    const base = pose({x, ...(working > 0.5 ? work : {})});
+    const moving = 1 - working;
+    const circ = Math.sin(u * 9) * 14;
+    return {p: mix(walk(base, u * 2.1 + start, moving), pose({x, ...work, armA: (work.armA ?? 40) + circ}), working), left: left !== outK > 0.02 && outK < 0.98 ? left : left};
+  };
+  return [
+    pass(0.2, -4.6, -1.15, {lean: 34, head: 20, armA: 58, foreA: 18, armB: 46, foreB: 20}, false),
+    pass(1.6, 4.6, 1.12, {lean: 20, head: 14, armA: 62, foreA: 24, armB: 30, foreB: 30}, true),
+    pass(3.2, -4.6, -1.3, {lean: 10, head: 10, armA: 30, foreA: 50}, false),
+  ];
 };
 
 /** Where the hook is: lowered, then scraping around the tape without ever catching it. */
-export const hookTip = (t: number): V3 => {
-  const lowered = ramp(t, T.hook + 0.25, T.hook + 1.35, E.inOutQuad);
-  const y = lerp(0.35, TAPE[1] + 0.07, lowered) + Math.sin(t * 2.9) * 0.025 * lowered;
-  return [TAPE[0] - 0.1 + Math.sin(t * 2.3) * 0.11 + Math.sin(t * 4.1) * 0.04, y, TAPE[2] + 0.02 + Math.cos(t * 1.9) * 0.08];
+export const hookTip = (t: number): [number, number] => {
+  const lowered = ramp(t, T.fishing - 0.1, T.fishing + 1.0, E.inOutQuad);
+  return [0.02 + Math.sin(t * 2.3) * 0.12 + Math.sin(t * 4.1) * 0.04, lerp(0.5, TRAY + 0.1, lowered) + Math.sin(t * 2.9) * 0.03 * lowered];
 };
-export const LADDER_TOP: V3 = [LADDER_IN.pos[0] + 0.07, LADDER_IN.pos[1] + LADDER_LEN / 2 - 0.25, LADDER_IN.pos[2]];
-export {STAND};
+
+/** The ladder as two end points over time: lying on the deck, swung up, dropped down the manway. */
+export const ladderAt = (t: number): {top: [number, number]; foot: [number, number]} => {
+  const rest = {top: [5.0, 0.07] as [number, number], foot: [1.9, 0.07] as [number, number]};
+  const held = {top: [-0.02, 3.85] as [number, number], foot: [-0.2, 0.75] as [number, number]};
+  const a = ramp(t, T.i9 + 0.1, T.climbs - 0.32, E.inOutQuad);
+  const b = ramp(t, T.climbs - 0.32, T.climbs - 0.02, E.in);
+  const m = (p: [number, number], q: [number, number], k: number): [number, number] => [lerp(p[0], q[0], k), lerp(p[1], q[1], k)];
+  return {top: m(m(rest.top, held.top, a), LADDER.top, b), foot: m(m(rest.foot, held.foot, a), LADDER.foot, b)};
+};

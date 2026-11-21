@@ -62,7 +62,8 @@ def align(words: list[str], heard: list[tuple[str, float, float]], dur: float):
             for k in range(i2 - i1):
                 times[i1 + k] = (heard[j1 + k][1], heard[j1 + k][2])
         elif tag == "replace" and j2 > j1:
-            if "".join(a[i1:i2]) != "".join(b[j1:j2]) and not any(ch.isdigit() for ch in "".join(a[i1:i2])):
+            # numbers spoken as words come back as digits ("twenty-five" -> "25"): not a mispronunciation
+            if "".join(a[i1:i2]) != "".join(b[j1:j2]) and not any(ch.isdigit() for ch in "".join(a[i1:i2]) + "".join(b[j1:j2])):
                 differs.append((" ".join(words[i1:i2]), " ".join(h[0].strip() for h in heard[j1:j2])))
             # Same stretch of audio, different spelling ("2005" vs "two thousand five"):
             # spread the script words across it by length.

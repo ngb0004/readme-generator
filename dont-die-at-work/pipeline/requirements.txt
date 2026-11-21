@@ -5,3 +5,4 @@ scipy>=1.14         # sound design filters
 soundfile>=0.12     # wav io
 kokoro-onnx>=0.4.9  # narrator voice (Kokoro-82M, Apache-2.0, runs locally)
 faster-whisper>=1.1 # word-level caption timing + pronunciation QA
+fonttools>=4.50      # lets pypdf decode the fonts in older CSB PDFs

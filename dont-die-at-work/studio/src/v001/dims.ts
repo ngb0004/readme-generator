@@ -22,8 +22,6 @@ export const NECK = 0.3; // inside of the head starts this far below the flange 
 export const YC = -(NECK + D.reactorR); // centre of the hemispherical head
 export const FLANGE_R = D.studCircleR + 0.13;
 export const FLANGE_T = 0.13;
-export const PLAT_R = 3.1;
-export const Y_BOTTOM = -27;
 export const TRAY_Y = -D.trayDepth;
 /** Inside radius of the vessel at height y. */
 export const innerR = (y: number) =>
