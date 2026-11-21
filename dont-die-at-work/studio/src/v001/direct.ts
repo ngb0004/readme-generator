@@ -56,8 +56,8 @@ export const CAM: CamKey[] = [
   {at: T.few, cut: true, p: [1.3, 0.0, 11.4], t: [0.1, -1.9, 0], fov: 27},
   {at: T.third, p: [0.9, -0.2, 9.2], t: [0.1, -2.0, 0], fov: 27, ease: E.out},
   // THE MOMENT: the third man at the ladder
-  {at: T.third, cut: true, p: [3.9, 1.75, 6.4], t: [0.45, 0.62, 0], fov: 29},
-  {at: T.responders, p: [3.1, 1.6, 5.3], t: [0.6, 0.72, 0], fov: 29, ease: E.out},
+  {at: T.third, cut: true, p: [3.9, 1.75, 6.4], t: [0.45, 0.86, 0], fov: 29},
+  {at: T.responders, p: [3.1, 1.6, 5.3], t: [0.6, 1.02, 0], fov: 29, ease: E.out},
   // responders
   {at: T.responders, cut: true, p: [-3.4, 3.1, 8.0], t: [0, 0.35, -0.3], fov: 35},
   {at: T.lesson, p: [-2.8, 2.8, 7.2], t: [0, 0.35, -0.3], fov: 35, ease: E.out},

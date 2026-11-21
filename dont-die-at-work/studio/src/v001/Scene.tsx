@@ -63,8 +63,8 @@ export const Scene: React.FC<{time: number; cam?: CamState}> = ({time: t, cam}) 
 
       {d.hats > 0.5 ? (
         <>
-          <HardHat color={LOOKS.A.hat} pos={[-0.86, -0.02, 0.46]} rot={[0, 0.9, 0]} />
-          <HardHat color={LOOKS.B.hat} pos={[-0.42, -0.02, 0.66]} rot={[0, 0.35, 0]} />
+          <HardHat color={LOOKS.A.hat} pos={[-0.9, -0.02, 0.42]} rot={[0, 1.15, 0]} />
+          <HardHat color={LOOKS.B.hat} pos={[-0.36, -0.02, 0.74]} rot={[0, 0.55, 0]} />
         </>
       ) : null}
     </>

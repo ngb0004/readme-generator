@@ -142,18 +142,26 @@ export const Shaft: React.FC<{level: number}> = ({level}) => {
 };
 
 export const HardHat: React.FC<{color: string; pos: V3; rot?: V3}> = ({color, pos, rot = [0, 0, 0]}) => {
-  const mat = useMemo(() => new THREE.MeshStandardMaterial({color, roughness: 0.3, emissive: color, emissiveIntensity: 0.08}), [color]);
+  const mat = useMemo(() => new THREE.MeshStandardMaterial({color, roughness: 0.34, emissive: color, emissiveIntensity: 0.04}), [color]);
   return (
-    <group position={pos} rotation={rot} scale={1.12}>
-      <mesh material={mat} scale={[1.05, 0.86, 1.14]} castShadow>
-        <sphereGeometry args={[0.122, 28, 16, 0, Math.PI * 2, 0, Math.PI / 2]} />
+    <group position={pos} rotation={rot} scale={1.15}>
+      {/* shell */}
+      <mesh material={mat} scale={[1.0, 0.82, 1.16]} castShadow>
+        <sphereGeometry args={[0.125, 36, 18, 0, Math.PI * 2, 0, Math.PI / 2]} />
       </mesh>
-      <mesh material={mat} position={[0, 0.004, 0.03]} scale={[1, 1, 1.22]} castShadow receiveShadow>
-        <cylinderGeometry args={[0.137, 0.14, 0.014, 28]} />
+      {/* brim all round, and the peak at the front */}
+      <mesh material={mat} position={[0, 0.006, 0]} scale={[1.0, 1, 1.16]} castShadow receiveShadow>
+        <cylinderGeometry args={[0.138, 0.142, 0.012, 36]} />
       </mesh>
-      <mesh material={mat} position={[0, 0.055, 0]} scale={[0.22, 1, 1]}>
-        <sphereGeometry args={[0.1, 14, 10, 0, Math.PI * 2, 0, Math.PI / 2]} />
+      <mesh material={mat} position={[0, 0.007, 0.1]} scale={[0.86, 1, 0.9]} castShadow receiveShadow>
+        <cylinderGeometry args={[0.105, 0.108, 0.012, 28]} />
       </mesh>
+      {/* three low ribs over the crown */}
+      {[-0.035, 0, 0.035].map((x) => (
+        <mesh key={x} material={mat} position={[x, 0.004, 0]} scale={[0.09, 0.855, 1.1]}>
+          <sphereGeometry args={[0.125, 10, 14, 0, Math.PI * 2, 0, Math.PI / 2]} />
+        </mesh>
+      ))}
     </group>
   );
 };

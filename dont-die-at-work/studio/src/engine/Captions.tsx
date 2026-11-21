@@ -25,11 +25,14 @@ const build = (beats: Beat[]): Chunk[] => {
       if (ends(w.w)) flush();
     });
     flush();
-    // hold the last chunk of a beat a moment, but never into the next beat
+    // within a beat, a chunk holds until the next one starts, unless the narrator pauses
+    for (let i = 0; i < out.length - 1; i++) {
+      if (out[i].start >= beat.start && out[i + 1].start - out[i].end < 0.5) out[i].end = out[i + 1].start;
+    }
+    // the last chunk of a beat holds a moment, but never into the next beat: a caption must not outlive its shot
     const next = beats[bi + 1];
-    out[out.length - 1].end = Math.min(beat.end + 0.22, next ? next.start - 0.04 : beat.end + 0.4);
+    out[out.length - 1].end = Math.min(beat.end + 0.18, next ? next.start - 0.04 : beat.end + 0.18);
   });
-  for (let i = 0; i < out.length - 1; i++) if (out[i + 1].start - out[i].end < 0.5) out[i].end = out[i + 1].start;
   return out;
 };
 
