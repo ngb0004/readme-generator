@@ -19,17 +19,30 @@ let done = 0;
 const t0 = Date.now();
 for (const [a, b] of ranges) {
   const tmp = fs.mkdtempSync(path.join(outDir, '.part-'));
-  await renderFrames({
-    composition, serveUrl, outputDir: tmp, inputProps: {}, imageFormat: 'jpeg', jpegQuality: 95,
-    frameRange: [a, b], concurrency: Number(process.env.DDAWT_CONCURRENCY ?? 2), browserExecutable, chromiumOptions,
-    onStart: () => {},
-    onFrameUpdate: (n) => {
-      if ((done + n) % 60 === 0) {
-        const rate = (Date.now() - t0) / 1000 / (done + n);
-        console.log(`${done + n}/${total} frames, ${rate.toFixed(2)}s/frame, ~${Math.round(((total - done - n) * rate) / 60)} min left`);
+  // Software GL occasionally stalls on the first frame of a new shot; give it room and try again.
+  for (let attempt = 1; ; attempt++) {
+    try {
+      await renderFrames({
+        composition, serveUrl, outputDir: tmp, inputProps: {}, imageFormat: 'jpeg', jpegQuality: 95,
+        frameRange: [a, b], concurrency: Number(process.env.DDAWT_CONCURRENCY ?? 2), browserExecutable, chromiumOptions,
+        timeoutInMilliseconds: 180000,
+        onStart: () => {},
+        onFrameUpdate: (n) => {
+          if ((done + n) % 60 === 0) {
+            const rate = (Date.now() - t0) / 1000 / (done + n);
+            console.log(`${done + n}/${total} frames, ${rate.toFixed(2)}s/frame, ~${Math.round(((total - done - n) * rate) / 60)} min left`);
+          }
+        },
+      });
+      break;
+    } catch (err) {
+      console.log(`range ${a}-${b} attempt ${attempt} failed: ${String(err.message ?? err).split('\n')[0]}`);
+      if (attempt >= 3) {
+        fs.rmSync(tmp, {recursive: true, force: true});
+        throw err;
       }
-    },
-  });
+    }
+  }
   // renderFrames numbers files by absolute frame; normalise to f00000.jpg
   for (const f of fs.readdirSync(tmp)) {
     const m = f.match(/(\d+)\.jpe?g$/);
