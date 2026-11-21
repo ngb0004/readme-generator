@@ -97,7 +97,7 @@ viewer what the people in the story cannot see, then let them carry on.
 
 How video 001 (cut 2) applies it: the hook promises two deaths and a killer you are breathing; the
 viewer is shown the gas in the first five seconds and the men are not; the gas is drawn, then
-switched off on "it stops looking like it can"; a new picture every two to three seconds.
+switched off on "it stops looking dangerous"; a new picture every two to three seconds.
 
 ## Daily loop
 
