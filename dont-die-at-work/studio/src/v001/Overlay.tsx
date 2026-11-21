@@ -7,6 +7,8 @@ import {Big, Chip, Dim, Grade, Leader, Reticle, Tag} from '../engine/hud';
 import {C, FONT, FPS, H, W} from '../engine/theme';
 import {E, clamp, ramp, spring, window as win} from '../engine/time';
 import {actorA, actorB, actorC} from './actors';
+import {half} from './Section';
+import {BAR_X, SIGN_X} from './World';
 import {os} from './Cards';
 import {Direction} from './direct';
 import {D, TRAY_Y} from './dims';
@@ -23,16 +25,36 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
   const shot = (a: number, b: number) => t >= a && t < b;
   const tape = at(0.12, TRAY_Y + 0.085);
 
-  // ---- the days before
-  const days = win(t, T.n1 + 0.3, T.onlyWarning - 0.3, 0.3, 0.2);
-  const only = win(t, T.onlyWarning + 0.75, T.n2, 0.25, 0.1);
   const giant = win(t, T.standing + 1.0, T.ma2, 0.3, 0.12);
 
   // ---- the job
-  const loc = (k: number) => win(t, T.i1 + k, T.management - 0.2, 0.3, 0.2);
-  const lid = win(t, T.i1 + 0.9, T.i2, 0.3, 0.15);
-  const sealed = win(t, T.management + 0.1, T.i2, 0.25, 0.15);
-  const sweep = ramp(t, T.management + 0.2, B['inc-1'].end + 0.1, E.out);
+  const loc = (k: number) => win(t, T.i1 + k, T.out - 0.05, 0.3, 0.15);
+  const lid = win(t, T.i1 + 0.9, T.out, 0.3, 0.12);
+
+  // ---- the gas coming out, and the man leaning over it
+  const leak = win(t, T.leaking + 0.1, T.lean + 0.7, 0.25, 0.2);
+  const ring = win(t, T.lean + 0.9, T.f1, 0.3, 0.05);
+  const aHead = pt(joints(v, actorA(t)).head);
+
+  // ---- nothing warns them
+  const noSign = win(t, T.noSign + 0.05, T.permit, 0.2, 0.1);
+  const noBarrier = win(t, T.noBarrier + 0.05, T.permit, 0.2, 0.1);
+
+  // ---- what the training covered
+  const inside = win(t, T.tr + 0.5, T.i2, 0.3, 0.15);
+  const outside = win(t, T.never, T.i2, 0.25, 0.15);
+  const cavity = (() => {
+    const pts: string[] = [];
+    for (let i = 0; i <= 30; i++) {
+      const y = TRAY_Y + 0.08 + ((0 - TRAY_Y - 0.08) * i) / 30;
+      pts.push(`${at(half(y) - 0.03, y).x},${at(0, y).y}`);
+    }
+    for (let i = 30; i >= 0; i--) {
+      const y = TRAY_Y + 0.08 + ((0 - TRAY_Y - 0.08) * i) / 30;
+      pts.push(`${at(-half(y) + 0.03, y).x},${at(0, y).y}`);
+    }
+    return pts.join(' ');
+  })();
 
   // ---- the tape
   const spot = win(t, T.five + 0.95, T.i3, 0.25, 0.15);
@@ -40,8 +62,8 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
   const fast = win(t, T.wire + 0.15, T.wire + 1.7, 0.2, 0.25);
 
   // ---- on the rim
-  const likely = win(t, T.sits + 0.35, T.i6, 0.25, 0.01);
-  const pooled = win(t, T.legs, T.i6, 0.3, 0.01);
+  const likely = win(t, T.sits + 0.35, T.calm + 0.25, 0.25, 0.2);
+  const pooled = win(t, T.calm + 0.35, T.i6, 0.3, 0.01);
   const a = actorA(t);
   const aHip = at(a.x, a.y + 0.45);
 
@@ -49,16 +71,21 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
   const bHead = pt(joints(v, actorB(t), true).head);
   const years = win(t, word('inc-8', 'twenty-five') - 0.1, T.stop, 0.25, 0.15);
   const taught = win(t, T.taught + 0.3, T.stop, 0.25, 0.15);
-  const banner = win(t, T.stop + 0.1, T.i9, 0.01, 0.15);
+  const banner = win(t, T.stop + 0.1, T.br1, 0.01, 0.12);
   const bannerScale = 1 + 0.9 * Math.pow(1 - clamp((t - T.stop - 0.1) / 0.22), 3);
   const stay = pop(t, T.stayOut);
 
   // ---- rescue
-  const bar = win(t, T.i11 + 0.2, T.i12, 0.3, 0.15);
-  const fillK = ramp(t, T.i11 + 0.3, T.nearlyTen + 0.9, E.lin);
   const arrive = pop(t, word('inc-11', 'under') - 0.05);
-  const dim24 = win(t, T.getting + 0.85, T.i12, 0.25, 0.15);
-  const ten = pop(t, T.nearlyTen + 0.25);
+  const arrived = win(t, word('inc-11', 'under') - 0.05, T.meter + 0.9, 0.01, 0.2);
+  const zero = pop(t, T.nearZero);
+
+  // ---- afterwards
+  const putUp = win(t, T.wentUp + 0.55, T.l2, 0.25, 0.1);
+  const before = win(t, T.required + 0.15, T.l2, 0.25, 0.1);
+
+  // ---- the picture to remember
+  const zone = win(t, T.l2 + 0.25, T.l3, 0.3, 0.1);
 
   // ---- lesson
   const no = pop(t, T.doNot);
@@ -90,33 +117,46 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
         </>
       ) : null}
 
-      {/* the days before */}
-      <Big x={540} y={226} a={days} size={100} stroke={8} color={C.cyan}>{os('norm-1', 0)}</Big>
-      {shot(T.onlyWarning + 0.6, T.n2) ? (
-        <>
-          <Leader from={{x: 300, y: at(0, 0.4).y - 196}} to={at(-0.52, 0.42)} a={only} color={C.red} />
-          <Chip x={70} y={at(0, 0.4).y - 262} a={only} size={58} color={C.red}>{os('norm-1', 1)}</Chip>
-        </>
-      ) : null}
-
       {/* the job */}
-      {shot(T.i1, T.i2) ? (
+      {shot(T.i1, T.out) ? (
         <>
           <Big x={70} y={226} a={loc(0.15)} size={124} align="left" stroke={8}>{os('inc-1', 0)}</Big>
           <div style={{position: 'absolute', left: 74, top: 362, fontFamily: FONT.label, fontWeight: 700, fontSize: 60, letterSpacing: '0.06em', color: C.yellow, opacity: loc(0.4), textShadow: '0 4px 14px rgba(0,0,0,0.9)'}}>{os('inc-1', 1)}</div>
-          <Chip x={74} y={448} a={loc(0.65)} size={44}>{os('inc-1', 2)}</Chip>
           <Leader from={{x: at(1.3, 0).x, y: at(0, 3.05).y + 44}} to={at(1.3, 2.86)} a={lid} color="#bcd3f5" />
-          <Chip x={at(1.3, 0).x - 110} y={at(0, 3.05).y - 30} a={lid} size={50} color="#bcd3f5">{os('inc-1', 3)}</Chip>
-          {sealed > 0 ? (
-            <div style={{position: 'absolute', left: 70, top: 226, opacity: sealed, display: 'flex', alignItems: 'center', gap: 26}}>
-              <svg width={170} height={170}>
-                <circle cx={85} cy={85} r={70} fill="rgba(5,8,14,0.75)" stroke="rgba(255,255,255,0.22)" strokeWidth={12} />
-                <circle cx={85} cy={85} r={70} fill="none" stroke={C.red} strokeWidth={12} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - sweep * 0.92} transform="rotate(-90 85 85)" />
-                <line x1={85} y1={85} x2={85 + Math.sin(sweep * 0.92 * 6.283) * 48} y2={85 - Math.cos(sweep * 0.92 * 6.283) * 48} stroke={C.white} strokeWidth={7} strokeLinecap="round" />
-              </svg>
-              <div style={{fontFamily: FONT.display, fontSize: 66, lineHeight: 1.05, color: C.white, width: 560, textShadow: '0 4px 16px #000'}}>{os('inc-1', 4)}</div>
-            </div>
+          <Chip x={at(1.3, 0).x - 110} y={at(0, 3.05).y - 30} a={lid} size={50} color="#bcd3f5">{os('inc-1', 2)}</Chip>
+        </>
+      ) : null}
+
+      {/* the gas keeps coming out; lean over it and that is what you could be breathing */}
+      {shot(T.out, T.f1) ? (
+        <>
+          <Big x={540} y={232} a={leak} size={150} stroke={10} color={C.cyan}>{os('out-1', 0)}</Big>
+          {ring > 0 ? (
+            <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: ring}}>
+              <circle cx={aHead.x} cy={aHead.y} r={0.3 * v.s * (1.5 - 0.5 * ring)} fill="none" stroke="rgba(0,0,0,0.55)" strokeWidth={12} />
+              <circle cx={aHead.x} cy={aHead.y} r={0.3 * v.s * (1.5 - 0.5 * ring)} fill="none" stroke={C.cyan} strokeWidth={6} strokeDasharray="20 14" strokeDashoffset={-t * 40} />
+            </svg>
           ) : null}
+        </>
+      ) : null}
+
+      {/* nothing warns them: where the sign and the barrier should have been */}
+      {shot(T.f1, T.permit) ? (
+        <>
+          <Chip x={at(SIGN_X, 0).x - 330} y={at(0, 2.2).y - 110} a={noSign} size={54} color={C.red} mark="✕">{os('flag-1', 0)}</Chip>
+          <Chip x={at(-BAR_X, 0).x} y={at(0, 0).y + 64} a={noBarrier} size={54} color={C.red} mark="✕">{os('flag-1', 1)}</Chip>
+        </>
+      ) : null}
+
+      {/* training covered the inside of the tank; it never covered the air outside it */}
+      {shot(T.tr, T.i2) ? (
+        <>
+          <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
+            <polygon points={cavity} fill="rgba(244,246,250,0.10)" stroke={C.white} strokeWidth={5} strokeDasharray="18 12" opacity={inside} />
+            <ellipse cx={at(0, 0).x} cy={at(0, 0.84).y} rx={1.62 * v.s} ry={1.12 * v.s} fill="rgba(255,59,47,0.13)" stroke={C.red} strokeWidth={6} strokeDasharray="20 14" strokeDashoffset={-t * 34} opacity={outside} />
+          </svg>
+          <Chip x={540} y={at(0, TRAY_Y).y + 50} a={inside} size={52} color={C.white} mark="✓" align="center">{os('train-1', 0)}</Chip>
+          <Chip x={540} y={at(0, 2.0).y - 118} a={outside} size={64} color={C.red} mark="✕" align="center">{os('train-1', 1)}</Chip>
         </>
       ) : null}
 
@@ -141,14 +181,14 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
               <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: pooled}}>
                 <ellipse cx={at(0, 0).x} cy={at(0, 0.62).y} rx={1.12 * v.s} ry={0.86 * v.s} fill="none" stroke={C.cyan} strokeWidth={4} strokeDasharray="18 16" strokeDashoffset={-t * 30} />
               </svg>
-              <Chip x={540} y={at(0, 1.6).y - 74} a={pooled} size={46} color={C.cyan} align="center">{os('inc-5', 1)}</Chip>
+              <Chip x={540} y={at(0, 1.6).y - 74} a={pooled} size={46} color={C.cyan} align="center">{os('calm-1', 0)}</Chip>
             </>
           ) : null}
         </>
       ) : null}
 
       {/* who he is, and the moment */}
-      {shot(T.i8, T.i9) ? (
+      {shot(T.i8, T.br1) ? (
         <>
           <Chip x={70} y={bHead.y - 250} a={years} size={60}>{os('inc-8', 0)}</Chip>
           <Chip x={70} y={bHead.y + 330} a={taught} size={54}>{os('inc-8', 1)}</Chip>
@@ -166,36 +206,35 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
         </>
       ) : null}
 
-      {/* rescue: under two minutes to arrive, nearly ten to get them air */}
-      {bar > 0 ? (
-        <div style={{position: 'absolute', left: 70, top: 232, width: 940, opacity: bar}}>
-          <div style={{position: 'relative', height: 26, background: 'rgba(255,255,255,0.14)', borderRadius: 5}}>
-            <div style={{position: 'absolute', left: 0, top: 0, bottom: 0, width: `${fillK * 100}%`, background: C.red, borderRadius: 5}} />
-            <div style={{position: 'absolute', left: '19%', top: -14, bottom: -14, width: 5, background: C.yellow}} />
-            <div style={{position: 'absolute', left: '96%', top: -14, bottom: -14, width: 5, background: C.white}} />
-          </div>
-          <div style={{position: 'absolute', left: '19%', top: 52, transform: `scale(${0.8 + 0.2 * arrive})`, transformOrigin: '0 0', opacity: t >= word('inc-11', 'under') - 0.05 ? 1 : 0}}>
-            <div style={{fontFamily: FONT.display, fontSize: 70, lineHeight: 1, color: C.yellow, textShadow: '0 4px 16px #000'}}>{os('inc-11', 1)}</div>
-            <div style={{fontFamily: FONT.mono, fontWeight: 700, fontSize: 26, letterSpacing: '0.14em', color: C.white, marginTop: 6}}>{os('inc-11', 0)}</div>
-          </div>
-          <div style={{position: 'absolute', right: 0, top: 52, textAlign: 'right', transform: `scale(${0.8 + 0.2 * ten})`, transformOrigin: '100% 0', opacity: t >= T.nearlyTen + 0.25 ? 1 : 0}}>
-            <div style={{fontFamily: FONT.display, fontSize: 70, lineHeight: 1, color: C.red, textShadow: '0 4px 16px #000'}}>{os('inc-11', 3)}</div>
-            <div style={{fontFamily: FONT.mono, fontWeight: 700, fontSize: 26, letterSpacing: '0.14em', color: C.white, marginTop: 6}}>{os('inc-11', 4)}</div>
-          </div>
-        </div>
-      ) : null}
-      {dim24 > 0 ? (
+      {/* rescue: there in under two minutes; the meter alarms the moment it is in the hole */}
+      {shot(T.i11, T.i12) ? (
         <>
-          <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: dim24}}>
-            {[8, 4].map((w) => (
-              <g key={w} stroke={w === 8 ? 'rgba(0,0,0,0.6)' : C.yellow} strokeWidth={w} fill="none">
-                <line x1={at(-D.manwayR, 0).x} y1={at(0, -0.62).y} x2={at(D.manwayR, 0).x} y2={at(0, -0.62).y} />
-                <line x1={at(-D.manwayR, 0).x} y1={at(0, -0.62).y + 26} x2={at(-D.manwayR, 0).x} y2={at(0, -0.02).y} strokeDasharray="10 8" />
-                <line x1={at(D.manwayR, 0).x} y1={at(0, -0.62).y + 26} x2={at(D.manwayR, 0).x} y2={at(0, -0.02).y} strokeDasharray="10 8" />
-              </g>
-            ))}
+          <div style={{position: 'absolute', left: 70, top: 232, opacity: arrived, transform: `scale(${0.8 + 0.2 * arrive})`, transformOrigin: '0 0'}}>
+            <div style={{fontFamily: FONT.mono, fontWeight: 700, fontSize: 30, letterSpacing: '0.16em', color: C.white, textShadow: '0 3px 12px #000'}}>{os('inc-11', 0)}</div>
+            <div style={{fontFamily: FONT.display, fontSize: 132, lineHeight: 1.02, color: C.yellow, WebkitTextStroke: '8px #04060a', paintOrder: 'stroke fill'}}>{os('inc-11', 1)}</div>
+          </div>
+          {t >= T.nearZero ? (
+            <div style={{position: 'absolute', left: 0, top: 236, width: W, textAlign: 'center', fontFamily: FONT.display, fontSize: 124, lineHeight: 1, color: C.red, whiteSpace: 'nowrap', transform: `scale(${0.7 + 0.3 * zero})`, opacity: Math.min(1, zero * 2), WebkitTextStroke: '10px #04060a', paintOrder: 'stroke fill', filter: 'drop-shadow(0 12px 24px rgba(0,0,0,0.8))'}}>{os('inc-11', 2)}</div>
+          ) : null}
+        </>
+      ) : null}
+
+      {/* afterwards: the sign that the site's own rules had called for */}
+      {shot(T.af, T.l2) ? (
+        <>
+          <Leader from={{x: 470, y: 292}} to={at(SIGN_X - 0.42, 1.86)} a={putUp} color={C.red} />
+          <Chip x={70} y={246} a={putUp} size={66} color={C.red}>{os('after-1', 0)}</Chip>
+          <Chip x={70} y={372} a={before} size={66} color={C.yellow}>{os('after-1', 1)}</Chip>
+        </>
+      ) : null}
+
+      {/* the picture to remember: outside the tank, and in it all the same */}
+      {shot(T.l2, T.l3) ? (
+        <>
+          <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: zone}}>
+            <ellipse cx={at(0, 0).x} cy={at(0, 0.72).y} rx={1.18 * v.s} ry={0.9 * v.s} fill="rgba(255,59,47,0.10)" stroke={C.red} strokeWidth={6} strokeDasharray="20 14" strokeDashoffset={-t * 34} />
           </svg>
-          <Big x={at(0, 0).x} y={at(0, -0.62).y + 30} a={dim24} size={150} color={C.yellow} stroke={10}>{os('inc-11', 2)}</Big>
+          <Chip x={540} y={236} a={zone} size={62} color={C.red} align="center">{os('lesson-2', 0)}</Chip>
         </>
       ) : null}
 

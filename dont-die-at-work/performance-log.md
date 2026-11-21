@@ -84,3 +84,33 @@ idea what's going on." Cut 2 had called it "this refinery tank" and moved on.
 - This is now the spine for every video (see CLAUDE.md): what it is, what it is for, how it works,
   why people work on it, what these people were doing, why it killed them.
 - **Status:** awaiting Nick's review.
+
+### Cut 4 (same day)
+
+Nick on cut 3: "I like the ending, and I sort of like the video", the tank explanation is "decent",
+but it is "very technical... not practical. It's not explaining why they were doing the things that
+they were doing and what they didn't understand." Then, after a long conversation: "for all of that
+to happen, the guys did not understand that there is a tank that is spewing nitrogen, and it is
+insanely dangerous to have your head anywhere near the opening."
+
+- **Kept:** the hook, the tank explanation and the ending (lesson line, tribute, sign-off).
+- **Rebuilt the middle** around what the men were doing and what nobody had told them:
+  the gas leaks out of the open hole onto the platform where they work; no sign and no barrier,
+  though the site's own procedure called for both; their work permit marked the nitrogen purge
+  "N/A"; their training covered going inside a tank and never the air outside one; so they stayed
+  outside and fished with a wire; the still air may have let the gas pool round the first man's
+  head; investigators suspect the foreman thought he could hold his breath, and why that does not
+  work; the responders' oxygen meter alarmed the moment it was in the hole; a warning sign went up
+  afterwards.
+- **Changed the framing.** Cuts 2 and 3 told a "shortcut" story ("Most shortcuts cost you
+  nothing..."). The report tells a different one: they obeyed the rule they knew (never go inside)
+  and the danger was outside the line. That line and its card are gone; the new lesson is "You
+  don't have to climb inside a tank for it to kill you."
+- **Held to the report:** it says the gas "may have" pooled and that he "could have" passed out and
+  slid in, one of two scenarios it could not choose between, so the narration says "may" and the
+  cut still goes to black on "Nobody saw what happened next."
+- **Left out for length:** that management wanted the tank sealed before the end of the shift; the
+  24-inch opening; the ten-minute figure is now on screen only.
+- 101 citations. Length: 2:52 at 172 words a minute. That is the ceiling for a Short.
+- **Status:** awaiting Nick's review.
+

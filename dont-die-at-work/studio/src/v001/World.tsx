@@ -2,7 +2,8 @@ import React from 'react';
 import {Pictogram, joints} from '../engine2d/Pictogram';
 import {P, View} from '../engine2d/view';
 import {C, H, W} from '../engine/theme';
-import {LOOKS, actorA, actorB, actorC, actorP, crews, hookTip, ladderAt, responders} from './actors';
+import {clamp, spring} from '../engine/time';
+import {LOOKS, actorA, actorB, actorC, actorP, hookTip, ladderAt, meterAt, responders} from './actors';
 import {Direction} from './direct';
 import {D, FLANGE_R, TRAY_Y} from './dims';
 import {Backdrop, Defs, Nitrogen, OxygenOut, Reactor, Tape} from './Section';
@@ -83,6 +84,83 @@ const HardHat: React.FC<{v: View; x: number; color: string; tilt?: number}> = ({
   );
 };
 
+/**
+ * A warning sign on a post and a barricade round the hatch. The site's procedure called for both
+ * before the purge was started (CSB p. 12); they were installed after the incident (Figs. 8, 11).
+ *   ghost  drawn as a red dashed outline: what was not there
+ *   solid  0..1+, each piece dropping into place
+ */
+export const SIGN_X = 2.55;
+export const BAR_X = 1.78;
+const Guard: React.FC<{v: View; sign: number; barrier: number; ghost?: boolean}> = ({v, sign, barrier, ghost}) => {
+  const px = (m: number) => m * v.s;
+  const dash = `${px(0.1)} ${px(0.07)}`;
+  const line = ghost ? {fill: 'rgba(255,59,47,0.16)', stroke: C.red, strokeWidth: Math.max(4, px(0.03)), strokeDasharray: dash} : {};
+  const drop = (k: number) => (ghost ? 0 : (1 - Math.min(1, k)) * -px(2.2));
+  // the barricade: two posts and a striped board, in front of the hatch
+  const [bl, by] = P(v, -BAR_X, 1.02);
+  const [br] = P(v, BAR_X, 1.02);
+  const board = px(0.2);
+  const stripes = Math.floor((br - bl) / px(0.2));
+  // the sign: a warning triangle on a post
+  const [sx, sy] = P(v, SIGN_X, 1.9);
+  const tri = px(0.62);
+  return (
+    <g>
+      {barrier > 0.01 ? (
+        <g opacity={ghost ? barrier : Math.min(1, barrier * 3)} transform={`translate(0 ${drop(barrier)})`}>
+          {[-BAR_X, BAR_X].map((x) => (
+            <rect key={x} x={P(v, x - 0.035, 0)[0]} y={by} width={px(0.07)} height={px(1.02)} fill={ghost ? 'none' : '#d7dce6'} {...line} />
+          ))}
+          <rect x={bl} y={by} width={br - bl} height={board} fill={ghost ? 'rgba(255,59,47,0.16)' : C.yellow} stroke={ghost ? C.red : '#07090d'} strokeWidth={ghost ? Math.max(4, px(0.03)) : 3} strokeDasharray={ghost ? dash : undefined} />
+          {!ghost
+            ? Array.from({length: stripes}, (_, i) => {
+                const x = bl + (i + 0.25) * ((br - bl) / stripes);
+                const w = (br - bl) / stripes / 2;
+                return <path key={i} d={`M ${x} ${by + board} L ${x + w} ${by + board} L ${x + w + board * 0.7} ${by} L ${x + board * 0.7} ${by} Z`} fill="#07090d" />;
+              })
+            : null}
+        </g>
+      ) : null}
+      {sign > 0.01 ? (
+        <g opacity={ghost ? sign : Math.min(1, sign * 3)} transform={`translate(0 ${drop(sign)})`}>
+          <rect x={sx - px(0.03)} y={sy + tri * 0.3} width={px(0.06)} height={P(v, 0, 0)[1] - sy - tri * 0.3} fill={ghost ? 'none' : '#d7dce6'} {...line} />
+          <path d={`M ${sx} ${sy - tri * 0.5} L ${sx + tri * 0.56} ${sy + tri * 0.42} L ${sx - tri * 0.56} ${sy + tri * 0.42} Z`} fill={ghost ? 'rgba(255,59,47,0.16)' : C.yellow} stroke={ghost ? C.red : '#07090d'} strokeWidth={ghost ? Math.max(4, px(0.03)) : px(0.035)} strokeLinejoin="round" strokeDasharray={ghost ? dash : undefined} />
+          {!ghost ? (
+            <>
+              <rect x={sx - tri * 0.045} y={sy - tri * 0.2} width={tri * 0.09} height={tri * 0.36} rx={tri * 0.03} fill="#07090d" />
+              <circle cx={sx} cy={sy + tri * 0.28} r={tri * 0.055} fill="#07090d" />
+            </>
+          ) : null}
+        </g>
+      ) : null}
+    </g>
+  );
+};
+
+/** The responders' oxygen meter on its cord, let down through the manway. It alarms at once. */
+const Meter: React.FC<{v: View; hand: [number, number]; drop: number; alarm: boolean; time: number}> = ({v, hand, drop, alarm, time}) => {
+  const w = 0.17 * v.s;
+  const h = 0.26 * v.s;
+  const y = hand[1] + 0.12 * v.s + (P(v, 0, -0.78)[1] - hand[1] - 0.12 * v.s) * drop;
+  const x = hand[0];
+  const blink = alarm ? Math.sin(time * 26) > -0.2 : false;
+  return (
+    <g>
+      <line x1={hand[0]} y1={hand[1]} x2={x} y2={y} stroke="#eef3fb" strokeWidth={Math.max(3, 0.014 * v.s)} />
+      {alarm
+        ? [0, 1, 2].map((i) => {
+            const k = (time * 1.7 + i / 3) % 1;
+            return <circle key={i} cx={x} cy={y + h / 2} r={w * (0.9 + k * 4.2)} fill="none" stroke={C.red} strokeWidth={Math.max(4, 0.022 * v.s)} opacity={(1 - k) * 0.9} />;
+          })
+        : null}
+      <rect x={x - w / 2} y={y} width={w} height={h} rx={w * 0.16} fill={C.yellow} stroke="#07090d" strokeWidth={Math.max(2, 0.012 * v.s)} />
+      <rect x={x - w * 0.34} y={y + h * 0.14} width={w * 0.68} height={h * 0.36} rx={w * 0.06} fill={alarm ? (blink ? C.red : '#5a0d09') : '#0c1a14'} />
+      <circle cx={x} cy={y + h * 0.74} r={w * 0.13} fill={alarm && blink ? C.red : '#07090d'} />
+    </g>
+  );
+};
+
 /** The drawing: everything in the world at time t, through the camera. */
 export const World: React.FC<{t: number; d: Direction; view?: View}> = ({t, d, view}) => {
   const v = view ?? d.view;
@@ -116,12 +194,12 @@ export const World: React.FC<{t: number; d: Direction; view?: View}> = ({t, d, v
       <Reactor v={v} part="front" tape={d.redTape} />
       {d.ladder && t < T.climbs - 0.34 ? <Ladder v={v} top={ladder.top} foot={ladder.foot} /> : null}
 
-      {d.cast === 'crews' ? crews(t).map((c, i) => <Pictogram key={i} v={v} p={c.p} look={LOOKS.X} faceLeft={c.left} />) : null}
       {d.cast === 'main' ? (
         <>
           {d.showP ? <Pictogram v={v} p={actorP(t)} look={LOOKS.P} /> : null}
           {d.showC ? <Pictogram v={v} p={actorC(t)} look={LOOKS.C} faceLeft /> : null}
           {d.responders ? responders(t).map((r, i) => <Pictogram key={i} v={v} p={r} look={LOOKS.R} faceLeft />) : null}
+          {d.responders && d.meter ? <Meter v={v} hand={joints(v, responders(t)[0], true).hand} time={t} {...meterAt(t)} /> : null}
           {t < T.climbs + 0.5 ? <Pictogram v={v} p={b} look={LOOKS.B} faceLeft /> : null}
           {!fallenA ? <Pictogram v={v} p={a} look={LOOKS.A} glow /> : null}
           {d.wire ? (
@@ -134,6 +212,8 @@ export const World: React.FC<{t: number; d: Direction; view?: View}> = ({t, d, v
       ) : null}
 
       <Lid v={v} a={d.lid} time={t} />
+      {d.ghost.sign > 0.01 || d.ghost.barrier > 0.01 ? <Guard v={v} sign={d.ghost.sign} barrier={d.ghost.barrier} ghost /> : null}
+      {d.after ? <Guard v={v} sign={clamp(spring(t - T.wentUp, 2.4, 0.62), 0, 1.15)} barrier={clamp(spring(t - T.wentUp - 0.45, 2.4, 0.62), 0, 1.15)} /> : null}
       {d.hats > 0 ? (
         <>
           <HardHat v={v} x={-1.72} color={LOOKS.A.color} tilt={-4} />
@@ -142,7 +222,7 @@ export const World: React.FC<{t: number; d: Direction; view?: View}> = ({t, d, v
       ) : null}
 
       {/* what hangs over the opening goes in front of whoever is standing in it */}
-      <Nitrogen v={v} time={t} level={d.gas.level * 0.9} fill={d.gas.fill} cloud={d.gas.cloud} part="cloud" />
+      <Nitrogen v={v} time={t} level={d.gas.level * 0.9} fill={d.gas.fill} cloud={d.gas.cloud} spill={d.gas.spill} part="cloud" />
       {d.flash > 0 ? <rect width={W} height={H} fill={C.red} opacity={d.flash * 0.16} /> : null}
       <rect x={0} y={1280} width={W} height={640} fill="url(#fadeDown)" opacity={0.9} />
     </svg>

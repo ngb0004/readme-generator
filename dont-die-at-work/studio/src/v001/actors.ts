@@ -10,7 +10,6 @@ export const LOOKS: Record<string, Look2D> = {
   C: {color: '#7ea6e8'}, // the contract administrator
   P: {color: '#86cfa0'}, // the pipefitter who saw the tape
   R: {color: '#ff7a45', tank: '#e7ebf2'}, // emergency responders, on air
-  X: {color: '#6f86a8'}, // other crews, in the days before
 };
 
 const TRAY = TRAY_Y + 0.06; // top of the bubble caps
@@ -35,6 +34,7 @@ const alive = (p: Pose2D, t: number, seed: number): Pose2D => ({
 const A_WORK = pose({x: -1.02, lean: 16, head: 22, armA: 44, foreA: 30, armB: 36, foreB: 36});
 const A_STAND = pose({x: -1.05});
 const A_LOOKUP = pose({x: -1.08, lean: -5, head: -24, armA: 4, armB: -6});
+const A_LEAN = pose({x: -0.92, lean: 40, head: 24, armA: 34, foreA: 22, armB: 24, foreB: 30, legA: 8, legB: -10});
 const A_LOOKDOWN = pose({x: -0.98, lean: 22, head: 30, armA: 20, foreA: 10, armB: 10, foreB: 10});
 const A_TALK = pose({x: -1.05, lean: 4, head: -4, armA: 36, foreA: 72, armB: 4});
 const A_BEND = pose({x: -1.08, lean: 12, head: 26, armA: 34, foreA: 66, armB: 28, foreB: 74});
@@ -48,6 +48,9 @@ export const actorA = (t: number): Pose2D => {
   const p = seq(t, [
     {at: 0, p: A_WORK},
     {at: T.i1 - 0.1, p: A_LOOKUP, dur: 0.01},
+    {at: T.out - 0.05, p: A_WORK, dur: 0.01},
+    {at: T.lean - 0.1, p: A_LEAN, dur: 0.8, ease: E.inOutQuad},
+    {at: T.f1 - 0.05, p: A_WORK, dur: 0.01},
     {at: T.i2 - 0.1, p: A_LOOKDOWN, dur: 0.5},
     {at: T.i3, p: A_TALK, dur: 0.5},
     {at: T.wire - 0.2, p: A_BEND, dur: 0.45},
@@ -56,7 +59,8 @@ export const actorA = (t: number): Pose2D => {
     {at: T.sits - 0.55, p: A_SIT, dur: 0.75, ease: E.inOutQuad},
   ]);
   const over = Math.sin(clamp((t - (T.sits - 0.55)) / 0.75) * Math.PI);
-  const turning = t < T.h3 ? Math.sin(t * 5.2) * 5 : 0; // working a wrench in the opening shot
+  const atWork = t < T.h3 || (t >= T.out && t < T.lean - 0.3) || (t >= T.f1 && t < T.i2 - 0.4);
+  const turning = atWork ? Math.sin(t * 5.2) * 5 : 0; // working a wrench
   return alive({...p, y: p.y + over * 0.42, foreA: p.foreA + turning}, t, 1);
 };
 
@@ -85,6 +89,7 @@ export const actorB = (t: number): Pose2D => {
       seq(t, [
         {at: 0, p: B_WORK},
         {at: T.i1 - 0.1, p: B_LOOKUP, dur: 0.01},
+        {at: T.out - 0.05, p: B_WORK, dur: 0.01},
         {at: T.i2, p: B_STAND, dur: 0.5},
         {at: T.i3, p: B_TALK, dur: 0.5},
         {at: T.wire, p: B_WATCH, dur: 0.6},
@@ -121,7 +126,7 @@ export const actorB = (t: number): Pose2D => {
 // ------------------------------------------------------------------ C, the contract administrator (faces left)
 const C_AWAY = pose({x: 2.55});
 const C_PEER = pose({x: 1.72, lean: 30, head: 24, armA: 20, foreA: 10});
-const C_BACK = pose({x: 2.3, lean: -2});
+const C_BACK = pose({x: 3.05, lean: -2});
 const C_NEAR = pose({x: 0.92, lean: 6});
 const C_REACH = pose({x: 0.86, lean: 22, head: 18, armA: 78, foreA: 12});
 const C_STOP = pose({x: 1.04, lean: -8, head: 14, armA: 34, foreA: 60, armB: -14});
@@ -157,34 +162,18 @@ export const actorP = (t: number): Pose2D => {
 };
 
 // ------------------------------------------------------------------ responders (face left), breathing air on their backs
+const R_LOWER = pose({x: 1.0, lean: 30, head: 22, armA: 62, foreA: 4, armB: 18, foreB: 30, legA: 10, legB: -8});
 export const responders = (t: number): Pose2D[] => {
   const k = ramp(t, T.i11 - 0.1, T.i11 + 1.9, E.out);
-  return [[4.4, 1.5], [5.2, 2.35]].map(([from, to], i) => {
+  return [[4.4, 1.0], [5.2, 2.0]].map(([from, to], i) => {
     const base = pose({x: lerp(from, to, k), lean: 6, head: 8});
     const stride = 1 - ramp(t, T.i11 + 1.5, T.i11 + 1.9);
-    return mix(base, walk(base, t * 2.3 + i * 0.5, 1), stride);
+    const p = mix(base, walk(base, t * 2.3 + i * 0.5, 1), stride);
+    return i === 0 ? mix(p, R_LOWER, ramp(t, T.meter, T.meter + 0.6, E.inOutQuad)) : p;
   });
 };
-
-// ------------------------------------------------------------------ the days before: other crews come and go
-export const crews = (t: number): {p: Pose2D; left: boolean}[] => {
-  const u = t - T.n1;
-  const pass = (start: number, from: number, to: number, work: Partial<Pose2D>, left: boolean) => {
-    const inK = ramp(u, start, start + 1.0, E.inOutQuad);
-    const outK = ramp(u, start + 2.1, start + 3.1, E.inOutQuad);
-    const x = lerp(lerp(from, to, inK), from, outK);
-    const working = Math.min(ramp(u, start + 0.95, start + 1.2), 1 - ramp(u, start + 1.95, start + 2.15));
-    const base = pose({x, ...(working > 0.5 ? work : {})});
-    const moving = 1 - working;
-    const circ = Math.sin(u * 9) * 14;
-    return {p: mix(walk(base, u * 2.1 + start, moving), pose({x, ...work, armA: (work.armA ?? 40) + circ}), working), left: left !== outK > 0.02 && outK < 0.98 ? left : left};
-  };
-  return [
-    pass(0.2, -4.6, -1.15, {lean: 34, head: 20, armA: 58, foreA: 18, armB: 46, foreB: 20}, false),
-    pass(1.6, 4.6, 1.12, {lean: 20, head: 14, armA: 62, foreA: 24, armB: 30, foreB: 30}, true),
-    pass(3.2, -4.6, -1.3, {lean: 10, head: 10, armA: 30, foreA: 50}, false),
-  ];
-};
+/** How far the meter has been let down (0 at the hand, 1 inside the vessel), and whether it is alarming. */
+export const meterAt = (t: number) => ({drop: ramp(t, T.meter + 0.5, T.alarm - 0.15, E.inOutQuad), alarm: t >= T.alarm});
 
 /** Where the hook is: lowered, then scraping around the tape without ever catching it. */
 export const hookTip = (t: number): [number, number] => {

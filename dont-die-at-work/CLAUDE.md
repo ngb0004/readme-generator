@@ -68,6 +68,14 @@ has never seen a refinery, a barge or a grain silo, rewrite it. Background on ho
 works may come from OSHA, NIOSH or CSB reference documents (for 001, OSHA's Technical Manual on
 refining), saved and cited like any other source.
 
+**Practical, not technical.** Nick on cut 3 (2026-11-21): "very technical... but it's not
+practical. It's not explaining why they were doing the things that they were doing and what they
+didn't understand." Steps 5 and 6 of the spine are the heart of the video, not a coda. Say what the
+people believed, what nobody had told them, and the exact thing that turned an ordinary action
+into a fatal one (for 001, his words: "there is a tank that is spewing nitrogen, and it is insanely
+dangerous to have your head anywhere near the opening"). Then say how the viewer avoids it. Give
+the reason behind the rule, not the rule: everyone in the story already knew the rule.
+
 Required sections (enforced by `pipeline/verify.py`). The video opens on `hook` and closes on
 `tribute` then `signoff`; the rest can come in whatever order tells the story best.
 
@@ -89,8 +97,17 @@ had ever gone wrong, and that is exactly why it killed them. Find the facts in t
 why it felt normal (how long it had been that way, what was and was not posted, what everyone else
 was doing), and say what the report could not establish.
 
-Format: YouTube Short, 1080x1920, 30 fps, **up to about 2:30** (Nick lifted the 60 s cap on
-2026-11-21 and asked for the full explanation; YouTube allows Shorts up to 3 minutes). The build fails over the `max_runtime_s` set in
+Nick on the audience (2026-11-21). They are told that everything is dangerous, every month, in
+training videos they click through: "you've watched so many videos, you don't actually know about
+anything", and "nobody understands how dangerous it is until it goes south and somebody dies". The
+channel is that death, told well enough to stick, for people who were not there. He calls the aim
+risk management: the job is risk, so a video cannot say "avoid risk"; it shows which part of the
+job is the part that kills. And it is "for the masses": "something that somebody completely
+outside of this genre would understand and find interesting."
+
+Format: YouTube Short, 1080x1920, 30 fps, **under 3:00**, which is YouTube's limit for a Short
+(Nick lifted the 60 s cap on 2026-11-21 and asked for the full explanation). Cut 4 of 001 runs
+2:52; treat that as the ceiling, not the target. The build fails over the `max_runtime_s` set in
 the video's `script.json`. Narrate at a natural pace: cut 1 was sped up to 186 words a minute to
 fit eight sections under 60 s, and it showed.
 
@@ -113,14 +130,17 @@ viewer what the people in the story cannot see, then let them carry on.
 - Measure it: average view duration and percentage viewed are the scores.
 - Keep learning: add findings here **with their source**. Unsourced tips do not go in.
 
-How video 001 (cut 2) applies it: the hook promises two deaths and a killer you are breathing; the
-viewer is shown the gas in the first five seconds and the men are not; the gas is drawn, then
-switched off on "it stops looking dangerous"; a new picture every two to three seconds.
+How video 001 (cut 4) applies it: the hook promises two deaths and a killer you are breathing; the
+viewer is shown the gas leaking out of the open hole and the men are not; each stretch of the
+middle adds one thing the men had not been told (no sign, the permit, the training, why you cannot
+hold your breath); a new picture every two to three seconds.
 
 ## Daily loop
 
 1. **Research and pick.** Dig through the approved sources and commit to the most shocking,
-   well-documented incident. No pitch list, no approval step.
+   well-documented incident. No pitch list, no approval step. Prefer reports that print the human
+   reasons (what the crew discussed, what the permit said, who saw what): CSB investigations and
+   NIOSH FACE reports do; a bare OSHA citation rarely does.
 2. **Script** from the report, under the hard rules, into `script.json`.
 3. **Verify.** `pipeline/verify.py`. Any unsourced claim fails the build.
 4. **Produce.** Voice, animation, captions, sound, thumbnail.
@@ -226,6 +246,14 @@ tool (needs Nick's approval).
   report, and make the call yourself. Do not bolt each suggestion on.
 - **Decide and show.** He responds to a finished cut far better than to questions. Do not ask him
   to approve details; build it on your own judgment and let him react.
+- **He is in the field; you are not.** He was an engineer and now works as a mechanic. When he
+  describes how crews behave, that is evidence, not a claim to balance. On 2026-11-21 I guessed
+  that training videos get skipped because they talk down, and softened his point about education;
+  he corrected both ("they don't talk down... people don't care"). Push back with the report, not
+  with guesses or politeness.
+- **When the talking has done its job, build.** The same night, after a long conversation: "we're
+  getting into the weeds... I believe that you are capable of creating a good video." (I read that
+  as the go-ahead for cut 4; that reading is mine.)
 - **Rules are not a substitute for thinking.** Cut 1 met every rule and was shallow. If the rules
   are producing a bad video, say so before building, not after.
 - His bar for the picture is "top echelon", not "decent". A cut that merely works is not done.

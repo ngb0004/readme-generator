@@ -2,8 +2,8 @@
   "id": "001-valero-nitrogen-duct-tape",
   "title": "Both of These Men Are About to Die",
   "format": "short",
-  "max_runtime_s": 160,
-  "tested_variable": "baseline (cut 2: hook, line and sinker; cut 1 was rejected in review)",
+  "max_runtime_s": 175,
+  "tested_variable": "baseline (cut 4: the practical story; cuts 1-3 were not published)",
   "composition": "V001",
   "thumbnail": {
     "lines": [
@@ -92,7 +92,7 @@
       "id": "hook-3",
       "section": "hook",
       "narration": "What kills them has already killed eighty people at work. And you're breathing it right now.",
-      "gap_after": 0.45,
+      "gap_after": 0.4,
       "onscreen": [
         "80",
         "KILLED AT WORK",
@@ -249,7 +249,7 @@
       "id": "mach-4",
       "section": "mechanism",
       "narration": "But the fresh batch can't touch oxygen. So the tank is pumped full of nitrogen, on purpose, and kept that way until the hatch on top is bolted shut.",
-      "gap_after": 0.45,
+      "gap_after": 0.35,
       "onscreen": [
         "CAN'T TOUCH OXYGEN",
         "NITROGEN IN",
@@ -360,103 +360,14 @@
       ]
     },
     {
-      "id": "norm-1",
-      "section": "mechanism",
-      "narration": "The gas has been flowing for days. Crews have been working around that open hatch. The only warning is a strip of red tape.",
-      "gap_after": 0.35,
-      "onscreen": [
-        "FLOWING FOR DAYS",
-        "THE ONLY WARNING"
-      ],
-      "claims": [
-        {
-          "claim": "The purge started days earlier.",
-          "src": "case",
-          "page": 2,
-          "quote": "A few days before the incident, Matrix installed a temporary nitrogen supply system"
-        },
-        {
-          "claim": "It kept running until the night of the incident.",
-          "src": "case",
-          "page": 2,
-          "quote": "until emergency responders closed the nitrogen supply valve the night of the incident"
-        },
-        {
-          "claim": "Other crews had been working at the open manway.",
-          "src": "case",
-          "page": 2,
-          "quote": "placed a temporary plastic tarp and wooden cover over the open manway"
-        },
-        {
-          "claim": "A foreman wrapped tape round the studs hours before.",
-          "src": "case",
-          "page": 2,
-          "quote": "About five hours before the incident, a CHSC foreman wrapped red"
-        },
-        {
-          "claim": "Set-up permits typically carried no air monitoring.",
-          "src": "case",
-          "page": 7,
-          "quote": "operators do not typically specify"
-        },
-        {
-          "claim": "Neither crew's permit specified the fresh-air precaution.",
-          "src": "case",
-          "page": 12,
-          "quote": "did not specify this precaution on either the boilermaker crew"
-        },
-        {
-          "claim": "Fresh-air areas require continuous air monitoring.",
-          "src": "case",
-          "page": 12,
-          "quote": "continuous air monitoring in all fresh-air designated work areas"
-        },
-        {
-          "claim": "The red tape was the only warning.",
-          "src": "case",
-          "page": 14,
-          "quote": "the red tape was the only warning on the manway"
-        }
-      ]
-    },
-    {
-      "id": "norm-2",
-      "section": "mechanism",
-      "narration": "When something has never hurt you, it stops looking dangerous.",
-      "gap_after": 0.5,
-      "onscreen": [],
-      "claims": [
-        {
-          "claim": "The hazard outside the opening is not broadly recognised by workers.",
-          "src": "case",
-          "page": 10,
-          "quote": "is not broadly recognized to be a hazard to workers"
-        },
-        {
-          "claim": "People are caught off guard by it.",
-          "src": "bulletin",
-          "page": 4,
-          "quote": "hazard of asphyxiation was not expected and personnel were typically caught off guard"
-        },
-        {
-          "claim": "These were experienced men.",
-          "src": "case",
-          "page": 10,
-          "quote": "The first victim had nearly ten years experience working in refineries; the second had more than 25"
-        }
-      ]
-    },
-    {
       "id": "inc-1",
       "section": "incident",
-      "narration": "That's tonight's job for these two: bolt the lid back on. And management wants it done before the shift ends.",
+      "narration": "That's tonight's job for these two: bolt the lid back on.",
       "gap_after": 0.3,
       "onscreen": [
         "NOV 5, 2005",
         "DELAWARE CITY, DE",
-        "NIGHT SHIFT",
-        "THE LID",
-        "SEALED BEFORE END OF SHIFT"
+        "THE LID"
       ],
       "claims": [
         {
@@ -478,12 +389,6 @@
           "quote": "reinstalling the stud nuts and washers"
         },
         {
-          "claim": "Management wanted it sealed before the end of the night shift.",
-          "src": "case",
-          "page": 8,
-          "quote": "management wanted the pipe installation work completed and the reactor sealed before the end of the night shift"
-        },
-        {
           "claim": "Date.",
           "src": "case",
           "page": 2,
@@ -494,6 +399,121 @@
           "src": "case",
           "page": 2,
           "quote": "refinery in Delaware City, Delaware"
+        }
+      ]
+    },
+    {
+      "id": "out-1",
+      "section": "mechanism",
+      "narration": "But until that lid is on, the gas keeps leaking out of the open hole. Lean over it, and that's what you could be breathing.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "LEAKING OUT"
+      ],
+      "claims": [
+        {
+          "claim": "The nitrogen was needed until the reactor was resealed.",
+          "src": "case",
+          "page": 2,
+          "quote": "until the reactor was resealed"
+        },
+        {
+          "claim": "It flowed out of the reactor through the open top manway.",
+          "src": "case",
+          "page": 2,
+          "quote": "The nitrogen flowed slowly out of the reactor through the"
+        },
+        {
+          "claim": "The purge vented straight onto the work platform.",
+          "src": "case",
+          "page": 12,
+          "quote": "the reactor was on a nitrogen purge that vented directly onto the work platform area"
+        },
+        {
+          "claim": "Outside, near the opening, the air could be unsafe.",
+          "src": "case",
+          "page": 2,
+          "quote": "an oxygen-depleted, hazardous atmosphere might be present outside the equipment near unsealed equipment openings"
+        },
+        {
+          "claim": "Above the opening he could have been breathing oxygen-deficient air.",
+          "src": "case",
+          "page": 9,
+          "quote": "the first victim could have been exposed to an oxygen-deficient atmosphere above the opening"
+        }
+      ]
+    },
+    {
+      "id": "flag-1",
+      "section": "mechanism",
+      "narration": "And nothing warns them. No sign. No barrier. Their work permit says nitrogen: not applicable.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "NO SIGN",
+        "NO BARRIER",
+        "NITROGEN PURGE:",
+        "N/A"
+      ],
+      "claims": [
+        {
+          "claim": "No nitrogen warning sign or barricade was in place, contrary to site procedure.",
+          "src": "case",
+          "page": 2,
+          "quote": "contrary to the Valero refinery safety procedures, a nitrogen purge warning sign and barricade were not in place in the work area"
+        },
+        {
+          "claim": "No warning sign was on the manway at the time.",
+          "src": "case",
+          "page": 14,
+          "quote": "no warning sign was in place at the time of the incident"
+        },
+        {
+          "claim": "Their permit marked the nitrogen purge N/A.",
+          "src": "case",
+          "page": 3,
+          "quote": "the nitrogen purge status was marked \"N/A\" on the permit even though the reactor continued to be purged with nitrogen"
+        },
+        {
+          "claim": "Their permit did not tell them the reactor was on nitrogen purge.",
+          "src": "case",
+          "page": 7,
+          "quote": "safe work permit did not inform them that the reactor was on nitrogen purge"
+        }
+      ]
+    },
+    {
+      "id": "train-1",
+      "section": "mechanism",
+      "narration": "Their training covered going inside a tank. Never the air right outside one.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "COVERED IN TRAINING",
+        "NEVER COVERED"
+      ],
+      "claims": [
+        {
+          "claim": "Training covered the nitrogen hazard inside a confined space.",
+          "src": "case",
+          "page": 10,
+          "quote": "hazard awareness and confined space training that addressed the confined space nitrogen asphyxiation hazard"
+        },
+        {
+          "claim": "Workers told investigators their training did not cover the air outside the opening.",
+          "src": "case",
+          "page": 10,
+          "quote": "stated that their training did not address the possibility that an"
+        },
+        {
+          "claim": "...outside the confined space, near the access opening.",
+          "src": "case",
+          "page": 10,
+          "quote": "atmosphere might be present outside the confined space near the access opening"
+        },
+        {
+          "claim": "The risk outside the space is not broadly recognised.",
+          "src": "case",
+          "page": 10,
+          "quote": "is not broadly recognized to be a hazard to workers"
         }
       ]
     },
@@ -531,14 +551,14 @@
     {
       "id": "inc-3",
       "section": "incident",
-      "narration": "The safe way means a permit and a delay. So they bend a wire into a hook, and go fishing.",
+      "narration": "Going inside means a permit, a special crew, and a delay. So they stay outside, bend a wire into a hook, and go fishing.",
       "gap_after": 0.4,
       "onscreen": [
-        "THE SAFE WAY",
+        "GOING INSIDE",
         "ENTRY PERMIT",
         "TRAINED CREW",
         "DELAY",
-        "THE FAST WAY"
+        "STAY OUTSIDE"
       ],
       "claims": [
         {
@@ -554,10 +574,16 @@
           "quote": "which would delay their work, possibly beyond the end of their work shift"
         },
         {
-          "claim": "They made a wire hook instead.",
+          "claim": "They made a wire hook instead of entering.",
           "src": "case",
           "page": 4,
-          "quote": "they decided to make a long wire hook"
+          "quote": "Instead, they decided to make a long wire hook"
+        },
+        {
+          "claim": "They knew a permit was required to enter, and discussed it.",
+          "src": "case",
+          "page": 13,
+          "quote": "knew a confined space entry safe work permit would be required if they could not retrieve the tape with the wire hook"
         }
       ]
     },
@@ -586,10 +612,9 @@
       "id": "inc-5",
       "section": "incident",
       "narration": "So, investigators believe, he sits on the edge of the hole, and puts his legs in.",
-      "gap_after": 0.45,
+      "gap_after": 0.3,
       "onscreen": [
-        "CSB: MOST LIKELY",
-        "NITROGEN MAY HAVE POOLED HERE"
+        "CSB: MOST LIKELY"
       ],
       "claims": [
         {
@@ -603,12 +628,35 @@
           "src": "case",
           "page": 8,
           "quote": "sat down, and dangled his legs inside the reactor"
-        },
+        }
+      ]
+    },
+    {
+      "id": "calm-1",
+      "section": "incident",
+      "narration": "The air is dead still. The gas may be sitting right around his head.",
+      "gap_after": 0.45,
+      "onscreen": [
+        "NITROGEN MAY HAVE POOLED HERE"
+      ],
+      "claims": [
         {
-          "claim": "Nitrogen may have collected above the opening in calm air.",
+          "claim": "Calm air: the nitrogen may have collected above the opening.",
           "src": "case",
           "page": 9,
           "quote": "the air was very calm, so the nitrogen purge gas may have accumulated above the manway"
+        },
+        {
+          "claim": "Sitting there he could have been breathing oxygen-deficient air.",
+          "src": "case",
+          "page": 9,
+          "quote": "the first victim could have been exposed to an oxygen-deficient atmosphere above the opening"
+        },
+        {
+          "claim": "He could have passed out without warning and slid in (one of two scenarios).",
+          "src": "case",
+          "page": 9,
+          "quote": "he could have become disoriented or lost consciousness from oxygen deprivation"
         }
       ]
     },
@@ -674,7 +722,7 @@
       "id": "stop-1",
       "section": "stoppable_moment",
       "narration": "Everything he's been trained to do says: stay out.",
-      "gap_after": 0.5,
+      "gap_after": 0.4,
       "onscreen": [
         "THE MOMENT IT COULD'VE BEEN STOPPED",
         "STAY OUT."
@@ -685,6 +733,68 @@
           "src": "case",
           "page": 10,
           "quote": "Had the foreman applied his emergency response training, he would have immediately announced the emergency on the radio and remained on the platform, safely away from the manway until qualified emergency response personnel arrived"
+        }
+      ]
+    },
+    {
+      "id": "breath-1",
+      "section": "stoppable_moment",
+      "narration": "Investigators suspect he thought he could hold his breath, like underwater.",
+      "gap_after": 0.3,
+      "onscreen": [
+        "HOLD YOUR BREATH?",
+        "INVESTIGATORS SUSPECT"
+      ],
+      "claims": [
+        {
+          "claim": "CSB: the rescue attempt suggests workers may believe they can hold their breath.",
+          "src": "case",
+          "page": 11,
+          "quote": "suggest that some workers may believe that they can hold their breath long enough to enter an"
+        },
+        {
+          "claim": "The comparison with swimming underwater is the report's.",
+          "src": "case",
+          "page": 11,
+          "quote": "similarly to their ability to hold their breath when they swim underwater"
+        }
+      ]
+    },
+    {
+      "id": "breath-2",
+      "section": "mechanism",
+      "narration": "But water makes you fight. Nitrogen feels like air. You just breathe.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "WATER",
+        "YOU FIGHT IT",
+        "NITROGEN",
+        "YOU JUST BREATHE"
+      ],
+      "claims": [
+        {
+          "claim": "Inhaling water makes a swimmer cough: a stimulus to resist breathing.",
+          "src": "case",
+          "page": 11,
+          "quote": "inhaling water causes sudden, uncontrollable coughing"
+        },
+        {
+          "claim": "That stimulus helps a swimmer hold on.",
+          "src": "case",
+          "page": 11,
+          "quote": "This is a powerful stimulus that helps a swimmer resist the body"
+        },
+        {
+          "claim": "Nitrogen gives no such stimulus.",
+          "src": "case",
+          "page": 11,
+          "quote": "provides no stimulus to voluntarily resist the breathing reflex"
+        },
+        {
+          "claim": "In an emergency a person is extremely unlikely to hold their breath.",
+          "src": "case",
+          "page": 11,
+          "quote": "it is extremely unlikely that a person would hold their breath"
         }
       ]
     },
@@ -739,14 +849,12 @@
     {
       "id": "inc-11",
       "section": "incident",
-      "narration": "Rescuers arrive in under two minutes. Getting two men out through a twenty-four inch hole takes nearly ten.",
+      "narration": "Rescuers arrive in under two minutes. They lower an oxygen meter into the hole. It alarms at once: almost no oxygen.",
       "gap_after": 0.45,
       "onscreen": [
         "RESCUERS ARRIVE",
         "UNDER 2 MIN",
-        "24 IN",
-        "NEARLY 10 MIN",
-        "WITHOUT OXYGEN"
+        "OXYGEN: NEAR ZERO"
       ],
       "claims": [
         {
@@ -756,16 +864,16 @@
           "quote": "arrived on the platform in less than two minutes"
         },
         {
-          "claim": "The 24-inch opening made recovery very difficult.",
+          "claim": "They put an oxygen meter through the manway.",
           "src": "case",
-          "page": 5,
-          "quote": "Because the manway opening was only 24 inches and the victims were not wearing safety harnesses, recovering them from the reactor was very difficult"
+          "page": 4,
+          "quote": "They inserted an oxygen meter"
         },
         {
-          "claim": "They were without adequate oxygen for nearly ten minutes.",
+          "claim": "It alarmed immediately: oxygen near zero.",
           "src": "case",
           "page": 5,
-          "quote": "the two victims were deprived of adequate oxygen for nearly ten minutes"
+          "quote": "through the manway and it immediately alarmed—the oxygen concentration was near zero"
         },
         {
           "claim": "Responders used breathing apparatus.",
@@ -779,65 +887,100 @@
       "id": "inc-12",
       "section": "incident",
       "narration": "Both men were pronounced dead.",
-      "gap_after": 0.75,
-      "onscreen": [],
+      "gap_after": 0.65,
+      "onscreen": [
+        "NEARLY 10 MIN",
+        "WITHOUT OXYGEN"
+      ],
       "claims": [
         {
           "claim": "Both were pronounced dead.",
           "src": "case",
           "page": 5,
           "quote": "transported to the hospital where they were pronounced dead"
+        },
+        {
+          "claim": "They were without adequate oxygen for nearly ten minutes.",
+          "src": "case",
+          "page": 5,
+          "quote": "the two victims were deprived of adequate oxygen for nearly ten minutes"
+        },
+        {
+          "claim": "Recovery through the opening was very difficult.",
+          "src": "case",
+          "page": 5,
+          "quote": "recovering them from the reactor was very difficult"
         }
       ]
     },
     {
-      "id": "lesson-1",
+      "id": "after-1",
       "section": "lesson",
-      "narration": "Investigators never found out whether either man even knew the nitrogen was on.",
-      "gap_after": 0.5,
+      "narration": "Afterwards, a warning sign went up at that hatch. The refinery's own rules had required one all along.",
+      "gap_after": 0.35,
       "onscreen": [
-        "NITROGEN PURGE:",
-        "N/A"
+        "PUT UP AFTER",
+        "REQUIRED BEFORE"
       ],
       "claims": [
         {
-          "claim": "CSB could not determine whether the victims knew of the purge.",
+          "claim": "A warning sign was on the manway after the incident.",
           "src": "case",
-          "page": 13,
-          "quote": "there was insufficient evidence for CSB to determine if the two victims had direct knowledge of the nitrogen purge"
+          "page": 14,
+          "quote": "Confined space warning sign on the unsecured reactor manway after the incident"
         },
         {
-          "claim": "Their permit marked the nitrogen purge N/A.",
+          "claim": "A nitrogen-purge barricade and warning were installed on the platform after the incident.",
           "src": "case",
-          "page": 3,
-          "quote": "the nitrogen purge status was marked \"N/A\" on the permit even though the reactor continued to be purged with nitrogen"
+          "page": 12,
+          "quote": "Nitrogen-purge controlled area barricade and warning installed on the R1 platform after the incident"
+        },
+        {
+          "claim": "Site procedure required a barricade and warning signs at access points...",
+          "src": "case",
+          "page": 12,
+          "quote": "The procedures required operators to install a barricade and post warning signs at all equipment access points"
+        },
+        {
+          "claim": "...before the purge was started.",
+          "src": "case",
+          "page": 12,
+          "quote": "before the nitrogen purge was started"
+        },
+        {
+          "claim": "They were not used at this manway that night.",
+          "src": "case",
+          "page": 12,
+          "quote": "The barricade and control log were not used at the R1 manway the night of the incident"
         }
       ]
     },
     {
       "id": "lesson-2",
       "section": "lesson",
-      "narration": "Most shortcuts cost you nothing. That's what makes the one that kills you look just like the rest.",
-      "gap_after": 0.5,
-      "onscreen": [],
+      "narration": "You don't have to climb inside a tank for it to kill you.",
+      "gap_after": 0.4,
+      "onscreen": [
+        "THE DANGER IS OUTSIDE TOO"
+      ],
       "claims": [
         {
-          "claim": "The shortcut was chosen to avoid a delay.",
+          "claim": "CSB: hazardous atmospheres may be present outside the space, near openings.",
           "src": "case",
-          "page": 4,
-          "quote": "which would delay their work, possibly beyond the end of their work shift"
+          "page": 13,
+          "quote": "atmospheres may be present outside the confined space, near openings"
         },
         {
-          "claim": "At this site, skipping protection for set-up work was typical.",
+          "claim": "CSB recommendation: training must say so.",
           "src": "case",
-          "page": 7,
-          "quote": "operators do not typically specify"
+          "page": 17,
+          "quote": "An oxygen-deficient atmosphere might exist outside a confined space opening"
         },
         {
-          "claim": "People are caught off guard by this hazard.",
-          "src": "bulletin",
-          "page": 4,
-          "quote": "hazard of asphyxiation was not expected and personnel were typically caught off guard"
+          "claim": "CSB lesson: barriers and warnings round open purge vents.",
+          "src": "case",
+          "page": 16,
+          "quote": "Barriers and warnings should be maintained around open purge vents at all times during purging activities"
         }
       ]
     },
@@ -845,7 +988,7 @@
       "id": "lesson-3",
       "section": "lesson",
       "narration": "If someone goes down in a tank, you do not go in after them. You call it in.",
-      "gap_after": 0.55,
+      "gap_after": 0.5,
       "onscreen": [
         "DO NOT GO IN",
         "CALL IT IN",

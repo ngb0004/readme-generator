@@ -192,9 +192,9 @@ export const SafeWay: React.FC<{t: number}> = ({t}) => {
   const d = pop(t, T.delay - 0.05);
   return (
     <div style={{position: 'absolute', inset: 0, opacity: a}}>
-      <div style={{position: 'absolute', left: 0, top: 330, width: W, textAlign: 'center', fontFamily: FONT.mono, fontWeight: 700, fontSize: 38, letterSpacing: '0.2em', color: C.mute}}>{os('inc-3', 0)}</div>
+      <div style={{position: 'absolute', left: 0, top: 286, width: W, textAlign: 'center', fontFamily: FONT.display, fontSize: 92, lineHeight: 1, color: C.white, WebkitTextStroke: '8px #04060a', paintOrder: 'stroke fill'}}>{os('inc-3', 0)}</div>
       {row(os('inc-3', 1), word('inc-3', 'permit') - 0.1, 420)}
-      {row(os('inc-3', 2), word('inc-3', 'permit') + 0.12, 540)}
+      {row(os('inc-3', 2), T.crew, 540)}
       <div style={{position: 'absolute', left: 0, top: 680, width: W, textAlign: 'center', fontFamily: FONT.display, fontSize: 250, color: C.red, transform: `scale(${0.7 + 0.3 * d})`, opacity: t >= T.delay - 0.05 ? Math.min(1, d * 2) : 0, ...stroke(12)}}>= {os('inc-3', 3)}</div>
     </div>
   );
@@ -221,14 +221,18 @@ export const Dead: React.FC<{t: number}> = ({t}) => {
         <Pictogram v={v} p={pose({x: 0.5, y: 0.905})} look={LOOKS.B} faceLeft dead={gone * 0.92} glow={gone < 0.5} />
         <line x1={200} y1={1184} x2={880} y2={1184} stroke="#2b3a52" strokeWidth={4} />
       </svg>
+      <div style={{position: 'absolute', left: 0, top: 300, width: W, textAlign: 'center', opacity: ramp(t, T.i12 + 0.25, T.i12 + 0.6)}}>
+        <div style={{fontFamily: FONT.display, fontSize: 150, lineHeight: 1, color: C.red}}>{os('inc-12', 0)}</div>
+        <div style={{fontFamily: FONT.mono, fontWeight: 700, fontSize: 34, letterSpacing: '0.2em', color: C.white, marginTop: 14}}>{os('inc-12', 1)}</div>
+      </div>
     </div>
   );
 };
 
-// ---------------------------------------------------------------- did they even know?
+// ---------------------------------------------------------------- their work permit: nitrogen, not applicable
 export const PermitCard: React.FC<{t: number}> = ({t}) => {
-  const inK = clamp(spring(t - T.l1, 2.6, 0.7), 0, 1.1);
-  const circle = ramp(t, word('lesson-1', 'knew') - 0.1, word('lesson-1', 'knew') + 0.45, E.inOutQuad);
+  const inK = clamp(spring(t - T.permit, 2.6, 0.7), 0, 1.1);
+  const circle = ramp(t, T.na - 0.05, T.na + 0.45, E.inOutQuad);
   const box = (label: string, checked: boolean) => (
     <div style={{display: 'flex', alignItems: 'center', gap: 14}}>
       <div style={{width: 56, height: 56, border: '5px solid #1b1d22', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONT.display, fontSize: 52, color: '#1b1d22', lineHeight: 1}}>{checked ? '✕' : ''}</div>
@@ -245,11 +249,11 @@ export const PermitCard: React.FC<{t: number}> = ({t}) => {
             <div key={w} style={{height: 18, width: w, background: '#c9c2ad', borderRadius: 3, marginTop: 26}} />
           ))}
           <div style={{marginTop: 36, borderTop: '4px solid #1b1d22', paddingTop: 28}}>
-            <div style={{fontFamily: FONT.label, fontWeight: 700, fontSize: 60, color: '#1b1d22', letterSpacing: '0.02em'}}>{os('lesson-1', 0)}</div>
+            <div style={{fontFamily: FONT.label, fontWeight: 700, fontSize: 60, color: '#1b1d22', letterSpacing: '0.02em'}}>{os('flag-1', 2)}</div>
             <div style={{display: 'flex', gap: 62, marginTop: 26, position: 'relative'}}>
               {box('YES', false)}
               {box('NO', false)}
-              {box(os('lesson-1', 1), true)}
+              {box(os('flag-1', 3), true)}
               <svg width={320} height={150} style={{position: 'absolute', left: 470, top: -46, overflow: 'visible'}}>
                 <ellipse cx={136} cy={74} rx={146} ry={62} fill="none" stroke={C.red} strokeWidth={10} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - circle} transform="rotate(-5 136 74)" />
               </svg>
@@ -257,49 +261,80 @@ export const PermitCard: React.FC<{t: number}> = ({t}) => {
           </div>
         </div>
       </div>
-      <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: ramp(t, T.l1 + 0.6, T.l1 + 1.0)}}>
-        <Pictogram v={v} p={pose({x: -0.55, y: 0.905})} look={LOOKS.A} dead={0.55} />
-        <Pictogram v={v} p={pose({x: 0.55, y: 0.905})} look={LOOKS.B} faceLeft dead={0.55} />
+      <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, opacity: ramp(t, T.permit + 0.5, T.permit + 0.9)}}>
+        <Pictogram v={v} p={pose({x: -0.55, y: 0.905, head: -8})} look={LOOKS.A} glow />
+        <Pictogram v={v} p={pose({x: 0.55, y: 0.905, head: -8})} look={LOOKS.B} faceLeft />
       </svg>
     </Sheet>
   );
 };
 
-// ---------------------------------------------------------------- the one that kills you looks just like the rest
-export const Hatches: React.FC<{t: number}> = ({t}) => {
-  const n = 5;
-  const lethal = 3;
-  const reveal = win(t, T.theOne, word('lesson-2', 'look') + 0.1, 0.12, 0.35);
+// ---------------------------------------------------------------- you cannot hold your breath in it
+export const BreathHold: React.FC<{t: number}> = ({t}) => {
+  const L = {x: 70, y: 452, w: 452, h: 600};
+  const R = {x: 558, y: 452, w: 452, h: 600};
+  const view = (b: typeof L): View => ({cx: b.x + b.w / 2, cy: b.y + b.h - 26, s: 286});
+  const water = ramp(t, T.under - 0.25, T.under + 0.75, E.out); // the water comes up over his head
+  const fight = win(t, T.fight - 0.15, T.feels + 0.2, 0.2, 0.4);
+  const gas = ramp(t, T.feels - 0.1, T.feels + 0.5, E.out);
+  const fall = ramp(t, T.justBreathe + 0.4, T.justBreathe + 0.95, E.in);
+  const lit = (k: number) => 0.38 + 0.62 * k;
+  const shake = Math.sin(t * 34) * 2.4 * fight;
+  const held = pose({x: 0, y: 0.905, lean: 2 + shake, head: -8 - fight * 6, armA: 8 + fight * 46, foreA: 8 + fight * 104, armB: -8 + fight * 34, foreB: 6 + fight * 96});
+  const breathe = Math.sin((t - T.feels) * 4.2);
+  const easy = mix(pose({x: 0, y: 0.905, lean: 2 + breathe * 0.9 * gas, head: -3}), pose({x: 0.12, y: 0.16, rot: 88, lean: 0, head: 10, armA: 30, foreA: 20, legA: 14, shinA: -20}), fall);
+  const top = L.y + L.h - (L.h - 22) * water;
+  const wave = (x: number) => Math.sin(x * 0.045 + t * 3) * 6;
+  const verdict = (text: string, at: number, b: typeof L, color: string) => {
+    const k = pop(t, at);
+    return <div style={{position: 'absolute', left: b.x, top: b.y + b.h + 26, width: b.w, textAlign: 'center', fontFamily: FONT.display, fontSize: 66, lineHeight: 1, color, whiteSpace: 'nowrap', transform: `scale(${0.75 + 0.25 * k})`, opacity: t >= at ? Math.min(1, k * 2) : 0, ...stroke(6)}}>{text}</div>;
+  };
+  const name = (text: string, b: typeof L, color: string, a: number) => (
+    <div style={{position: 'absolute', left: b.x + 22, top: b.y + 18, fontFamily: FONT.mono, fontWeight: 700, fontSize: 30, letterSpacing: '0.16em', color, opacity: a}}>{text}</div>
+  );
+  const title = pop(t, T.hold);
   return (
     <Sheet>
+      <div style={{position: 'absolute', left: 0, top: 232, width: W, textAlign: 'center', fontFamily: FONT.mono, fontWeight: 700, fontSize: 36, letterSpacing: '0.18em', color: C.yellow, opacity: ramp(t, T.br1 + 0.15, T.br1 + 0.5)}}>{os('breath-1', 1)}</div>
+      <div style={{position: 'absolute', left: 0, top: 284, width: W, textAlign: 'center', fontFamily: FONT.display, fontSize: 128, lineHeight: 1, color: C.white, transform: `scale(${0.75 + 0.25 * title})`, opacity: t >= T.hold ? Math.min(1, title * 2) : 0, ...stroke(8)}}>{os('breath-1', 0)}</div>
       <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
-        {Array.from({length: n}, (_, i) => {
-          const cx = i < 3 ? 210 + i * 330 : 375 + (i - 3) * 330;
-          const cy = i < 3 ? 520 : 890;
-          const born = T.l2 + 0.1 + i * 0.12;
-          const k = clamp(spring(t - born, 4, 0.6), 0, 1.1);
-          const ok = t >= word('lesson-2', 'cost') + i * 0.13 && i !== lethal;
-          const hot = i === lethal ? reveal : 0;
-          return (
-            <g key={i} transform={`translate(${cx} ${cy}) scale(${k * 1.55})`}>
-              {hot > 0 ? <circle r={150} fill={C.cyan} opacity={0.25 * hot} filter="url(#softH)" /> : null}
-              {/* an open hatch, seen from above: a ring of studs round a hole */}
-              <circle r={78} fill="#1d2b40" stroke={hot > 0.3 ? C.red : '#8db1e6'} strokeWidth={5} />
-              <circle r={38} fill={hot > 0.3 ? '#0f5f7a' : '#05080f'} stroke="#4b648c" strokeWidth={3} />
-              {Array.from({length: 12}, (_, j) => (
-                <circle key={j} cx={Math.sin((j / 12) * 6.283) * 60} cy={Math.cos((j / 12) * 6.283) * 60} r={7} fill="#51688d" />
-              ))}
-              {ok ? <path d="M -30 122 l 20 22 l 42 -46" fill="none" stroke="#7ee08a" strokeWidth={12} strokeLinecap="round" strokeLinejoin="round" /> : null}
-              {hot > 0.3 ? <path d="M -26 108 l 52 52 M 26 108 l -52 52" stroke={C.red} strokeWidth={13} strokeLinecap="round" /> : null}
-            </g>
-          );
-        })}
         <defs>
-          <filter id="softH" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="22" />
-          </filter>
+          <clipPath id="tankL"><rect x={L.x} y={L.y} width={L.w} height={L.h} rx={18} /></clipPath>
+          <clipPath id="tankR"><rect x={R.x} y={R.y} width={R.w} height={R.h} rx={18} /></clipPath>
         </defs>
+        {/* water: you know you are in it, and you fight to keep it out */}
+        <g clipPath="url(#tankL)">
+          <rect x={L.x} y={L.y} width={L.w} height={L.h} fill="rgba(13,22,38,0.9)" />
+          <Pictogram v={view(L)} p={held} look={LOOKS.B} />
+          {water > 0.01 ? (
+            <path d={`M ${L.x} ${L.y + L.h} L ${L.x} ${top + wave(L.x)} ${Array.from({length: 16}, (_, i) => `L ${L.x + ((i + 1) * L.w) / 16} ${top + wave(L.x + ((i + 1) * L.w) / 16)}`).join(' ')} L ${L.x + L.w} ${L.y + L.h} Z`} fill="rgba(52,120,235,0.5)" stroke="#8fc0ff" strokeWidth={4} />
+          ) : null}
+          {Array.from({length: 14}, (_, i) => {
+            const k = (rnd(i * 3.3) + t * (0.5 + rnd(i * 5.1) * 0.5)) % 1;
+            const x = L.x + L.w / 2 + 16 + (rnd(i * 7.7) - 0.5) * 70 + Math.sin(t * 5 + i) * 8;
+            const y = L.y + 150 - k * 130;
+            return y > top ? <circle key={i} cx={x} cy={y} r={5 + rnd(i * 9.1) * 8} fill="none" stroke="#d6e8ff" strokeWidth={3} opacity={fight * Math.sin(k * Math.PI)} /> : null;
+          })}
+        </g>
+        <rect x={L.x} y={L.y} width={L.w} height={L.h} rx={18} fill="none" stroke="#8db1e6" strokeWidth={4} />
+        {/* nitrogen: it feels like air, so you just breathe it */}
+        <g clipPath="url(#tankR)" opacity={lit(gas)}>
+          <rect x={R.x} y={R.y} width={R.w} height={R.h} fill="rgba(13,22,38,0.9)" />
+          <rect x={R.x} y={R.y} width={R.w} height={R.h} fill={C.cyan} opacity={0.13 * gas} />
+          {Array.from({length: 46}, (_, i) => {
+            const k = (rnd(i * 2.9) + t * (0.16 + rnd(i * 5.3) * 0.14)) % 1;
+            const x = R.x + 20 + rnd(i * 4.1) * (R.w - 40) + noise(t * 0.7 + i, i) * 22;
+            const y = R.y + R.h - 10 - k * (R.h - 20);
+            return <circle key={i} cx={x} cy={y} r={9} fill={C.cyan} opacity={gas * Math.sin(k * Math.PI) * 0.85} />;
+          })}
+          <Pictogram v={view(R)} p={easy} look={LOOKS.B} dead={fall * 0.7} />
+        </g>
+        <rect x={R.x} y={R.y} width={R.w} height={R.h} rx={18} fill="none" stroke={gas > 0.5 ? C.cyan : '#4b648c'} strokeWidth={4} />
       </svg>
+      {name(os('breath-2', 0), L, '#8fc0ff', ramp(t, T.under - 0.2, T.under + 0.2))}
+      {name(os('breath-2', 2), R, C.cyan, gas)}
+      {verdict(os('breath-2', 1), T.fight, L, C.white)}
+      {verdict(os('breath-2', 3), T.justBreathe, R, C.red)}
     </Sheet>
   );
 };

@@ -124,8 +124,9 @@ export const Backdrop: React.FC<{w: number; h: number; v: View; time: number; da
  *   level  how visible the drawing of it is
  *   fill   how full the vessel is, 0..1 (for "pumped full")
  *   cloud  how much hangs over the open manway
+ *   spill  how hard the drawing shows it coming out of the hole and across the platform
  */
-export const Nitrogen: React.FC<{v: View; time: number; level: number; fill?: number; cloud?: number; part?: 'body' | 'wisps' | 'cloud'}> = ({v, time, level, fill = 1, cloud = 1, part = 'body'}) => {
+export const Nitrogen: React.FC<{v: View; time: number; level: number; fill?: number; cloud?: number; spill?: number; part?: 'body' | 'wisps' | 'cloud'}> = ({v, time, level, fill = 1, cloud = 1, spill = 0, part = 'body'}) => {
   if (level <= 0.003) return null;
   const top = lerp(TRAY_Y + 0.05, 0, fill);
   const body = cavity(TRAY_Y + 0.02, top);
@@ -144,6 +145,17 @@ export const Nitrogen: React.FC<{v: View; time: number; level: number; fill?: nu
       y: 0.05 + Math.pow(life, 0.8) * (0.55 + rnd(i * 4.4) * 0.75) - spread * 0.1,
       r: 0.3 + life * 0.5 + rnd(i * 9.9) * 0.2,
       o: Math.min(1, life * 5) * Math.pow(1 - life, 1.1),
+    };
+  });
+  // out of the hole, over the studs, and away across the platform on both sides
+  const flow = Array.from({length: 40}, (_, i) => {
+    const life = (rnd(i * 4.7 + 2) + time * (0.1 + rnd(i * 3.1) * 0.07)) % 1;
+    const side = i % 2 ? 1 : -1;
+    return {
+      x: side * (0.18 + Math.pow(life, 0.85) * (1.9 + rnd(i * 5.9) * 1.0)) + noise(time * 0.35 + i, i + 3) * 0.06,
+      y: 0.3 + Math.sin(Math.min(1, life * 2.2) * Math.PI * 0.5) * (0.42 + rnd(i * 7.7) * 0.55) - life * 0.25,
+      r: 0.24 + life * 0.34 + rnd(i * 2.7) * 0.1,
+      o: Math.min(1, life * 6) * Math.pow(1 - life, 0.9),
     };
   });
   const [gx, gy] = P(v, 0, lerp(TRAY_Y, -0.6, fill) + 0.35);
@@ -169,6 +181,21 @@ export const Nitrogen: React.FC<{v: View; time: number; level: number; fill?: nu
             const [x, y] = P(v, p.x, p.y);
             return <circle key={i} cx={x} cy={y} r={p.r * v.s} fill="url(#puff)" opacity={0.6 * p.o} />;
           })}
+          {spill > 0.01
+            ? flow.map((p, i) => {
+                const [x, y] = P(v, p.x, p.y);
+                return <circle key={`f${i}`} cx={x} cy={y} r={p.r * v.s} fill="url(#puff)" opacity={0.62 * p.o * spill} />;
+              })
+            : null}
+          {/* which way it is moving: up and out */}
+          {spill > 0.5
+            ? [0, 1, 2, 3].map((i) => {
+                const k = (time * 0.6 + i / 4) % 1;
+                const [x, y] = P(v, i % 2 ? 0.1 : -0.1, -0.45 + k * 1.25);
+                const w = 0.085 * v.s;
+                return <path key={`c${i}`} d={`M ${x - w} ${y + w * 0.75} L ${x} ${y - w * 0.5} L ${x + w} ${y + w * 0.75}`} fill="none" stroke={C.cyan} strokeWidth={Math.max(4, 0.03 * v.s)} strokeLinecap="round" strokeLinejoin="round" opacity={Math.sin(k * Math.PI) * 0.95 * (spill - 0.5) * 2} />;
+              })
+            : null}
         </g>
       ) : null}
     </g>
