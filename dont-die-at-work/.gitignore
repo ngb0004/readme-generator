@@ -19,3 +19,6 @@ videos/*/render/video-only.mp4
 # Regenerated in seconds by `build.py --from sound`; the final mix is inside final.mp4
 videos/*/assets/score.wav
 videos/*/assets/mix.wav
+
+# Work-in-progress cuts stay out of git (~45 MB each). `git add -f` the one Nick approves.
+videos/*/render/final.mp4

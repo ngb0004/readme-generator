@@ -25,3 +25,16 @@ The next video's tested variable is chosen with this log in hand (hard rule 8).
   ~50 s (do people stay for the tribute?).
 - Candidates for the first test, one at a time: a question hook vs this statement hook; 45 s vs 58 s;
   title with the number first ("2 Men, 1 Roll of Duct Tape").
+
+### Review of cut 1 (Nick, 2026-11-21): not approved
+
+What he said, in his words: the animations look "a little scuffed" and need to be "10-fold" better,
+"top echelon"; it is "way too fast"; it "doesn't lock me in"; it gets "to the point too quickly"
+("duct tape, two guys, they climb into a pit and then they die"); there is "more we can get out of
+this situation"; open on how dangerous an ordinary-looking situation is, and play it out.
+
+What the numbers say about "too fast": 177 words in 57 s is 186 words a minute, with the voice sped
+up to 1.15x. That was done to fit eight mandatory template sections under the 60 s limit, which
+leaves about 7 s a section.
+
+Open questions before cut 2 (Nick's call): the visual style, and whether a Short may run past 60 s.

@@ -108,7 +108,8 @@ dont-die-at-work/
     claim-map.md          generated: every line next to its quote and page (for spot-checks)
     upload.json           title, description, tags, disclosure flag
     assets/               voice.wav, timings.json, cues.json, score.wav, mix.wav
-    render/               final.mp4, thumbnail.jpg  (frames/ is not committed)
+    render/               final.mp4, thumbnail.jpg  (frames/ is never committed; final.mp4 is
+                          committed with `git add -f` only once Nick approves the cut: ~45 MB each)
     analytics/            48 h and 7 d pulls go here
 ```
 
@@ -159,6 +160,13 @@ every word with a speech recogniser that has never seen the script and flags any
 rewrite the line until it passes. An AI cannot hear the result: **the voice is the part that most
 needs a human ear.** Swapping to a paid voice is a change to `voice.py` only, and counts as a new
 tool (needs Nick's approval).
+
+## Working with Nick
+
+- **Push back.** Nick asked for this directly (2026-11-21, reviewing the first cut of 001): do not
+  just agree with his feedback. He describes his notes as his interpretation, "not necessarily
+  correct". Give an independent view, say where you disagree and why, and only then change things.
+- His bar for the picture is "top echelon", not "decent". A cut that merely works is not done.
 
 ## Guardrails
 
