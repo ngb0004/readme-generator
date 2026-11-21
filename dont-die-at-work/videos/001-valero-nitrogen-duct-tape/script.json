@@ -2,7 +2,7 @@
   "id": "001-valero-nitrogen-duct-tape",
   "title": "Both of These Men Are About to Die",
   "format": "short",
-  "max_runtime_s": 130,
+  "max_runtime_s": 160,
   "tested_variable": "baseline (cut 2: hook, line and sinker; cut 1 was rejected in review)",
   "composition": "V001",
   "thumbnail": {
@@ -35,6 +35,18 @@
       "landing_page": "https://www.csb.gov/hazards-of-nitrogen-asphyxiation/",
       "file": "source/csb-safety-bulletin-nitrogen-asphyxiation-2003-10-I-B.pdf",
       "sha256": "2e829a5704b91bd1fe4042a750a2c8160dded607640f8782aef4686442d3373c",
+      "retrieved": "2026-11-21"
+    },
+    {
+      "id": "otm",
+      "publisher": "Occupational Safety and Health Administration (OSHA)",
+      "title": "OSHA Technical Manual, Section IV, Chapter 2: Petroleum Refining Processes",
+      "report_no": "OTM IV-2",
+      "published": "n.d.",
+      "url": "https://www.osha.gov/otm/section-4-safety-hazards/chapter-2",
+      "landing_page": "https://www.osha.gov/otm/section-4-safety-hazards/chapter-2",
+      "file": "source/osha-technical-manual-sec4-ch2-petroleum-refining.html",
+      "sha256": "9d622cfa7e754ef2143b827196fa34da196bda5d3b3311a772f4d501260f8a6b",
       "retrieved": "2026-11-21"
     }
   ],
@@ -116,9 +128,170 @@
       ]
     },
     {
+      "id": "mach-1",
+      "section": "mechanism",
+      "narration": "It's a gas called nitrogen. And they're standing on a giant steel tank that's full of it.",
+      "gap_after": 0.3,
+      "onscreen": [
+        "NITROGEN"
+      ],
+      "claims": [
+        {
+          "claim": "They died of nitrogen asphyxiation.",
+          "src": "case",
+          "page": 2,
+          "quote": "nitrogen asphyxiation death of two"
+        },
+        {
+          "claim": "The vessel was nitrogen-filled.",
+          "src": "case",
+          "page": 4,
+          "quote": "Nobody saw him enter the nitrogen-filled reactor"
+        },
+        {
+          "claim": "They worked on a platform at the top of the reactor.",
+          "src": "case",
+          "page": 8,
+          "quote": "Reactor R1 work platform"
+        }
+      ]
+    },
+    {
+      "id": "mach-2",
+      "section": "mechanism",
+      "narration": "The tank is part of an oil refinery, and it has one purpose: making fuel. Inside, thick heavy oil is cooked under enormous heat and pressure, until it breaks down into gasoline and jet fuel.",
+      "gap_after": 0.3,
+      "onscreen": [
+        "OIL REFINERY",
+        "HEAVY OIL IN",
+        "HEAT + PRESSURE",
+        "GASOLINE",
+        "JET FUEL"
+      ],
+      "claims": [
+        {
+          "claim": "It is a refinery unit that turns heavy oil into lighter products using high pressure and catalyst.",
+          "src": "case",
+          "page": 2,
+          "quote": "The hydrocracker unit converts heavy oil fractions to lighter molecular structure hydrocarbons using high pressure hydrogen and catalysts"
+        },
+        {
+          "claim": "Hydrocracking uses high pressure, high temperature and a catalyst to crack heavier feedstocks.",
+          "src": "otm",
+          "page": 1,
+          "quote": "heavier feedstocks are cracked in the presence of hydrogen to produce more desirable products. The process employs high pressure, high temperature, a catalyst, and hydrogen"
+        },
+        {
+          "claim": "Its products include gasoline components and jet fuel.",
+          "src": "otm",
+          "page": 1,
+          "quote": "Depending on the products desired (gasoline components, jet fuel, and gas oil)"
+        },
+        {
+          "claim": "It is a refinery.",
+          "src": "case",
+          "page": 2,
+          "quote": "refinery in Delaware City, Delaware"
+        },
+        {
+          "claim": "Gasoline is the most important refinery product.",
+          "src": "otm",
+          "page": 1,
+          "quote": "The most important refinery product is motor gasoline"
+        }
+      ]
+    },
+    {
+      "id": "mach-3",
+      "section": "mechanism",
+      "narration": "The tank is packed with a material that makes that happen. Sometimes that material wears out. So the tank is shut down, opened at the top, and refilled with a fresh batch.",
+      "gap_after": 0.3,
+      "onscreen": [
+        "CATALYST",
+        "WORN OUT",
+        "SHUT DOWN",
+        "FRESH BATCH"
+      ],
+      "claims": [
+        {
+          "claim": "The reactor holds catalyst.",
+          "src": "case",
+          "page": 4,
+          "quote": "A tray is a perforated platform installed inside a reactor used to support catalyst material"
+        },
+        {
+          "claim": "Catalyst gets spent and is recharged.",
+          "src": "otm",
+          "page": 1,
+          "quote": "when handling spent catalyst, recharging catalyst"
+        },
+        {
+          "claim": "It had just been loaded with new catalyst during a shutdown.",
+          "src": "case",
+          "page": 2,
+          "quote": "finished loading the reactor with the new catalyst"
+        },
+        {
+          "claim": "This was a maintenance shutdown.",
+          "src": "case",
+          "page": 2,
+          "quote": "maintenance turnaround (unit shutdown)"
+        },
+        {
+          "claim": "The top manway was the open access point.",
+          "src": "case",
+          "page": 2,
+          "quote": "placed a temporary plastic tarp and wooden cover over the open manway"
+        }
+      ]
+    },
+    {
+      "id": "mach-4",
+      "section": "mechanism",
+      "narration": "But the fresh batch can't touch oxygen. So the tank is pumped full of nitrogen, on purpose, and kept that way until the hatch on top is bolted shut.",
+      "gap_after": 0.45,
+      "onscreen": [
+        "CAN'T TOUCH OXYGEN",
+        "NITROGEN IN",
+        "ON PURPOSE"
+      ],
+      "claims": [
+        {
+          "claim": "The purge protected newly loaded catalyst from oxygen.",
+          "src": "case",
+          "page": 2,
+          "quote": "protect the newly loaded catalyst from reacting with oxygen in the air"
+        },
+        {
+          "claim": "Purging means pumping in nitrogen to remove oxygen.",
+          "src": "case",
+          "page": 2,
+          "quote": "Purging is the process of pumping inert gas, such as nitrogen, into pressure vessels, pipes, and other equipment to remove oxygen or other hazardous gases"
+        },
+        {
+          "claim": "It was a deliberate step in the procedure.",
+          "src": "case",
+          "page": 2,
+          "quote": "as part of the catalyst loading procedure"
+        },
+        {
+          "claim": "The nitrogen was needed until the reactor was resealed.",
+          "src": "case",
+          "page": 2,
+          "quote": "until the reactor was resealed"
+        },
+        {
+          "claim": "It vented out of the open top manway.",
+          "src": "case",
+          "page": 9,
+          "quote": "The nitrogen purge gas was slowly venting out of the reactor through the manway"
+        }
+      ]
+    },
+    {
       "id": "mech-1",
       "section": "mechanism",
-      "narration": "It's nitrogen. Most of the air around you. Harmless, until it's all there is.",
+      "narration": "Nitrogen is most of the air around you. Harmless, until it's all there is.",
       "gap_after": 0.3,
       "onscreen": [
         "NORMAL AIR",
@@ -187,59 +360,12 @@
       ]
     },
     {
-      "id": "mech-3",
-      "section": "mechanism",
-      "narration": "This refinery tank was pumped full of it on purpose, to keep oxygen away from what's inside. Routine.",
-      "gap_after": 0.45,
-      "onscreen": [
-        "REFINERY REACTOR",
-        "NITROGEN IN",
-        "PUMPED IN ON PURPOSE",
-        "NEW CATALYST",
-        "MUST NOT TOUCH OXYGEN",
-        "ROUTINE"
-      ],
-      "claims": [
-        {
-          "claim": "Purging means pumping in nitrogen to remove oxygen.",
-          "src": "case",
-          "page": 2,
-          "quote": "Purging is the process of pumping inert gas, such as nitrogen, into pressure vessels, pipes, and other equipment to remove oxygen or other hazardous gases"
-        },
-        {
-          "claim": "The purge protected newly loaded catalyst from oxygen.",
-          "src": "case",
-          "page": 2,
-          "quote": "protect the newly loaded catalyst from reacting with oxygen in the air"
-        },
-        {
-          "claim": "It was a deliberate step in the procedure.",
-          "src": "case",
-          "page": 2,
-          "quote": "as part of the catalyst loading procedure"
-        },
-        {
-          "claim": "Keeping a vessel under nitrogen is common practice.",
-          "src": "bulletin",
-          "page": 1,
-          "quote": "a flow of nitrogen is maintained in a vessel to keep oxygen out"
-        },
-        {
-          "claim": "It was a refinery reactor.",
-          "src": "case",
-          "page": 2,
-          "quote": "refinery in Delaware City, Delaware"
-        }
-      ]
-    },
-    {
       "id": "norm-1",
       "section": "mechanism",
-      "narration": "The gas has been flowing for days. Crews have been working around that open hatch. Nobody's permit calls for an air monitor. The only warning is a strip of red tape.",
+      "narration": "The gas has been flowing for days. Crews have been working around that open hatch. The only warning is a strip of red tape.",
       "gap_after": 0.35,
       "onscreen": [
         "FLOWING FOR DAYS",
-        "NO AIR MONITOR",
         "THE ONLY WARNING"
       ],
       "claims": [
@@ -323,7 +449,7 @@
     {
       "id": "inc-1",
       "section": "incident",
-      "narration": "That night, the crew is bolting its lid back on, and management wants it sealed before the shift ends.",
+      "narration": "That's tonight's job for these two: bolt the lid back on. And management wants it done before the shift ends.",
       "gap_after": 0.3,
       "onscreen": [
         "NOV 5, 2005",
@@ -667,7 +793,7 @@
     {
       "id": "lesson-1",
       "section": "lesson",
-      "narration": "Investigators could never establish whether either man knew the nitrogen was on.",
+      "narration": "Investigators never found out whether either man even knew the nitrogen was on.",
       "gap_after": 0.5,
       "onscreen": [
         "NITROGEN PURGE:",

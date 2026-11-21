@@ -51,13 +51,31 @@ catching a fish."
 - **Sinker.** The tragedy. Real people, true details, no gore. This is what makes someone in the
   field think "that could be me".
 
+**The spine of every video** (Nick, 2026-11-21, after cut 2 still called it "this refinery tank"):
+"It's not interesting to me that two guys went into a tank and they died. It's interesting to know
+what the tank is, what its goal is, how it works, and then how two guys died." So, in this order:
+
+1. What the thing is.
+2. What it is for (its goal), in terms of something the viewer uses.
+3. How it works.
+4. Why people have to work on it, and what makes that work dangerous.
+5. What these people were doing.
+6. Why it killed them: what they did not know, what was skipped, what nobody had flagged.
+
+**Assume the viewer knows nothing.** No trade words without saying what they mean ("a material
+that makes that happen", then CATALYST on screen). If a line would not make sense to someone who
+has never seen a refinery, a barge or a grain silo, rewrite it. Background on how the equipment
+works may come from OSHA, NIOSH or CSB reference documents (for 001, OSHA's Technical Manual on
+refining), saved and cited like any other source.
+
 Required sections (enforced by `pipeline/verify.py`). The video opens on `hook` and closes on
 `tribute` then `signoff`; the rest can come in whatever order tells the story best.
 
 | section            | job                                                                        |
 |--------------------|----------------------------------------------------------------------------|
 | `hook`             | The first seconds. A bold, true claim. Opens a loop.                       |
-| `mechanism`        | Where the hazard came from, why it could not be sensed, why it felt safe.  |
+| `mechanism`        | What the thing is, its goal, how it works, why people work on it; where    |
+|                    | the hazard came from, why it could not be sensed, why it felt safe.        |
 | `incident`         | What happened, played out, with the viewer knowing more than the people.   |
 | `stoppable_moment` | The moment it could have been stopped.                                     |
 | `lesson`           | How you don't die. One thing a viewer can act on.                          |
@@ -71,8 +89,8 @@ had ever gone wrong, and that is exactly why it killed them. Find the facts in t
 why it felt normal (how long it had been that way, what was and was not posted, what everyone else
 was doing), and say what the report could not establish.
 
-Format: YouTube Short, 1080x1920, 30 fps, **about 1:30 to 2:00** (Nick lifted the 60 s cap on
-2026-11-21; YouTube allows Shorts up to 3 minutes). The build fails over the `max_runtime_s` set in
+Format: YouTube Short, 1080x1920, 30 fps, **up to about 2:30** (Nick lifted the 60 s cap on
+2026-11-21 and asked for the full explanation; YouTube allows Shorts up to 3 minutes). The build fails over the `max_runtime_s` set in
 the video's `script.json`. Narrate at a natural pace: cut 1 was sped up to 186 words a minute to
 fit eight sections under 60 s, and it showed.
 

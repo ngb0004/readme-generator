@@ -8,6 +8,7 @@ import '@fontsource/jetbrains-mono/500.css';
 import '@fontsource/jetbrains-mono/700.css';
 import {C, FPS} from '../engine/theme';
 import {AirMix, Black, Breathing, Breaths, Dead, Hatches, PermitCard, SafeWay, Signoff, Stat80} from './Cards';
+import {Machine} from './Machine';
 import {direct} from './direct';
 import {Overlay, SRC} from './Overlay';
 import {T} from './timeline';
@@ -33,9 +34,10 @@ export const Video: React.FC = () => {
       ) : null}
       {t >= T.i3 && t < T.wire ? <SafeWay t={t} /> : null}
       {t >= T.h3 && t < T.breathing ? <Stat80 t={t} /> : null}
-      {t >= T.breathing && t < T.m1 ? <Breathing t={t} /> : null}
+      {t >= T.breathing && t < T.standing ? <Breathing t={t} /> : null}
+      {t >= T.ma2 && t < T.m1 ? <Machine t={t} /> : null}
       {t >= T.m1 && t < T.m2 ? <AirMix t={t} /> : null}
-      {t >= T.m2 && t < T.m3 ? <Breaths t={t} /> : null}
+      {t >= T.m2 && t < T.n1 ? <Breaths t={t} /> : null}
       {t >= T.i6 && t < T.i7 ? <Black t={t} /> : null}
       {t >= T.i12 && t < T.l1 ? <Dead t={t} /> : null}
       {t >= T.l1 && t < T.l2 ? <PermitCard t={t} /> : null}

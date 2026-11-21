@@ -111,8 +111,14 @@ class Gate:
         return ok
 
 
-def load_pages(pdf: Path) -> list[str]:
-    return [normalise(page.extract_text() or "") for page in PdfReader(str(pdf)).pages]
+def load_pages(doc: Path) -> list[str]:
+    """Text of a source document, one string per page. A saved web page counts as a single page."""
+    if doc.suffix.lower() in (".html", ".htm"):
+        import html as htmllib
+        raw = doc.read_text(encoding="utf-8", errors="ignore")
+        raw = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
+        return [normalise(htmllib.unescape(re.sub(r"<[^>]+>", " ", raw)))]
+    return [normalise(page.extract_text() or "") for page in PdfReader(str(doc)).pages]
 
 
 def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:

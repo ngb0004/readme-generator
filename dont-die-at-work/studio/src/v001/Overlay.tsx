@@ -23,17 +23,10 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
   const shot = (a: number, b: number) => t >= a && t < b;
   const tape = at(0.12, TRAY_Y + 0.085);
 
-  // ---- mechanism: the machine
-  const title = win(t, T.m3 + 0.2, T.n1, 0.3, 0.2);
-  const nIn = win(t, T.m3 + 0.9, T.n1, 0.3, 0.2);
-  const purpose = win(t, T.onPurpose - 0.1, T.n1, 0.3, 0.2);
-  const cat = win(t, T.keepOxygen + 0.3, T.n1, 0.3, 0.2);
-  const routine = pop(t, T.routine - 0.05);
-
   // ---- the days before
-  const days = win(t, T.n1 + 0.3, T.monitor - 0.1, 0.3, 0.2);
-  const mon = win(t, T.monitor + 0.1, T.onlyWarning + 0.2, 0.25, 0.15);
+  const days = win(t, T.n1 + 0.3, T.onlyWarning - 0.3, 0.3, 0.2);
   const only = win(t, T.onlyWarning + 0.75, T.n2, 0.25, 0.1);
+  const giant = win(t, T.standing + 1.0, T.ma2, 0.3, 0.12);
 
   // ---- the job
   const loc = (k: number) => win(t, T.i1 + k, T.management - 0.2, 0.3, 0.2);
@@ -89,33 +82,20 @@ export const Overlay: React.FC<{t: number; d: Direction}> = ({t, d}) => {
         <div style={{fontFamily: FONT.mono, fontSize: 19, letterSpacing: '0.1em', color: C.mute, marginTop: 7}}>{SRC}</div>
       </div>
 
-      {/* the machine */}
-      {shot(T.m3, T.n1) ? (
+      {/* a giant steel tank, full of it */}
+      {shot(T.standing, T.ma2) ? (
         <>
-          <Big x={540} y={214} a={title} size={92} stroke={8}>{os('mech-3', 0)}</Big>
-          <Chip x={40} y={at(0, -3.0).y + 54} a={nIn} size={44} color={C.cyan}>{os('mech-3', 1)}</Chip>
-          <Leader from={{x: 800, y: at(0, -0.72).y + 20}} to={at(0.62, -0.95)} a={purpose} color={C.cyan} />
-          <Chip x={560} y={at(0, -0.72).y - 62} a={purpose} size={50} color={C.cyan}>{os('mech-3', 2)}</Chip>
-          <Leader from={{x: 760, y: at(0, -2.05).y + 30}} to={at(0.55, -2.45)} a={cat} color="#eab366" />
-          <div style={{position: 'absolute', right: 40, top: at(0, -2.05).y - 96, opacity: cat, textAlign: 'right', background: 'rgba(5,8,14,0.82)', padding: '10px 22px', borderRight: '9px solid #eab366'}}>
-            <div style={{fontFamily: FONT.display, fontSize: 56, color: '#eab366'}}>{os('mech-3', 3)}</div>
-            <div style={{fontFamily: FONT.label, fontWeight: 600, fontSize: 38, color: C.white}}>{os('mech-3', 4).toLowerCase()}</div>
-          </div>
-          {t >= T.routine - 0.05 ? (
-            <div style={{position: 'absolute', left: 0, top: 356, width: W, display: 'flex', justifyContent: 'center', transform: `scale(${0.7 + 0.3 * routine}) rotate(-3deg)`, opacity: Math.min(1, routine * 2)}}>
-              <div style={{background: C.yellow, color: '#07090d', fontFamily: FONT.display, fontSize: 104, padding: '10px 44px 4px', boxShadow: '0 20px 50px rgba(0,0,0,0.6)'}}>{os('mech-3', 5)}</div>
-            </div>
-          ) : null}
+          <Leader from={{x: 800, y: at(0, -0.9).y - 40}} to={at(0.7, -0.95)} a={giant} color={C.cyan} />
+          <Chip x={640} y={at(0, -0.9).y - 112} a={giant} size={62} color={C.cyan}>{os('mach-1', 0)}</Chip>
         </>
       ) : null}
 
       {/* the days before */}
       <Big x={540} y={226} a={days} size={100} stroke={8} color={C.cyan}>{os('norm-1', 0)}</Big>
-      {shot(T.monitor, T.onlyWarning + 0.3) ? <Chip x={540} y={at(0, 1.5).y - 60} a={mon} size={60} color={C.red} align="center" mark="✕">{os('norm-1', 1)}</Chip> : null}
       {shot(T.onlyWarning + 0.6, T.n2) ? (
         <>
           <Leader from={{x: 300, y: at(0, 0.4).y - 196}} to={at(-0.52, 0.42)} a={only} color={C.red} />
-          <Chip x={70} y={at(0, 0.4).y - 262} a={only} size={58} color={C.red}>{os('norm-1', 2)}</Chip>
+          <Chip x={70} y={at(0, 0.4).y - 262} a={only} size={58} color={C.red}>{os('norm-1', 1)}</Chip>
         </>
       ) : null}
 

@@ -1,7 +1,7 @@
 {
  "voice": "am_michael",
  "speed": 1.04,
- "speech_end": 121.262,
+ "speech_end": 151.349,
  "beats": [
   {
    "id": "hook-1",
@@ -178,1766 +178,2240 @@
    ]
   },
   {
-   "id": "mech-1",
+   "id": "mach-1",
    "section": "mechanism",
    "start": 9.636,
-   "end": 14.517,
+   "end": 14.653,
    "words": [
     {
      "w": "It's",
      "start": 9.636,
-     "end": 9.876
+     "end": 9.816
+    },
+    {
+     "w": "a",
+     "start": 9.816,
+     "end": 9.916
+    },
+    {
+     "w": "gas",
+     "start": 9.916,
+     "end": 10.256
+    },
+    {
+     "w": "called",
+     "start": 10.256,
+     "end": 10.616
     },
     {
      "w": "nitrogen.",
-     "start": 9.876,
-     "end": 10.416
+     "start": 10.616,
+     "end": 11.096
     },
     {
-     "w": "Most",
-     "start": 10.856,
-     "end": 10.996
+     "w": "And",
+     "start": 11.716,
+     "end": 11.936
+    },
+    {
+     "w": "they're",
+     "start": 11.936,
+     "end": 12.116
+    },
+    {
+     "w": "standing",
+     "start": 12.116,
+     "end": 12.436
+    },
+    {
+     "w": "on",
+     "start": 12.436,
+     "end": 12.656
+    },
+    {
+     "w": "a",
+     "start": 12.656,
+     "end": 12.836
+    },
+    {
+     "w": "giant",
+     "start": 12.836,
+     "end": 13.116
+    },
+    {
+     "w": "steel",
+     "start": 13.116,
+     "end": 13.516
+    },
+    {
+     "w": "tank",
+     "start": 13.516,
+     "end": 13.876
+    },
+    {
+     "w": "that's",
+     "start": 13.876,
+     "end": 14.216
+    },
+    {
+     "w": "full",
+     "start": 14.216,
+     "end": 14.376
     },
     {
      "w": "of",
-     "start": 10.996,
-     "end": 11.176
+     "start": 14.376,
+     "end": 14.556
     },
     {
-     "w": "the",
-     "start": 11.176,
-     "end": 11.276
+     "w": "it.",
+     "start": 14.556,
+     "end": 14.616
+    }
+   ]
+  },
+  {
+   "id": "mach-2",
+   "section": "mechanism",
+   "start": 14.953,
+   "end": 27.839,
+   "words": [
+    {
+     "w": "The",
+     "start": 14.953,
+     "end": 15.093
     },
     {
-     "w": "air",
-     "start": 11.276,
-     "end": 11.496
+     "w": "tank",
+     "start": 15.093,
+     "end": 15.313
     },
     {
-     "w": "around",
-     "start": 11.496,
-     "end": 11.856
+     "w": "is",
+     "start": 15.313,
+     "end": 15.513
     },
     {
-     "w": "you.",
-     "start": 11.856,
-     "end": 12.216
+     "w": "part",
+     "start": 15.513,
+     "end": 15.793
     },
     {
-     "w": "Harmless,",
-     "start": 12.636,
-     "end": 13.016
+     "w": "of",
+     "start": 15.793,
+     "end": 15.953
+    },
+    {
+     "w": "an",
+     "start": 15.953,
+     "end": 16.093
+    },
+    {
+     "w": "oil",
+     "start": 16.093,
+     "end": 16.433
+    },
+    {
+     "w": "refinery,",
+     "start": 16.433,
+     "end": 17.033
+    },
+    {
+     "w": "and",
+     "start": 17.533,
+     "end": 17.593
+    },
+    {
+     "w": "it",
+     "start": 17.593,
+     "end": 17.693
+    },
+    {
+     "w": "has",
+     "start": 17.693,
+     "end": 17.813
+    },
+    {
+     "w": "one",
+     "start": 17.813,
+     "end": 18.053
+    },
+    {
+     "w": "purpose:",
+     "start": 18.053,
+     "end": 18.533
+    },
+    {
+     "w": "making",
+     "start": 19.053,
+     "end": 19.313
+    },
+    {
+     "w": "fuel.",
+     "start": 19.313,
+     "end": 19.733
+    },
+    {
+     "w": "Inside,",
+     "start": 20.993,
+     "end": 21.033
+    },
+    {
+     "w": "thick",
+     "start": 21.373,
+     "end": 21.493
+    },
+    {
+     "w": "heavy",
+     "start": 21.533,
+     "end": 21.793
+    },
+    {
+     "w": "oil",
+     "start": 21.793,
+     "end": 22.173
+    },
+    {
+     "w": "is",
+     "start": 22.173,
+     "end": 22.393
+    },
+    {
+     "w": "cooked",
+     "start": 22.393,
+     "end": 22.613
+    },
+    {
+     "w": "under",
+     "start": 22.613,
+     "end": 22.913
+    },
+    {
+     "w": "enormous",
+     "start": 22.913,
+     "end": 23.473
+    },
+    {
+     "w": "heat",
+     "start": 23.473,
+     "end": 23.853
+    },
+    {
+     "w": "and",
+     "start": 23.853,
+     "end": 24.053
+    },
+    {
+     "w": "pressure,",
+     "start": 24.053,
+     "end": 24.413
     },
     {
      "w": "until",
-     "start": 13.016,
-     "end": 13.456
+     "start": 24.413,
+     "end": 25.073
+    },
+    {
+     "w": "it",
+     "start": 25.073,
+     "end": 25.233
+    },
+    {
+     "w": "breaks",
+     "start": 25.233,
+     "end": 25.453
+    },
+    {
+     "w": "down",
+     "start": 25.453,
+     "end": 25.873
+    },
+    {
+     "w": "into",
+     "start": 25.873,
+     "end": 26.153
+    },
+    {
+     "w": "gasoline",
+     "start": 26.153,
+     "end": 26.693
+    },
+    {
+     "w": "and",
+     "start": 26.693,
+     "end": 27.093
+    },
+    {
+     "w": "jet",
+     "start": 27.093,
+     "end": 27.373
+    },
+    {
+     "w": "fuel.",
+     "start": 27.373,
+     "end": 27.713
+    }
+   ]
+  },
+  {
+   "id": "mach-3",
+   "section": "mechanism",
+   "start": 28.139,
+   "end": 38.808,
+   "words": [
+    {
+     "w": "The",
+     "start": 28.139,
+     "end": 28.279
+    },
+    {
+     "w": "tank",
+     "start": 28.279,
+     "end": 28.499
+    },
+    {
+     "w": "is",
+     "start": 28.499,
+     "end": 28.699
+    },
+    {
+     "w": "packed",
+     "start": 28.699,
+     "end": 29.039
+    },
+    {
+     "w": "with",
+     "start": 29.039,
+     "end": 29.299
+    },
+    {
+     "w": "a",
+     "start": 29.299,
+     "end": 29.399
+    },
+    {
+     "w": "material",
+     "start": 29.399,
+     "end": 29.839
+    },
+    {
+     "w": "that",
+     "start": 29.839,
+     "end": 30.159
+    },
+    {
+     "w": "makes",
+     "start": 30.159,
+     "end": 30.359
+    },
+    {
+     "w": "that",
+     "start": 30.359,
+     "end": 30.639
+    },
+    {
+     "w": "happen.",
+     "start": 30.639,
+     "end": 31.039
+    },
+    {
+     "w": "Sometimes",
+     "start": 31.659,
+     "end": 32.039
+    },
+    {
+     "w": "that",
+     "start": 32.039,
+     "end": 32.359
+    },
+    {
+     "w": "material",
+     "start": 32.359,
+     "end": 32.919
+    },
+    {
+     "w": "wears",
+     "start": 32.919,
+     "end": 33.199
+    },
+    {
+     "w": "out.",
+     "start": 33.199,
+     "end": 33.579
+    },
+    {
+     "w": "So",
+     "start": 34.139,
+     "end": 34.239
+    },
+    {
+     "w": "the",
+     "start": 34.239,
+     "end": 34.359
+    },
+    {
+     "w": "tank",
+     "start": 34.359,
+     "end": 34.619
+    },
+    {
+     "w": "is",
+     "start": 34.619,
+     "end": 34.799
+    },
+    {
+     "w": "shut",
+     "start": 34.799,
+     "end": 35.079
+    },
+    {
+     "w": "down,",
+     "start": 35.079,
+     "end": 35.599
+    },
+    {
+     "w": "opened",
+     "start": 35.839,
+     "end": 36.239
+    },
+    {
+     "w": "at",
+     "start": 36.239,
+     "end": 36.399
+    },
+    {
+     "w": "the",
+     "start": 36.399,
+     "end": 36.579
+    },
+    {
+     "w": "top,",
+     "start": 36.579,
+     "end": 36.899
+    },
+    {
+     "w": "and",
+     "start": 37.079,
+     "end": 37.179
+    },
+    {
+     "w": "refilled",
+     "start": 37.179,
+     "end": 37.619
+    },
+    {
+     "w": "with",
+     "start": 37.619,
+     "end": 37.859
+    },
+    {
+     "w": "a",
+     "start": 37.859,
+     "end": 37.979
+    },
+    {
+     "w": "fresh",
+     "start": 37.979,
+     "end": 38.199
+    },
+    {
+     "w": "batch.",
+     "start": 38.199,
+     "end": 38.559
+    }
+   ]
+  },
+  {
+   "id": "mach-4",
+   "section": "mechanism",
+   "start": 39.108,
+   "end": 48.618,
+   "words": [
+    {
+     "w": "But",
+     "start": 39.108,
+     "end": 39.228
+    },
+    {
+     "w": "the",
+     "start": 39.228,
+     "end": 39.368
+    },
+    {
+     "w": "fresh",
+     "start": 39.368,
+     "end": 39.588
+    },
+    {
+     "w": "batch",
+     "start": 39.588,
+     "end": 39.968
+    },
+    {
+     "w": "can't",
+     "start": 39.968,
+     "end": 40.368
+    },
+    {
+     "w": "touch",
+     "start": 40.368,
+     "end": 40.608
+    },
+    {
+     "w": "oxygen.",
+     "start": 40.608,
+     "end": 41.208
+    },
+    {
+     "w": "So",
+     "start": 41.908,
+     "end": 41.968
+    },
+    {
+     "w": "the",
+     "start": 41.968,
+     "end": 42.108
+    },
+    {
+     "w": "tank",
+     "start": 42.108,
+     "end": 42.328
+    },
+    {
+     "w": "is",
+     "start": 42.328,
+     "end": 42.548
+    },
+    {
+     "w": "pumped",
+     "start": 42.548,
+     "end": 42.808
+    },
+    {
+     "w": "full",
+     "start": 42.808,
+     "end": 43.128
+    },
+    {
+     "w": "of",
+     "start": 43.128,
+     "end": 43.308
+    },
+    {
+     "w": "nitrogen,",
+     "start": 43.308,
+     "end": 43.908
+    },
+    {
+     "w": "on",
+     "start": 43.908,
+     "end": 44.388
+    },
+    {
+     "w": "purpose,",
+     "start": 44.388,
+     "end": 44.848
+    },
+    {
+     "w": "and",
+     "start": 45.248,
+     "end": 45.508
+    },
+    {
+     "w": "kept",
+     "start": 45.508,
+     "end": 45.748
+    },
+    {
+     "w": "that",
+     "start": 45.748,
+     "end": 45.988
+    },
+    {
+     "w": "way",
+     "start": 45.988,
+     "end": 46.268
+    },
+    {
+     "w": "until",
+     "start": 46.268,
+     "end": 46.528
+    },
+    {
+     "w": "the",
+     "start": 46.528,
+     "end": 46.688
+    },
+    {
+     "w": "hatch",
+     "start": 46.688,
+     "end": 46.928
+    },
+    {
+     "w": "on",
+     "start": 46.928,
+     "end": 47.168
+    },
+    {
+     "w": "top",
+     "start": 47.168,
+     "end": 47.508
+    },
+    {
+     "w": "is",
+     "start": 47.508,
+     "end": 47.768
+    },
+    {
+     "w": "bolted",
+     "start": 47.768,
+     "end": 48.208
+    },
+    {
+     "w": "shut.",
+     "start": 48.208,
+     "end": 48.588
+    }
+   ]
+  },
+  {
+   "id": "mech-1",
+   "section": "mechanism",
+   "start": 49.068,
+   "end": 53.971,
+   "words": [
+    {
+     "w": "Nitrogen",
+     "start": 49.068,
+     "end": 49.688
+    },
+    {
+     "w": "is",
+     "start": 49.688,
+     "end": 49.888
+    },
+    {
+     "w": "most",
+     "start": 49.888,
+     "end": 50.148
+    },
+    {
+     "w": "of",
+     "start": 50.148,
+     "end": 50.328
+    },
+    {
+     "w": "the",
+     "start": 50.328,
+     "end": 50.428
+    },
+    {
+     "w": "air",
+     "start": 50.428,
+     "end": 50.668
+    },
+    {
+     "w": "around",
+     "start": 50.668,
+     "end": 50.988
+    },
+    {
+     "w": "you.",
+     "start": 50.988,
+     "end": 51.428
+    },
+    {
+     "w": "Harmless,",
+     "start": 51.768,
+     "end": 52.188
+    },
+    {
+     "w": "until",
+     "start": 52.188,
+     "end": 52.828
     },
     {
      "w": "it's",
-     "start": 13.456,
-     "end": 13.656
+     "start": 52.828,
+     "end": 53.028
     },
     {
      "w": "all",
-     "start": 13.656,
-     "end": 13.816
+     "start": 53.028,
+     "end": 53.248
     },
     {
      "w": "there",
-     "start": 13.816,
-     "end": 14.036
+     "start": 53.248,
+     "end": 53.488
     },
     {
      "w": "is.",
-     "start": 14.036,
-     "end": 14.376
+     "start": 53.488,
+     "end": 53.888
     }
    ]
   },
   {
    "id": "mech-2",
    "section": "mechanism",
-   "start": 14.817,
-   "end": 20.77,
+   "start": 54.271,
+   "end": 60.224,
    "words": [
     {
      "w": "One",
-     "start": 14.817,
-     "end": 15.017
+     "start": 54.271,
+     "end": 54.471
     },
     {
      "w": "or",
-     "start": 15.017,
-     "end": 15.137
+     "start": 54.471,
+     "end": 54.591
     },
     {
      "w": "two",
-     "start": 15.137,
-     "end": 15.357
+     "start": 54.591,
+     "end": 54.811
     },
     {
      "w": "breaths",
-     "start": 15.357,
-     "end": 15.577
+     "start": 54.811,
+     "end": 55.031
     },
     {
      "w": "of",
-     "start": 15.577,
-     "end": 15.817
+     "start": 55.031,
+     "end": 55.271
     },
     {
      "w": "pure",
-     "start": 15.817,
-     "end": 16.037
+     "start": 55.271,
+     "end": 55.491
     },
     {
      "w": "nitrogen",
-     "start": 16.037,
-     "end": 16.537
+     "start": 55.491,
+     "end": 55.991
     },
     {
      "w": "and",
-     "start": 16.537,
-     "end": 16.817
+     "start": 55.991,
+     "end": 56.271
     },
     {
      "w": "you",
-     "start": 16.817,
-     "end": 16.957
+     "start": 56.271,
+     "end": 56.411
     },
     {
      "w": "black",
-     "start": 16.957,
-     "end": 17.177
+     "start": 56.411,
+     "end": 56.631
     },
     {
      "w": "out.",
-     "start": 17.177,
-     "end": 17.557
+     "start": 56.631,
+     "end": 57.011
     },
     {
      "w": "No",
-     "start": 17.997,
-     "end": 18.217
+     "start": 57.451,
+     "end": 57.671
     },
     {
      "w": "smell.",
-     "start": 18.217,
-     "end": 18.577
+     "start": 57.671,
+     "end": 58.031
     },
     {
      "w": "No",
-     "start": 19.017,
-     "end": 19.237
+     "start": 58.471,
+     "end": 58.691
     },
     {
      "w": "taste.",
-     "start": 19.237,
-     "end": 19.657
+     "start": 58.691,
+     "end": 59.111
     },
     {
      "w": "No",
-     "start": 20.037,
-     "end": 20.257
+     "start": 59.491,
+     "end": 59.711
     },
     {
      "w": "warning.",
-     "start": 20.257,
-     "end": 20.617
-    }
-   ]
-  },
-  {
-   "id": "mech-3",
-   "section": "mechanism",
-   "start": 21.169,
-   "end": 27.832,
-   "words": [
-    {
-     "w": "This",
-     "start": 21.169,
-     "end": 21.33
-    },
-    {
-     "w": "refinery",
-     "start": 21.33,
-     "end": 21.83
-    },
-    {
-     "w": "tank",
-     "start": 21.83,
-     "end": 22.27
-    },
-    {
-     "w": "was",
-     "start": 22.27,
-     "end": 22.53
-    },
-    {
-     "w": "pumped",
-     "start": 22.53,
-     "end": 22.81
-    },
-    {
-     "w": "full",
-     "start": 22.81,
-     "end": 23.11
-    },
-    {
-     "w": "of",
-     "start": 23.11,
-     "end": 23.249
-    },
-    {
-     "w": "it",
-     "start": 23.249,
-     "end": 23.33
-    },
-    {
-     "w": "on",
-     "start": 23.33,
-     "end": 23.47
-    },
-    {
-     "w": "purpose,",
-     "start": 23.47,
-     "end": 23.87
-    },
-    {
-     "w": "to",
-     "start": 23.87,
-     "end": 24.45
-    },
-    {
-     "w": "keep",
-     "start": 24.45,
-     "end": 24.67
-    },
-    {
-     "w": "oxygen",
-     "start": 24.67,
-     "end": 25.13
-    },
-    {
-     "w": "away",
-     "start": 25.13,
-     "end": 25.53
-    },
-    {
-     "w": "from",
-     "start": 25.53,
-     "end": 25.79
-    },
-    {
-     "w": "what's",
-     "start": 25.79,
-     "end": 26.05
-    },
-    {
-     "w": "inside.",
-     "start": 26.05,
-     "end": 26.569
-    },
-    {
-     "w": "Routine.",
-     "start": 27.31,
-     "end": 27.49
+     "start": 59.711,
+     "end": 60.071
     }
    ]
   },
   {
    "id": "norm-1",
    "section": "mechanism",
-   "start": 28.282,
-   "end": 38.967,
+   "start": 60.623,
+   "end": 68.279,
    "words": [
     {
      "w": "The",
-     "start": 28.282,
-     "end": 28.422
+     "start": 60.623,
+     "end": 60.764
     },
     {
      "w": "gas",
-     "start": 28.422,
-     "end": 28.662
+     "start": 60.764,
+     "end": 61.024
     },
     {
      "w": "has",
-     "start": 28.662,
-     "end": 28.922
+     "start": 61.024,
+     "end": 61.284
     },
     {
      "w": "been",
-     "start": 28.922,
-     "end": 29.122
+     "start": 61.284,
+     "end": 61.484
     },
     {
      "w": "flowing",
-     "start": 29.122,
-     "end": 29.442
+     "start": 61.484,
+     "end": 61.784
     },
     {
      "w": "for",
-     "start": 29.442,
-     "end": 29.742
+     "start": 61.784,
+     "end": 62.084
     },
     {
      "w": "days.",
-     "start": 29.742,
-     "end": 30.202
+     "start": 62.084,
+     "end": 62.544
     },
     {
      "w": "Crews",
-     "start": 30.902,
-     "end": 31.102
+     "start": 63.224,
+     "end": 63.404
     },
     {
      "w": "have",
-     "start": 31.102,
-     "end": 31.162
+     "start": 63.404,
+     "end": 63.463
     },
     {
      "w": "been",
-     "start": 31.162,
-     "end": 31.322
+     "start": 63.463,
+     "end": 63.624
     },
     {
      "w": "working",
-     "start": 31.322,
-     "end": 31.642
+     "start": 63.624,
+     "end": 63.924
     },
     {
      "w": "around",
-     "start": 31.642,
-     "end": 31.982
+     "start": 63.924,
+     "end": 64.284
     },
     {
      "w": "that",
-     "start": 31.982,
-     "end": 32.202
+     "start": 64.284,
+     "end": 64.504
     },
     {
      "w": "open",
-     "start": 32.202,
-     "end": 32.622
+     "start": 64.504,
+     "end": 64.903
     },
     {
      "w": "hatch.",
-     "start": 32.622,
-     "end": 33.022
-    },
-    {
-     "w": "Nobody's",
-     "start": 33.682,
-     "end": 34.202
-    },
-    {
-     "w": "permit",
-     "start": 34.202,
-     "end": 34.462
-    },
-    {
-     "w": "calls",
-     "start": 34.462,
-     "end": 34.902
-    },
-    {
-     "w": "for",
-     "start": 34.902,
-     "end": 35.182
-    },
-    {
-     "w": "an",
-     "start": 35.182,
-     "end": 35.322
-    },
-    {
-     "w": "air",
-     "start": 35.322,
-     "end": 35.522
-    },
-    {
-     "w": "monitor.",
-     "start": 35.522,
-     "end": 35.942
+     "start": 64.903,
+     "end": 65.284
     },
     {
      "w": "The",
-     "start": 36.562,
-     "end": 36.682
+     "start": 65.904,
+     "end": 66.024
     },
     {
      "w": "only",
-     "start": 36.682,
-     "end": 37.002
+     "start": 66.024,
+     "end": 66.344
     },
     {
      "w": "warning",
-     "start": 37.002,
-     "end": 37.482
+     "start": 66.344,
+     "end": 66.824
     },
     {
      "w": "is",
-     "start": 37.482,
-     "end": 37.722
+     "start": 66.824,
+     "end": 67.064
     },
     {
      "w": "a",
-     "start": 37.722,
-     "end": 37.862
+     "start": 67.064,
+     "end": 67.204
     },
     {
      "w": "strip",
-     "start": 37.862,
-     "end": 38.122
+     "start": 67.204,
+     "end": 67.464
     },
     {
      "w": "of",
-     "start": 38.122,
-     "end": 38.382
+     "start": 67.464,
+     "end": 67.724
     },
     {
      "w": "red",
-     "start": 38.382,
-     "end": 38.602
+     "start": 67.724,
+     "end": 67.924
     },
     {
      "w": "tape.",
-     "start": 38.602,
-     "end": 38.942
+     "start": 67.924,
+     "end": 68.244
     }
    ]
   },
   {
    "id": "norm-2",
    "section": "mechanism",
-   "start": 39.317,
-   "end": 42.847,
+   "start": 68.629,
+   "end": 72.159,
    "words": [
     {
      "w": "When",
-     "start": 39.317,
-     "end": 39.457
+     "start": 68.629,
+     "end": 68.769
     },
     {
      "w": "something",
-     "start": 39.457,
-     "end": 39.777
+     "start": 68.769,
+     "end": 69.089
     },
     {
      "w": "has",
-     "start": 39.777,
-     "end": 39.997
+     "start": 69.089,
+     "end": 69.309
     },
     {
      "w": "never",
-     "start": 39.997,
-     "end": 40.257
+     "start": 69.309,
+     "end": 69.569
     },
     {
      "w": "hurt",
-     "start": 40.257,
-     "end": 40.537
+     "start": 69.569,
+     "end": 69.849
     },
     {
      "w": "you,",
-     "start": 40.537,
-     "end": 40.837
+     "start": 69.849,
+     "end": 70.149
     },
     {
      "w": "it",
-     "start": 41.117,
-     "end": 41.277
+     "start": 70.429,
+     "end": 70.589
     },
     {
      "w": "stops",
-     "start": 41.277,
-     "end": 41.597
+     "start": 70.589,
+     "end": 70.909
     },
     {
      "w": "looking",
-     "start": 41.597,
-     "end": 41.977
+     "start": 70.909,
+     "end": 71.289
     },
     {
      "w": "dangerous.",
-     "start": 41.977,
-     "end": 42.517
+     "start": 71.289,
+     "end": 71.829
     }
    ]
   },
   {
    "id": "inc-1",
    "section": "incident",
-   "start": 43.347,
-   "end": 49.3,
+   "start": 72.659,
+   "end": 79.314,
    "words": [
     {
-     "w": "That",
-     "start": 43.347,
-     "end": 43.507
+     "w": "That's",
+     "start": 72.659,
+     "end": 72.939
     },
     {
-     "w": "night,",
-     "start": 43.507,
-     "end": 43.787
+     "w": "tonight's",
+     "start": 72.939,
+     "end": 73.319
+    },
+    {
+     "w": "job",
+     "start": 73.319,
+     "end": 73.659
+    },
+    {
+     "w": "for",
+     "start": 73.659,
+     "end": 73.919
+    },
+    {
+     "w": "these",
+     "start": 73.919,
+     "end": 74.119
+    },
+    {
+     "w": "two:",
+     "start": 74.119,
+     "end": 74.459
+    },
+    {
+     "w": "bolt",
+     "start": 75.059,
+     "end": 75.119
     },
     {
      "w": "the",
-     "start": 43.947,
-     "end": 44.007
-    },
-    {
-     "w": "crew",
-     "start": 44.007,
-     "end": 44.267
-    },
-    {
-     "w": "is",
-     "start": 44.267,
-     "end": 44.487
-    },
-    {
-     "w": "bolting",
-     "start": 44.487,
-     "end": 44.967
-    },
-    {
-     "w": "its",
-     "start": 44.967,
-     "end": 45.147
+     "start": 75.119,
+     "end": 75.319
     },
     {
      "w": "lid",
-     "start": 45.147,
-     "end": 45.367
+     "start": 75.319,
+     "end": 75.499
     },
     {
      "w": "back",
-     "start": 45.367,
-     "end": 45.667
+     "start": 75.499,
+     "end": 75.799
     },
     {
-     "w": "on,",
-     "start": 45.667,
-     "end": 46.127
+     "w": "on.",
+     "start": 75.799,
+     "end": 76.339
     },
     {
-     "w": "and",
-     "start": 46.367,
-     "end": 46.647
+     "w": "And",
+     "start": 76.339,
+     "end": 76.759
     },
     {
      "w": "management",
-     "start": 46.647,
-     "end": 47.047
+     "start": 76.759,
+     "end": 77.159
     },
     {
      "w": "wants",
-     "start": 47.047,
-     "end": 47.407
+     "start": 77.159,
+     "end": 77.539
     },
     {
      "w": "it",
-     "start": 47.407,
-     "end": 47.607
+     "start": 77.539,
+     "end": 77.739
     },
     {
-     "w": "sealed",
-     "start": 47.607,
-     "end": 47.967
+     "w": "done",
+     "start": 77.739,
+     "end": 77.959
     },
     {
      "w": "before",
-     "start": 47.967,
-     "end": 48.307
+     "start": 77.959,
+     "end": 78.299
     },
     {
      "w": "the",
-     "start": 48.307,
-     "end": 48.467
+     "start": 78.299,
+     "end": 78.479
     },
     {
      "w": "shift",
-     "start": 48.467,
-     "end": 48.647
+     "start": 78.479,
+     "end": 78.659
     },
     {
      "w": "ends.",
-     "start": 48.647,
-     "end": 49.007
+     "start": 78.659,
+     "end": 79.039
     }
    ]
   },
   {
    "id": "inc-2",
    "section": "incident",
-   "start": 49.6,
-   "end": 54.91,
+   "start": 79.614,
+   "end": 84.924,
    "words": [
     {
      "w": "Then",
-     "start": 49.6,
-     "end": 49.74
+     "start": 79.614,
+     "end": 79.754
     },
     {
      "w": "someone",
-     "start": 49.74,
-     "end": 50.1
+     "start": 79.754,
+     "end": 80.114
     },
     {
      "w": "spots",
-     "start": 50.1,
-     "end": 50.44
+     "start": 80.114,
+     "end": 80.454
     },
     {
      "w": "a",
-     "start": 50.44,
-     "end": 50.66
+     "start": 80.454,
+     "end": 80.674
     },
     {
      "w": "roll",
-     "start": 50.66,
-     "end": 50.86
+     "start": 80.674,
+     "end": 80.874
     },
     {
      "w": "of",
-     "start": 50.86,
-     "end": 51.06
+     "start": 80.874,
+     "end": 81.074
     },
     {
      "w": "duct",
-     "start": 51.06,
-     "end": 51.24
+     "start": 81.074,
+     "end": 81.254
     },
     {
      "w": "tape,",
-     "start": 51.24,
-     "end": 51.62
+     "start": 81.254,
+     "end": 81.634
     },
     {
      "w": "five",
-     "start": 51.62,
-     "end": 52.22
+     "start": 81.634,
+     "end": 82.234
     },
     {
      "w": "feet",
-     "start": 52.22,
-     "end": 52.52
+     "start": 82.234,
+     "end": 82.534
     },
     {
      "w": "down",
-     "start": 52.52,
-     "end": 52.88
+     "start": 82.534,
+     "end": 82.894
     },
     {
      "w": "inside.",
-     "start": 52.88,
-     "end": 53.4
+     "start": 82.894,
+     "end": 83.414
     },
     {
      "w": "It",
-     "start": 53.98,
-     "end": 54.08
+     "start": 83.994,
+     "end": 84.094
     },
     {
      "w": "has",
-     "start": 54.08,
-     "end": 54.26
+     "start": 84.094,
+     "end": 84.274
     },
     {
      "w": "to",
-     "start": 54.26,
-     "end": 54.46
+     "start": 84.274,
+     "end": 84.474
     },
     {
      "w": "come",
-     "start": 54.46,
-     "end": 54.66
+     "start": 84.474,
+     "end": 84.674
     },
     {
      "w": "out.",
-     "start": 54.66,
-     "end": 54.88
+     "start": 84.674,
+     "end": 84.894
     }
    ]
   },
   {
    "id": "inc-3",
    "section": "incident",
-   "start": 55.21,
-   "end": 60.597,
+   "start": 85.224,
+   "end": 90.61,
    "words": [
     {
      "w": "The",
-     "start": 55.21,
-     "end": 55.35
+     "start": 85.224,
+     "end": 85.364
     },
     {
      "w": "safe",
-     "start": 55.35,
-     "end": 55.57
+     "start": 85.364,
+     "end": 85.584
     },
     {
      "w": "way",
-     "start": 55.57,
-     "end": 55.81
+     "start": 85.584,
+     "end": 85.824
     },
     {
      "w": "means",
-     "start": 55.81,
-     "end": 56.09
+     "start": 85.824,
+     "end": 86.104
     },
     {
      "w": "a",
-     "start": 56.09,
-     "end": 56.27
+     "start": 86.104,
+     "end": 86.284
     },
     {
      "w": "permit",
-     "start": 56.27,
-     "end": 56.59
+     "start": 86.284,
+     "end": 86.604
     },
     {
      "w": "and",
-     "start": 56.59,
-     "end": 56.89
+     "start": 86.604,
+     "end": 86.904
     },
     {
      "w": "a",
-     "start": 56.89,
-     "end": 56.99
+     "start": 86.904,
+     "end": 87.004
     },
     {
      "w": "delay.",
-     "start": 56.99,
-     "end": 57.37
+     "start": 87.004,
+     "end": 87.384
     },
     {
      "w": "So",
-     "start": 57.85,
-     "end": 58.09
+     "start": 87.864,
+     "end": 88.104
     },
     {
      "w": "they",
-     "start": 58.09,
-     "end": 58.25
+     "start": 88.104,
+     "end": 88.264
     },
     {
      "w": "bend",
-     "start": 58.25,
-     "end": 58.47
+     "start": 88.264,
+     "end": 88.484
     },
     {
      "w": "a",
-     "start": 58.47,
-     "end": 58.63
+     "start": 88.484,
+     "end": 88.644
     },
     {
      "w": "wire",
-     "start": 58.63,
-     "end": 58.97
+     "start": 88.644,
+     "end": 88.984
     },
     {
      "w": "into",
-     "start": 58.97,
-     "end": 59.25
+     "start": 88.984,
+     "end": 89.264
     },
     {
      "w": "a",
-     "start": 59.25,
-     "end": 59.43
+     "start": 89.264,
+     "end": 89.444
     },
     {
      "w": "hook,",
-     "start": 59.43,
-     "end": 59.67
+     "start": 89.444,
+     "end": 89.684
     },
     {
      "w": "and",
-     "start": 59.67,
-     "end": 59.93
+     "start": 89.684,
+     "end": 89.944
     },
     {
      "w": "go",
-     "start": 59.93,
-     "end": 60.11
+     "start": 89.944,
+     "end": 90.124
     },
     {
      "w": "fishing.",
-     "start": 60.11,
-     "end": 60.41
+     "start": 90.124,
+     "end": 90.424
     }
    ]
   },
   {
    "id": "inc-4",
    "section": "incident",
-   "start": 60.997,
-   "end": 64.035,
+   "start": 91.01,
+   "end": 94.048,
    "words": [
     {
      "w": "He",
-     "start": 60.997,
-     "end": 61.097
+     "start": 91.01,
+     "end": 91.11
     },
     {
      "w": "tries",
-     "start": 61.097,
-     "end": 61.377
+     "start": 91.11,
+     "end": 91.39
     },
     {
      "w": "standing.",
-     "start": 61.377,
-     "end": 61.817
+     "start": 91.39,
+     "end": 91.83
     },
     {
      "w": "He",
-     "start": 62.217,
-     "end": 62.317
+     "start": 92.23,
+     "end": 92.33
     },
     {
      "w": "tries",
-     "start": 62.317,
-     "end": 62.597
+     "start": 92.33,
+     "end": 92.61
     },
     {
      "w": "kneeling.",
-     "start": 62.597,
-     "end": 62.957
+     "start": 92.61,
+     "end": 92.97
     },
     {
      "w": "He",
-     "start": 63.237,
-     "end": 63.357
+     "start": 93.25,
+     "end": 93.37
     },
     {
      "w": "can't",
-     "start": 63.357,
-     "end": 63.657
+     "start": 93.37,
+     "end": 93.67
     },
     {
      "w": "reach",
-     "start": 63.657,
-     "end": 63.797
+     "start": 93.67,
+     "end": 93.81
     },
     {
      "w": "it.",
-     "start": 63.797,
-     "end": 63.997
+     "start": 93.81,
+     "end": 94.01
     }
    ]
   },
   {
    "id": "inc-5",
    "section": "incident",
-   "start": 64.385,
-   "end": 69.298,
+   "start": 94.398,
+   "end": 99.312,
    "words": [
     {
      "w": "So,",
-     "start": 64.385,
-     "end": 64.645
+     "start": 94.398,
+     "end": 94.658
     },
     {
      "w": "investigators",
-     "start": 64.785,
-     "end": 65.425
+     "start": 94.798,
+     "end": 95.438
     },
     {
      "w": "believe,",
-     "start": 65.425,
-     "end": 65.985
+     "start": 95.438,
+     "end": 95.998
     },
     {
      "w": "he",
-     "start": 65.985,
-     "end": 66.645
+     "start": 95.998,
+     "end": 96.658
     },
     {
      "w": "sits",
-     "start": 66.645,
-     "end": 66.885
+     "start": 96.658,
+     "end": 96.898
     },
     {
      "w": "on",
-     "start": 66.885,
-     "end": 67.125
+     "start": 96.898,
+     "end": 97.138
     },
     {
      "w": "the",
-     "start": 67.125,
-     "end": 67.265
+     "start": 97.138,
+     "end": 97.278
     },
     {
      "w": "edge",
-     "start": 67.265,
-     "end": 67.465
+     "start": 97.278,
+     "end": 97.478
     },
     {
      "w": "of",
-     "start": 67.465,
-     "end": 67.625
+     "start": 97.478,
+     "end": 97.638
     },
     {
      "w": "the",
-     "start": 67.625,
-     "end": 67.745
+     "start": 97.638,
+     "end": 97.758
     },
     {
      "w": "hole,",
-     "start": 67.745,
-     "end": 68.065
+     "start": 97.758,
+     "end": 98.078
     },
     {
      "w": "and",
-     "start": 68.065,
-     "end": 68.305
+     "start": 98.078,
+     "end": 98.318
     },
     {
      "w": "puts",
-     "start": 68.305,
-     "end": 68.505
+     "start": 98.318,
+     "end": 98.518
     },
     {
      "w": "his",
-     "start": 68.505,
-     "end": 68.705
+     "start": 98.518,
+     "end": 98.718
     },
     {
      "w": "legs",
-     "start": 68.705,
-     "end": 68.985
+     "start": 98.718,
+     "end": 98.998
     },
     {
      "w": "in.",
-     "start": 68.985,
-     "end": 69.265
+     "start": 98.998,
+     "end": 99.278
     }
    ]
   },
   {
    "id": "inc-6",
    "section": "incident",
-   "start": 69.748,
-   "end": 71.409,
+   "start": 99.762,
+   "end": 101.423,
    "words": [
     {
      "w": "Nobody",
-     "start": 69.748,
-     "end": 70.108
+     "start": 99.762,
+     "end": 100.122
     },
     {
      "w": "saw",
-     "start": 70.108,
-     "end": 70.428
+     "start": 100.122,
+     "end": 100.442
     },
     {
      "w": "what",
-     "start": 70.428,
-     "end": 70.628
+     "start": 100.442,
+     "end": 100.642
     },
     {
      "w": "happened",
-     "start": 70.628,
-     "end": 70.888
+     "start": 100.642,
+     "end": 100.902
     },
     {
      "w": "next.",
-     "start": 70.888,
-     "end": 71.228
+     "start": 100.902,
+     "end": 101.242
     }
    ]
   },
   {
    "id": "inc-7",
    "section": "incident",
-   "start": 72.009,
-   "end": 73.599,
+   "start": 102.023,
+   "end": 103.613,
    "words": [
     {
      "w": "His",
-     "start": 72.009,
-     "end": 72.149
+     "start": 102.023,
+     "end": 102.163
     },
     {
      "w": "foreman",
-     "start": 72.149,
-     "end": 72.629
+     "start": 102.163,
+     "end": 102.643
     },
     {
      "w": "looks",
-     "start": 72.629,
-     "end": 72.849
+     "start": 102.643,
+     "end": 102.863
     },
     {
      "w": "into",
-     "start": 72.849,
-     "end": 73.089
+     "start": 102.863,
+     "end": 103.103
     },
     {
      "w": "the",
-     "start": 73.089,
-     "end": 73.229
+     "start": 103.103,
+     "end": 103.243
     },
     {
      "w": "hole.",
-     "start": 73.229,
-     "end": 73.489
+     "start": 103.243,
+     "end": 103.503
     }
    ]
   },
   {
    "id": "inc-8",
    "section": "incident",
-   "start": 73.949,
-   "end": 79.093,
+   "start": 103.963,
+   "end": 109.107,
    "words": [
     {
      "w": "More",
-     "start": 73.949,
-     "end": 74.169
+     "start": 103.963,
+     "end": 104.183
     },
     {
      "w": "than",
-     "start": 74.169,
-     "end": 74.389
+     "start": 104.183,
+     "end": 104.403
     },
     {
      "w": "twenty-five",
-     "start": 74.389,
-     "end": 74.949
+     "start": 104.403,
+     "end": 104.963
     },
     {
      "w": "years",
-     "start": 74.949,
-     "end": 75.309
+     "start": 104.963,
+     "end": 105.323
     },
     {
      "w": "in",
-     "start": 75.309,
-     "end": 75.569
+     "start": 105.323,
+     "end": 105.583
     },
     {
      "w": "refineries.",
-     "start": 75.569,
-     "end": 76.189
+     "start": 105.583,
+     "end": 106.203
     },
     {
      "w": "A",
-     "start": 76.809,
-     "end": 76.909
+     "start": 106.823,
+     "end": 106.923
     },
     {
      "w": "man",
-     "start": 76.909,
-     "end": 77.129
+     "start": 106.923,
+     "end": 107.143
     },
     {
      "w": "who",
-     "start": 77.129,
-     "end": 77.309
+     "start": 107.143,
+     "end": 107.323
     },
     {
      "w": "taught",
-     "start": 77.309,
-     "end": 77.509
+     "start": 107.323,
+     "end": 107.523
     },
     {
      "w": "safety",
-     "start": 77.509,
-     "end": 77.989
+     "start": 107.523,
+     "end": 108.003
     },
     {
      "w": "to",
-     "start": 77.989,
-     "end": 78.249
+     "start": 108.003,
+     "end": 108.263
     },
     {
      "w": "other",
-     "start": 78.249,
-     "end": 78.449
+     "start": 108.263,
+     "end": 108.463
     },
     {
      "w": "workers.",
-     "start": 78.449,
-     "end": 78.849
+     "start": 108.463,
+     "end": 108.863
     }
    ]
   },
   {
    "id": "stop-1",
    "section": "stoppable_moment",
-   "start": 79.493,
-   "end": 82.278,
+   "start": 109.507,
+   "end": 112.292,
    "words": [
     {
      "w": "Everything",
-     "start": 79.493,
-     "end": 79.913
+     "start": 109.507,
+     "end": 109.927
     },
     {
      "w": "he's",
-     "start": 79.913,
-     "end": 80.173
+     "start": 109.927,
+     "end": 110.187
     },
     {
      "w": "been",
-     "start": 80.173,
-     "end": 80.313
+     "start": 110.187,
+     "end": 110.327
     },
     {
      "w": "trained",
-     "start": 80.313,
-     "end": 80.593
+     "start": 110.327,
+     "end": 110.607
     },
     {
      "w": "to",
-     "start": 80.593,
-     "end": 80.833
+     "start": 110.607,
+     "end": 110.847
     },
     {
      "w": "do",
-     "start": 80.833,
-     "end": 80.993
+     "start": 110.847,
+     "end": 111.007
     },
     {
      "w": "says:",
-     "start": 80.993,
-     "end": 81.353
+     "start": 111.007,
+     "end": 111.367
     },
     {
      "w": "stay",
-     "start": 81.673,
-     "end": 81.913
+     "start": 111.687,
+     "end": 111.927
     },
     {
      "w": "out.",
-     "start": 81.913,
-     "end": 82.253
+     "start": 111.927,
+     "end": 112.267
     }
    ]
   },
   {
    "id": "inc-9",
    "section": "incident",
-   "start": 82.778,
-   "end": 85.363,
+   "start": 112.792,
+   "end": 115.377,
    "words": [
     {
      "w": "He",
-     "start": 82.778,
-     "end": 82.878
+     "start": 112.792,
+     "end": 112.892
     },
     {
      "w": "grabs",
-     "start": 82.878,
-     "end": 83.158
+     "start": 112.892,
+     "end": 113.172
     },
     {
      "w": "a",
-     "start": 83.158,
-     "end": 83.378
+     "start": 113.172,
+     "end": 113.392
     },
     {
      "w": "ladder",
-     "start": 83.378,
-     "end": 83.678
+     "start": 113.392,
+     "end": 113.692
     },
     {
      "w": "and",
-     "start": 83.678,
-     "end": 84.098
+     "start": 113.692,
+     "end": 114.112
     },
     {
      "w": "climbs",
-     "start": 84.098,
-     "end": 84.458
+     "start": 114.112,
+     "end": 114.472
     },
     {
      "w": "in",
-     "start": 84.458,
-     "end": 84.698
+     "start": 114.472,
+     "end": 114.712
     },
     {
      "w": "to",
-     "start": 84.698,
-     "end": 84.878
+     "start": 114.712,
+     "end": 114.892
     },
     {
      "w": "save",
-     "start": 84.878,
-     "end": 85.118
+     "start": 114.892,
+     "end": 115.132
     },
     {
      "w": "him.",
-     "start": 85.118,
-     "end": 85.338
+     "start": 115.132,
+     "end": 115.352
     }
    ]
   },
   {
    "id": "inc-10",
    "section": "incident",
-   "start": 85.713,
-   "end": 88.233,
+   "start": 115.727,
+   "end": 118.247,
    "words": [
     {
      "w": "A",
-     "start": 85.713,
-     "end": 85.813
+     "start": 115.727,
+     "end": 115.827
     },
     {
      "w": "few",
-     "start": 85.813,
-     "end": 86.033
+     "start": 115.827,
+     "end": 116.047
     },
     {
      "w": "breaths",
-     "start": 86.033,
-     "end": 86.293
+     "start": 116.047,
+     "end": 116.307
     },
     {
      "w": "later,",
-     "start": 86.293,
-     "end": 86.753
+     "start": 116.307,
+     "end": 116.767
     },
     {
      "w": "he's",
-     "start": 87.073,
-     "end": 87.233
+     "start": 117.087,
+     "end": 117.247
     },
     {
      "w": "lying",
-     "start": 87.233,
-     "end": 87.493
+     "start": 117.247,
+     "end": 117.507
     },
     {
      "w": "beside",
-     "start": 87.493,
-     "end": 87.973
+     "start": 117.507,
+     "end": 117.987
     },
     {
      "w": "him.",
-     "start": 87.973,
-     "end": 88.193
+     "start": 117.987,
+     "end": 118.207
     }
    ]
   },
   {
    "id": "inc-11",
    "section": "incident",
-   "start": 88.933,
-   "end": 95.236,
+   "start": 118.947,
+   "end": 125.25,
    "words": [
     {
      "w": "Rescuers",
-     "start": 88.933,
-     "end": 89.593
+     "start": 118.947,
+     "end": 119.607
     },
     {
      "w": "arrive",
-     "start": 89.593,
-     "end": 89.933
+     "start": 119.607,
+     "end": 119.947
     },
     {
      "w": "in",
-     "start": 89.933,
-     "end": 90.213
+     "start": 119.947,
+     "end": 120.227
     },
     {
      "w": "under",
-     "start": 90.213,
-     "end": 90.393
+     "start": 120.227,
+     "end": 120.407
     },
     {
      "w": "two",
-     "start": 90.393,
-     "end": 90.653
+     "start": 120.407,
+     "end": 120.667
     },
     {
      "w": "minutes.",
-     "start": 90.653,
-     "end": 91.053
+     "start": 120.667,
+     "end": 121.067
     },
     {
      "w": "Getting",
-     "start": 91.613,
-     "end": 91.753
+     "start": 121.627,
+     "end": 121.767
     },
     {
      "w": "two",
-     "start": 91.753,
-     "end": 92.053
+     "start": 121.767,
+     "end": 122.067
     },
     {
      "w": "men",
-     "start": 92.053,
-     "end": 92.233
+     "start": 122.067,
+     "end": 122.247
     },
     {
      "w": "out",
-     "start": 92.233,
-     "end": 92.513
+     "start": 122.247,
+     "end": 122.527
     },
     {
      "w": "through",
-     "start": 92.513,
-     "end": 92.733
+     "start": 122.527,
+     "end": 122.747
     },
     {
      "w": "a",
-     "start": 92.733,
-     "end": 92.853
+     "start": 122.747,
+     "end": 122.867
     },
     {
      "w": "twenty-four",
-     "start": 92.853,
-     "end": 93.373
+     "start": 122.867,
+     "end": 123.387
     },
     {
      "w": "inch",
-     "start": 93.373,
-     "end": 93.613
+     "start": 123.387,
+     "end": 123.627
     },
     {
      "w": "hole",
-     "start": 93.613,
-     "end": 94.053
+     "start": 123.627,
+     "end": 124.067
     },
     {
      "w": "takes",
-     "start": 94.053,
-     "end": 94.433
+     "start": 124.067,
+     "end": 124.447
     },
     {
      "w": "nearly",
-     "start": 94.433,
-     "end": 94.833
+     "start": 124.447,
+     "end": 124.847
     },
     {
      "w": "ten.",
-     "start": 94.833,
-     "end": 95.153
+     "start": 124.847,
+     "end": 125.167
     }
    ]
   },
   {
    "id": "inc-12",
    "section": "incident",
-   "start": 95.686,
-   "end": 97.212,
+   "start": 125.7,
+   "end": 127.226,
    "words": [
     {
      "w": "Both",
-     "start": 95.686,
-     "end": 95.946
+     "start": 125.7,
+     "end": 125.96
     },
     {
      "w": "men",
-     "start": 95.946,
-     "end": 96.226
+     "start": 125.96,
+     "end": 126.24
     },
     {
      "w": "were",
-     "start": 96.226,
-     "end": 96.426
+     "start": 126.24,
+     "end": 126.44
     },
     {
      "w": "pronounced",
-     "start": 96.426,
-     "end": 96.726
+     "start": 126.44,
+     "end": 126.74
     },
     {
      "w": "dead.",
-     "start": 96.726,
-     "end": 97.126
+     "start": 126.74,
+     "end": 127.14
     }
    ]
   },
   {
    "id": "lesson-1",
    "section": "lesson",
-   "start": 97.962,
-   "end": 103.083,
+   "start": 127.976,
+   "end": 133.17,
    "words": [
     {
      "w": "Investigators",
-     "start": 97.962,
-     "end": 98.702
-    },
-    {
-     "w": "could",
-     "start": 98.702,
-     "end": 99.162
+     "start": 127.976,
+     "end": 128.656
     },
     {
      "w": "never",
-     "start": 99.162,
-     "end": 99.462
+     "start": 128.656,
+     "end": 129.536
     },
     {
-     "w": "establish",
-     "start": 99.462,
-     "end": 100.162
+     "w": "found",
+     "start": 129.536,
+     "end": 129.876
+    },
+    {
+     "w": "out",
+     "start": 129.876,
+     "end": 130.136
     },
     {
      "w": "whether",
-     "start": 100.162,
-     "end": 100.762
+     "start": 130.136,
+     "end": 130.416
     },
     {
      "w": "either",
-     "start": 100.762,
-     "end": 101.122
+     "start": 130.416,
+     "end": 130.776
     },
     {
      "w": "man",
-     "start": 101.122,
-     "end": 101.482
+     "start": 130.776,
+     "end": 131.196
+    },
+    {
+     "w": "even",
+     "start": 131.196,
+     "end": 131.576
     },
     {
      "w": "knew",
-     "start": 101.482,
-     "end": 101.782
+     "start": 131.576,
+     "end": 131.876
     },
     {
      "w": "the",
-     "start": 101.782,
-     "end": 101.982
+     "start": 131.876,
+     "end": 132.096
     },
     {
      "w": "nitrogen",
-     "start": 101.982,
-     "end": 102.402
+     "start": 132.096,
+     "end": 132.516
     },
     {
      "w": "was",
-     "start": 102.402,
-     "end": 102.762
+     "start": 132.516,
+     "end": 132.856
     },
     {
      "w": "on.",
-     "start": 102.762,
-     "end": 103.062
+     "start": 132.856,
+     "end": 133.136
     }
    ]
   },
   {
    "id": "lesson-2",
    "section": "lesson",
-   "start": 103.583,
-   "end": 108.934,
+   "start": 133.67,
+   "end": 139.021,
    "words": [
     {
      "w": "Most",
-     "start": 103.583,
-     "end": 103.863
+     "start": 133.67,
+     "end": 133.95
     },
     {
      "w": "shortcuts",
-     "start": 103.863,
-     "end": 104.443
+     "start": 133.95,
+     "end": 134.53
     },
     {
      "w": "cost",
-     "start": 104.443,
-     "end": 104.803
+     "start": 134.53,
+     "end": 134.89
     },
     {
      "w": "you",
-     "start": 104.803,
-     "end": 105.063
+     "start": 134.89,
+     "end": 135.15
     },
     {
      "w": "nothing.",
-     "start": 105.063,
-     "end": 105.343
+     "start": 135.15,
+     "end": 135.43
     },
     {
      "w": "That's",
-     "start": 105.883,
-     "end": 106.163
+     "start": 135.97,
+     "end": 136.25
     },
     {
      "w": "what",
-     "start": 106.163,
-     "end": 106.303
+     "start": 136.25,
+     "end": 136.39
     },
     {
      "w": "makes",
-     "start": 106.303,
-     "end": 106.523
+     "start": 136.39,
+     "end": 136.61
     },
     {
      "w": "the",
-     "start": 106.523,
-     "end": 106.723
+     "start": 136.61,
+     "end": 136.81
     },
     {
      "w": "one",
-     "start": 106.723,
-     "end": 106.883
+     "start": 136.81,
+     "end": 136.97
     },
     {
      "w": "that",
-     "start": 106.883,
-     "end": 107.123
+     "start": 136.97,
+     "end": 137.21
     },
     {
      "w": "kills",
-     "start": 107.123,
-     "end": 107.363
+     "start": 137.21,
+     "end": 137.45
     },
     {
      "w": "you",
-     "start": 107.363,
-     "end": 107.623
+     "start": 137.45,
+     "end": 137.71
     },
     {
      "w": "look",
-     "start": 107.623,
-     "end": 107.843
+     "start": 137.71,
+     "end": 137.93
     },
     {
      "w": "just",
-     "start": 107.843,
-     "end": 108.163
+     "start": 137.93,
+     "end": 138.25
     },
     {
      "w": "like",
-     "start": 108.163,
-     "end": 108.363
+     "start": 138.25,
+     "end": 138.45
     },
     {
      "w": "the",
-     "start": 108.363,
-     "end": 108.523
+     "start": 138.45,
+     "end": 138.61
     },
     {
      "w": "rest.",
-     "start": 108.523,
-     "end": 108.723
+     "start": 138.61,
+     "end": 138.81
     }
    ]
   },
   {
    "id": "lesson-3",
    "section": "lesson",
-   "start": 109.434,
-   "end": 113.831,
+   "start": 139.521,
+   "end": 143.918,
    "words": [
     {
      "w": "If",
-     "start": 109.434,
-     "end": 109.554
+     "start": 139.521,
+     "end": 139.641
     },
     {
      "w": "someone",
-     "start": 109.554,
-     "end": 109.934
+     "start": 139.641,
+     "end": 140.021
     },
     {
      "w": "goes",
-     "start": 109.934,
-     "end": 110.194
+     "start": 140.021,
+     "end": 140.281
     },
     {
      "w": "down",
-     "start": 110.194,
-     "end": 110.554
+     "start": 140.281,
+     "end": 140.641
     },
     {
      "w": "in",
-     "start": 110.554,
-     "end": 110.694
+     "start": 140.641,
+     "end": 140.781
     },
     {
      "w": "a",
-     "start": 110.694,
-     "end": 110.814
+     "start": 140.781,
+     "end": 140.901
     },
     {
      "w": "tank,",
-     "start": 110.814,
-     "end": 111.114
+     "start": 140.901,
+     "end": 141.201
     },
     {
      "w": "you",
-     "start": 111.334,
-     "end": 111.414
+     "start": 141.421,
+     "end": 141.501
     },
     {
      "w": "do",
-     "start": 111.414,
-     "end": 111.534
+     "start": 141.501,
+     "end": 141.621
     },
     {
      "w": "not",
-     "start": 111.534,
-     "end": 111.734
+     "start": 141.621,
+     "end": 141.821
     },
     {
      "w": "go",
-     "start": 111.734,
-     "end": 111.974
+     "start": 141.821,
+     "end": 142.061
     },
     {
      "w": "in",
-     "start": 111.974,
-     "end": 112.154
+     "start": 142.061,
+     "end": 142.241
     },
     {
      "w": "after",
-     "start": 112.154,
-     "end": 112.414
+     "start": 142.241,
+     "end": 142.501
     },
     {
      "w": "them.",
-     "start": 112.414,
-     "end": 112.734
+     "start": 142.501,
+     "end": 142.821
     },
     {
      "w": "You",
-     "start": 113.094,
-     "end": 113.254
+     "start": 143.181,
+     "end": 143.341
     },
     {
      "w": "call",
-     "start": 113.254,
-     "end": 113.494
+     "start": 143.341,
+     "end": 143.581
     },
     {
      "w": "it",
-     "start": 113.494,
-     "end": 113.654
+     "start": 143.581,
+     "end": 143.741
     },
     {
      "w": "in.",
-     "start": 113.654,
-     "end": 113.794
+     "start": 143.741,
+     "end": 143.881
     }
    ]
   },
   {
    "id": "tribute-1",
    "section": "tribute",
-   "start": 114.381,
-   "end": 119.506,
+   "start": 144.468,
+   "end": 149.594,
    "words": [
     {
      "w": "Two",
-     "start": 114.381,
-     "end": 114.561
+     "start": 144.468,
+     "end": 144.648
     },
     {
      "w": "men",
-     "start": 114.561,
-     "end": 114.801
+     "start": 144.648,
+     "end": 144.888
     },
     {
      "w": "never",
-     "start": 114.801,
-     "end": 115.121
+     "start": 144.888,
+     "end": 145.208
     },
     {
      "w": "came",
-     "start": 115.121,
-     "end": 115.401
+     "start": 145.208,
+     "end": 145.488
     },
     {
      "w": "home.",
-     "start": 115.401,
-     "end": 115.821
+     "start": 145.488,
+     "end": 145.908
     },
     {
      "w": "We",
-     "start": 116.341,
-     "end": 116.461
+     "start": 146.428,
+     "end": 146.548
     },
     {
      "w": "tell",
-     "start": 116.461,
-     "end": 116.661
+     "start": 146.548,
+     "end": 146.748
     },
     {
      "w": "their",
-     "start": 116.661,
-     "end": 116.881
+     "start": 146.748,
+     "end": 146.968
     },
     {
      "w": "story",
-     "start": 116.881,
-     "end": 117.261
+     "start": 146.968,
+     "end": 147.348
     },
     {
      "w": "so",
-     "start": 117.261,
-     "end": 117.581
+     "start": 147.348,
+     "end": 147.668
     },
     {
      "w": "no",
-     "start": 117.581,
-     "end": 117.821
+     "start": 147.668,
+     "end": 147.908
     },
     {
      "w": "other",
-     "start": 117.821,
-     "end": 118.101
+     "start": 147.908,
+     "end": 148.188
     },
     {
      "w": "family",
-     "start": 118.101,
-     "end": 118.381
+     "start": 148.188,
+     "end": 148.468
     },
     {
      "w": "goes",
-     "start": 118.381,
-     "end": 118.781
+     "start": 148.468,
+     "end": 148.868
     },
     {
      "w": "through",
-     "start": 118.781,
-     "end": 119.101
+     "start": 148.868,
+     "end": 149.188
     },
     {
      "w": "this.",
-     "start": 119.101,
-     "end": 119.361
+     "start": 149.188,
+     "end": 149.448
     }
    ]
   },
   {
    "id": "signoff",
    "section": "signoff",
-   "start": 119.956,
-   "end": 121.262,
+   "start": 150.044,
+   "end": 151.349,
    "words": [
     {
      "w": "Don't",
-     "start": 119.956,
-     "end": 120.256
+     "start": 150.044,
+     "end": 150.344
     },
     {
      "w": "die",
-     "start": 120.256,
-     "end": 120.456
+     "start": 150.344,
+     "end": 150.544
     },
     {
      "w": "at",
-     "start": 120.456,
-     "end": 120.636
+     "start": 150.544,
+     "end": 150.724
     },
     {
      "w": "work",
-     "start": 120.636,
-     "end": 120.816
+     "start": 150.724,
+     "end": 150.904
     },
     {
      "w": "today.",
-     "start": 120.816,
-     "end": 121.096
+     "start": 150.904,
+     "end": 151.184
     }
    ]
   }

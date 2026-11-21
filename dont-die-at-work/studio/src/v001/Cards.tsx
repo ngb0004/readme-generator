@@ -78,6 +78,9 @@ export const Breathing: React.FC<{t: number}> = ({t}) => {
       </svg>
       <div style={{position: 'absolute', left: 0, top: 232, width: W, textAlign: 'center', fontFamily: FONT.display, fontSize: 300, lineHeight: 1, color: C.cyan, transform: `scale(${0.75 + 0.25 * slam})`, opacity: Math.min(1, slam * 2), ...stroke(10)}}>{os('hook-3', 3)}</div>
       <div style={{position: 'absolute', left: 0, top: 528, width: W, textAlign: 'center', fontFamily: FONT.display, fontSize: 84, color: C.white, opacity: ramp(t, t0 + 0.45, t0 + 0.75), ...stroke(8)}}>{os('hook-3', 4)}</div>
+      {t >= T.gasCalled - 0.05 ? (
+        <div style={{position: 'absolute', left: 430, top: 880, fontFamily: FONT.display, fontSize: 150, color: C.cyan, transform: `scale(${0.7 + 0.3 * pop(t, T.gasCalled - 0.05)})`, transformOrigin: '0 50%', ...stroke(10)}}>{os('mach-1', 0)}</div>
+      ) : null}
     </Sheet>
   );
 };

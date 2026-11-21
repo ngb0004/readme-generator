@@ -67,3 +67,20 @@ In his words:
 - **My own calls, not asked for:** dropped a planned line about the earlier federal warning to make
   room for the "why it felt safe" beat; no wage figure in the hook (the report gives none).
 - **Status:** awaiting Nick's review.
+
+### Cut 3 (same day)
+
+Nick on cut 2: "What even is this tank? How am I supposed to give a fuck about some guy going into a
+tank when I have no idea what the tank is?" and "Assume that everybody is uneducated and has no
+idea what's going on." Cut 2 had called it "this refinery tank" and moved on.
+
+- Added a 40-second section straight after the hook, in plain words with an animated diagram:
+  what the tank is (part of an oil refinery), its one purpose (making fuel), how it works (heavy
+  oil cooked under heat and pressure into gasoline and jet fuel), why people open it (the material
+  inside wears out and is refilled), and why it is then full of nitrogen (the fresh batch cannot
+  touch oxygen).
+- Third source: OSHA Technical Manual, Section IV Chapter 2, for how the process works. 86 citations.
+- Length: 2:33 at 173 words a minute.
+- This is now the spine for every video (see CLAUDE.md): what it is, what it is for, how it works,
+  why people work on it, what these people were doing, why it killed them.
+- **Status:** awaiting Nick's review.

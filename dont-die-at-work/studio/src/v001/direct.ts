@@ -9,12 +9,12 @@ const VIEWS: ViewKey[] = [
   {at: 0, cut: true, x: 0.08, y: 0.86, s: 196},
   {at: T.h2, x: 0.08, y: 0.84, s: 232, ease: E.out},
   {at: T.h3, x: 0, y: -0.62, s: 196, ease: E.inOutQuad},
-  // MECHANISM: the whole machine
-  {at: T.m3, cut: true, x: 0, y: -0.75, s: 166},
-  {at: T.n1, x: 0, y: -0.6, s: 178, ease: E.lin},
+  // "a giant steel tank": pull back from the two men to all of it
+  {at: T.standing, cut: true, x: 0.06, y: 0.84, s: 236},
+  {at: T.ma2, x: 0, y: -2.2, s: 112, ease: E.inOutQuad},
   // the days before
   {at: T.n1, cut: true, x: 0, y: 0.42, s: 150},
-  {at: T.monitor, x: 0, y: 0.42, s: 158, ease: E.lin},
+  {at: T.onlyWarning - 0.4, x: 0, y: 0.42, s: 160, ease: E.lin},
   {at: T.onlyWarning, x: 0, y: 0.36, s: 190, ease: E.inOutQuad},
   {at: T.onlyWarning + 0.7, x: 0, y: 0.34, s: 420, ease: E.inOutQuad},
   {at: T.n2, x: 0, y: 0.34, s: 440, ease: E.lin},
@@ -89,7 +89,7 @@ export type Direction = {
 };
 
 export const direct = (t: number): Direction => {
-  const inCard = (t >= T.h3 && t < T.m3) || (t >= T.i6 && t < T.i7) || (t >= T.i12 && t < T.l3);
+  const inCard = (t >= T.h3 && t < T.standing) || (t >= T.ma2 && t < T.n1) || (t >= T.i6 && t < T.i7) || (t >= T.i12 && t < T.l3);
   const safeWay = t >= T.i3 && t < T.wire;
 
   // The gas is colourless. The viewer is shown it; the men are not.
@@ -100,21 +100,20 @@ export const direct = (t: number): Direction => {
   else if (t >= T.i2 && t < T.i3) level = lerp(0.06, 0.9, ramp(t, T.five + 0.2, T.five + 1.0));
   else if (t >= T.l3 && t < T.tribute) level = 0.85;
   else if (t >= T.tribute) level = 0;
-  const filling = t >= T.m3 && t < T.n1;
-  const fill = filling ? ramp(t, T.m3 + 1.0, T.keepOxygen + 0.4, E.inOutQuad) : 1;
 
   // time-lapse over the days before: two day/night turns while the purge runs
-  const u = clamp((t - T.n1) / (T.monitor - T.n1));
-  const day = t >= T.n1 && t < T.monitor ? Math.pow(Math.max(0, Math.sin(u * Math.PI * 2 - 0.6)), 0.8) * (1 - ramp(t, T.monitor - 0.5, T.monitor)) : 0;
+  const dusk = T.onlyWarning - 0.3;
+  const u = clamp((t - T.n1) / (dusk - T.n1));
+  const day = t >= T.n1 && t < dusk ? Math.pow(Math.max(0, Math.sin(u * Math.PI * 2 - 0.6)), 0.8) * (1 - ramp(t, dusk - 0.5, dusk)) : 0;
 
-  const cast: Direction['cast'] = t < T.h3 ? 'main' : t < T.n1 ? 'none' : t < T.n2 ? 'crews' : t < T.i1 - 0.1 ? 'none' : t < T.tribute ? 'main' : 'none';
+  const cast: Direction['cast'] = t < T.ma2 ? 'main' : t < T.n1 ? 'none' : t < T.n2 ? 'crews' : t < T.i1 - 0.1 ? 'none' : t < T.tribute ? 'main' : 'none';
   return {
     view: viewOf(t),
     world: !inCard,
-    gas: {level, fill, cloud: filling ? ramp(t, T.keepOxygen + 0.3, T.keepOxygen + 1.2) : 1},
-    o2out: filling ? win(t, T.m3 + 1.2, T.keepOxygen + 1.4, 0.4, 0.6) : 0,
-    supply: win(t, T.m3, T.monitor, 0.3, 0.6),
-    redTape: t < T.h3 ? 1 : t < T.n1 ? 0 : t < T.n2 ? ramp(t, T.n1 + 2.9, T.n1 + 3.5) : 1,
+    gas: {level, fill: 1, cloud: 1},
+    o2out: 0,
+    supply: 0,
+    redTape: t < T.n1 ? 1 : t < T.n2 ? ramp(t, T.n1 + 2.9, T.n1 + 3.5) : 1,
     day,
     cast,
     showP: t >= T.i2 - 1.6 && t < T.i3 + 1.4,
