@@ -1,0 +1,1020 @@
+{
+ "voice": "am_michael",
+ "speed": 1.15,
+ "speech_end": 57.164,
+ "beats": [
+  {
+   "id": "hook-1",
+   "section": "hook",
+   "start": 0.1,
+   "end": 2.232,
+   "words": [
+    {
+     "w": "Two",
+     "start": 0.1,
+     "end": 0.26
+    },
+    {
+     "w": "men",
+     "start": 0.26,
+     "end": 0.5
+    },
+    {
+     "w": "died",
+     "start": 0.5,
+     "end": 0.88
+    },
+    {
+     "w": "over",
+     "start": 0.88,
+     "end": 1.16
+    },
+    {
+     "w": "this",
+     "start": 1.16,
+     "end": 1.32
+    },
+    {
+     "w": "roll",
+     "start": 1.32,
+     "end": 1.58
+    },
+    {
+     "w": "of",
+     "start": 1.58,
+     "end": 1.76
+    },
+    {
+     "w": "duct",
+     "start": 1.76,
+     "end": 1.96
+    },
+    {
+     "w": "tape.",
+     "start": 1.96,
+     "end": 2.2
+    }
+   ]
+  },
+  {
+   "id": "hook-2",
+   "section": "hook",
+   "start": 2.412,
+   "end": 4.616,
+   "words": [
+    {
+     "w": "And",
+     "start": 2.412,
+     "end": 2.532
+    },
+    {
+     "w": "what",
+     "start": 2.532,
+     "end": 2.692
+    },
+    {
+     "w": "killed",
+     "start": 2.692,
+     "end": 2.952
+    },
+    {
+     "w": "them,",
+     "start": 2.952,
+     "end": 3.272
+    },
+    {
+     "w": "you're",
+     "start": 3.532,
+     "end": 3.692
+    },
+    {
+     "w": "breathing",
+     "start": 3.692,
+     "end": 3.932
+    },
+    {
+     "w": "right",
+     "start": 3.932,
+     "end": 4.252
+    },
+    {
+     "w": "now.",
+     "start": 4.252,
+     "end": 4.592
+    }
+   ]
+  },
+  {
+   "id": "buildup-1",
+   "section": "buildup",
+   "start": 4.956,
+   "end": 10.676,
+   "words": [
+    {
+     "w": "Night",
+     "start": 4.956,
+     "end": 5.156
+    },
+    {
+     "w": "shift",
+     "start": 5.156,
+     "end": 5.496
+    },
+    {
+     "w": "at",
+     "start": 5.496,
+     "end": 5.776
+    },
+    {
+     "w": "a",
+     "start": 5.776,
+     "end": 5.896
+    },
+    {
+     "w": "Delaware",
+     "start": 5.896,
+     "end": 6.276
+    },
+    {
+     "w": "refinery.",
+     "start": 6.276,
+     "end": 6.916
+    },
+    {
+     "w": "A",
+     "start": 7.516,
+     "end": 7.636
+    },
+    {
+     "w": "crew",
+     "start": 7.636,
+     "end": 7.896
+    },
+    {
+     "w": "has",
+     "start": 7.896,
+     "end": 8.176
+    },
+    {
+     "w": "to",
+     "start": 8.176,
+     "end": 8.376
+    },
+    {
+     "w": "reinstall",
+     "start": 8.376,
+     "end": 8.956
+    },
+    {
+     "w": "a",
+     "start": 8.956,
+     "end": 9.156
+    },
+    {
+     "w": "pipe",
+     "start": 9.156,
+     "end": 9.416
+    },
+    {
+     "w": "on",
+     "start": 9.416,
+     "end": 9.656
+    },
+    {
+     "w": "top",
+     "start": 9.656,
+     "end": 9.876
+    },
+    {
+     "w": "of",
+     "start": 9.876,
+     "end": 10.036
+    },
+    {
+     "w": "this",
+     "start": 10.036,
+     "end": 10.156
+    },
+    {
+     "w": "reactor.",
+     "start": 10.156,
+     "end": 10.456
+    }
+   ]
+  },
+  {
+   "id": "buildup-2",
+   "section": "buildup",
+   "start": 10.856,
+   "end": 15.56,
+   "words": [
+    {
+     "w": "Someone",
+     "start": 10.856,
+     "end": 11.136
+    },
+    {
+     "w": "spots",
+     "start": 11.136,
+     "end": 11.476
+    },
+    {
+     "w": "a",
+     "start": 11.476,
+     "end": 11.676
+    },
+    {
+     "w": "roll",
+     "start": 11.676,
+     "end": 11.836
+    },
+    {
+     "w": "of",
+     "start": 11.836,
+     "end": 11.996
+    },
+    {
+     "w": "duct",
+     "start": 11.996,
+     "end": 12.196
+    },
+    {
+     "w": "tape,",
+     "start": 12.196,
+     "end": 12.536
+    },
+    {
+     "w": "five",
+     "start": 12.536,
+     "end": 13.076
+    },
+    {
+     "w": "feet",
+     "start": 13.076,
+     "end": 13.336
+    },
+    {
+     "w": "down",
+     "start": 13.336,
+     "end": 13.676
+    },
+    {
+     "w": "inside.",
+     "start": 13.676,
+     "end": 14.136
+    },
+    {
+     "w": "It",
+     "start": 14.596,
+     "end": 14.736
+    },
+    {
+     "w": "can't",
+     "start": 14.736,
+     "end": 15.056
+    },
+    {
+     "w": "stay",
+     "start": 15.056,
+     "end": 15.256
+    },
+    {
+     "w": "there.",
+     "start": 15.256,
+     "end": 15.536
+    }
+   ]
+  },
+  {
+   "id": "buildup-3",
+   "section": "buildup",
+   "start": 15.74,
+   "end": 19.339,
+   "words": [
+    {
+     "w": "Going",
+     "start": 15.74,
+     "end": 16.02
+    },
+    {
+     "w": "in",
+     "start": 16.02,
+     "end": 16.22
+    },
+    {
+     "w": "means",
+     "start": 16.22,
+     "end": 16.5
+    },
+    {
+     "w": "a",
+     "start": 16.5,
+     "end": 16.68
+    },
+    {
+     "w": "permit",
+     "start": 16.68,
+     "end": 16.96
+    },
+    {
+     "w": "and",
+     "start": 16.96,
+     "end": 17.22
+    },
+    {
+     "w": "a",
+     "start": 17.22,
+     "end": 17.3
+    },
+    {
+     "w": "delay.",
+     "start": 17.3,
+     "end": 17.64
+    },
+    {
+     "w": "So",
+     "start": 18.02,
+     "end": 18.26
+    },
+    {
+     "w": "they",
+     "start": 18.26,
+     "end": 18.38
+    },
+    {
+     "w": "make",
+     "start": 18.38,
+     "end": 18.54
+    },
+    {
+     "w": "a",
+     "start": 18.54,
+     "end": 18.68
+    },
+    {
+     "w": "wire",
+     "start": 18.68,
+     "end": 18.96
+    },
+    {
+     "w": "hook.",
+     "start": 18.96,
+     "end": 19.22
+    }
+   ]
+  },
+  {
+   "id": "hidden-1",
+   "section": "hidden_cause",
+   "start": 19.639,
+   "end": 25.582,
+   "words": [
+    {
+     "w": "But",
+     "start": 19.639,
+     "end": 19.759
+    },
+    {
+     "w": "their",
+     "start": 19.759,
+     "end": 19.919
+    },
+    {
+     "w": "permit",
+     "start": 19.919,
+     "end": 20.239
+    },
+    {
+     "w": "left",
+     "start": 20.239,
+     "end": 20.479
+    },
+    {
+     "w": "one",
+     "start": 20.479,
+     "end": 20.759
+    },
+    {
+     "w": "thing",
+     "start": 20.759,
+     "end": 20.999
+    },
+    {
+     "w": "out:",
+     "start": 20.999,
+     "end": 21.359
+    },
+    {
+     "w": "the",
+     "start": 21.599,
+     "end": 21.759
+    },
+    {
+     "w": "reactor",
+     "start": 21.759,
+     "end": 22.059
+    },
+    {
+     "w": "is",
+     "start": 22.059,
+     "end": 22.399
+    },
+    {
+     "w": "full",
+     "start": 22.399,
+     "end": 22.579
+    },
+    {
+     "w": "of",
+     "start": 22.579,
+     "end": 22.739
+    },
+    {
+     "w": "nitrogen.",
+     "start": 22.739,
+     "end": 23.179
+    },
+    {
+     "w": "No",
+     "start": 23.819,
+     "end": 23.919
+    },
+    {
+     "w": "warning",
+     "start": 23.919,
+     "end": 24.259
+    },
+    {
+     "w": "sign.",
+     "start": 24.259,
+     "end": 24.639
+    },
+    {
+     "w": "No",
+     "start": 24.899,
+     "end": 25.039
+    },
+    {
+     "w": "barricade.",
+     "start": 25.039,
+     "end": 25.559
+    }
+   ]
+  },
+  {
+   "id": "hidden-2",
+   "section": "hidden_cause",
+   "start": 25.822,
+   "end": 28.425,
+   "words": [
+    {
+     "w": "No",
+     "start": 25.822,
+     "end": 26.002
+    },
+    {
+     "w": "smell.",
+     "start": 26.002,
+     "end": 26.302
+    },
+    {
+     "w": "No",
+     "start": 26.442,
+     "end": 26.602
+    },
+    {
+     "w": "color.",
+     "start": 26.602,
+     "end": 26.922
+    },
+    {
+     "w": "Almost",
+     "start": 27.302,
+     "end": 27.542
+    },
+    {
+     "w": "no",
+     "start": 27.542,
+     "end": 27.822
+    },
+    {
+     "w": "oxygen.",
+     "start": 27.822,
+     "end": 28.202
+    }
+   ]
+  },
+  {
+   "id": "reveal-1",
+   "section": "reveal",
+   "start": 28.825,
+   "end": 31.223,
+   "words": [
+    {
+     "w": "The",
+     "start": 28.825,
+     "end": 28.945
+    },
+    {
+     "w": "first",
+     "start": 28.945,
+     "end": 29.165
+    },
+    {
+     "w": "man",
+     "start": 29.165,
+     "end": 29.445
+    },
+    {
+     "w": "tries",
+     "start": 29.445,
+     "end": 29.725
+    },
+    {
+     "w": "standing.",
+     "start": 29.725,
+     "end": 30.225
+    },
+    {
+     "w": "Then",
+     "start": 30.645,
+     "end": 30.745
+    },
+    {
+     "w": "kneeling.",
+     "start": 30.745,
+     "end": 31.045
+    }
+   ]
+  },
+  {
+   "id": "reveal-2",
+   "section": "reveal",
+   "start": 31.543,
+   "end": 32.741,
+   "words": [
+    {
+     "w": "Nobody",
+     "start": 31.543,
+     "end": 31.803
+    },
+    {
+     "w": "saw",
+     "start": 31.803,
+     "end": 32.183
+    },
+    {
+     "w": "him",
+     "start": 32.183,
+     "end": 32.343
+    },
+    {
+     "w": "go",
+     "start": 32.343,
+     "end": 32.523
+    },
+    {
+     "w": "in.",
+     "start": 32.523,
+     "end": 32.703
+    }
+   ]
+  },
+  {
+   "id": "reveal-3",
+   "section": "reveal",
+   "start": 33.191,
+   "end": 35.339,
+   "words": [
+    {
+     "w": "In",
+     "start": 33.191,
+     "end": 33.311
+    },
+    {
+     "w": "that",
+     "start": 33.311,
+     "end": 33.471
+    },
+    {
+     "w": "air,",
+     "start": 33.471,
+     "end": 33.731
+    },
+    {
+     "w": "one",
+     "start": 34.031,
+     "end": 34.091
+    },
+    {
+     "w": "or",
+     "start": 34.091,
+     "end": 34.211
+    },
+    {
+     "w": "two",
+     "start": 34.211,
+     "end": 34.391
+    },
+    {
+     "w": "breaths",
+     "start": 34.391,
+     "end": 34.651
+    },
+    {
+     "w": "and",
+     "start": 34.651,
+     "end": 34.871
+    },
+    {
+     "w": "you're",
+     "start": 34.871,
+     "end": 35.031
+    },
+    {
+     "w": "down.",
+     "start": 35.031,
+     "end": 35.251
+    }
+   ]
+  },
+  {
+   "id": "reveal-4",
+   "section": "reveal",
+   "start": 35.699,
+   "end": 40.998,
+   "words": [
+    {
+     "w": "His",
+     "start": 35.699,
+     "end": 35.839
+    },
+    {
+     "w": "foreman",
+     "start": 35.839,
+     "end": 36.219
+    },
+    {
+     "w": "grabs",
+     "start": 36.219,
+     "end": 36.539
+    },
+    {
+     "w": "a",
+     "start": 36.539,
+     "end": 36.739
+    },
+    {
+     "w": "ladder",
+     "start": 36.739,
+     "end": 36.999
+    },
+    {
+     "w": "and",
+     "start": 36.999,
+     "end": 37.239
+    },
+    {
+     "w": "climbs",
+     "start": 37.239,
+     "end": 37.519
+    },
+    {
+     "w": "in",
+     "start": 37.519,
+     "end": 37.779
+    },
+    {
+     "w": "to",
+     "start": 37.779,
+     "end": 37.959
+    },
+    {
+     "w": "save",
+     "start": 37.959,
+     "end": 38.199
+    },
+    {
+     "w": "him.",
+     "start": 38.199,
+     "end": 38.459
+    },
+    {
+     "w": "A",
+     "start": 39.039,
+     "end": 39.079
+    },
+    {
+     "w": "few",
+     "start": 39.059,
+     "end": 39.259
+    },
+    {
+     "w": "breaths",
+     "start": 39.259,
+     "end": 39.479
+    },
+    {
+     "w": "later,",
+     "start": 39.479,
+     "end": 39.919
+    },
+    {
+     "w": "he's",
+     "start": 40.219,
+     "end": 40.399
+    },
+    {
+     "w": "down",
+     "start": 40.399,
+     "end": 40.619
+    },
+    {
+     "w": "too.",
+     "start": 40.619,
+     "end": 40.959
+    }
+   ]
+  },
+  {
+   "id": "stop-1",
+   "section": "stoppable_moment",
+   "start": 41.498,
+   "end": 45.233,
+   "words": [
+    {
+     "w": "A",
+     "start": 41.498,
+     "end": 41.638
+    },
+    {
+     "w": "third",
+     "start": 41.638,
+     "end": 41.898
+    },
+    {
+     "w": "man",
+     "start": 41.898,
+     "end": 42.198
+    },
+    {
+     "w": "reaches",
+     "start": 42.198,
+     "end": 42.558
+    },
+    {
+     "w": "the",
+     "start": 42.558,
+     "end": 42.778
+    },
+    {
+     "w": "ladder.",
+     "start": 42.778,
+     "end": 43.078
+    },
+    {
+     "w": "He",
+     "start": 43.538,
+     "end": 43.638
+    },
+    {
+     "w": "stops,",
+     "start": 43.638,
+     "end": 43.978
+    },
+    {
+     "w": "and",
+     "start": 43.978,
+     "end": 44.298
+    },
+    {
+     "w": "radios",
+     "start": 44.298,
+     "end": 44.698
+    },
+    {
+     "w": "for",
+     "start": 44.698,
+     "end": 44.998
+    },
+    {
+     "w": "help.",
+     "start": 44.998,
+     "end": 45.198
+    }
+   ]
+  },
+  {
+   "id": "stop-2",
+   "section": "stoppable_moment",
+   "start": 45.473,
+   "end": 47.555,
+   "words": [
+    {
+     "w": "Responders",
+     "start": 45.473,
+     "end": 46.113
+    },
+    {
+     "w": "arrive",
+     "start": 46.113,
+     "end": 46.493
+    },
+    {
+     "w": "in",
+     "start": 46.493,
+     "end": 46.713
+    },
+    {
+     "w": "under",
+     "start": 46.713,
+     "end": 46.853
+    },
+    {
+     "w": "two",
+     "start": 46.853,
+     "end": 47.113
+    },
+    {
+     "w": "minutes.",
+     "start": 47.113,
+     "end": 47.353
+    }
+   ]
+  },
+  {
+   "id": "lesson-1",
+   "section": "lesson",
+   "start": 47.915,
+   "end": 50.307,
+   "words": [
+    {
+     "w": "Never",
+     "start": 47.915,
+     "end": 48.155
+    },
+    {
+     "w": "follow",
+     "start": 48.155,
+     "end": 48.535
+    },
+    {
+     "w": "someone",
+     "start": 48.535,
+     "end": 48.815
+    },
+    {
+     "w": "into",
+     "start": 48.815,
+     "end": 49.035
+    },
+    {
+     "w": "a",
+     "start": 49.035,
+     "end": 49.195
+    },
+    {
+     "w": "tank.",
+     "start": 49.195,
+     "end": 49.495
+    },
+    {
+     "w": "Call",
+     "start": 49.915,
+     "end": 49.955
+    },
+    {
+     "w": "it",
+     "start": 49.955,
+     "end": 50.095
+    },
+    {
+     "w": "in.",
+     "start": 50.095,
+     "end": 50.275
+    }
+   ]
+  },
+  {
+   "id": "tribute-1",
+   "section": "tribute",
+   "start": 50.757,
+   "end": 55.574,
+   "words": [
+    {
+     "w": "Two",
+     "start": 50.757,
+     "end": 50.917
+    },
+    {
+     "w": "men",
+     "start": 50.917,
+     "end": 51.137
+    },
+    {
+     "w": "never",
+     "start": 51.137,
+     "end": 51.437
+    },
+    {
+     "w": "came",
+     "start": 51.437,
+     "end": 51.717
+    },
+    {
+     "w": "home.",
+     "start": 51.717,
+     "end": 52.137
+    },
+    {
+     "w": "We",
+     "start": 52.637,
+     "end": 52.737
+    },
+    {
+     "w": "tell",
+     "start": 52.737,
+     "end": 52.937
+    },
+    {
+     "w": "their",
+     "start": 52.937,
+     "end": 53.117
+    },
+    {
+     "w": "story",
+     "start": 53.117,
+     "end": 53.477
+    },
+    {
+     "w": "so",
+     "start": 53.477,
+     "end": 53.737
+    },
+    {
+     "w": "no",
+     "start": 53.737,
+     "end": 53.937
+    },
+    {
+     "w": "other",
+     "start": 53.937,
+     "end": 54.217
+    },
+    {
+     "w": "family",
+     "start": 54.217,
+     "end": 54.477
+    },
+    {
+     "w": "goes",
+     "start": 54.477,
+     "end": 54.877
+    },
+    {
+     "w": "through",
+     "start": 54.877,
+     "end": 55.197
+    },
+    {
+     "w": "this.",
+     "start": 55.197,
+     "end": 55.437
+    }
+   ]
+  },
+  {
+   "id": "signoff",
+   "section": "signoff",
+   "start": 55.934,
+   "end": 57.164,
+   "words": [
+    {
+     "w": "Don't",
+     "start": 55.934,
+     "end": 56.234
+    },
+    {
+     "w": "die",
+     "start": 56.234,
+     "end": 56.374
+    },
+    {
+     "w": "at",
+     "start": 56.374,
+     "end": 56.534
+    },
+    {
+     "w": "work",
+     "start": 56.534,
+     "end": 56.714
+    },
+    {
+     "w": "today.",
+     "start": 56.714,
+     "end": 56.954
+    }
+   ]
+  }
+ ]
+}

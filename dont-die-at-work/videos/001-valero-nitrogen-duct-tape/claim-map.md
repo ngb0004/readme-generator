@@ -27,7 +27,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 ## buildup-1 (buildup)
 
-> November 2005. Night shift at a Delaware refinery. A crew is about to bolt a pipe back onto this reactor.
+> Night shift at a Delaware refinery. A crew has to reinstall a pipe on top of this reactor.
 >
 > On screen: NOV 5, 2005 / DELAWARE CITY, DE / NIGHT SHIFT / THE JOB: REINSTALL THE TOP ELBOW
 
@@ -38,10 +38,11 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 - **The job was to install the top elbow.** (p. 3): "top elbow"
 - **The vessel was the hydrocracker reactor, R1.** (p. 2): "reactor (R1)"
 - **The work included reinstalling the stud nuts (bolting).** (p. 8): "reinstalling the stud nuts and washers"
+- **The pipe goes on the reactor's top manway.** (p. 4): "Pipe assembly connects 12-inch diameter process pipe to the reactor top manway"
 
 ## buildup-2 (buildup)
 
-> Someone spots a roll of duct tape, five feet down inside. It can't stay.
+> Someone spots a roll of duct tape, five feet down inside. It can't stay there.
 >
 > On screen: 5 FT / DUCT TAPE
 
@@ -62,7 +63,7 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 ## hidden-1 (hidden_cause)
 
-> But their permit left something out: the reactor was full of nitrogen. No warning sign. No barricade.
+> But their permit left one thing out: the reactor is full of nitrogen. No warning sign. No barricade.
 >
 > On screen: SAFE WORK PERMIT / NITROGEN PURGE / N/A / NO WARNING SIGN / NO BARRICADE
 
@@ -85,18 +86,33 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 ## reveal-1 (reveal)
 
-> The first man tries standing. Then kneeling. Nobody saw him go in. In that air, one or two breaths and you're down.
+> The first man tries standing. Then kneeling.
 >
-> On screen: CSB: HE LIKELY SAT ON THE LEDGE / NOBODY SAW HIM GO IN / 1-2 BREATHS
+> On screen: CSB: HE LIKELY SAT ON THE LEDGE
 
 - **He tried standing, then kneeling.** (p. 8): "He tried from a standing position next to the manway and then, apparently to get closer, tried kneeling on the platform next to the manway"
-- **Nobody saw him enter; whether he fell or went in on purpose is unknown.** (p. 4): "Nobody saw him enter the nitrogen-filled reactor, but he either fell in or intentionally went into the reactor"
 - **CSB concluded he likely sat on the narrow ledge.** (p. 8): "the CSB concluded that the first victim likely stepped over the manway studs and then sat on the narrow ledge"
-- **Collapse comes within one or two breaths.** (p. 9): "he would collapse from a lack of oxygen within one or two breaths"
 
 ## reveal-2 (reveal)
 
-> His foreman grabs a ladder and climbs down to save him. A few breaths later, he's down too.
+> Nobody saw him go in.
+>
+> On screen: NOBODY SAW HIM GO IN
+
+- **Nobody saw him enter; whether he fell or went in on purpose is unknown.** (p. 4): "Nobody saw him enter the nitrogen-filled reactor, but he either fell in or intentionally went into the reactor"
+
+## reveal-3 (reveal)
+
+> In that air, one or two breaths and you're down.
+>
+> On screen: 1-2 BREATHS
+
+- **Collapse comes within one or two breaths.** (p. 9): "he would collapse from a lack of oxygen within one or two breaths"
+- **Loss of consciousness follows after only one or two breaths.** (p. 11): "After only one or two breaths the oxygen concentration in the blood drops dangerously low"
+
+## reveal-4 (reveal)
+
+> His foreman grabs a ladder and climbs in to save him. A few breaths later, he's down too.
 
 - **The foreman grabbed a ladder and climbed into the reactor.** (p. 10): "the foreman grabbed a nearby ladder, shoved it down the manway, and quickly climbed in the reactor"
 - **He was trying to rescue his co-worker.** (p. 1): "His co-worker, the crew foreman, was asphyxiated while attempting to rescue him"
@@ -130,9 +146,9 @@ Saved copy: `source/csb-valero-case-study-2006-02-I-DE.pdf` (sha256 `61852aabebc
 
 ## tribute-1 (tribute)
 
-> Two men never came home. One died trying to save the other. We tell their story so no other family goes through this.
+> Two men never came home. We tell their story so no other family goes through this.
 >
-> On screen: IN MEMORY OF THE TWO MEN WHO DIED / DELAWARE CITY, NOVEMBER 5, 2005 / NEARLY 10 YEARS IN REFINERIES / MORE THAN 25
+> On screen: IN MEMORY OF THE TWO MEN WHO DIED / DELAWARE CITY, NOVEMBER 5, 2005 / ONE DIED TRYING TO SAVE THE OTHER / NEARLY 10 YEARS IN REFINERIES / MORE THAN 25
 
 - **Both men died.** (p. 5): "transported to the hospital where they were pronounced dead"
 - **Two died; the second was attempting a rescue.** (p. 1): "asphyxiation death of two contractor employees"
