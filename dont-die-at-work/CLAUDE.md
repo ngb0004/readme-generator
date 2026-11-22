@@ -62,9 +62,12 @@ what the tank is, what its goal is, how it works, and then how two guys died." S
 5. What these people were doing.
 6. Why it killed them: what they did not know, what was skipped, what nobody had flagged.
 
-**Assume the viewer knows nothing.** No trade words without saying what they mean ("a material
-that makes that happen", then CATALYST on screen). If a line would not make sense to someone who
-has never seen a refinery, a barge or a grain silo, rewrite it. Background on how the equipment
+**Assume the viewer knows nothing.** No trade words without saying what they mean. That means
+naming the thing and explaining it, not hiding it: cuts 2 to 4 said "a material that makes that
+happen", and Nick asked (2026-11-22) "why does it say just material... dumb it down but still give
+people some good info". Now: "pellets called catalyst. They're what break the oil apart." If a
+line would not make sense to someone who has never seen a refinery, a barge or a grain silo,
+rewrite it. Background on how the equipment
 works may come from OSHA, NIOSH or CSB reference documents (for 001, OSHA's Technical Manual on
 refining), saved and cited like any other source.
 

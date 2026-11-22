@@ -252,7 +252,7 @@ export const Machine: React.FC<{t: number}> = ({t}) => {
       <Chip x={40} y={690} a={win(t, T.refilled + 0.6, T.pumped, 0.3, 0.15)} size={50} color="#f0b45e">{os('mach-3', 3)}</Chip>
 
       {/* oxygen, then nitrogen on purpose */}
-      <Chip x={540} y={236} a={win(t, T.cantTouch, T.pumped, 0.2, 0.15)} size={62} color={C.red} align="center" mark="✕">{os('mach-4', 0)}</Chip>
+      <Chip x={540} y={236} a={win(t, T.cantTouch, T.pumped, 0.2, 0.15)} size={62} color={C.red} align="center">{os('mach-4', 0)}</Chip>
       <Chip x={40} y={800} a={win(t, T.pumped + 0.1, T.m1, 0.3, 0.1)} size={50} color={C.cyan}>{os('mach-4', 1)}</Chip>
       {t >= T.onPurpose ? (
         <div style={{position: 'absolute', left: 0, top: 226, width: W, display: 'flex', justifyContent: 'center', transform: `scale(${0.7 + 0.3 * pop(t, T.onPurpose)}) rotate(-3deg)`, opacity: Math.min(1, pop(t, T.onPurpose) * 2)}}>

@@ -114,3 +114,18 @@ insanely dangerous to have your head anywhere near the opening."
 - 101 citations. Length: 2:52 at 172 words a minute. That is the ceiling for a Short.
 - **Status:** awaiting Nick's review.
 
+### Cut 5 (2026-11-22)
+
+Nick on cut 4: "why does it say just material, why don't we say what type of material is in the
+tank that can't touch oxygen and why it can't touch oxygen... dumb it down but still give people
+some good info."
+
+- The tank explanation now names it: "pellets called catalyst. They're what break the oil apart",
+  and says why the nitrogen is there: "fresh catalyst reacts with the oxygen in air".
+- That is as far as the approved sources go. The CSB report says the purge was there "to protect
+  the newly loaded catalyst from reacting with oxygen in the air" and does not say what the
+  reaction does. Patents describe this kind of catalyst as self-heating or pyrophoric in air; that
+  is not from OSHA, NIOSH or the CSB, so it is not in the video.
+- 105 citations. Length: 2:53.
+- **Status:** awaiting Nick's review.
+

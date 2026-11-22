@@ -204,13 +204,13 @@
     {
       "id": "mach-3",
       "section": "mechanism",
-      "narration": "The tank is packed with a material that makes that happen. Sometimes that material wears out. So the tank is shut down, opened at the top, and refilled with a fresh batch.",
+      "narration": "The tank is packed with pellets called catalyst. They're what break the oil apart. When they wear out, the tank is shut down, opened at the top, and refilled with fresh ones.",
       "gap_after": 0.3,
       "onscreen": [
         "CATALYST",
         "WORN OUT",
         "SHUT DOWN",
-        "FRESH BATCH"
+        "FRESH CATALYST"
       ],
       "claims": [
         {
@@ -218,6 +218,30 @@
           "src": "case",
           "page": 4,
           "quote": "A tray is a perforated platform installed inside a reactor used to support catalyst material"
+        },
+        {
+          "claim": "Cracking-unit catalysts are solids, in forms that include pellets.",
+          "src": "otm",
+          "page": 1,
+          "quote": "that come in the form of powders, beads, pellets or shaped materials called extrudites"
+        },
+        {
+          "claim": "The oil cracks on the catalyst.",
+          "src": "otm",
+          "page": 1,
+          "quote": "Feedstock reacts with catalyst and cracks into different hydrocarbons"
+        },
+        {
+          "claim": "The hydrocracker converts heavy oil to lighter products using catalysts.",
+          "src": "case",
+          "page": 2,
+          "quote": "converts heavy oil fractions to lighter molecular structure hydrocarbons using high pressure hydrogen and catalysts"
+        },
+        {
+          "claim": "Catalyst wears out and is replaced with fresh.",
+          "src": "otm",
+          "page": 1,
+          "quote": "Fresh catalyst is added and worn-out catalyst removed"
         },
         {
           "claim": "Catalyst gets spent and is recharged.",
@@ -248,10 +272,10 @@
     {
       "id": "mach-4",
       "section": "mechanism",
-      "narration": "But the fresh batch can't touch oxygen. So the tank is pumped full of nitrogen, on purpose, and kept that way until the hatch on top is bolted shut.",
+      "narration": "But fresh catalyst reacts with the oxygen in air. So the tank is pumped full of nitrogen, on purpose, and kept that way until the hatch on top is bolted shut.",
       "gap_after": 0.35,
       "onscreen": [
-        "CAN'T TOUCH OXYGEN",
+        "REACTS WITH OXYGEN",
         "NITROGEN IN",
         "ON PURPOSE"
       ],
