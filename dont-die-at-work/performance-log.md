@@ -235,8 +235,8 @@ What changed from Nick's draft, and why:
   ("Moron Mountain", @moronmountainclimber, the channel renamed that night) with a grant that can
   read. All six were uploaded there and read back from YouTube: the film public at once
   (https://youtu.be/DSq4t9WdoVY), the Shorts held for 12:00, 12:40, 13:20, 14:00 and 14:40 UTC
-  (ids in `upload-result-short-*.json`). The custom thumbnail was refused again: the channel is
-  not verified. The six copies on the personal account are listed in
+  (ids in `upload-result-short-*.json`). The custom thumbnail was refused until Nick verified
+  the channel by phone; it was set at 11:12 UTC (`render/thumbnail-rain.jpg`). The six copies on the personal account are listed in
   `uploads-personal-account/`; its film went public at 11:00 UTC. Nick deletes those.
 - **To do after the blast:** switch the title to "Five Tons of Neglect: The Army's Lead Bomb in
   Iowa" and the thumbnail to a calmer one; then the new ending when the EPA's results are out.
