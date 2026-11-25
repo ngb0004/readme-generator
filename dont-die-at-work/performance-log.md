@@ -6,6 +6,7 @@ The next video's tested variable is chosen with this log in hand (hard rule 8).
 | # | Video | Published | Tested variable | Views | CTR | Avg view duration | % viewed | Subs gained | Notes |
 |---|-------|-----------|-----------------|-------|-----|-------------------|----------|-------------|-------|
 | 001 | Both of These Men Are About to Die | not yet | baseline | - | - | - | - | - | Cut 2. Cut 1 rejected in review. Awaiting Nick's review and YouTube setup. |
+| S1 | Five Tons of Neglect (special, long-form) | not yet | none: outside the lane | - | - | - | - | - | Pre-blast edition. Awaiting Nick's review. |
 
 ## 001 - Both of These Men Are About to Die (Valero nitrogen, 2005)
 
@@ -129,3 +130,53 @@ some good info."
 - 105 citations. Length: 2:53.
 - **Status:** awaiting Nick's review.
 
+## S1 - Five Tons of Neglect: The Army's Lead Bomb in Iowa (special)
+
+Not a channel video: a long-form special (see CLAUDE.md, Specials). Nick handed over a full draft
+script on 2026-11-24, the night before the Army's detonation of its lead azide stockpile at
+Middletown, Iowa, and said "build this video".
+
+- **Edition:** pre-blast, finished the night of 2026-11-24. The ending says so and promises an
+  update. It needs a new ending once the EPA's sampling results and the Army's final map are out.
+- **Format:** 16:9, 1920x1080, 13:40 (13:31 of narration at 165 words a minute, then the sources
+  card). Twelve sections, 118 beats. Nick's draft aimed at 11 to 13 minutes.
+- **Sourcing:** 189 claims, each tied to a verbatim quote, from 26 documents: six official (Army
+  announcements and advisories, the EPA notice and its letter to the governor, and the Army's own
+  1984 paper "Complexities of Lead Azide") and twenty news reports. 15 beats are opinion and are
+  labelled COMMENTARY on screen.
+- **Two sources could not be fetched and rest on search results only:** CBS 2 Iowa (tl-18: the
+  governor's office learned of the plan from the public advisory) and Beef Magazine (farm-3 and
+  part of farm-4: the Iowa Beef Center's advice). Six quotes; the gate lists them as not re-checked.
+
+What changed from Nick's draft, and why:
+
+- **Wrong in the draft, fixed.** The barrels today are plastic, not steel (repacked in 2009); rust
+  is what the 1984 paper warned about. The stockpile has been in Iowa since 2009, not "20+ years"
+  (some of the material is over 60 years old). The governor-elect did not "agree" to the blast: he
+  said the decision was up to the administration.
+- **Cut because no source could be found:** the plume reaching "toward Maquoketa" in a band "10
+  miles wide"; Standard Form 95 and the two-year deadline; disposal "at a later date"; the 155 mm
+  production line; any TNT equivalent.
+- **Cut on the merits: Camp Minden.** The draft's "there's a better way, and we've already done
+  it" compared this to a contained burn of propellant in Louisiana. That material could be moved
+  and fed to a chamber in batches; this cannot be moved or opened. The film makes the argument the
+  record supports instead: the Army hired a contractor in March to treat the barrels chemically,
+  and dropped that for detonation by May, and has not said publicly what changed.
+- **Not built: "our estimate" of the plume.** A homemade dust forecast for a live event could send
+  someone the wrong way. The film shows the Army's maps as reported, drawn as schematics and
+  labelled as forecasts.
+- **Stronger than the draft.** The 1984 paper itself, found on DTIC: the Army tried to sell the
+  surplus and nobody bought it; it began destroying the stockpile and stopped about halfway; the
+  leaking drums were repacked to buy "another 10 to 15 years"; "Breaking these crystals is
+  believed to initiate detonation." Also: a 2004 Defense Department assessment; the government's
+  own court brief saying the liquid went "unchecked and unreplenished since September 2025"; the
+  plant commander's "no immediate danger to the public" in March; the Army spokesperson calling
+  Middletown "an anomaly".
+- **Fairness the draft did not have.** The scientists following this do not expect a disaster far
+  from the plant; a federal appeals court, the governor and Middletown's mayor backed the blast;
+  and the film says the Army is "probably right" that, by now, detonation is the least bad option.
+  The argument is about the decades before, not the decision this week.
+- **Left out on purpose:** how lead azide is made, treated or neutralised.
+- **Voice:** respellings were needed for "lead" (the metal), EPA, FEMA, ATF and years; a trim bug
+  that clipped the last consonant of sentences was found and fixed (see CLAUDE.md, Voice).
+- **Status:** awaiting Nick's review. Where it is published is his call.
