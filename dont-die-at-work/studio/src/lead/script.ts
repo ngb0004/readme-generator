@@ -1,0 +1,54 @@
+import script from '../../../specials/five-tons-of-neglect/script.json';
+
+type Claim = {claim: string; src: string; page: number; quote: string};
+export type ScriptBeat = {id: string; section: string; narration: string; onscreen: string[]; claims: Claim[]; exempt?: string};
+type Source = {id: string; short: string; publisher: string; title: string; url: string; kind: string};
+
+export const SCRIPT = script as unknown as {
+  title: string;
+  sections: string[];
+  section_titles: Record<string, string>;
+  labels: Record<string, string>;
+  sources: Source[];
+  beats: ScriptBeat[];
+};
+const BY_ID = Object.fromEntries(SCRIPT.beats.map((b) => [b.id, b])) as Record<string, ScriptBeat>;
+const SRC = Object.fromEntries(SCRIPT.sources.map((s) => [s.id, s])) as Record<string, Source>;
+
+/** Every word on screen comes out of script.json, which the verify gate has checked against the sources. */
+export const os = (beat: string, i: number): string => {
+  const b = BY_ID[beat];
+  if (!b || b.onscreen[i] === undefined) throw new Error(`no on-screen text ${beat}[${i}]`);
+  return b.onscreen[i];
+};
+export const label = (key: string): string => {
+  if (SCRIPT.labels[key] === undefined) throw new Error(`no label ${key}`);
+  return SCRIPT.labels[key];
+};
+/**
+ * A label that is not in script.json yet. It renders `fallback` so work can continue, and
+ * `grep labelOr` finds every one that still has to be moved into the script before a release.
+ */
+export const labelOr = (key: string, fallback: string): string => SCRIPT.labels[key] ?? fallback;
+export const sectionTitle = (section: string): string => SCRIPT.section_titles[section] ?? '';
+export const sectionIndex = (section: string): number => SCRIPT.sections.indexOf(section);
+export const isCommentary = (beat: string): boolean => Boolean(BY_ID[beat]?.exempt);
+
+/** Who a beat's facts come from, shortest list first: shown in the corner while the beat plays. */
+export const provenance = (beat: string): string[] => {
+  const b = BY_ID[beat];
+  if (!b) return [];
+  const out: string[] = [];
+  for (const c of b.claims) {
+    const s = SRC[c.src]?.short;
+    if (s && !out.includes(s)) out.push(s);
+  }
+  return out.slice(0, 3);
+};
+
+/** One line per publisher, for the end card. */
+export const publishers = (): string[] => {
+  const out: string[] = [];
+  for (const s of SCRIPT.sources) if (!out.includes(s.short)) out.push(s.short);
+  return out;
+};

@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import difflib
+import hashlib
 import json
 import re
 import sys
@@ -34,7 +35,7 @@ DEFAULT_GAP = 0.20
 
 # Words that sound the same. A beat may respell a word for the voice ("say"): the metal is
 # written "led" so it is not read as the verb, and the recogniser may write either.
-SAME = {"led": "lead"}
+SAME = {"led": "lead", "fuse": "fuze", "azine": "azide"}   # the recogniser does not know "azide"
 
 
 def key(word: str) -> str:
@@ -42,7 +43,9 @@ def key(word: str) -> str:
     return SAME.get(k, k)
 
 
-def trim(audio: np.ndarray, sr: int, floor_db: float = -42.0, pad: float = 0.025) -> np.ndarray:
+def trim(audio: np.ndarray, sr: int, floor_db: float = -55.0, pad: float = 0.12) -> np.ndarray:
+    """Cut the silence off both ends, gently. A harder trim (-42 dB, 25 ms) clipped soft final
+    consonants: the recogniser heard "corn" as "core" and "azide" as "aza" until this was eased."""
     win = int(sr * 0.01)
     env = np.sqrt(np.convolve(audio**2, np.ones(win) / win, mode="same"))
     loud = np.where(env > 10 ** (floor_db / 20))[0]
@@ -123,15 +126,27 @@ def main() -> int:
     beats_out = []
     total_missed = total_words = 0
 
+    # A long script changes a line at a time. Keep each beat's audio and what the recogniser
+    # heard, keyed by exactly what was spoken, so a re-run only redoes the beats that changed.
+    cache = args.video / "assets" / ".voice-cache"
+    cache.mkdir(parents=True, exist_ok=True)
     for beat in script["beats"]:
         text = beat.get("say", beat["narration"])    # "say" lets a beat respell a word for the voice
-        raw, sr = tts.create(text, voice=voice, speed=speed, lang=cfg.get("lang", "en-us"))
-        audio = trim(raw.astype(np.float32), sr)
+        stamp = hashlib.sha1(json.dumps([text, voice, speed, cfg.get("lang", "en-us"), "trim -55dB 120ms"]).encode()).hexdigest()[:20]
+        kept = cache / f"{stamp}.npz"
+        if kept.exists():
+            z = np.load(kept, allow_pickle=False)
+            audio, sr = z["audio"], int(z["sr"])
+            heard = [(str(w), float(a), float(b)) for w, a, b in zip(z["words"], z["starts"], z["ends"])]
+        else:
+            raw, sr = tts.create(text, voice=voice, speed=speed, lang=cfg.get("lang", "en-us"))
+            audio = trim(raw.astype(np.float32), sr)
+            segments, _ = asr.transcribe(audio_16k(audio, sr), language="en", word_timestamps=True,
+                                         beam_size=5, condition_on_previous_text=False)
+            heard = [(w.word, w.start, w.end) for seg in segments for w in seg.words]
+            np.savez(kept, audio=audio, sr=sr, words=np.array([h[0] for h in heard], dtype=str),
+                     starts=np.array([h[1] for h in heard]), ends=np.array([h[2] for h in heard]))
         dur = len(audio) / sr
-
-        segments, _ = asr.transcribe(audio_16k(audio, sr), language="en", word_timestamps=True,
-                                     beam_size=5, condition_on_previous_text=False)
-        heard = [(w.word, w.start, w.end) for seg in segments for w in seg.words]
         words, missed, differs = align(beat["narration"].split(), heard, dur)
         total_missed += missed
         total_words += len(words)

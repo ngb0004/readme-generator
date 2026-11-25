@@ -19,6 +19,8 @@ export const FONT = {
   mono: "'JetBrains Mono', 'DejaVu Sans Mono', monospace",
 };
 
+// Shorts are 1080x1920. Long-form specials are 1920x1080 and use LF instead of W and H.
+export const LF = {W: 1920, H: 1080};
 export const W = 1080;
 export const H = 1920;
 export const FPS = 30;

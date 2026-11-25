@@ -10,7 +10,8 @@ const [comp, outDir, scaleArg, ...frames] = process.argv.slice(2);
 const scale = Number(scaleArg);
 fs.mkdirSync(outDir, {recursive: true});
 const t0 = Date.now();
-const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts'), webpackOverride: (c) => c});
+// DDAWT_ENTRY points at a development entry that registers one scene on its own (see src/lead/dev/).
+const serveUrl = await bundle({entryPoint: path.resolve(process.env.DDAWT_ENTRY ?? 'src/index.ts'), webpackOverride: (c) => c});
 const chromiumOptions = {gl: 'swangle'};
 const browserExecutable = process.env.DDAWT_CHROME ?? '/opt/pw-browsers/chromium_headless_shell';
 const browser = await openBrowser('chrome', {browserExecutable, chromiumOptions});

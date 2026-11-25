@@ -31,3 +31,7 @@ specials/*/assets/score.wav
 specials/*/assets/mix.wav
 specials/*/render/final.mp4
 specials/*/source/news/
+
+# Per-beat audio kept by voice.py so a re-run only redoes changed lines
+videos/*/assets/.voice-cache/
+specials/*/assets/.voice-cache/

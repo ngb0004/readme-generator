@@ -23,6 +23,43 @@
     "farms",
     "ending"
   ],
+  "section_titles": {
+    "cold": "",
+    "what": "WHAT IT IS",
+    "surplus": "WHY THERE IS A STOCKPILE",
+    "storage": "HOW IT IS STORED",
+    "timeline": "WHO KNEW, AND WHEN",
+    "failure": "HOW IT WENT BAD",
+    "decision": "THE DECISION",
+    "zone": "WHERE THE DUST GOES",
+    "evac": "WHO LEAVES, WHO STAYS",
+    "lead": "WHY LEAD MATTERS",
+    "farms": "THE FARMS",
+    "ending": ""
+  },
+  "labels": {
+    "reconstruction": "ANIMATED EXPLAINER · NOT FOOTAGE",
+    "source": "SOURCE",
+    "commentary": "COMMENTARY",
+    "schematic": "SCHEMATIC · NOT TO SCALE",
+    "edition": "FINISHED NOV. 24, 2026, THE NIGHT BEFORE THE DETONATION",
+    "schematic_map": "SCHEMATIC OF THE ARMY'S MAPS AS REPORTED · NOT A FORECAST",
+    "sources_title": "SOURCES",
+    "sources_note": "EVERY CLAIM IN THIS VIDEO IS TIED TO A QUOTE FROM ONE OF THESE. FULL LIST AND LINKS IN THE DESCRIPTION.",
+    "iowa": "IOWA",
+    "illinois": "ILLINOIS",
+    "missouri": "MISSOURI",
+    "mississippi": "MISSISSIPPI RIVER",
+    "plant": "IOWA ARMY AMMUNITION PLANT",
+    "middletown": "MIDDLETOWN",
+    "burlington": "BURLINGTON",
+    "mediapolis": "MEDIAPOLIS",
+    "keokuk": "KEOKUK",
+    "quincy": "QUINCY",
+    "knoxCity": "KNOX CITY",
+    "macon": "MACON",
+    "wind": "WIND"
+  },
   "sources": [
     {
       "id": "army_announce",
@@ -33,7 +70,8 @@
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
       "file": "source/army-announces-detonation.html",
-      "sha256": "223f464109adb4b04515fbf542cd45a56d0ac64007762ac0743b7e72129666bb"
+      "sha256": "223f464109adb4b04515fbf542cd45a56d0ac64007762ac0743b7e72129666bb",
+      "short": "U.S. ARMY"
     },
     {
       "id": "army_advisory",
@@ -44,7 +82,8 @@
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
       "file": "source/army-public-safety-advisory.html",
-      "sha256": "70be0544213bf2a9c5813766c0030c619ddd13a464e7526bcd6a8dc318ef90bc"
+      "sha256": "70be0544213bf2a9c5813766c0030c619ddd13a464e7526bcd6a8dc318ef90bc",
+      "short": "U.S. ARMY"
     },
     {
       "id": "army_nov15",
@@ -55,7 +94,8 @@
       "published": "2026-11-15",
       "retrieved": "2026-11-24",
       "file": "source/army-iaaap-public-advisory.html",
-      "sha256": "84c6946c39e6fcb892c1d0099f601f8e0ab168fe43c9ffc5995228c67ee0dd8e"
+      "sha256": "84c6946c39e6fcb892c1d0099f601f8e0ab168fe43c9ffc5995228c67ee0dd8e",
+      "short": "U.S. ARMY"
     },
     {
       "id": "army_openhouse",
@@ -66,7 +106,8 @@
       "published": "2026-10-28",
       "retrieved": "2026-11-24",
       "file": "source/army-open-house-oct.html",
-      "sha256": "851bd2f2899d2811a897e31ef5851ea066c3675f2657f0ed5dc3fac82be6eaa1"
+      "sha256": "851bd2f2899d2811a897e31ef5851ea066c3675f2657f0ed5dc3fac82be6eaa1",
+      "short": "U.S. ARMY"
     },
     {
       "id": "epa_notice",
@@ -77,7 +118,8 @@
       "published": "2026-11-16",
       "retrieved": "2026-11-24",
       "file": "source/epa-public-notice.html",
-      "sha256": "8370eadbb6d1bd7050d85efab64d261ba38bf1550690694b72c73257a4410bb5"
+      "sha256": "8370eadbb6d1bd7050d85efab64d261ba38bf1550690694b72c73257a4410bb5",
+      "short": "U.S. EPA"
     },
     {
       "id": "epa_profile",
@@ -88,7 +130,8 @@
       "published": "2026-11",
       "retrieved": "2026-11-24",
       "file": "source/epa-osc-site-profile.html",
-      "sha256": "9f7525bf1cf28bf2c5281e80b907370a4523db50fe5c4cdee3362aa45753b34d"
+      "sha256": "9f7525bf1cf28bf2c5281e80b907370a4523db50fe5c4cdee3362aa45753b34d",
+      "short": "U.S. EPA"
     },
     {
       "id": "epa_letter",
@@ -99,7 +142,8 @@
       "published": "2026-11-20",
       "retrieved": "2026-11-24",
       "file": "source/epa-letter-to-governor-reynolds.pdf",
-      "sha256": "3ad157d1db33b19b292fc0898c412d12bf5470b9c280703f11e5209bdd8165fd"
+      "sha256": "3ad157d1db33b19b292fc0898c412d12bf5470b9c280703f11e5209bdd8165fd",
+      "short": "U.S. EPA"
     },
     {
       "id": "paper",
@@ -110,7 +154,8 @@
       "published": "1984-08-29",
       "retrieved": "2026-11-24",
       "file": "source/dtic-adp004872-excerpts.txt",
-      "sha256": "35e159412f6be4a81116d91e8a0fc6128390c83124dfacaafd6f4e0b59af573b"
+      "sha256": "35e159412f6be4a81116d91e8a0fc6128390c83124dfacaafd6f4e0b59af573b",
+      "short": "1984 ARMY PAPER (DTIC)"
     },
     {
       "id": "kcrg_how",
@@ -120,7 +165,8 @@
       "url": "https://www.kcrg.com/2026/11/24/how-did-we-get-here-army-prepares-controlled-blast-lead-azide-stockpile-iowa/",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/kcrg-how-did-we-get-here.html"
+      "local": "source/news/kcrg-how-did-we-get-here.html",
+      "short": "KCRG"
     },
     {
       "id": "kcrg_docs",
@@ -130,7 +176,8 @@
       "url": "https://www.kcrg.com/2026/11/24/documents-show-lead-azide-concerns-iowa-army-ammunition-plant-date-back-decades/",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/kcrg-documents-date-back-decades.html"
+      "local": "source/news/kcrg-documents-date-back-decades.html",
+      "short": "KCRG"
     },
     {
       "id": "kcrg_march",
@@ -140,7 +187,8 @@
       "url": "https://www.kcrg.com/2026/03/19/iowa-army-ammunition-plant-still-pause-safety-reasons/",
       "published": "2026-03-19",
       "retrieved": "2026-11-24",
-      "local": "source/news/kcrg-march-still-on-pause.html"
+      "local": "source/news/kcrg-march-still-on-pause.html",
+      "short": "KCRG"
     },
     {
       "id": "kwqc_timeline",
@@ -150,7 +198,8 @@
       "url": "https://www.kwqc.com/2026/11/24/stockpile-crisis-critical-timeline-behind-iowa-detonation-plans/",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/kwqc-timeline.html"
+      "local": "source/news/kwqc-timeline.html",
+      "short": "KWQC"
     },
     {
       "id": "kwqc_expert",
@@ -160,7 +209,8 @@
       "url": "https://www.kwqc.com/2026/11/17/expert-warns-lead-army-detonation-middletown-could-pose-health-risks/",
       "published": "2026-11-17",
       "retrieved": "2026-11-24",
-      "local": "source/news/kwqc-expert-warns.html"
+      "local": "source/news/kwqc-expert-warns.html",
+      "short": "KWQC"
     },
     {
       "id": "abc_timeline",
@@ -170,7 +220,8 @@
       "url": "https://abcnews.com/US/iowa-detonation-timeline-led-controlled-explosion-degraded-lead/story?id=138419343",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/abc-timeline.html"
+      "local": "source/news/abc-timeline.html",
+      "short": "ABC NEWS"
     },
     {
       "id": "abc_mitigation",
@@ -180,7 +231,8 @@
       "url": "https://abcnews.com/US/us-army-details-mitigation-plans-controlled-iowa-munition/story?id=138410668",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/abc-mitigation-plans.html"
+      "local": "source/news/abc-mitigation-plans.html",
+      "short": "ABC NEWS"
     },
     {
       "id": "ap_wednesday",
@@ -190,7 +242,8 @@
       "url": "https://www.pbs.org/newshour/nation/getting-court-approval-u-s-army-to-detonate-degraded-bomb-making-material-in-iowa-on-wednesday",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/pbs-detonate-wednesday.html"
+      "local": "source/news/pbs-detonate-wednesday.html",
+      "short": "ASSOCIATED PRESS"
     },
     {
       "id": "ap_whattoknow",
@@ -200,7 +253,8 @@
       "url": "https://www.pbs.org/newshour/nation/trump-told-the-army-to-pause-the-detonation-of-9500-pounds-of-lead-azide-in-iowa-heres-what-to-know",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/pbs-trump-pause-what-to-know.html"
+      "local": "source/news/pbs-trump-pause-what-to-know.html",
+      "short": "PBS NEWS"
     },
     {
       "id": "ap_brace",
@@ -210,7 +264,8 @@
       "url": "https://www.pbs.org/newshour/nation/iowans-brace-for-lead-dust-cloud-as-army-plans-to-detonate-5-tons-of-bomb-making-chemicals",
       "published": "2026-11-19",
       "retrieved": "2026-11-24",
-      "local": "source/news/pbs-iowans-brace.html"
+      "local": "source/news/pbs-iowans-brace.html",
+      "short": "ASSOCIATED PRESS"
     },
     {
       "id": "ipr_maps",
@@ -220,7 +275,8 @@
       "url": "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/ipr-safety-tips-plume-maps.html"
+      "local": "source/news/ipr-safety-tips-plume-maps.html",
+      "short": "IOWA PUBLIC RADIO"
     },
     {
       "id": "ipr_residents",
@@ -230,7 +286,8 @@
       "url": "https://www.iowapublicradio.org/ipr-news/2026-11-23/what-midwest-residents-need-to-know-about-the-lead-azide-detonations-planned-for-this-week",
       "published": "2026-11-23",
       "retrieved": "2026-11-24",
-      "local": "source/news/ipr-what-residents-need-to-know.html"
+      "local": "source/news/ipr-what-residents-need-to-know.html",
+      "short": "IOWA PUBLIC RADIO"
     },
     {
       "id": "ipr_reynolds",
@@ -240,7 +297,8 @@
       "url": "https://www.iowapublicradio.org/ipr-news/2026-11-24/reynolds-iowa-lead-azide-detonation-army-ammunitions-plant-ernst-grassley-middletown",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/ipr-reynolds-support.html"
+      "local": "source/news/ipr-reynolds-support.html",
+      "short": "IOWA PUBLIC RADIO"
     },
     {
       "id": "ipr_contractor",
@@ -250,7 +308,8 @@
       "url": "https://www.iowapublicradio.org/environment/2026-11-24/army-blast-unstable-lead-azide-contractor-chemical-treatment-plan",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/ipr-contractor-treatment-plan.html"
+      "local": "source/news/ipr-contractor-treatment-plan.html",
+      "short": "IOWA PUBLIC RADIO"
     },
     {
       "id": "cbs_maps",
@@ -260,7 +319,8 @@
       "url": "https://www.cbsnews.com/chicago/news/maps-show-how-far-lead-dust-from-about-5-tons-of-iowa-explosives-could-spread/",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/cbs-plume-maps.html"
+      "local": "source/news/cbs-plume-maps.html",
+      "short": "CBS NEWS CHICAGO"
     },
     {
       "id": "cbs_why",
@@ -270,7 +330,8 @@
       "url": "https://www.cbsnews.com/news/lead-azide-detonation-iowa-army-explosives/",
       "published": "2026-11-24",
       "retrieved": "2026-11-24",
-      "local": "source/news/cbs-why-army-needs-to-detonate.html"
+      "local": "source/news/cbs-why-army-needs-to-detonate.html",
+      "short": "CBS NEWS"
     },
     {
       "id": "snopes",
@@ -280,7 +341,8 @@
       "url": "https://www.snopes.com/fact-check/lead-azide-detonation-army-iowa/",
       "published": "2026-11-23",
       "retrieved": "2026-11-24",
-      "local": "source/news/snopes-fact-check.html"
+      "local": "source/news/snopes-fact-check.html",
+      "short": "SNOPES"
     },
     {
       "id": "wiki_azide",
@@ -290,7 +352,8 @@
       "url": "https://en.wikipedia.org/wiki/Lead(II)_azide",
       "published": "n.d.",
       "retrieved": "2026-11-24",
-      "local": "source/news/wikipedia-lead-azide.html"
+      "local": "source/news/wikipedia-lead-azide.html",
+      "short": "WIKIPEDIA"
     },
     {
       "id": "wiki_minden",
@@ -300,7 +363,8 @@
       "url": "https://en.wikipedia.org/wiki/Camp_Minden",
       "published": "n.d.",
       "retrieved": "2026-11-24",
-      "local": "source/news/wikipedia-camp-minden.html"
+      "local": "source/news/wikipedia-camp-minden.html",
+      "short": "WIKIPEDIA"
     },
     {
       "id": "cbs2_gov",
@@ -310,7 +374,8 @@
       "url": "https://cbs2iowa.com/news/local/governor-kim-reynolds-office-state-lawmakers-respond-to-detonation-plans",
       "published": "2026-11",
       "retrieved": "2026-11-24",
-      "check": "search"
+      "check": "search",
+      "short": "CBS 2 IOWA"
     },
     {
       "id": "beef",
@@ -320,13 +385,14 @@
       "url": "https://www.beefmagazine.com/livestock-management/army-s-planned-lead-detonation-in-iowa-poses-risks-for-cattle",
       "published": "2026-11",
       "retrieved": "2026-11-24",
-      "check": "search"
+      "check": "search",
+      "short": "BEEF MAGAZINE"
     }
   ],
   "voice": {
     "engine": "kokoro-onnx",
     "voice": "am_michael",
-    "speed": 1.04,
+    "speed": 1.08,
     "lang": "en-us"
   },
   "beats": [
@@ -334,7 +400,7 @@
       "id": "cold-1",
       "section": "cold",
       "narration": "Under these mounds of dirt in southeast Iowa, there are sixty-eight barrels.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "MIDDLETOWN, IOWA",
         "68 BARRELS"
@@ -358,7 +424,7 @@
       "id": "cold-2",
       "section": "cold",
       "narration": "Inside them is nearly five tons of an explosive so sensitive that, the Army says, slight friction or movement can set it off.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "LEAD AZIDE",
         "MORE THAN 9,700 LB"
@@ -388,7 +454,7 @@
       "id": "cold-3",
       "section": "cold",
       "narration": "It is the country's entire stockpile. And the Army says it cannot be moved.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "THE ENTIRE U.S. STOCKPILE",
         "CAN'T BE MOVED"
@@ -412,7 +478,7 @@
       "id": "cold-4",
       "section": "cold",
       "narration": "So the plan is to blow it up. Right where it sits. Wednesday morning, nine a.m.",
-      "gap_after": 0.45,
+      "gap_after": 0.25,
       "onscreen": [
         "WEDNESDAY, NOV. 25",
         "9:00 A.M."
@@ -430,7 +496,7 @@
       "id": "cold-5",
       "section": "cold",
       "narration": "The dust from that blast will have lead in it.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "\"a dust plume that will contain some lead\"",
         "U.S. ARMY PUBLIC ADVISORY"
@@ -449,7 +515,7 @@
       "id": "cold-6",
       "section": "cold",
       "narration": "The town next door has been urged to leave. People up to twenty miles away were told to stay inside and shut the windows.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "URGED TO LEAVE",
         "20 MILES: STAY INDOORS"
@@ -479,7 +545,7 @@
       "id": "cold-7",
       "section": "cold",
       "narration": "And parents were told that when it's over, they should wash down the play equipment.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [
         "WET-CLEAN OUTDOOR PLAY EQUIPMENT, TOYS"
       ],
@@ -502,9 +568,10 @@
       "id": "cold-8",
       "section": "cold",
       "narration": "How did we get here? This was not a surprise. In 1984, an Army safety officer wrote down exactly how this would go wrong.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
-        "1984"
+        "1984",
+        "HOW DID WE GET HERE?"
       ],
       "claims": [
         {
@@ -532,7 +599,7 @@
       "id": "cold-9",
       "section": "cold",
       "narration": "And the stuff has been sitting in storage ever since.",
-      "gap_after": 0.7,
+      "gap_after": 0.5,
       "onscreen": [],
       "claims": [
         {
@@ -553,7 +620,7 @@
       "id": "cold-title",
       "section": "cold",
       "narration": "Five tons of neglect.",
-      "gap_after": 1.0,
+      "gap_after": 0.8,
       "onscreen": [
         "FIVE TONS",
         "OF NEGLECT",
@@ -572,7 +639,7 @@
       "id": "what-1",
       "section": "what",
       "narration": "To set off the main explosive in a shell or a bomb, you need a small, violent trigger first. A detonator.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "MAIN CHARGE",
         "DETONATOR"
@@ -595,8 +662,8 @@
     {
       "id": "what-2",
       "section": "what",
-      "narration": "For about a hundred years, the stuff inside that trigger has been lead azide.",
-      "gap_after": 0.35,
+      "narration": "For about a hundred years, lead azide has been the stuff inside that trigger.",
+      "gap_after": 0.08,
       "onscreen": [
         "LEAD AZIDE",
         "IN U.S. MUNITIONS FOR 100 YEARS"
@@ -609,13 +676,13 @@
           "quote": "The U.S. started using lead azide 100 years ago to make munitions."
         }
       ],
-      "say": "For about a hundred years, the stuff inside that trigger has been led azide."
+      "say": "For about a hundred years, led azide has been the stuff inside that trigger."
     },
     {
       "id": "what-3",
       "section": "what",
       "narration": "It goes off from heat, from a knock, from friction. That is the whole point of it.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "HEAT",
         "SHOCK",
@@ -634,7 +701,7 @@
       "id": "what-4",
       "section": "what",
       "narration": "A weapon only needs a tiny amount. A little cup of it, sealed inside the fuze.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -649,7 +716,7 @@
       "id": "what-5",
       "section": "what",
       "narration": "Now picture that little cup. Then picture sixty-eight barrels.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "68 BARRELS"
       ],
@@ -666,7 +733,7 @@
       "id": "what-6",
       "section": "what",
       "narration": "And here is the strange part. The military stopped using it about fifteen years ago.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "THE MILITARY MOVED AWAY FROM IT ABOUT 15 YEARS AGO"
       ],
@@ -683,7 +750,7 @@
       "id": "what-7",
       "section": "what",
       "narration": "So what is nearly five tons of it still doing in a bunker in Iowa?",
-      "gap_after": 0.8,
+      "gap_after": 0.6,
       "onscreen": [],
       "claims": [
         {
@@ -697,8 +764,8 @@
     {
       "id": "sur-1",
       "section": "surplus",
-      "narration": "The answer starts in that 1984 paper. It was written by the safety officer at an Army depot in Illinois, and presented to the Defense Department's explosives safety board.",
-      "gap_after": 0.35,
+      "narration": "The answer starts in that 1984 paper, written by the safety officer at an Army depot in Illinois.",
+      "gap_after": 0.08,
       "onscreen": [
         "COMPLEXITIES OF LEAD AZIDE",
         "SAFETY OFFICER, SAVANNA ARMY DEPOT ACTIVITY",
@@ -736,13 +803,13 @@
           "quote": "29 August 1984"
         }
       ],
-      "say": "The answer starts in that nineteen eighty-four paper. It was written by the safety officer at an Army depot in Illinois, and presented to the Defense Department's explosives safety board."
+      "say": "The answer starts in that nineteen eighty-four paper, written by the safety officer at an Army depot in Illinois."
     },
     {
       "id": "sur-2",
       "section": "surplus",
-      "narration": "It says the war in Vietnam drove the development of weapons that used, quote, relatively enormous quantities of lead azide.",
-      "gap_after": 0.35,
+      "narration": "It says the war in Vietnam drove the development of weapons that used lead azide in, quote, relatively enormous quantities.",
+      "gap_after": 0.08,
       "onscreen": [
         "Vietnam-era jungle warfare fostered the development of munitions using relatively enormous quantities of lead azide."
       ],
@@ -754,13 +821,13 @@
           "quote": "Vietnam-era jungle warfare fostered the development of munitions using relatively enormous quantities of lead azide."
         }
       ],
-      "say": "It says the war in Vietnam drove the development of weapons that used, quote, relatively enormous quantities of led azide."
+      "say": "It says the war in Vietnam drove the development of weapons that used led azide in, quote, relatively enormous quantities."
     },
     {
       "id": "sur-3",
       "section": "surplus",
       "narration": "But they were so sensitive that many of the people meant to use them did not want to.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "Their sensitivity to detonation caused a reluctance among many users to deploy them"
       ],
@@ -777,7 +844,7 @@
       "id": "sur-4",
       "section": "surplus",
       "narration": "So when the war wound down, the military was left with a vast supply, and almost no demand.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "a vast supply and an extremely small demand"
       ],
@@ -794,7 +861,7 @@
       "id": "sur-5",
       "section": "surplus",
       "narration": "They tried to sell it. Nobody bought it.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "Early attempts to sell the stockpiled lead azide were fruitless"
       ],
@@ -811,7 +878,7 @@
       "id": "sur-6",
       "section": "surplus",
       "narration": "So the Army started destroying it. And then it stopped. The paper says the project was halted with about half the stockpile gone.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "halted after approximately half the stockpile was destroyed"
       ],
@@ -828,7 +895,7 @@
       "id": "sur-7",
       "section": "surplus",
       "narration": "The other half stayed in drums. Drums that were already leaking. They were repacked, and the paper says that bought another ten to fifteen years.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "another 10 to 15 years"
       ],
@@ -845,7 +912,7 @@
       "id": "sur-8",
       "section": "surplus",
       "narration": "That was 1984.",
-      "gap_after": 0.9,
+      "gap_after": 0.7,
       "onscreen": [
         "1984"
       ],
@@ -863,7 +930,7 @@
       "id": "sto-1",
       "section": "storage",
       "narration": "Here is how you store this stuff. Dry, it is too sensitive to keep. So it is kept wet: in barrels, under liquid, inside concrete bunkers buried in earth.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "EARTH-COVERED MAGAZINE",
         "REINFORCED CONCRETE",
@@ -894,7 +961,7 @@
       "id": "sto-2",
       "section": "storage",
       "narration": "And the same paper lists what can go wrong.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -909,7 +976,7 @@
       "id": "sto-3",
       "section": "storage",
       "narration": "First. It has to stay under water.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "KEEP IT UNDER WATER"
       ],
@@ -926,7 +993,7 @@
       "id": "sto-4",
       "section": "storage",
       "narration": "Second. If that water freezes, the paper says, it can go off on its own. So alcohol gets added, to keep it from freezing.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "IF THE WATER FREEZES: \"SPONTANEOUS DETONATION\"",
         "SO ALCOHOL IS ADDED"
@@ -950,7 +1017,7 @@
       "id": "sto-5",
       "section": "storage",
       "narration": "Third. Alcohol evaporates. So somebody has to keep checking the level, and keep topping it up.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "ALCOHOL EVAPORATES",
         "SOMEONE HAS TO KEEP CHECKING THE LEVEL"
@@ -968,7 +1035,7 @@
       "id": "sto-6",
       "section": "storage",
       "narration": "And the containers do not last. In 1984 they were steel drums, and the paper says steel rusts through.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "RUST-THROUGH",
         "1984: IT WAS ALL WRITTEN DOWN"
@@ -993,7 +1060,7 @@
       "id": "sto-7",
       "section": "storage",
       "narration": "So this is a material that is only safe for as long as somebody keeps looking after it.",
-      "gap_after": 0.9,
+      "gap_after": 0.7,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -1002,7 +1069,7 @@
       "id": "tl-1",
       "section": "timeline",
       "narration": "So let's count the chances there were to deal with it.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -1011,7 +1078,7 @@
       "id": "tl-2",
       "section": "timeline",
       "narration": "1984. The risks are on paper, and half the stockpile is still in drums.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "1984",
         "THE RISKS ARE ON PAPER"
@@ -1035,8 +1102,8 @@
     {
       "id": "tl-3",
       "section": "timeline",
-      "narration": "2004. A Defense Department assessment raises concern about an old stockpile of lead azide that has been deteriorating for forty years.",
-      "gap_after": 0.35,
+      "narration": "In 2004, a Defense Department assessment raises concern about an old stockpile of lead azide that has been deteriorating for forty years.",
+      "gap_after": 0.08,
       "onscreen": [
         "2004",
         "A STOCKPILE \"DETERIORATING FOR 40 YEARS\""
@@ -1049,13 +1116,13 @@
           "quote": "An environmental assessment from 2004 shows the Department of Defense was concerned about an old stockpile of lead azide that had been deteriorating for 40 years at the plant in Middletown."
         }
       ],
-      "say": "2004. A Defense Department assessment raises concern about an old stockpile of led azide that has been deteriorating for forty years."
+      "say": "In 2004, a Defense Department assessment raises concern about an old stockpile of led azide that has been deteriorating for forty years."
     },
     {
       "id": "tl-4",
       "section": "timeline",
       "narration": "2009. The Army gathers up what is left of the country's lead azide and moves it to one place: the Iowa Army Ammunition Plant, in Middletown. Some of it is already more than sixty years old. It goes into new plastic barrels.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "2009",
         "THE WHOLE STOCKPILE MOVES TO IOWA",
@@ -1086,8 +1153,8 @@
     {
       "id": "tl-5",
       "section": "timeline",
-      "narration": "Around 2011, the military stops using lead azide.",
-      "gap_after": 0.35,
+      "narration": "Around 2011, the military stops using lead azide altogether.",
+      "gap_after": 0.08,
       "onscreen": [
         "2011",
         "THE MILITARY STOPS USING IT"
@@ -1100,28 +1167,13 @@
           "quote": "2011 or earlier: U.S. military moved away from procuring/using lead azide because of sensitivity and storage/handling challenges."
         }
       ],
-      "say": "Around 2011, the military stops using led azide."
-    },
-    {
-      "id": "tl-6",
-      "section": "timeline",
-      "narration": "And it keeps the stockpile anyway. In case, officials said this week, it is ever needed again.",
-      "gap_after": 0.35,
-      "onscreen": [],
-      "claims": [
-        {
-          "claim": "The ATF director's explanation.",
-          "src": "kcrg_how",
-          "page": 1,
-          "quote": "said it is not uncommon for the Army to stockpile materials in case it could use them again"
-        }
-      ]
+      "say": "Around 2011, the military stops using led azide altogether."
     },
     {
       "id": "tl-7",
       "section": "timeline",
       "narration": "The routine: an inspection every month, and a top-up of the liquid every September, before winter.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "INSPECTED MONTHLY",
         "TOPPED UP EVERY SEPTEMBER"
@@ -1139,7 +1191,7 @@
       "id": "tl-8",
       "section": "timeline",
       "narration": "September 2025. According to the government's own court filing, that is the last time the liquid was checked and refilled.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "SEPTEMBER 2025",
         "\"unchecked and unreplenished since September 2025\"",
@@ -1158,8 +1210,8 @@
     {
       "id": "tl-9",
       "section": "timeline",
-      "narration": "That same month, the company that runs the plant asks an outside firm for a price to get rid of the barrels.",
-      "gap_after": 0.35,
+      "narration": "That same month, the plant's contractor asks an outside firm for a price to get rid of the barrels.",
+      "gap_after": 0.08,
       "onscreen": [
         "SEPT. 24, 2025",
         "PLANT CONTRACTOR ASKS FOR A DISPOSAL QUOTE"
@@ -1177,7 +1229,7 @@
       "id": "tl-10",
       "section": "timeline",
       "narration": "March 11, 2026. An inspection finds the lead azide has crystallized. The next day the Army tells the EPA, and the plant shuts down for eighteen days.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "MARCH 11, 2026",
         "CRYSTALS FOUND",
@@ -1203,13 +1255,13 @@
           "quote": "since the plant closed for an 18-day emergency safety review in March"
         }
       ],
-      "say": "March eleventh, twenty twenty-six. An inspection finds the led azide has crystallized. The next day the Army tells the E P A, and the plant shuts down for eighteen days."
+      "say": "March eleventh, twenty twenty-six. An inspection finds the led azide has crystallized. The next day the Army tells the E.P.A., and the plant shuts down for eighteen days."
     },
     {
       "id": "tl-11",
       "section": "timeline",
       "narration": "And the plant's commander tells the public, quote: there is no immediate danger to the public.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "\"There is no immediate danger to the public.\"",
         "PLANT COMMANDER, MARCH 2026"
@@ -1233,7 +1285,7 @@
       "id": "tl-12",
       "section": "timeline",
       "narration": "Within two weeks, the Army hires a company to treat the barrels chemically. No blast, no dust cloud. By May, that is dropped, and the Secretary of the Army has chosen detonation.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "MARCH: A CONTRACT TO TREAT IT CHEMICALLY",
         "MAY: DROPPED. DETONATION CHOSEN."
@@ -1262,11 +1314,13 @@
     {
       "id": "tl-14",
       "section": "timeline",
-      "narration": "October 15. The Army holds an open house in Middletown. About 200 people come.",
-      "gap_after": 0.35,
+      "narration": "October 15. The Army holds an open house in Middletown. One of Iowa's own senators says those talks left out how far the lead dust could travel.",
+      "gap_after": 0.08,
       "onscreen": [
         "OCT. 15",
-        "OPEN HOUSE: NEARLY 200 RESIDENTS"
+        "OPEN HOUSE: NEARLY 200 RESIDENTS",
+        "LEFT OUT: HOW FAR THE DUST COULD TRAVEL",
+        "SEN. JONI ERNST"
       ],
       "claims": [
         {
@@ -1274,20 +1328,7 @@
           "src": "epa_letter",
           "page": 4,
           "quote": "10/15/2026 -- The Army held an Open House with nearly 200 residents and community leaders"
-        }
-      ],
-      "say": "October fifteenth. The Army holds an open house in Middletown. About 200 people come."
-    },
-    {
-      "id": "tl-15",
-      "section": "timeline",
-      "narration": "But according to one of Iowa's own senators, those conversations left out how far the lead dust could travel.",
-      "gap_after": 0.35,
-      "onscreen": [
-        "LEFT OUT: HOW FAR THE DUST COULD TRAVEL",
-        "SEN. JONI ERNST"
-      ],
-      "claims": [
+        },
         {
           "claim": "",
           "src": "ipr_reynolds",
@@ -1295,13 +1336,13 @@
           "quote": "Ernst said the Army began discussing disposal with some communities months ago, but those discussions left out how far dust containing lead could travel."
         }
       ],
-      "say": "But according to one of Iowa's own senators, those conversations left out how far the led dust could travel."
+      "say": "October fifteenth. The Army holds an open house in Middletown. One of Iowa's own senators says those talks left out how far the led dust could travel."
     },
     {
       "id": "tl-16",
       "section": "timeline",
-      "narration": "November 13. The EPA signs the permit to blow it up.",
-      "gap_after": 0.35,
+      "narration": "November 13. The EPA grants the permit to blow it up.",
+      "gap_after": 0.08,
       "onscreen": [
         "NOV. 13",
         "EPA PERMIT TO DETONATE"
@@ -1314,13 +1355,13 @@
           "quote": "EPA issued an emergency permit that became effective on November 13, 2026"
         }
       ],
-      "say": "November thirteenth. The E P A signs the permit to blow it up."
+      "say": "November thirteenth. The E.P.A. grants the permit to blow it up."
     },
     {
       "id": "tl-17",
       "section": "timeline",
       "narration": "November 15. The Army announces the date, five days out, and publishes the maps. The dust cloud on those maps reaches about 100 miles.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "NOV. 15",
         "5 DAYS' NOTICE",
@@ -1346,7 +1387,7 @@
       "id": "tl-18",
       "section": "timeline",
       "narration": "The next day, the governor's office says, is when it learned of the plan. From that public advisory.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "GOVERNOR'S OFFICE: LEARNED FROM THE PUBLIC ADVISORY"
       ],
@@ -1362,8 +1403,8 @@
     {
       "id": "tl-19",
       "section": "timeline",
-      "narration": "The blast is set for November 20. Then November 23. Then, after a lawsuit, a court order, and a post from the President, November 25. The incoming governor says the decision belongs to the administration.",
-      "gap_after": 0.6,
+      "narration": "The blast is set for November 20. Then November 23. Then, after a lawsuit and a post from the President, November 25.",
+      "gap_after": 0.4,
       "onscreen": [
         "NOV. 20",
         "NOV. 23",
@@ -1383,6 +1424,12 @@
           "quote": "on Wednesday, November 25, 2026, at approximately 9:00 a.m. CST"
         },
         {
+          "claim": "The lawsuit.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "Iowa environmental groups file a petition for review against the EPA, challenging the permit authorizing the detonation"
+        },
+        {
           "claim": "The President's post.",
           "src": "abc_timeline",
           "page": 1,
@@ -1393,21 +1440,15 @@
           "src": "abc_timeline",
           "page": 1,
           "quote": "The appeals court denies the environmental group's emergency motion and lifts the administrative stay on the permit, clearing the way for the detonation."
-        },
-        {
-          "claim": "Gov.-elect Rob Sand's position.",
-          "src": "ap_wednesday",
-          "page": 1,
-          "quote": "has said the decision is fully up to the Trump administration"
         }
       ],
-      "say": "The blast is set for November twentieth. Then November twenty-third. Then, after a lawsuit, a court order, and a post from the President, November twenty-fifth. The incoming governor says the decision belongs to the administration."
+      "say": "The blast is set for November twentieth. Then November twenty-third. Then, after a lawsuit and a post from the President, November twenty-fifth."
     },
     {
       "id": "tl-21",
       "section": "timeline",
       "narration": "Look at that whole line. The warning was written in 1984. The public got the date, and the map, five days ahead.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -1429,7 +1470,7 @@
       "id": "tl-22",
       "section": "timeline",
       "narration": "One of Iowa's Republican senators said it plainly. These materials should never have been allowed to get to this point.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [
         "\"These materials should never have been allowed to get to this point.\"",
         "SEN. JONI ERNST (R-IOWA)"
@@ -1447,7 +1488,7 @@
       "id": "tl-23",
       "section": "timeline",
       "narration": "For decades, the answer was later. Later showed up.",
-      "gap_after": 1.0,
+      "gap_after": 0.8,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -1456,7 +1497,7 @@
       "id": "fail-1",
       "section": "failure",
       "narration": "So what happened inside those barrels? The liquid went down.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "THE LIQUID EVAPORATED"
       ],
@@ -1473,7 +1514,7 @@
       "id": "fail-2",
       "section": "failure",
       "narration": "When lead azide dries out, it grows crystals. Long, needle-shaped ones.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "NEEDLE-LIKE CRYSTALS"
       ],
@@ -1497,7 +1538,7 @@
       "id": "fail-3",
       "section": "failure",
       "narration": "And the 1984 paper says it in one line. Breaking these crystals is believed to initiate detonation.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [
         "Breaking these crystals is believed to initiate detonation."
       ],
@@ -1521,7 +1562,7 @@
       "id": "fail-4",
       "section": "failure",
       "narration": "By this fall, the Army says, crystals had built up on the outside of the barrels. On the lids. On the bolts.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "ON THE LIDS",
         "ON THE BOLTS"
@@ -1545,7 +1586,7 @@
       "id": "fail-5",
       "section": "failure",
       "narration": "So nobody can open a lid to add liquid. The head of the ATF said just removing one lid could set off that barrel, and then every other barrel in the bunker.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "CAN'T OPEN"
       ],
@@ -1563,7 +1604,7 @@
       "id": "fail-6",
       "section": "failure",
       "narration": "They cannot be moved. They cannot be trucked somewhere safer.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "CAN'T MOVE"
       ],
@@ -1586,7 +1627,7 @@
       "id": "fail-7",
       "section": "failure",
       "narration": "And winter is coming. Less liquid means what is left freezes more easily. Freezing is the exact thing the 1984 paper warned about.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [
         "CAN'T WAIT"
       ],
@@ -1616,7 +1657,7 @@
       "id": "fail-8",
       "section": "failure",
       "narration": "An engineer who filed a statement for the groups suing over the permit said: stored properly, it should not deteriorate. It only happens when storage is not carefully monitored.",
-      "gap_after": 0.9,
+      "gap_after": 0.7,
       "onscreen": [
         "\"It's only when the conditions of storage are not carefully monitored that it starts to form crystals\"",
         "DR. RON SAHU, ENVIRONMENTAL ENGINEER"
@@ -1640,7 +1681,7 @@
       "id": "dec-1",
       "section": "decision",
       "narration": "So here is the plan. Two rapid detonations, inside the bunkers.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "TWO RAPID DETONATIONS"
       ],
@@ -1663,7 +1704,7 @@
       "id": "dec-2",
       "section": "decision",
       "narration": "Around them: walls of sand-filled barriers two stories high. Water tanks. Foam. Gel blocks. And misters soaking the ground and the air.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "SAND-FILLED BARRIERS, TWO STORIES HIGH",
         "WATER TANKS",
@@ -1696,7 +1737,7 @@
       "id": "dec-3",
       "section": "decision",
       "narration": "The Army says its goal is to keep as much of the dust as it can on its own property.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "GOAL: KEEP IT ON THE PLANT"
       ],
@@ -1713,7 +1754,7 @@
       "id": "dec-5",
       "section": "decision",
       "narration": "And the Army's argument is simple. Leave it, and it goes off on its own. No warning. No barriers. Nobody evacuated.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -1734,7 +1775,7 @@
       "id": "dec-6",
       "section": "decision",
       "narration": "The general in charge said: inaction is no longer an option.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "\"Inaction is no longer an option.\"",
         "MAJ. GEN. ERIC SHIRLEY, U.S. ARMY SUSTAINMENT COMMAND"
@@ -1752,7 +1793,7 @@
       "id": "dec-7",
       "section": "decision",
       "narration": "A federal appeals court agreed. So did Iowa's governor. So did the mayor of Middletown.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "8TH CIRCUIT COURT OF APPEALS",
         "GOV. KIM REYNOLDS",
@@ -1789,7 +1830,7 @@
       "id": "dec-8",
       "section": "decision",
       "narration": "And today? They are probably right.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -1798,7 +1839,7 @@
       "id": "dec-9",
       "section": "decision",
       "narration": "But it is only true today. Because of everything that did not happen before today.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -1807,7 +1848,7 @@
       "id": "dec-10",
       "section": "decision",
       "narration": "It could have been destroyed while it was stable. The Army was already doing that when the 1984 paper was written. It stopped halfway.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "DESTROY IT WHILE IT IS STABLE"
       ],
@@ -1831,7 +1872,7 @@
       "id": "dec-11",
       "section": "decision",
       "narration": "The Army's own spokesperson calls Middletown an anomaly. Everywhere else, she says, stockpiles like this were eliminated over the last two decades.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "\"AN ANOMALY\"",
         "ARMY SPOKESPERSON"
@@ -1855,7 +1896,7 @@
       "id": "dec-12",
       "section": "decision",
       "narration": "It could have been kept wet. That was the whole job.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "KEEP IT WET"
       ],
@@ -1878,7 +1919,7 @@
       "id": "dec-13",
       "section": "decision",
       "narration": "And it could have been treated this spring. By the contractor's account, a review panel recommended exactly that, and the Army hired the contractor to do it.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "TREAT IT THIS SPRING"
       ],
@@ -1901,7 +1942,7 @@
       "id": "dec-14",
       "section": "decision",
       "narration": "The Army says crystals around the lids made opening the barrels too dangerous. What changed between March and May has not been made public.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [],
       "claims": [
         {
@@ -1919,69 +1960,10 @@
       ]
     },
     {
-      "id": "dec-15",
-      "section": "decision",
-      "narration": "And communities have changed plans like this before. In Louisiana, in 2014, the plan was to burn fifteen million pounds of old military propellant in the open. With a citizens' group at the table, the EPA switched to a contained system.",
-      "gap_after": 0.35,
-      "onscreen": [
-        "CAMP MINDEN, LOUISIANA",
-        "2014: OPEN BURN PLANNED",
-        "2015: CONTAINED BURN SYSTEM"
-      ],
-      "claims": [
-        {
-          "claim": "The 2014 plan.",
-          "src": "wiki_minden",
-          "page": 1,
-          "quote": "EPA, the Louisiana Department of Environmental Quality and the Army agreed to dispose of explosive M6 propellant by \"open burn\""
-        },
-        {
-          "claim": "When.",
-          "src": "wiki_minden",
-          "page": 1,
-          "quote": "In October, 2014"
-        },
-        {
-          "claim": "How much.",
-          "src": "wiki_minden",
-          "page": 1,
-          "quote": "15 million pounds of M6 propellant"
-        },
-        {
-          "claim": "The change.",
-          "src": "wiki_minden",
-          "page": 1,
-          "quote": "In May 2015, EPA in conjunction with a Citizens' Advisory Group announced, that a contained burn system in the form of an incinerator would be used."
-        }
-      ],
-      "say": "And communities have changed plans like this before. In Louisiana, in 2014, the plan was to burn fifteen million pounds of old military propellant in the open. With a citizens' group at the table, the E P A switched to a contained system."
-    },
-    {
-      "id": "dec-16",
-      "section": "decision",
-      "narration": "That was an easier problem. But those people had months. Here, the map came out five days before the date.",
-      "gap_after": 0.35,
-      "onscreen": [],
-      "claims": [
-        {
-          "claim": "The public notice came five days ahead.",
-          "src": "epa_letter",
-          "page": 4,
-          "quote": "11/15/2026 -- Army issued its 5-day advance public notification"
-        },
-        {
-          "claim": "Months between the plan and the change.",
-          "src": "wiki_minden",
-          "page": 1,
-          "quote": "In May 2015, EPA in conjunction with a Citizens' Advisory Group announced"
-        }
-      ]
-    },
-    {
       "id": "dec-17",
       "section": "decision",
       "narration": "The window to do this safely was open for decades. It closed because nobody went through it.",
-      "gap_after": 1.0,
+      "gap_after": 0.8,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -1990,7 +1972,7 @@
       "id": "zone-1",
       "section": "zone",
       "narration": "So where does the dust go? Wherever the wind is going that morning.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -2005,7 +1987,7 @@
       "id": "zone-2",
       "section": "zone",
       "narration": "The first maps, for the first date, sent the cloud northeast. About 100 miles.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "FIRST MAPS: NORTHEAST",
         "ABOUT 100 MILES"
@@ -2029,7 +2011,7 @@
       "id": "zone-3",
       "section": "zone",
       "narration": "Up the Mississippi, and over it, into Illinois. The Illinois environmental agency said nobody had notified it.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "ILLINOIS EPA: NOT NOTIFIED"
       ],
@@ -2052,7 +2034,7 @@
       "id": "zone-4",
       "section": "zone",
       "narration": "In Mediapolis, less than twenty miles from the plant, city officials learned where they stood when the first map put them in the middle of it.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "MEDIAPOLIS"
       ],
@@ -2070,7 +2052,7 @@
       "id": "zone-5",
       "section": "zone",
       "narration": "Then the date moved. And the wind turned around.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [],
       "claims": [
         {
@@ -2091,7 +2073,7 @@
       "id": "zone-6",
       "section": "zone",
       "narration": "The newest maps send the cloud the other way. Southwest, across the corner of Iowa, and into northeast Missouri.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "NEW MAPS: SOUTHWEST",
         "INTO NORTHEAST MISSOURI"
@@ -2121,7 +2103,7 @@
       "id": "zone-7",
       "section": "zone",
       "narration": "A University of Iowa professor put it like this. People who were worried a few days ago are off the hook. People who thought they would be fine are now right in the path.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "\"...those who thought they were going to be OK are now right in the plume path.\"",
         "PATRICK O'SHAUGHNESSY, UNIVERSITY OF IOWA"
@@ -2145,7 +2127,7 @@
       "id": "zone-8",
       "section": "zone",
       "narration": "Same blast. Different people downwind. Decided by the weather on a Wednesday morning.",
-      "gap_after": 0.7,
+      "gap_after": 0.5,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -2154,7 +2136,7 @@
       "id": "zone-9",
       "section": "zone",
       "narration": "And remember what these maps are. They are forecasts. How they were built has not been made public. That same professor called them a guesstimate.",
-      "gap_after": 0.9,
+      "gap_after": 0.7,
       "onscreen": [
         "FORECASTS, NOT MEASUREMENTS",
         "\"It is a guesstimate at this point\""
@@ -2183,8 +2165,8 @@
     {
       "id": "evac-1",
       "section": "evac",
-      "narration": "Here is who is being helped to leave. Everyone in Middletown, and everyone inside a cone that runs five miles southwest of the plant, with one extra mile on each side.",
-      "gap_after": 0.35,
+      "narration": "Here is who is being helped to leave. Everyone in Middletown, and everyone inside a cone-shaped zone that runs five miles southwest of the plant, with one extra mile on each side.",
+      "gap_after": 0.08,
       "onscreen": [
         "RECOMMENDED RELOCATION",
         "5-MILE CONE",
@@ -2215,7 +2197,7 @@
       "id": "evac-2",
       "section": "evac",
       "narration": "It is a recommendation, not an order. FEMA is covering rides, hotel rooms and meals through Friday.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "FEMA: TRANSPORT, HOTELS, MEALS",
         "THROUGH FRIDAY, NOV. 27"
@@ -2240,7 +2222,7 @@
       "id": "evac-3",
       "section": "evac",
       "narration": "Now here is everyone else.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [],
       "exempt": "note"
@@ -2249,7 +2231,7 @@
       "id": "evac-4",
       "section": "evac",
       "narration": "Out to twenty miles, the emergency alert on people's phones said: stay indoors, windows closed.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "20 MILES",
         "STAY INDOORS, WINDOWS CLOSED"
@@ -2267,7 +2249,7 @@
       "id": "evac-6",
       "section": "evac",
       "narration": "The dust maps run a lot farther than that. For people out there, the instructions are: close up the house, keep kids and pets inside, and afterwards, wet-wipe anything a child might touch.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "CLOSE WINDOWS AND DOORS",
         "KEEP CHILDREN AND PETS INSIDE",
@@ -2298,7 +2280,7 @@
       "id": "evac-7",
       "section": "evac",
       "narration": "Three Iowa counties are under a disaster proclamation. The federal government counts about 350 farms in the path.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "DES MOINES, LEE AND VAN BUREN COUNTIES",
         "ABOUT 350 FARMS"
@@ -2328,7 +2310,7 @@
       "id": "evac-8",
       "section": "evac",
       "narration": "The Army says lead levels out there will be well below the point where the EPA requires anyone to act.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -2338,13 +2320,13 @@
           "quote": "the levels will be well below the level at which the EPA requires protective actions"
         }
       ],
-      "say": "The Army says led levels out there will be well below the point where the E P A requires anyone to act."
+      "say": "The Army says led levels out there will be well below the point where the E.P.A. requires anyone to act."
     },
     {
       "id": "evac-9",
       "section": "evac",
-      "narration": "Maybe so. But look at the gap between the people being helped to leave, and the people being told to stay inside and clean up afterwards. That gap is the part to watch.",
-      "gap_after": 0.9,
+      "narration": "Maybe so. But look at the gap between the people helped to leave, and the people told to stay inside and clean up after. That gap is the part to watch.",
+      "gap_after": 0.7,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -2353,7 +2335,7 @@
       "id": "lead-1",
       "section": "lead",
       "narration": "Here is why people are this angry about dust. Lead is a neurotoxin. It damages the brain and nervous system, the kidneys, and the heart and blood vessels.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "BRAIN + NERVOUS SYSTEM",
         "KIDNEYS",
@@ -2373,7 +2355,7 @@
       "id": "lead-2",
       "section": "lead",
       "narration": "The CDC says no amount of lead exposure is safe.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "NO AMOUNT OF LEAD EXPOSURE IS SAFE",
         "CENTERS FOR DISEASE CONTROL AND PREVENTION"
@@ -2392,7 +2374,7 @@
       "id": "lead-3",
       "section": "lead",
       "narration": "And it hits the smallest people hardest. In small children it can cause permanent brain damage.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -2407,7 +2389,7 @@
       "id": "lead-4",
       "section": "lead",
       "narration": "A University of Iowa professor of environmental health said the most concerning thing is two-year-olds. They touch everything. And then everything goes into their mouth.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "\"...2-year-olds that just have this habit of, right, of touching everything and then everything goes right into their mouth\"",
         "PATRICK O'SHAUGHNESSY, UNIVERSITY OF IOWA"
@@ -2425,7 +2407,7 @@
       "id": "lead-5",
       "section": "lead",
       "narration": "So think about the advice to rinse off the playground. Researchers at the same university pointed out the catch. The lead does not go away. It washes into the dirt underneath.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "THE LEAD DOESN'T GO AWAY",
         "IT WASHES INTO THE DIRT"
@@ -2450,7 +2432,7 @@
       "id": "lead-6",
       "section": "lead",
       "narration": "Lead does not break down. Whatever lands stays there until somebody removes it.",
-      "gap_after": 0.7,
+      "gap_after": 0.5,
       "onscreen": [],
       "claims": [
         {
@@ -2472,7 +2454,7 @@
       "id": "lead-7",
       "section": "lead",
       "narration": "Now, to be fair. The scientists following this do not expect a disaster far from the plant. One of them said that at the far end of the plume, this would be a very small addition to the lead already in the ground.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "\"...a very small addition to the lead that's already naturally occurring.\"",
         "JEFFREY CATALANO, WASHINGTON UNIVERSITY IN ST. LOUIS"
@@ -2497,7 +2479,7 @@
       "id": "lead-8",
       "section": "lead",
       "narration": "But close to the blast, he said, it could be high. And he said he knows of nothing like this ever being done.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -2518,7 +2500,7 @@
       "id": "lead-9",
       "section": "lead",
       "narration": "So the real answer is that nobody knows yet. That is what the sampling is for.",
-      "gap_after": 0.9,
+      "gap_after": 0.7,
       "onscreen": [],
       "claims": [
         {
@@ -2533,7 +2515,7 @@
       "id": "farm-1",
       "section": "farms",
       "narration": "This is farm country. And animals cannot follow an evacuation notice.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -2548,7 +2530,7 @@
       "id": "farm-2",
       "section": "farms",
       "narration": "The state told farmers: move feed, hay and water tanks indoors, or cover them with a tarp. Keep livestock inside, or somewhere else, until the all-clear.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "MOVE FEED, HAY AND WATER TANKS INDOORS",
         "OR COVER THEM WITH A TARP",
@@ -2572,8 +2554,8 @@
     {
       "id": "farm-3",
       "section": "farms",
-      "narration": "Iowa State's beef specialists told producers to pull cattle off pasture and away from ponds, and to watch for lead poisoning. Sudden death. Or, more slowly: weight loss, trouble seeing, trouble breeding.",
-      "gap_after": 0.35,
+      "narration": "Iowa State's beef specialists told producers to pull cattle off pasture and away from ponds, and to watch for lead poisoning. Sudden death. Or slower signs: weight loss, trouble seeing, trouble breeding.",
+      "gap_after": 0.08,
       "onscreen": [
         "SUDDEN DEATH",
         "GRADUAL WEIGHT LOSS",
@@ -2607,13 +2589,13 @@
           "quote": "Cattle should be removed from pond water drinking areas"
         }
       ],
-      "say": "Iowa State's beef specialists told producers to pull cattle off pasture and away from ponds, and to watch for led poisoning. Sudden death. Or, more slowly: weight loss, trouble seeing, trouble breeding."
+      "say": "Iowa State's beef specialists told producers to pull cattle off pasture and away from ponds, and to watch for led poisoning. Sudden death. Or slower signs: weight loss, trouble seeing, trouble breeding."
     },
     {
       "id": "farm-4",
       "section": "farms",
       "narration": "And both of them gave farmers the same homework. Take samples now. Write down every expense.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "TAKE BASELINE SAMPLES",
         "\"Track and record all relevant expenses\""
@@ -2637,7 +2619,7 @@
       "id": "farm-5",
       "section": "farms",
       "narration": "Read that again. Farmers are being told to build their own evidence file, in case they have to file a claim against the Army.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -2646,7 +2628,7 @@
       "id": "farm-6",
       "section": "farms",
       "narration": "The Army says it will pay, and clean up any home that tests over its limit at government expense. Iowa's agriculture secretary says farmers must be fully compensated.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "ARMY: CLEANUP \"at complete government expense\"",
         "STATE: \"Iowans are fully compensated\""
@@ -2676,7 +2658,7 @@
       "id": "farm-7",
       "section": "farms",
       "narration": "And to be fair again: that same scientist said he would not expect a measurable increase in lead in next year's corn.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "\"I don't think you would find a measurable increase in lead in next year's corn crop\"",
         "JEFFREY CATALANO, WASHINGTON UNIVERSITY IN ST. LOUIS"
@@ -2694,8 +2676,8 @@
     {
       "id": "farm-8",
       "section": "farms",
-      "narration": "So maybe the farms come through fine. But the state's own agriculture secretary said there are a lot of questions to answer about how we got here. And about how late the state was told.",
-      "gap_after": 1.0,
+      "narration": "So maybe the farms come through fine. But the state's own agriculture secretary said there are a lot of questions to answer about how we got here, and about how late the state was told.",
+      "gap_after": 0.8,
       "onscreen": [
         "\"...a lot of questions that'll need to be answered, ultimately about how did we get here\"",
         "MIKE NAIG, IOWA SECRETARY OF AGRICULTURE"
@@ -2719,7 +2701,7 @@
       "id": "end-1",
       "section": "ending",
       "narration": "This video was finished the night before the blast.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [],
       "exempt": "note"
@@ -2727,8 +2709,8 @@
     {
       "id": "end-2",
       "section": "ending",
-      "narration": "By the time you are watching, it has probably happened. Two blasts, a few seconds, and a cloud.",
-      "gap_after": 0.35,
+      "narration": "By the time you are watching, it has probably happened.",
+      "gap_after": 0.08,
       "onscreen": [],
       "claims": [
         {
@@ -2749,7 +2731,7 @@
       "id": "end-3",
       "section": "ending",
       "narration": "What nobody knows yet is where the lead came down. The EPA says its first results will take days. The Army has promised a final map.",
-      "gap_after": 0.6,
+      "gap_after": 0.4,
       "onscreen": [
         "FIRST RESULTS: \"in the days following the detonation\"",
         "FINAL MAP: PROMISED"
@@ -2768,13 +2750,13 @@
           "quote": "the Army will issue a final map showing where lead-containing dust has settled"
         }
       ],
-      "say": "What nobody knows yet is where the led came down. The E P A says its first results will take days. The Army has promised a final map."
+      "say": "What nobody knows yet is where the led came down. The E.P.A. says its first results will take days. The Army has promised a final map."
     },
     {
       "id": "end-4",
       "section": "ending",
       "narration": "If the numbers come back low, we got lucky. And luck is not a safety plan.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -2783,7 +2765,7 @@
       "id": "end-5",
       "section": "ending",
       "narration": "If they do not, then decades of later just landed on somebody's farm. Somebody's playground. Somebody's kid.",
-      "gap_after": 0.8,
+      "gap_after": 0.6,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -2792,7 +2774,7 @@
       "id": "end-6",
       "section": "ending",
       "narration": "Either way, the Army has now ordered a review of every weapons storage site it has. To make sure, in its words, that something like this never happens again.",
-      "gap_after": 0.35,
+      "gap_after": 0.08,
       "onscreen": [
         "\"...to ensure that something like this never happens again.\"",
         "ADAM TELLE, ACTING SECRETARY OF THE ARMY"
@@ -2810,7 +2792,7 @@
       "id": "end-7",
       "section": "ending",
       "narration": "Good. But one of the scientists watching this asked the question that should bother everyone. Once we do this, it becomes an option. So how many more times?",
-      "gap_after": 0.8,
+      "gap_after": 0.6,
       "onscreen": [
         "\"...how many more times will we think of doing this and think it's okay now?\"",
         "PETER THORNE, UNIVERSITY OF IOWA COLLEGE OF PUBLIC HEALTH"
@@ -2840,7 +2822,7 @@
       "id": "end-8",
       "section": "ending",
       "narration": "The Army wrote down how this would go wrong in 1984. Keep it wet. Keep checking. Do not trust the drums.",
-      "gap_after": 0.5,
+      "gap_after": 0.3,
       "onscreen": [
         "1984"
       ],
@@ -2870,7 +2852,7 @@
       "id": "end-9",
       "section": "ending",
       "narration": "Then it kept nearly five tons of it anyway.",
-      "gap_after": 0.8,
+      "gap_after": 0.6,
       "onscreen": [],
       "claims": [
         {
@@ -2885,7 +2867,7 @@
       "id": "end-10",
       "section": "ending",
       "narration": "This was not an accident. This is what happens when a problem belongs to nobody.",
-      "gap_after": 0.9,
+      "gap_after": 0.7,
       "onscreen": [],
       "claims": [],
       "exempt": "opinion"
@@ -2894,7 +2876,7 @@
       "id": "end-11",
       "section": "ending",
       "narration": "We will update this when the results are in.",
-      "gap_after": 0.0,
+      "gap_after": 0.06,
       "onscreen": [],
       "claims": [],
       "exempt": "note"
