@@ -20,8 +20,8 @@
     "plume map"
   ],
   "categoryId": "27",
-  "privacyStatus": "private",
+  "privacyStatus": "public",
   "selfDeclaredMadeForKids": false,
   "containsSyntheticMedia": true,
-  "notes": "A long-form special, outside the channel's workplace-incident lane (see CLAUDE.md, Specials). categoryId 27 = Education. containsSyntheticMedia is YouTube's altered/synthetic content disclosure: the voice is synthetic and the picture is an animated explainer. Chapter times come from assets/timings.json (the start of each section); regenerate them if the narration is re-recorded. Edition: pre-blast (written 2026-11-24, the night before the detonation). Upload stays private until Nick has reviewed."
+  "notes": "A long-form special, outside the channel's workplace-incident lane (see CLAUDE.md, Specials). categoryId 27 = Education. containsSyntheticMedia is YouTube's altered/synthetic content disclosure: the voice is synthetic and the picture is an animated explainer. Chapter times come from assets/timings.json (the start of each section); regenerate them if the narration is re-recorded. Edition: pre-blast (written 2026-11-24, the night before the detonation). Published straight to public on Nick's instruction, without a listen-through first."
 }

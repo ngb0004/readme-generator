@@ -60,13 +60,13 @@ upload = {
     "tags": ["lead azide", "Middletown Iowa", "Iowa Army Ammunition Plant", "controlled detonation", "lead dust", "lead exposure",
              "U.S. Army", "EPA", "Iowa", "Missouri", "Illinois", "explainer", "Iowa detonation", "lead dust cloud", "plume map"],
     "categoryId": "27",
-    "privacyStatus": "private",
+    "privacyStatus": "public",   # Nick, 2026-11-25, before the blast: "don't go private fucking send it"
     "selfDeclaredMadeForKids": False,
     "containsSyntheticMedia": True,
     "notes": ("A long-form special, outside the channel's workplace-incident lane (see CLAUDE.md, Specials). categoryId 27 = Education. "
               "containsSyntheticMedia is YouTube's altered/synthetic content disclosure: the voice is synthetic and the picture is an animated explainer. "
               "Chapter times come from assets/timings.json (the start of each section); regenerate them if the narration is re-recorded. "
-              "Edition: " + script["edition"] + ". Upload stays private until Nick has reviewed."),
+              "Edition: " + script["edition"] + ". Published straight to public on Nick's instruction, without a listen-through first."),
 }
 (video / "upload.json").write_text(json.dumps(upload, indent=2, ensure_ascii=False) + "\n")
 # The same text laid out for pasting into YouTube Studio by hand, until the upload step is built.
