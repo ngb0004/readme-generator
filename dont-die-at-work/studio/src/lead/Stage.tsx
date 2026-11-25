@@ -5,7 +5,7 @@ import {C, FONT, FPS} from '../engine/theme';
 import {ramp} from '../engine/time';
 import {useFonts} from './fonts';
 import {Backdrop, Grade16, H, W} from './kit';
-import {isCommentary, label, provenance, sectionIndex, sectionTitle} from './script';
+import {isCommentary, isEstimate, label, provenance, sectionIndex, sectionTitle} from './script';
 import {BEATS, S, SPEECH_END, beatAt} from './timeline';
 
 const CAPTION_TINT: Record<string, string> = {LEAD: C.cyan, DUST: C.cyan, NEVER: C.red, "CAN'T": C.red, CANNOT: C.red, 'LATER': C.yellow};
@@ -30,7 +30,7 @@ export const Stage: React.FC<{t: number; section: string; options?: StageOptions
   const r = S[section];
   const tagA = bare || !title ? 0 : ramp(t, r.start + 0.2, r.start + 0.7);
   const speaking = beat && t < beat.end + 0.6;
-  const prov = beat && speaking ? (isCommentary(beat.id) ? [label('commentary')] : provenance(beat.id)) : [];
+  const prov = beat && speaking ? (isEstimate(beat.id) ? [label('estimate')] : isCommentary(beat.id) ? [label('commentary')] : provenance(beat.id)) : [];
   return (
     <AbsoluteFill style={{background: C.bg}}>
       <Backdrop />
@@ -43,7 +43,7 @@ export const Stage: React.FC<{t: number; section: string; options?: StageOptions
       <div style={{position: 'absolute', right: 64, top: 50, opacity: bare ? 0 : 0.62, fontFamily: FONT.mono, fontWeight: 700, fontSize: 18, letterSpacing: '0.18em', color: C.white, textShadow: '0 2px 10px #000'}}>{label('reconstruction')}</div>
       {!bare && prov.length ? (
         <div style={{position: 'absolute', left: 64, top: H - 62, display: 'flex', alignItems: 'center', gap: 12, fontFamily: FONT.mono, fontWeight: 700, fontSize: 20, letterSpacing: '0.14em', color: C.mute, textShadow: '0 2px 10px #000'}}>
-          <span style={{width: 11, height: 11, borderRadius: 11, background: isCommentary(beat!.id) ? C.mute : C.yellow, display: 'inline-block'}} />
+          <span style={{width: 11, height: 11, borderRadius: 11, background: isCommentary(beat!.id) && !isEstimate(beat!.id) ? C.mute : C.yellow, display: 'inline-block'}} />
           <span style={{color: C.white, opacity: 0.85}}>{isCommentary(beat!.id) ? prov[0] : `${label('source')}: ${prov.join(' · ')}`}</span>
         </div>
       ) : null}

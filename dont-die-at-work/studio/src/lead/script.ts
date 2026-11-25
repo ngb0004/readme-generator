@@ -32,7 +32,10 @@ export const label = (key: string): string => {
 export const labelOr = (key: string, fallback: string): string => SCRIPT.labels[key] ?? fallback;
 export const sectionTitle = (section: string): string => SCRIPT.section_titles[section] ?? '';
 export const sectionIndex = (section: string): number => SCRIPT.sections.indexOf(section);
+/** A beat that carries no sourced claim: opinion, a note to the viewer, or our own estimate. */
 export const isCommentary = (beat: string): boolean => Boolean(BY_ID[beat]?.exempt);
+/** True for lines that present the film's own calculation (see estimate.py beside the script). */
+export const isEstimate = (beat: string): boolean => BY_ID[beat]?.exempt === 'estimate';
 
 /** Who a beat's facts come from, shortest list first: shown in the corner while the beat plays. */
 export const provenance = (beat: string): string[] => {

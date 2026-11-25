@@ -19,6 +19,7 @@
     "failure",
     "decision",
     "zone",
+    "ours",
     "evac",
     "lead",
     "farms",
@@ -33,6 +34,7 @@
     "failure": "HOW IT WENT BAD",
     "decision": "THE DECISION",
     "zone": "WHERE THE DUST GOES",
+    "ours": "OUR OWN MAP",
     "evac": "WHO LEAVES, WHO STAYS",
     "lead": "WHY LEAD MATTERS",
     "farms": "THE FARMS",
@@ -59,7 +61,11 @@
     "quincy": "QUINCY",
     "knoxCity": "KNOX CITY",
     "macon": "MACON",
-    "wind": "WIND"
+    "wind": "WIND",
+    "estimate": "OUR ESTIMATE · NATIONAL WEATHER SERVICE FORECAST",
+    "ours_note": "OUR ESTIMATE OF WHERE THE WIND CARRIES IT · NOT AN OFFICIAL MAP · NOT LEAD LEVELS",
+    "ours_aloft": "FASTER WIND ABOVE",
+    "ours_ground": "WIND NEAR THE GROUND"
   },
   "sources": [
     {
@@ -121,6 +127,18 @@
       "file": "source/epa-letter-to-governor-reynolds.pdf",
       "sha256": "3ad157d1db33b19b292fc0898c412d12bf5470b9c280703f11e5209bdd8165fd",
       "short": "U.S. EPA"
+    },
+    {
+      "id": "nws",
+      "kind": "official",
+      "publisher": "National Weather Service",
+      "title": "Gridpoint forecast for the Iowa Army Ammunition Plant (Quad Cities office, cell 45,33), issued 6:26 p.m. CST, Nov. 24, 2026",
+      "url": "https://api.weather.gov/gridpoints/DVN/45,33",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "file": "source/nws-gridpoint-dvn-45-33.json",
+      "sha256": "eed7b801711937267da754284f87d4ed56fb5ade4cbc795b95c91dce06e8d2a7",
+      "short": "NATIONAL WEATHER SERVICE"
     },
     {
       "id": "paper",
@@ -2127,6 +2145,129 @@
           "quote": "It is a guesstimate at this point"
         }
       ]
+    },
+    {
+      "id": "our-1",
+      "section": "ours",
+      "narration": "So we checked it ourselves.",
+      "gap_after": 0.15,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "note"
+    },
+    {
+      "id": "our-2",
+      "section": "ours",
+      "narration": "We took the National Weather Service forecast for Wednesday, hour by hour: the wind near the ground, and the faster wind above it that carries a cloud.",
+      "gap_after": 0.08,
+      "onscreen": [
+        "NATIONAL WEATHER SERVICE FORECAST",
+        "ISSUED TUESDAY EVENING"
+      ],
+      "claims": [
+        {
+          "claim": "The forecast used was issued at 00:26 UTC on Nov. 25: 6:26 p.m. Central on Tuesday.",
+          "src": "nws",
+          "page": 1,
+          "quote": "\"updateTime\": \"2026-11-25T00:26:20+00:00\""
+        },
+        {
+          "claim": "It gives the wind near the ground, hour by hour.",
+          "src": "nws",
+          "page": 1,
+          "quote": "\"windDirection\""
+        },
+        {
+          "claim": "It gives the transport wind: the average wind through the layer of air that mixes with the ground.",
+          "src": "nws",
+          "page": 1,
+          "quote": "\"transportWindDirection\""
+        }
+      ]
+    },
+    {
+      "id": "our-3",
+      "section": "ours",
+      "narration": "At nine a.m. it blows from the northeast at about twelve miles an hour. It stays in the northeast all day.",
+      "gap_after": 0.08,
+      "onscreen": [
+        "WIND FROM THE NORTHEAST",
+        "12 TO 14 MPH"
+      ],
+      "claims": [],
+      "exempt": "estimate"
+    },
+    {
+      "id": "our-4",
+      "section": "ours",
+      "narration": "Ride that wind, and the front of the cloud is about forty miles out by noon. By five p.m., about a hundred.",
+      "gap_after": 0.08,
+      "onscreen": [
+        "NOON",
+        "5 P.M.",
+        "ABOUT 100 MILES"
+      ],
+      "claims": [],
+      "exempt": "estimate"
+    },
+    {
+      "id": "our-5",
+      "section": "ours",
+      "narration": "Southwest, into northeast Missouri. Near the ground the wind is slower, so the tail lags behind. And the Army's newest map runs right between our two lines.",
+      "gap_after": 0.08,
+      "onscreen": [
+        "OUR ESTIMATE",
+        "ARMY'S MAP, AS REPORTED"
+      ],
+      "claims": [
+        {
+          "claim": "The Army's maps point southwest.",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "Wind arrows on the maps point southwest."
+        },
+        {
+          "claim": "The Army's shaded area runs toward Macon, Missouri.",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "toward Macon, Missouri"
+        }
+      ],
+      "exempt": "estimate"
+    },
+    {
+      "id": "our-6",
+      "section": "ours",
+      "narration": "So the direction checks out. What no map of ours can show is how much lead is in that cloud. That depends on how much the blast puts in the sky, and the basis for the Army's estimates is not public.",
+      "gap_after": 0.08,
+      "onscreen": [
+        "HOW MUCH LEAD?",
+        "\"the basis for the estimates is not public\""
+      ],
+      "claims": [
+        {
+          "claim": "How much lead comes down depends on how much goes up.",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "How much lead ends up in the soil will depend on how much lead ends up in the sky after the detonation."
+        },
+        {
+          "claim": "The basis for the Army's estimates is not public.",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "the basis for the estimates is not public"
+        }
+      ],
+      "say": "So the direction checks out. What no map of ours can show is how much led is in that cloud. That depends on how much the blast puts in the sky, and the basis for the Army's estimates is not public."
+    },
+    {
+      "id": "our-7",
+      "section": "ours",
+      "narration": "And this is Tuesday night's forecast. If the wind shifts by morning, so does the map.",
+      "gap_after": 0.7,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "note"
     },
     {
       "id": "evac-1",

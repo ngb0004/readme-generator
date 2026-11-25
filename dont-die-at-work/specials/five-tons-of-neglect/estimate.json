@@ -1,0 +1,231 @@
+{
+  "what": "Where air leaving the plant at 9 a.m. CST on 2026-11-25 is carried by the forecast wind. Not an estimate of lead in the air or on the ground.",
+  "inputs": [
+    {
+      "file": "source/nws-gridpoint-dvn-45-33.json",
+      "sha256": "eed7b801711937267da754284f87d4ed56fb5ade4cbc795b95c91dce06e8d2a7",
+      "url": "https://api.weather.gov/gridpoints/DVN/45,33",
+      "issued": "2026-11-25T00:26:20+00:00",
+      "issued_central": "Tuesday 6:26 PM CST, Nov. 24"
+    }
+  ],
+  "method": {
+    "release": "09:00 CST",
+    "hours": 8,
+    "stability_class": "D (overcast: sky cover 81 to 87 percent)",
+    "spread": "Briggs open-country sigma_y = 0.08 x / sqrt(1 + 0.0001 x); the band is two sigma either side",
+    "direction_error_deg": 10
+  },
+  "transport": [
+    {
+      "hour": "09:00",
+      "lon": -91.262,
+      "lat": 40.805,
+      "miles": 0.0,
+      "from_deg": 50,
+      "mph": 11.5,
+      "half_width_miles": 0.0
+    },
+    {
+      "hour": "10:00",
+      "lon": -91.4307,
+      "lat": 40.6979,
+      "miles": 11.5,
+      "from_deg": 50,
+      "mph": 12.7,
+      "half_width_miles": 1.1
+    },
+    {
+      "hour": "11:00",
+      "lon": -91.6159,
+      "lat": 40.58,
+      "miles": 24.2,
+      "from_deg": 60,
+      "mph": 13.8,
+      "half_width_miles": 1.7
+    },
+    {
+      "hour": "12:00",
+      "lon": -91.8439,
+      "lat": 40.48,
+      "miles": 38.0,
+      "from_deg": 50,
+      "mph": 13.8,
+      "half_width_miles": 2.3
+    },
+    {
+      "hour": "13:00",
+      "lon": -92.0454,
+      "lat": 40.3515,
+      "miles": 51.8,
+      "from_deg": 50,
+      "mph": 12.7,
+      "half_width_miles": 2.7
+    },
+    {
+      "hour": "14:00",
+      "lon": -92.2296,
+      "lat": 40.2336,
+      "miles": 64.4,
+      "from_deg": 50,
+      "mph": 12.7,
+      "half_width_miles": 3.1
+    },
+    {
+      "hour": "15:00",
+      "lon": -92.4136,
+      "lat": 40.1158,
+      "miles": 77.1,
+      "from_deg": 50,
+      "mph": 13.8,
+      "half_width_miles": 3.4
+    },
+    {
+      "hour": "16:00",
+      "lon": -92.6139,
+      "lat": 39.9873,
+      "miles": 90.9,
+      "from_deg": 50,
+      "mph": 12.7,
+      "half_width_miles": 3.7
+    },
+    {
+      "hour": "17:00",
+      "lon": -92.7972,
+      "lat": 39.8694,
+      "miles": 103.6,
+      "from_deg": 30,
+      "mph": 10.4,
+      "half_width_miles": 3.9
+    }
+  ],
+  "surface": [
+    {
+      "hour": "09:00",
+      "lon": -91.262,
+      "lat": 40.805,
+      "miles": 0.0,
+      "from_deg": 40,
+      "mph": 8.1,
+      "half_width_miles": 0.0
+    },
+    {
+      "hour": "10:00",
+      "lon": -91.3611,
+      "lat": 40.7156,
+      "miles": 8.1,
+      "from_deg": 40,
+      "mph": 9.2,
+      "half_width_miles": 0.9
+    },
+    {
+      "hour": "11:00",
+      "lon": -91.4741,
+      "lat": 40.6135,
+      "miles": 17.3,
+      "from_deg": 40,
+      "mph": 10.4,
+      "half_width_miles": 1.4
+    },
+    {
+      "hour": "12:00",
+      "lon": -91.6011,
+      "lat": 40.4986,
+      "miles": 27.6,
+      "from_deg": 40,
+      "mph": 10.4,
+      "half_width_miles": 1.9
+    },
+    {
+      "hour": "13:00",
+      "lon": -91.7279,
+      "lat": 40.3837,
+      "miles": 38.0,
+      "from_deg": 40,
+      "mph": 10.4,
+      "half_width_miles": 2.3
+    },
+    {
+      "hour": "14:00",
+      "lon": -91.8545,
+      "lat": 40.2688,
+      "miles": 48.3,
+      "from_deg": 40,
+      "mph": 10.4,
+      "half_width_miles": 2.6
+    },
+    {
+      "hour": "15:00",
+      "lon": -91.9809,
+      "lat": 40.1539,
+      "miles": 58.7,
+      "from_deg": 30,
+      "mph": 10.4,
+      "half_width_miles": 2.9
+    },
+    {
+      "hour": "16:00",
+      "lon": -92.079,
+      "lat": 40.024,
+      "miles": 69.0,
+      "from_deg": 30,
+      "mph": 10.4,
+      "half_width_miles": 3.2
+    },
+    {
+      "hour": "17:00",
+      "lon": -92.1769,
+      "lat": 39.8941,
+      "miles": 79.4,
+      "from_deg": 30,
+      "mph": 9.2,
+      "half_width_miles": 3.4
+    }
+  ],
+  "summary": {
+    "transport_bearing_deg": 231.4,
+    "transport_reach_miles": 103.5,
+    "surface_bearing_deg": 217.4,
+    "surface_reach_miles": 79.2,
+    "army_bearing_deg": 220.9,
+    "bearing_difference_deg": 10.4,
+    "knox_city_miles": 60.2,
+    "knox_city_bearing_deg": 220.6,
+    "knox_city_reached_hour": 13.67,
+    "mph_at_9am": 11.5,
+    "mph_min": 11.5,
+    "mph_max": 13.8,
+    "miles_by_noon": 38.0,
+    "miles_by_5pm": 103.6
+  },
+  "figures": [
+    {
+      "value": 9,
+      "from": "the release hour, 9 a.m., from the Army's announcement"
+    },
+    {
+      "value": 5,
+      "from": "the last hour computed, 5 p.m., the end of the window the Army's maps cover"
+    },
+    {
+      "value": 2,
+      "from": "the two tracks computed: one from the transport wind, one from the surface wind"
+    },
+    {
+      "value": 12,
+      "from": "transport wind at 9 a.m.: 11.5 mph"
+    },
+    {
+      "value": 14,
+      "from": "strongest transport wind, 9 a.m. to 5 p.m.: 13.8 mph"
+    },
+    {
+      "value": 40,
+      "from": "distance travelled by noon: 38.0 miles, to the nearest ten"
+    },
+    {
+      "value": 100,
+      "from": "distance travelled by 5 p.m.: 103.6 miles, to the nearest ten"
+    }
+  ]
+}

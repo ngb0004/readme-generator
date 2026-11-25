@@ -10,6 +10,7 @@ import {Evac, options as evac} from './scenes/Evac';
 import {Failure, options as failure} from './scenes/Failure';
 import {Farms, options as farms} from './scenes/Farms';
 import {Health, options as health} from './scenes/Health';
+import {Ours, options as ours} from './scenes/Ours';
 import {Storage, options as storage} from './scenes/Storage';
 import {Surplus, options as surplus} from './scenes/Surplus';
 import {Timeline, options as timeline} from './scenes/Timeline';
@@ -29,6 +30,7 @@ const SCENES: Record<string, {Scene: Scene; options: StageOptions}> = {
   failure: {Scene: Failure, options: failure},
   decision: {Scene: Decision, options: decision},
   zone: {Scene: Zone, options: zone},
+  ours: {Scene: Ours, options: ours},
   evac: {Scene: Evac, options: evac},
   lead: {Scene: Health, options: health},
   farms: {Scene: Farms, options: farms},

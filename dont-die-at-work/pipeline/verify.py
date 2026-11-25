@@ -24,6 +24,10 @@ news-pegged, not a workplace-fatality report). Its rules differ in three ways:
     always reported as not re-checked.
   - the sections are the ones the script lists in "sections", in that order.
   - commentary beats are marked "exempt": "opinion" (or "note"). They may not state numbers.
+  - a beat marked "exempt": "estimate" presents the film's own calculation. The calculation
+    lives beside the script (estimate.py, with its recorded result in estimate.json); this
+    gate re-runs it and fails if the result on disk differs, and the beat may state only the
+    figures the calculation lists (plus numbers in any quote it cites).
 
 What this does NOT do: judge whether a quote actually supports its claim. That
 is a reading-comprehension call, made when the script is written and
@@ -130,9 +134,24 @@ def load_pages(doc: Path) -> list[str]:
         raw = doc.read_text(encoding="utf-8", errors="ignore")
         raw = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
         return [normalise(htmllib.unescape(re.sub(r"<[^>]+>", " ", raw)))]
-    if doc.suffix.lower() == ".txt":
+    if doc.suffix.lower() in (".txt", ".json"):          # a data file is quoted as text, like any page
         return [normalise(doc.read_text(encoding="utf-8", errors="ignore"))]
     return [normalise(page.extract_text() or "") for page in PdfReader(str(doc)).pages]
+
+
+def own_estimate(video: Path, gate: Gate) -> set[float]:
+    """Re-run the film's own calculation and return the figures it allows. Fails the gate if
+    estimate.json was not produced by estimate.py from the saved inputs."""
+    calc, record = video / "estimate.py", video / "estimate.json"
+    if not gate.check(calc.exists() and record.exists(), "an estimate beat needs estimate.py and estimate.json beside the script"):
+        return set()
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("estimate", calc)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    fresh, saved = mod.compute(video), json.loads(record.read_text())
+    gate.check(json.loads(json.dumps(fresh)) == saved, "estimate.json does not match what estimate.py computes from the saved inputs: re-run it")
+    return {float(f["value"]) for f in saved.get("figures", [])}
 
 
 def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
@@ -196,6 +215,7 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
         gate.check(order[-2:] == ["tribute", "signoff"], "the video must close on the tribute, then the sign-off")
 
     banned = [n.lower() for n in script.get("do_not_name", [])]
+    estimate_figures: set[float] | None = None
 
     for beat in beats:
         bid = beat.get("id", "?")
@@ -210,13 +230,18 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
 
         # 2. Every beat is sourced --------------------------------------------
         exempt = beat.get("exempt")
-        if exempt:
+        figures: set[float] = set()
+        if exempt == "estimate" and special:
+            if estimate_figures is None:
+                estimate_figures = own_estimate(video, gate)
+            figures = estimate_figures       # its quotes, if it cites any, are still checked below
+        elif exempt:
             ok = exempt in ("opinion", "note") if special else exempt in EXEMPT_ALLOWED and beat.get("section") == exempt
             gate.check(ok, f"[{bid}] exempt='{exempt}' is not allowed here")
             gate.check(not numbers_in(text, skip_bare_one=True),
                        f"[{bid}] an exempt beat may not state numbers")
             continue
-        if not gate.check(bool(claims), f"[{bid}] UNSOURCED: no claims for \"{spoken}\""):
+        elif not gate.check(bool(claims), f"[{bid}] UNSOURCED: no claims for \"{spoken}\""):
             continue
 
         # 3. Quotes exist on the cited page -----------------------------------
@@ -239,10 +264,11 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
                        f"[{bid}] quote not found in {sid} on page {page}: \"{quote}\"")
 
         # 4. Every number is in a cited quote ---------------------------------
-        allowed = numbers_in(normalise(cited), skip_bare_one=False)
+        allowed = numbers_in(normalise(cited), skip_bare_one=False) | figures
         for n in sorted(numbers_in(text, skip_bare_one=True)):
             gate.check(n in allowed,
-                       f"[{bid}] number {n:g} appears in the script but in none of the quotes it cites")
+                       f"[{bid}] number {n:g} appears in the script but in none of the quotes it cites"
+                       + (" or the figures in estimate.json" if figures else ""))
     # Thumbnail text makes claims too: it borrows the quotes of the beat it names.
     thumb = script.get("thumbnail")
     if thumb:
@@ -290,7 +316,9 @@ def write_claim_map(video: Path, script: dict) -> None:
             out.append(">")
             out.append("> On screen: " + " / ".join(beat["onscreen"]))
         out.append("")
-        if beat.get("exempt"):
+        if beat.get("exempt") == "estimate":
+            out.append("*Our own estimate: the arithmetic is in `estimate.py`, its result in `estimate.json`.*")
+        elif beat.get("exempt"):
             out.append(f"*No factual claim ({beat['exempt']}).*")
         for claim in beat.get("claims", []):
             out.append(f"- **{claim['claim']}** ({claim.get('src', default)} p. {claim['page']}): \"{claim['quote']}\"")
