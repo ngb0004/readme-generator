@@ -144,9 +144,9 @@ export const Ending: React.FC<{t: number}> = ({t}) => {
             <Backdrop tone="deep" />
           </div>
           <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
-            <Barn x={spots[0].x} y={BASE} k={K} a={fadeIn(t, c.farm - 0.25, 0.3)} />
-            <Swings x={spots[1].x} y={BASE} k={K} a={fadeIn(t, c.play - 0.25, 0.3)} t={t} />
-            <Kid x={spots[2].x} y={BASE} k={K} a={fadeIn(t, c.kid - 0.25, 0.3)} />
+            <Barn x={spots[0].x} y={BASE} k={K} a={0.2 * fadeIn(t, c.b5 + 0.2, 0.6) + 0.8 * fadeIn(t, c.farm - 0.25, 0.3)} />
+            <Swings x={spots[1].x} y={BASE} k={K} a={0.2 * fadeIn(t, c.b5 + 0.2, 0.6) + 0.8 * fadeIn(t, c.play - 0.25, 0.3)} t={t} />
+            <Kid x={spots[2].x} y={BASE} k={K} a={0.2 * fadeIn(t, c.b5 + 0.2, 0.6) + 0.8 * fadeIn(t, c.kid - 0.25, 0.3)} />
             {spots.map((s) => (
               <Speck key={s.x} t={t} land={s.at + 0.3} x={s.x + s.top.x * K} y={BASE + s.top.y * K} />
             ))}

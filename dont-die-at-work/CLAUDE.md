@@ -273,6 +273,11 @@ so a re-run only records the lines that changed.
 - **When the talking has done its job, build.** The same night, after a long conversation: "we're
   getting into the weeds... I believe that you are capable of creating a good video." (I read that
   as the go-ahead for cut 4; that reading is mine.)
+- **Caution is not a reason to do less.** On the first special I refused his idea of an
+  independent plume map because a bad one could mislead people, and offered the Army's maps
+  instead. He overruled it, bluntly (2026-11-25, see Specials). The lesson I take from it (my
+  reading): when an idea carries a risk, the answer is to do it rigorously and label it, and to
+  say exactly which part cannot be done honestly, not to fall back on the official account.
 - **Rules are not a substitute for thinking.** Cut 1 met every rule and was shallow. If the rules
   are producing a bad video, say so before building, not after.
 - His bar for the picture is "top echelon", not "decent". A cut that merely works is not done.
@@ -313,11 +318,23 @@ What is different for a special (`"lane": "special"` in `script.json`; `verify.p
   little harm far from the plant, and the court, governor and mayor who backed the blast).
 - **Check the draft before building it.** His script is an input like any other idea. The first
   draft had three facts wrong and several that could not be confirmed (`performance-log.md`).
-- **No forecasts of our own.** For a live event that people may act on, show what the
-  authorities published, say it is a forecast, and draw it as a schematic. A homemade dust map
-  could send someone the wrong way.
+- **Our own estimates are allowed, done properly.** I first ruled out a homemade dust map for
+  this film, on the grounds that it could send someone the wrong way. Nick overruled that
+  (2026-11-25): "We can make our own fucking plume map... It doesn't have to be only what the
+  army says... we're doing it based on all of our research." He was right, and the film's own
+  argument says so: the Army had not shown how its maps were made. The rules that came out of it:
+  every input is public and saved in `source/`; the arithmetic is one file beside the script
+  (`estimate.py`, result in `estimate.json`), and `verify.py` re-runs it; a line that states our
+  result is marked `"exempt": "estimate"`, may say only the figures that file lists, and shows
+  OUR ESTIMATE in the corner; the picture is drawn from `estimate.json`, not by hand. And it
+  estimates only what the inputs support. Here that is where the forecast wind carries the cloud
+  and when. It is not how much lead is in it: nobody outside the Army has that number, so the
+  film says so instead of inventing one. What the authorities published is still shown, drawn
+  as a schematic and labelled as theirs.
 - **Leave out how-to detail for anything dangerous.** The film says what the explosive is and why
-  it went bad. It does not explain how it is made, treated or neutralised.
+  it went bad. It does not explain how it is made, treated or neutralised, and it has no drawing
+  of a munition's insides: a builder asked to draw a shell in cutaway was stopped by the model's
+  safety filter (2026-11-25). Type, hazard signs and the storage drums told that part instead.
 - **Say which edition it is.** A film finished before the event says so on screen and in the
   description, and gets a new ending when the facts are in.
 - **Sections** are whatever the film needs (`"sections"` in `script.json`), not the Short's seven.
@@ -325,7 +342,16 @@ What is different for a special (`"lane": "special"` in `script.json`; `verify.p
 
 Building one:
 
+- `make_script.py` in the special's folder writes `script.json` (it is far easier to edit than
+  the JSON); `make_upload.py` writes `upload.json`, with chapter times from the narration.
+- One scene per section in `studio/src/lead/scenes/`, each with a `dev/` entry that renders it
+  alone. Scenes can be built in parallel, but not many at once: six builders at full effort ran
+  the account into its five-hour usage limit in about twenty minutes (2026-11-25) and everything
+  stopped for half an hour. Two or three at a time, each told to write its file to disk before
+  anything else; the drafts on disk are what survived that night's two machine restarts.
+
 ```bash
+.venv/bin/python specials/five-tons-of-neglect/make_script.py specials/five-tons-of-neglect
 .venv/bin/python pipeline/build.py specials/five-tons-of-neglect
 (cd studio && DDAWT_ENTRY=src/lead/dev/zone.tsx node tools/stills.mjs LeadDev /tmp/stills 0.5 480s 500s)   # one scene alone
 ```

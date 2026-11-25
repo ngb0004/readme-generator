@@ -138,12 +138,13 @@ Middletown, Iowa, and said "build this video".
 
 - **Edition:** pre-blast, finished the night of 2026-11-24. The ending says so and promises an
   update. It needs a new ending once the EPA's sampling results and the Army's final map are out.
-- **Format:** 16:9, 1920x1080, 13:40 (13:31 of narration at 165 words a minute, then the sources
-  card). Twelve sections, 118 beats. Nick's draft aimed at 11 to 13 minutes.
-- **Sourcing:** 189 claims, each tied to a verbatim quote, from 26 documents: six official (Army
-  announcements and advisories, the EPA notice and its letter to the governor, and the Army's own
-  1984 paper "Complexities of Lead Azide") and twenty news reports. 15 beats are opinion and are
-  labelled COMMENTARY on screen.
+- **Format:** 16:9, 1920x1080, 14:35 (14:26 of narration at 165 words a minute, then the sources
+  card). Thirteen sections, 125 beats. Nick's draft aimed at 11 to 13 minutes.
+- **Sourcing:** 196 claims, each tied to a verbatim quote, from 27 documents: seven official (Army
+  announcements and advisories, the EPA notice and its letter to the governor, the Army's own
+  1984 paper "Complexities of Lead Azide", and the National Weather Service forecast) and twenty
+  news reports. 17 beats are opinion or notes and are labelled COMMENTARY on screen; three more
+  state our own estimate and are labelled OUR ESTIMATE.
 - **Two sources could not be fetched and rest on search results only:** CBS 2 Iowa (tl-18: the
   governor's office learned of the plan from the public advisory) and Beef Magazine (farm-3 and
   part of farm-4: the Iowa Beef Center's advice). Six quotes; the gate lists them as not re-checked.
@@ -162,9 +163,18 @@ What changed from Nick's draft, and why:
   and fed to a chamber in batches; this cannot be moved or opened. The film makes the argument the
   record supports instead: the Army hired a contractor in March to treat the barrels chemically,
   and dropped that for detonation by May, and has not said publicly what changed.
-- **Not built: "our estimate" of the plume.** A homemade dust forecast for a live event could send
-  someone the wrong way. The film shows the Army's maps as reported, drawn as schematics and
-  labelled as forecasts.
+- **"Our own map": built, after Nick overruled me.** I had left the draft's independent plume
+  estimate out, arguing a homemade forecast could mislead people. Nick (2026-11-25): "We can make
+  our own fucking plume map... It doesn't have to be only what the army says." It is now its own
+  section. Method: the National Weather Service gridpoint forecast for the plant (issued 6:26
+  p.m. CST on Nov. 24), air released at 9 a.m. and moved hour by hour to 5 p.m. by the transport
+  wind and, separately, the surface wind; a textbook spread curve for an overcast day; a fan for
+  a ten-degree error in the wind. Result: the transport-wind track heads 231 degrees and covers
+  104 miles by 5 p.m. (38 by noon); the surface-wind track heads 217 degrees and covers 79. The
+  Army's reported line toward Macon, Missouri (221 degrees) runs between the two, and the timing
+  matches what was reported (past Knox City in the early afternoon). So the film says the Army's
+  direction checks out, and that the missing piece is the amount of lead, which is not public.
+  **Not estimated:** lead in the air or on the ground. Any figure there would be invented.
 - **Stronger than the draft.** The 1984 paper itself, found on DTIC: the Army tried to sell the
   surplus and nobody bought it; it began destroying the stockpile and stopped about halfway; the
   leaking drums were repacked to buy "another 10 to 15 years"; "Breaking these crystals is
@@ -176,7 +186,8 @@ What changed from Nick's draft, and why:
   from the plant; a federal appeals court, the governor and Middletown's mayor backed the blast;
   and the film says the Army is "probably right" that, by now, detonation is the least bad option.
   The argument is about the decades before, not the decision this week.
-- **Left out on purpose:** how lead azide is made, treated or neutralised.
+- **Left out on purpose:** how lead azide is made, treated or neutralised, and any drawing of a
+  munition's insides (a builder drawing one was stopped by the model's safety filter).
 - **Voice:** respellings were needed for "lead" (the metal), EPA, FEMA, ATF and years; a trim bug
   that clipped the last consonant of sentences was found and fixed (see CLAUDE.md, Voice).
 - **Status:** awaiting Nick's review. Where it is published is his call.

@@ -6,14 +6,14 @@ import numpy as np
 # the bed sits low under explanation and comes up for the open, the failure and the close.
 BED = {
     "cold": (0.8, 0.55), "what": (0.35, 0.4), "surplus": (0.4, 0.45), "storage": (0.45, 0.55), "timeline": (0.4, 0.75),
-    "failure": (0.7, 0.9), "decision": (0.55, 0.6), "zone": (0.55, 0.65), "evac": (0.5, 0.55), "lead": (0.5, 0.45),
+    "failure": (0.7, 0.9), "decision": (0.55, 0.6), "zone": (0.55, 0.65), "ours": (0.45, 0.6), "evac": (0.5, 0.55), "lead": (0.5, 0.45),
     "farms": (0.4, 0.45), "ending": (0.6, 0.25),
 }
 # The bed's bottom note, by cue: D1 is the channel's home note; C1 for the past, F1 while
 # the routine holds, B-flat for the barrels going bad.
 D1, C1, F1, BB0 = 36.71, 32.70, 43.65, 29.14
 ROOTS = [("sec:cold", D1), ("sec:surplus", C1), ("sec:timeline", F1), ("tl-8", D1), ("sec:failure", BB0), ("sec:decision", C1),
-         ("sec:zone", D1), ("sec:lead", F1), ("sec:farms", C1), ("sec:ending", D1)]
+         ("sec:zone", D1), ("sec:ours", F1), ("sec:evac", D1), ("sec:lead", F1), ("sec:farms", C1), ("sec:ending", D1)]
 XFADE = 1.4  # seconds over which one note gives way to the next
 # (beat, offset in seconds, gain, body): the moments that land.
 HITS = [
@@ -26,7 +26,8 @@ HITS = [
     ("fail-1", 0.0, 0.6, 0.6), ("fail-3", 2.6, 0.9, 0.9), ("fail-5", 0.0, 0.7, 0.5), ("fail-6", 0.0, 0.7, 0.5), ("fail-7", 0.0, 0.7, 0.5), ("fail-8", 0.0, 0.5, 0.5),
     ("dec-1", 0.0, 0.6, 0.6), ("dec-6", 1.6, 0.9, 0.8), ("dec-8", 0.0, 0.5, 0.6), ("dec-9", 0.0, 0.7, 0.8), ("dec-10", 0.0, 0.6, 0.5), ("dec-12", 0.0, 0.6, 0.5),
     ("dec-13", 0.0, 0.6, 0.5), ("dec-17", 0.0, 0.9, 1.2),
-    ("zone-2", 0.0, 0.6, 0.6), ("zone-6", 0.0, 0.7, 0.6), ("zone-8", 0.0, 0.8, 0.9), ("evac-1", 0.0, 0.5, 0.5), ("evac-4", 0.0, 0.6, 0.5), ("evac-9", 0.0, 0.7, 0.8),
+    ("zone-2", 0.0, 0.6, 0.6), ("zone-6", 0.0, 0.7, 0.6), ("zone-8", 0.0, 0.8, 0.9),
+    ("our-1", 0.0, 0.7, 0.7), ("our-3", 2.3, 0.4, 0.4), ("our-4", 6.3, 0.7, 0.6), ("our-5", 7.1, 0.5, 0.5), ("our-6", 3.9, 0.9, 1.0), ("evac-1", 0.0, 0.5, 0.5), ("evac-4", 0.0, 0.6, 0.5), ("evac-9", 0.0, 0.7, 0.8),
     ("lead-1", 2.6, 0.6, 0.5), ("lead-2", 0.0, 0.8, 0.8), ("lead-4", 0.0, 0.5, 0.5), ("lead-7", 0.0, 0.4, 0.5), ("lead-9", 0.0, 0.6, 0.7),
     ("farm-1", 0.0, 0.5, 0.5), ("farm-4", 0.0, 0.5, 0.5), ("farm-5", 0.0, 0.7, 0.7), ("farm-8", 0.0, 0.5, 0.6),
     ("end-1", 0.0, 0.8, 1.0), ("end-4", 0.0, 0.6, 0.7), ("end-5", 0.0, 0.8, 0.9), ("end-8", 0.0, 0.7, 0.8), ("end-9", 0.0, 0.8, 0.9), ("end-10", 0.0, 1.0, 1.4),
