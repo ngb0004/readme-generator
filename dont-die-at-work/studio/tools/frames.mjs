@@ -7,7 +7,8 @@ import fs from 'node:fs';
 
 const [comp, outDir, rangesArg = 'all'] = process.argv.slice(2);
 fs.mkdirSync(outDir, {recursive: true});
-const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
+// DDAWT_ENTRY renders a development entry (one scene on its own; see src/lead/dev/) instead of the whole registry.
+const serveUrl = await bundle({entryPoint: path.resolve(process.env.DDAWT_ENTRY ?? 'src/index.ts')});
 // No GPU in the cloud container: software GL. Set DDAWT_GL=angle on a machine with a GPU.
 const chromiumOptions = {gl: process.env.DDAWT_GL ?? 'swangle'};
 const browserExecutable = process.env.DDAWT_CHROME ?? '/opt/pw-browsers/chromium_headless_shell';

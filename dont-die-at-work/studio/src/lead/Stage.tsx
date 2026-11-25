@@ -1,19 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {AbsoluteFill, continueRender, delayRender, useCurrentFrame} from 'remotion';
-import '@fontsource/anton/400.css';
-import '@fontsource/barlow-condensed/500.css';
-import '@fontsource/barlow-condensed/600.css';
-import '@fontsource/barlow-condensed/700.css';
-import '@fontsource/jetbrains-mono/500.css';
-import '@fontsource/jetbrains-mono/700.css';
+import React from 'react';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {Captions} from '../engine/Captions';
 import {C, FONT, FPS} from '../engine/theme';
 import {ramp} from '../engine/time';
+import {useFonts} from './fonts';
 import {Backdrop, Grade16, H, W} from './kit';
 import {isCommentary, label, provenance, sectionIndex, sectionTitle} from './script';
 import {BEATS, S, SPEECH_END, beatAt} from './timeline';
 
-const FACES = ["400 100px 'Anton'", "500 40px 'Barlow Condensed'", "600 40px 'Barlow Condensed'", "700 40px 'Barlow Condensed'", "500 20px 'JetBrains Mono'", "700 20px 'JetBrains Mono'"];
 const CAPTION_TINT: Record<string, string> = {LEAD: C.cyan, DUST: C.cyan, NEVER: C.red, "CAN'T": C.red, CANNOT: C.red, 'LATER': C.yellow};
 
 export type Scene = React.FC<{t: number}>;
@@ -29,10 +23,7 @@ export type StageOptions = {
  * where the current sentence's facts come from, the captions and the grade.
  */
 export const Stage: React.FC<{t: number; section: string; options?: StageOptions; children: React.ReactNode}> = ({t, section, options, children}) => {
-  const [fonts] = useState(() => delayRender('fonts'));
-  useEffect(() => {
-    Promise.all(FACES.map((f) => document.fonts.load(f))).then(() => continueRender(fonts));
-  }, [fonts]);
+  useFonts();
   const beat = beatAt(t);
   const bare = options?.bare?.(t) ?? false;
   const title = sectionTitle(section);

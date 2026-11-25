@@ -80,7 +80,8 @@ def main() -> int:
                 "-i", video / "assets" / "mix.wav",
                 # YouTube plays back at about -14 LUFS; deliver there so it is not turned down or up
                 "-af", "loudnorm=I=-14:TP=-1.5:LRA=9",
-                "-c:v", "libx264", "-preset", "slow", "-crf", "20", "-pix_fmt", "yuv420p",
+                # crf 20 suits a three-minute Short; a long film sets "crf" in script.json to stay a sane size
+                "-c:v", "libx264", "-preset", "slow", "-crf", str(script.get("crf", 20)), "-pix_fmt", "yuv420p",
                 "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
                 "-c:a", "aac", "-b:a", "256k", "-ar", "48000",
                 "-movflags", "+faststart", "-shortest", render / "final.mp4",
