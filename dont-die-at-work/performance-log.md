@@ -238,5 +238,11 @@ What changed from Nick's draft, and why:
   (ids in `upload-result-short-*.json`). The custom thumbnail was refused until Nick verified
   the channel by phone; it was set at 11:12 UTC (`render/thumbnail-rain.jpg`). The six copies on the personal account are listed in
   `uploads-personal-account/`; its film went public at 11:00 UTC. Nick deletes those.
+- **After the blast (2026-11-25, 15:41 UTC).** News reports (CNN, ABC News, CBS News, KCRG and
+  others, found by search, not saved as sources) say the Army detonated the lead azide at about
+  9 a.m. Central. Read back from YouTube at that time: the film and all five Shorts are public on
+  the channel; the film had 2 views, the Shorts 0 (the counts lag). The film's title and
+  thumbnail still say "about to". I did not change them: the after-title is Nick's call, and he
+  had not answered. Offered him a true, punchier one than the planned title.
 - **To do after the blast:** switch the title to "Five Tons of Neglect: The Army's Lead Bomb in
   Iowa" and the thumbnail to a calmer one; then the new ending when the EPA's results are out.
