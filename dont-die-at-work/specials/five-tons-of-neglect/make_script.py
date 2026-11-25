@@ -481,7 +481,21 @@ b("end-7", S, "Good. But one of the scientists watching this asked the question 
 b("end-8", S, "The Army wrote down how this would go wrong in 1984. Keep it wet. Keep checking. Do not trust the drums.", ["1984"], [QDATE, QWET, QSURV], gap=0.5)
 b("end-9", S, "Then it kept nearly five tons of it anyway.", [], [Q5T], gap=0.8)
 b("end-10", S, "This was not an accident. This is what happens when a problem belongs to nobody.", [], [], gap=0.9, exempt="opinion")
-b("end-11", S, "We will update this when the results are in.", [], [], gap=0.0, exempt="note")
+b("end-11", S, "We will update this when the results are in.", [], [], gap=0.75, exempt="note")
+
+# ------------------------------------------------------------------ one more thing
+# Nick, 2026-11-25: the film exists because a reel in his feed put "We are under attack!!" over the
+# emergency alert. He wanted the man's picture and the words "peak moron". The words are in, aimed
+# at the claim and marked as commentary. The picture is not: one frame of the reel is all that was
+# seen, and a frame of someone else's video hands them a takedown. Nobody is pictured or named.
+S = "thanks"
+b("thanks-1", S, "One more thing. We only went digging because a video in our feed said this: we are under attack.",
+  ["\"We are under attack!!\"", "A VIDEO IN OUR FEED"], exempt="note", gap=0.3)
+b("thanks-2", S, "It is not an attack. The Army planned it, announced it, and told people when.", ["NOT AN ATTACK."],
+  [("army_announce", "controlled, in-place detonation of degraded, crystallized lead azide at the Iowa Army Ammunition Plant on Wednesday, November 25, 2026, at approximately 9:00 a.m. CST", "The Army announced a controlled detonation, with the date and the hour.")], gap=0.25)
+b("thanks-3", S, "Calling that an attack is peak moron.", ["PEAK MORON"], exempt="opinion", gap=0.4)
+b("thanks-4", S, "What it is, is neglect. And being scared of the wrong thing is how the real thing gets ignored.", ["NEGLECT."], exempt="opinion", gap=0.35)
+b("thanks-5", S, "If this was worth your time, subscribe. There is more coming.", ["SUBSCRIBE"], exempt="note", gap=0.0)
 
 # Respellings for the voice only (captions and the gate use the narration as written). Each of
 # these was checked against the voice's phonemes: it reads "lead" as the verb, "EPA" as a word,
@@ -515,14 +529,14 @@ script = {
     "format": "longform",
     "edition": "pre-blast (written 2026-11-24, the night before the detonation)",
     "width": 1920, "height": 1080,
-    "max_runtime_s": 900,
+    "max_runtime_s": 930,
     "crf": 23,
     "composition": "Lead",
     "studio": "lead",
-    "sections": ["cold", "what", "surplus", "storage", "timeline", "failure", "decision", "zone", "ours", "evac", "lead", "farms", "ending"],
+    "sections": ["cold", "what", "surplus", "storage", "timeline", "failure", "decision", "zone", "ours", "evac", "lead", "farms", "ending", "thanks"],
     "section_titles": {"cold": "", "what": "WHAT IT IS", "surplus": "WHY THERE IS A STOCKPILE", "storage": "HOW IT IS STORED", "timeline": "WHO KNEW, AND WHEN",
                        "failure": "HOW IT WENT BAD", "decision": "THE DECISION", "zone": "WHERE THE DUST GOES", "ours": "OUR OWN MAP", "evac": "WHO LEAVES, WHO STAYS",
-                       "lead": "WHY LEAD MATTERS", "farms": "THE FARMS", "ending": ""},
+                       "lead": "WHY LEAD MATTERS", "farms": "THE FARMS", "ending": "", "thanks": ""},
     "labels": {"reconstruction": "ANIMATED EXPLAINER · NOT FOOTAGE", "source": "SOURCE", "commentary": "COMMENTARY", "schematic": "SCHEMATIC · NOT TO SCALE",
                "edition": "FINISHED NOV. 24, 2026, THE NIGHT BEFORE THE DETONATION",
                "schematic_map": "SCHEMATIC OF THE ARMY'S MAPS AS REPORTED · NOT A FORECAST",

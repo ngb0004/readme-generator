@@ -335,6 +335,17 @@ What is different for a special (`"lane": "special"` in `script.json`; `verify.p
   it went bad. It does not explain how it is made, treated or neutralised, and it has no drawing
   of a munition's insides: a builder asked to draw a shell in cutaway was stopped by the model's
   safety filter (2026-11-25). Type, hazard signs and the storage drums told that part instead.
+- **Investigations start from someone's claim.** Nick, 2026-11-25: "all investigative videos I
+  create are created because of morons like this where I'm forced to fact check them and get the
+  real facts". He wants this to be a staple, under a name like "Peak Moron Investigator", and to
+  name public figures ("I can investigate Tucker Carlson... and say his name proudly"). How the
+  first one handled it: the claim is quoted exactly ("We are under attack!!"), answered with a
+  sourced line, and the insult ("peak moron") is aimed at the claim and marked as commentary.
+  The man who posted it is not pictured or named. That last part was my call, against Nick's
+  request for his picture: only one frame of the reel had been seen, and a frame of someone
+  else's video gives them a takedown form on the day the film matters. My reading of where the
+  line sits: public figures are named and quoted; small accounts are quoted, not shown. Nick has
+  not agreed to that as a rule. The workplace-death videos must not sit under the "moron" name.
 - **Say which edition it is.** A film finished before the event says so on screen and in the
   description, and gets a new ending when the facts are in.
 - **Sections** are whatever the film needs (`"sections"` in `script.json`), not the Short's seven.
@@ -356,11 +367,40 @@ Building one:
 (cd studio && DDAWT_ENTRY=src/lead/dev/zone.tsx node tools/stills.mjs LeadDev /tmp/stills 0.5 480s 500s)   # one scene alone
 ```
 
+## Upload
+
+`pipeline/upload.py <video folder>` sends `render/final.mp4` with the title, description, tags and
+flags from `upload.json`, sets the thumbnail, and writes `upload-result.json`. It uploads as
+Private unless `upload.json` says otherwise: Nick watches it and publishes it himself.
+
+How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the repository):
+
+- Nick's Google Cloud project is called "Oauth". The YouTube Data API v3 is enabled there, and the
+  uploader app is the OAuth client "Web client 4" (redirect address
+  `https://developers.google.com/oauthplayground`). Its ID and secret are saved by Nick as a
+  network secret on the cloud environment for `oauth2.googleapis.com`; the proxy adds them to
+  token requests and they are never visible in a session.
+- Nick's grant for his channel is made by sending him the consent link (the client ID, that
+  redirect address, scope `https://www.googleapis.com/auth/youtube.upload`, `access_type=offline`,
+  `prompt=consent`). He clicks Allow, lands on the Playground page and pastes its address into the
+  chat. The `code` in it is exchanged at once at `https://oauth2.googleapis.com/token` and the
+  reply is saved to a private file outside the repository; `YT_TOKEN_FILE` points the script at it.
+  The code is single-use and dead after the exchange. Never print a token.
+- The grant file lives only on the session's machine. While the Google app is in "Testing" the
+  refresh token expires after seven days, and a new machine has no grant file at all, so expect
+  to send Nick the link again: it takes him about thirty seconds. Making it permanent needs the
+  app published in Google Cloud (Audience, Publish app) and the refresh token stored by Nick in
+  the environment's settings; not done yet.
+- Uploads go to whichever channel Nick picked on the Allow screen. A different channel means a
+  new grant.
+- Lesson from that night: a secure card for a secret closes if he sends a chat message while it
+  is open. Tell him to fill it in before typing. And ask for screenshots only of pages where the
+  secret is hidden; the "client created" box shows it in full.
+
 ## Not built yet
 
-- **Upload** (YouTube Data API v3 `videos.insert`). Needs a Google Cloud project and OAuth on the
-  channel account. Uploads from an unverified API project are locked to private until the app
-  passes Google's audit, so apply early. Default quota allows only a handful of uploads a day.
+- **Upload: built on 2026-11-25** (`pipeline/upload.py`; see Upload, above). Still to do: make the
+  sign-in permanent (it lasts seven days while the Google app is in "Testing").
 - **Analytics pull** (YouTube Analytics API): views, CTR, average view duration, retention curve,
   subscribers gained, at 48 h and 7 d, into `videos/<id>/analytics/`.
 - **Long-form** deep dives for the channel itself. The 16:9 stage built for the first special

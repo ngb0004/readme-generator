@@ -9,7 +9,7 @@ CHAPTER = {
     "cold": "68 barrels under a mound of dirt", "what": "What lead azide is", "surplus": "Why there is a stockpile",
     "storage": "How it has to be stored", "timeline": "Who knew, and when", "failure": "How it went bad",
     "decision": "The decision to detonate", "zone": "Where the dust goes", "ours": "Our own map", "evac": "Who leaves, who stays",
-    "lead": "Why lead matters", "farms": "The farms", "ending": "What nobody knows yet",
+    "lead": "Why lead matters", "farms": "The farms", "ending": "What nobody knows yet", "thanks": "One more thing",
 }
 def stamp(t):
     t = int(t)

@@ -6,7 +6,7 @@
   "edition": "pre-blast (written 2026-11-24, the night before the detonation)",
   "width": 1920,
   "height": 1080,
-  "max_runtime_s": 900,
+  "max_runtime_s": 930,
   "crf": 23,
   "composition": "Lead",
   "studio": "lead",
@@ -23,7 +23,8 @@
     "evac",
     "lead",
     "farms",
-    "ending"
+    "ending",
+    "thanks"
   ],
   "section_titles": {
     "cold": "",
@@ -38,7 +39,8 @@
     "evac": "WHO LEAVES, WHO STAYS",
     "lead": "WHY LEAD MATTERS",
     "farms": "THE FARMS",
-    "ending": ""
+    "ending": "",
+    "thanks": ""
   },
   "labels": {
     "reconstruction": "ANIMATED EXPLAINER · NOT FOOTAGE",
@@ -2991,8 +2993,70 @@
       "id": "end-11",
       "section": "ending",
       "narration": "We will update this when the results are in.",
-      "gap_after": 0.06,
+      "gap_after": 0.55,
       "onscreen": [],
+      "claims": [],
+      "exempt": "note"
+    },
+    {
+      "id": "thanks-1",
+      "section": "thanks",
+      "narration": "One more thing. We only went digging because a video in our feed said this: we are under attack.",
+      "gap_after": 0.1,
+      "onscreen": [
+        "\"We are under attack!!\"",
+        "A VIDEO IN OUR FEED"
+      ],
+      "claims": [],
+      "exempt": "note"
+    },
+    {
+      "id": "thanks-2",
+      "section": "thanks",
+      "narration": "It is not an attack. The Army planned it, announced it, and told people when.",
+      "gap_after": 0.06,
+      "onscreen": [
+        "NOT AN ATTACK."
+      ],
+      "claims": [
+        {
+          "claim": "The Army announced a controlled detonation, with the date and the hour.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "controlled, in-place detonation of degraded, crystallized lead azide at the Iowa Army Ammunition Plant on Wednesday, November 25, 2026, at approximately 9:00 a.m. CST"
+        }
+      ]
+    },
+    {
+      "id": "thanks-3",
+      "section": "thanks",
+      "narration": "Calling that an attack is peak moron.",
+      "gap_after": 0.2,
+      "onscreen": [
+        "PEAK MORON"
+      ],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "thanks-4",
+      "section": "thanks",
+      "narration": "What it is, is neglect. And being scared of the wrong thing is how the real thing gets ignored.",
+      "gap_after": 0.15,
+      "onscreen": [
+        "NEGLECT."
+      ],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "thanks-5",
+      "section": "thanks",
+      "narration": "If this was worth your time, subscribe. There is more coming.",
+      "gap_after": 0.06,
+      "onscreen": [
+        "SUBSCRIBE"
+      ],
       "claims": [],
       "exempt": "note"
     }

@@ -13,6 +13,7 @@ import {Health, options as health} from './scenes/Health';
 import {Ours, options as ours} from './scenes/Ours';
 import {Storage, options as storage} from './scenes/Storage';
 import {Surplus, options as surplus} from './scenes/Surplus';
+import {Thanks, options as thanks} from './scenes/Thanks';
 import {Timeline, options as timeline} from './scenes/Timeline';
 import {What, options as what} from './scenes/What';
 import {Zone, options as zone} from './scenes/Zone';
@@ -35,11 +36,12 @@ const SCENES: Record<string, {Scene: Scene; options: StageOptions}> = {
   lead: {Scene: Health, options: health},
   farms: {Scene: Farms, options: farms},
   ending: {Scene: Ending, options: ending},
+  thanks: {Scene: Thanks, options: thanks},
 };
 
 export const Film: React.FC = () => {
   const t = useCurrentFrame() / FPS;
-  if (t >= S.ending.end) return <EndCard t={t} />;
+  if (t >= S[SCRIPT.sections[SCRIPT.sections.length - 1]].end) return <EndCard t={t} />;
   const section = SCRIPT.sections.find((id) => t >= S[id].start && t < S[id].end) ?? 'ending';
   const {Scene, options} = SCENES[section];
   const r = S[section];

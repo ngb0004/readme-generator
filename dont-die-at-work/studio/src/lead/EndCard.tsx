@@ -4,13 +4,13 @@ import {C, FONT, FPS} from '../engine/theme';
 import {ramp} from '../engine/time';
 import {useFonts} from './fonts';
 import {Backdrop, Grade16, Txt, W, fadeIn} from './kit';
-import {label, publishers} from './script';
+import {SCRIPT, label, publishers} from './script';
 import {END, S} from './timeline';
 
 /** After the last word: who the facts came from. */
 export const EndCard: React.FC<{t: number}> = ({t}) => {
   useFonts();
-  const t0 = S.ending.end;
+  const t0 = S[SCRIPT.sections[SCRIPT.sections.length - 1]].end; // the sources card follows the last section
   const names = publishers();
   const cols = 3;
   const per = Math.ceil(names.length / cols);
