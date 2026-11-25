@@ -534,6 +534,10 @@ script = {
                "ours_note": "OUR ESTIMATE OF WHERE THE WIND CARRIES IT · NOT AN OFFICIAL MAP · NOT LEAD LEVELS",
                "ours_aloft": "FASTER WIND ABOVE", "ours_ground": "WIND NEAR THE GROUND"},
     "sources": sources,
+    # Nick, 2026-11-25: "it's raining lead in IOWA today!... show a picture of rain in IOWA but make the
+    # rain like lead color". Kept his line and made it true with two words: it has not happened yet
+    # ("about to"), and what falls is dust with lead in it ("dust"), which is the Army's own wording.
+    "thumbnail": {"lines": ["IT'S ABOUT TO RAIN", "LEAD DUST", "TODAY"], "claims_from": "cold-5"},
     "voice": {"engine": "kokoro-onnx", "voice": "am_michael", "speed": 1.08, "lang": "en-us"},
     "beats": beats,
 }

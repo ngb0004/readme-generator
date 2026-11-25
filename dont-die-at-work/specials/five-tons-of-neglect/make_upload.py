@@ -51,9 +51,10 @@ NEWS REPORTING
 Narration is an AI voice. The animation is an explainer, not footage."""
 
 upload = {
-    # Until the blast has happened. "Lead dust cloud" is the Associated Press's phrase; the Army's is
-    # "a dust plume that will contain some lead". Switch to title_after once it has gone off.
-    "title": "Lead Dust Cloud Over Iowa and Missouri TODAY: The Army Blows Up 5 Tons of Lead Azide",
+    # Until the blast has happened. Nick's line was "it's raining lead in IOWA today!"; "about to" and
+    # "dust" make it true (the Army's own words: "a dust plume that will contain some lead").
+    # Switch to title_after once it has gone off.
+    "title": "It's About to Rain Lead Dust in Iowa TODAY. The Army Is Doing It on Purpose.",
     "title_after": "Five Tons of Neglect: The Army's Lead Bomb in Iowa",
     "description": description,
     "tags": ["lead azide", "Middletown Iowa", "Iowa Army Ammunition Plant", "controlled detonation", "lead dust", "lead exposure",

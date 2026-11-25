@@ -1,7 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {FPS, H, LF, W} from './engine/theme';
-import {Thumb as LeadThumb, ThumbToday as LeadThumbToday} from './lead/Thumb';
+import {Thumb as LeadThumb, ThumbRain as LeadThumbRain, ThumbToday as LeadThumbToday} from './lead/Thumb';
 import {DURATION as LEAD_DURATION} from './lead/timeline';
 import {Film as Lead} from './lead/Video';
 import {DURATION} from './v001/timeline';
@@ -16,5 +16,6 @@ export const Root: React.FC = () => (
     <Composition id="Lead" component={Lead} width={LF.W} height={LF.H} fps={FPS} durationInFrames={LEAD_DURATION} />
     <Composition id="LeadThumb" component={LeadThumb} width={LF.W} height={LF.H} fps={FPS} durationInFrames={1} />
     <Composition id="LeadThumbToday" component={LeadThumbToday} width={LF.W} height={LF.H} fps={FPS} durationInFrames={1} />
+    <Composition id="LeadThumbRain" component={LeadThumbRain} width={LF.W} height={LF.H} fps={FPS} durationInFrames={1} />
   </>
 );

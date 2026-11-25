@@ -11,6 +11,7 @@ export const SCRIPT = script as unknown as {
   labels: Record<string, string>;
   sources: Source[];
   beats: ScriptBeat[];
+  thumbnail?: {lines: string[]; claims_from: string};
 };
 const BY_ID = Object.fromEntries(SCRIPT.beats.map((b) => [b.id, b])) as Record<string, ScriptBeat>;
 const SRC = Object.fromEntries(SCRIPT.sources.map((s) => [s.id, s])) as Record<string, Source>;
@@ -30,6 +31,12 @@ export const label = (key: string): string => {
  * `grep labelOr` finds every one that still has to be moved into the script before a release.
  */
 export const labelOr = (key: string, fallback: string): string => SCRIPT.labels[key] ?? fallback;
+/** A line of the thumbnail's text: it is in script.json too, and the gate checks it against a beat's quotes. */
+export const thumbLine = (i: number): string => {
+  const line = SCRIPT.thumbnail?.lines[i];
+  if (line === undefined) throw new Error(`no thumbnail line ${i}`);
+  return line;
+};
 export const sectionTitle = (section: string): string => SCRIPT.section_titles[section] ?? '';
 export const sectionIndex = (section: string): number => SCRIPT.sections.indexOf(section);
 /** A beat that carries no sourced claim: opinion, a note to the viewer, or our own estimate. */

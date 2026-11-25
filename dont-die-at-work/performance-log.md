@@ -190,6 +190,141 @@ What changed from Nick's draft, and why:
   munition's insides (a builder drawing one was stopped by the model's safety filter).
 - **Voice:** respellings were needed for "lead" (the metal), EPA, FEMA, ATF and years; a trim bug
   that clipped the last consonant of sentences was found and fixed (see CLAUDE.md, Voice).
+- **Title and thumbnail, for the hours before the blast.** Nick (2026-11-25, around 1 a.m.
+  Central): "upload schedules matter... it's raining lead in IOWA today!... show a picture of rain
+  in IOWA but make the rain like lead color... super catchy thumbnails... throw in an explosion in
+  the background". His point was right: the title has to be about what happens today, and the
+  thumbnail has to stop the scroll. Title used: "It's About to Rain Lead Dust in Iowa TODAY. The
+  Army Is Doing It on Purpose." It is his line with two words added, because as he wrote it the
+  claim was false: nothing has happened yet ("about to"), and what falls is dust with lead in it
+  ("dust"), which is the Army's own wording. Thumbnail (`render/thumbnail-rain.jpg`): a farm under
+  lead-coloured rain, a blast on the horizon feeding a dust cloud, "IT'S ABOUT TO RAIN LEAD DUST",
+  "TODAY, 9:00 A.M." Its words are in `script.json` ("thumbnail"). After the blast the title goes
+  back to "Five Tons of Neglect: The Army's Lead Bomb in Iowa". Two calmer thumbnails are kept
+  beside it (`thumbnail.jpg`, `thumbnail-today.jpg`).
+- **Status:** awaiting Nick's review.
+
+### Cut 3 (same day)
+
+Nick on cut 2: "What even is this tank? How am I supposed to give a fuck about some guy going into a
+tank when I have no idea what the tank is?" and "Assume that everybody is uneducated and has no
+idea what's going on." Cut 2 had called it "this refinery tank" and moved on.
+
+- Added a 40-second section straight after the hook, in plain words with an animated diagram:
+  what the tank is (part of an oil refinery), its one purpose (making fuel), how it works (heavy
+  oil cooked under heat and pressure into gasoline and jet fuel), why people open it (the material
+  inside wears out and is refilled), and why it is then full of nitrogen (the fresh batch cannot
+  touch oxygen).
+- Third source: OSHA Technical Manual, Section IV Chapter 2, for how the process works. 86 citations.
+- Length: 2:33 at 173 words a minute.
+- This is now the spine for every video (see CLAUDE.md): what it is, what it is for, how it works,
+  why people work on it, what these people were doing, why it killed them.
+- **Status:** awaiting Nick's review.
+
+### Cut 4 (same day)
+
+Nick on cut 3: "I like the ending, and I sort of like the video", the tank explanation is "decent",
+but it is "very technical... not practical. It's not explaining why they were doing the things that
+they were doing and what they didn't understand." Then, after a long conversation: "for all of that
+to happen, the guys did not understand that there is a tank that is spewing nitrogen, and it is
+insanely dangerous to have your head anywhere near the opening."
+
+- **Kept:** the hook, the tank explanation and the ending (lesson line, tribute, sign-off).
+- **Rebuilt the middle** around what the men were doing and what nobody had told them:
+  the gas leaks out of the open hole onto the platform where they work; no sign and no barrier,
+  though the site's own procedure called for both; their work permit marked the nitrogen purge
+  "N/A"; their training covered going inside a tank and never the air outside one; so they stayed
+  outside and fished with a wire; the still air may have let the gas pool round the first man's
+  head; investigators suspect the foreman thought he could hold his breath, and why that does not
+  work; the responders' oxygen meter alarmed the moment it was in the hole; a warning sign went up
+  afterwards.
+- **Changed the framing.** Cuts 2 and 3 told a "shortcut" story ("Most shortcuts cost you
+  nothing..."). The report tells a different one: they obeyed the rule they knew (never go inside)
+  and the danger was outside the line. That line and its card are gone; the new lesson is "You
+  don't have to climb inside a tank for it to kill you."
+- **Held to the report:** it says the gas "may have" pooled and that he "could have" passed out and
+  slid in, one of two scenarios it could not choose between, so the narration says "may" and the
+  cut still goes to black on "Nobody saw what happened next."
+- **Left out for length:** that management wanted the tank sealed before the end of the shift; the
+  24-inch opening; the ten-minute figure is now on screen only.
+- 101 citations. Length: 2:52 at 172 words a minute. That is the ceiling for a Short.
+- **Status:** awaiting Nick's review.
+
+### Cut 5 (2026-11-22)
+
+Nick on cut 4: "why does it say just material, why don't we say what type of material is in the
+tank that can't touch oxygen and why it can't touch oxygen... dumb it down but still give people
+some good info."
+
+- The tank explanation now names it: "pellets called catalyst. They're what break the oil apart",
+  and says why the nitrogen is there: "fresh catalyst reacts with the oxygen in air".
+- That is as far as the approved sources go. The CSB report says the purge was there "to protect
+  the newly loaded catalyst from reacting with oxygen in the air" and does not say what the
+  reaction does. Patents describe this kind of catalyst as self-heating or pyrophoric in air; that
+  is not from OSHA, NIOSH or the CSB, so it is not in the video.
+- 105 citations. Length: 2:53.
+- **Status:** awaiting Nick's review.
+
+## S1 - Five Tons of Neglect: The Army's Lead Bomb in Iowa (special)
+
+Not a channel video: a long-form special (see CLAUDE.md, Specials). Nick handed over a full draft
+script on 2026-11-24, the night before the Army's detonation of its lead azide stockpile at
+Middletown, Iowa, and said "build this video".
+
+- **Edition:** pre-blast, finished the night of 2026-11-24. The ending says so and promises an
+  update. It needs a new ending once the EPA's sampling results and the Army's final map are out.
+- **Format:** 16:9, 1920x1080, 14:35 (14:26 of narration at 165 words a minute, then the sources
+  card). Thirteen sections, 125 beats. Nick's draft aimed at 11 to 13 minutes.
+- **Sourcing:** 196 claims, each tied to a verbatim quote, from 27 documents: seven official (Army
+  announcements and advisories, the EPA notice and its letter to the governor, the Army's own
+  1984 paper "Complexities of Lead Azide", and the National Weather Service forecast) and twenty
+  news reports. 17 beats are opinion or notes and are labelled COMMENTARY on screen; three more
+  state our own estimate and are labelled OUR ESTIMATE.
+- **Two sources could not be fetched and rest on search results only:** CBS 2 Iowa (tl-18: the
+  governor's office learned of the plan from the public advisory) and Beef Magazine (farm-3 and
+  part of farm-4: the Iowa Beef Center's advice). Six quotes; the gate lists them as not re-checked.
+
+What changed from Nick's draft, and why:
+
+- **Wrong in the draft, fixed.** The barrels today are plastic, not steel (repacked in 2009); rust
+  is what the 1984 paper warned about. The stockpile has been in Iowa since 2009, not "20+ years"
+  (some of the material is over 60 years old). The governor-elect did not "agree" to the blast: he
+  said the decision was up to the administration.
+- **Cut because no source could be found:** the plume reaching "toward Maquoketa" in a band "10
+  miles wide"; Standard Form 95 and the two-year deadline; disposal "at a later date"; the 155 mm
+  production line; any TNT equivalent.
+- **Cut on the merits: Camp Minden.** The draft's "there's a better way, and we've already done
+  it" compared this to a contained burn of propellant in Louisiana. That material could be moved
+  and fed to a chamber in batches; this cannot be moved or opened. The film makes the argument the
+  record supports instead: the Army hired a contractor in March to treat the barrels chemically,
+  and dropped that for detonation by May, and has not said publicly what changed.
+- **"Our own map": built, after Nick overruled me.** I had left the draft's independent plume
+  estimate out, arguing a homemade forecast could mislead people. Nick (2026-11-25): "We can make
+  our own fucking plume map... It doesn't have to be only what the army says." It is now its own
+  section. Method: the National Weather Service gridpoint forecast for the plant (issued 6:26
+  p.m. CST on Nov. 24), air released at 9 a.m. and moved hour by hour to 5 p.m. by the transport
+  wind and, separately, the surface wind; a textbook spread curve for an overcast day; a fan for
+  a ten-degree error in the wind. Result: the transport-wind track heads 231 degrees and covers
+  104 miles by 5 p.m. (38 by noon); the surface-wind track heads 217 degrees and covers 79. The
+  Army's reported line toward Macon, Missouri (221 degrees) runs between the two, and the timing
+  matches what was reported (past Knox City in the early afternoon). So the film says the Army's
+  direction checks out, and that the missing piece is the amount of lead, which is not public.
+  **Not estimated:** lead in the air or on the ground. Any figure there would be invented.
+- **Stronger than the draft.** The 1984 paper itself, found on DTIC: the Army tried to sell the
+  surplus and nobody bought it; it began destroying the stockpile and stopped about halfway; the
+  leaking drums were repacked to buy "another 10 to 15 years"; "Breaking these crystals is
+  believed to initiate detonation." Also: a 2004 Defense Department assessment; the government's
+  own court brief saying the liquid went "unchecked and unreplenished since September 2025"; the
+  plant commander's "no immediate danger to the public" in March; the Army spokesperson calling
+  Middletown "an anomaly".
+- **Fairness the draft did not have.** The scientists following this do not expect a disaster far
+  from the plant; a federal appeals court, the governor and Middletown's mayor backed the blast;
+  and the film says the Army is "probably right" that, by now, detonation is the least bad option.
+  The argument is about the decades before, not the decision this week.
+- **Left out on purpose:** how lead azide is made, treated or neutralised, and any drawing of a
+  munition's insides (a builder drawing one was stopped by the model's safety filter).
+- **Voice:** respellings were needed for "lead" (the metal), EPA, FEMA, ATF and years; a trim bug
+  that clipped the last consonant of sentences was found and fixed (see CLAUDE.md, Voice).
 - **Title, for the hours before the blast** (Nick, 2026-11-25, 2 a.m.: "upload schedules matter...
   a bunch of lead is about to fly all over... lead-filled skies today... a huge dust cloud of
   lead"). His point was right: the title should be about what happens today. Used: "Lead Dust
