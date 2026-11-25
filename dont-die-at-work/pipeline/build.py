@@ -11,7 +11,7 @@ Steps, in order:
   voice    narration + word timings                       -> assets/voice.wav, timings.json
   cues     the film's cue sheet, from the word timings    -> assets/cues.json
   sound    score, effects and the final mix               -> assets/score.wav, mix.wav
-  frames   render the picture (slow: ~2 s/frame without a GPU) -> render/frames/
+  frames   render the picture (about 0.1 s/frame for the 2D look)  -> render/frames/
   mux      encode, add audio, normalise loudness          -> render/final.mp4
   thumb    render the thumbnail composition               -> render/thumbnail.jpg
   gate     runtime and format check on the final file (fails the build if over the limit)
@@ -60,7 +60,7 @@ def main() -> int:
         elif step == "voice":
             run([PY, "pipeline/voice.py", video])
         elif step == "cues":
-            run(["node", "tools/cues.mjs", video / "assets" / "cues.json"], cwd=STUDIO)
+            run(["node", "tools/cues.mjs", video / "assets" / "cues.json", script.get("studio", "v001")], cwd=STUDIO)
         elif step == "sound":
             run([PY, "pipeline/sound.py", video])
         elif step == "frames":

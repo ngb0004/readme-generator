@@ -1,0 +1,2903 @@
+{
+  "id": "five-tons-of-neglect",
+  "title": "Five Tons of Neglect: The Army's Lead Bomb in Iowa",
+  "lane": "special",
+  "format": "longform",
+  "edition": "pre-blast (written 2026-11-24, the night before the detonation)",
+  "width": 1920,
+  "height": 1080,
+  "max_runtime_s": 900,
+  "composition": "Lead",
+  "studio": "lead",
+  "sections": [
+    "cold",
+    "what",
+    "surplus",
+    "storage",
+    "timeline",
+    "failure",
+    "decision",
+    "zone",
+    "evac",
+    "lead",
+    "farms",
+    "ending"
+  ],
+  "sources": [
+    {
+      "id": "army_announce",
+      "kind": "official",
+      "publisher": "U.S. Army",
+      "title": "Army announces controlled detonation of degraded explosive material at Iowa Army Ammunition Plant",
+      "url": "https://www.army.mil/article/297069/army_announces_controlled_detonation_of_degraded_explosive_material_at_iowa_army_ammunition_plant",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "file": "source/army-announces-detonation.html",
+      "sha256": "223f464109adb4b04515fbf542cd45a56d0ac64007762ac0743b7e72129666bb"
+    },
+    {
+      "id": "army_advisory",
+      "kind": "official",
+      "publisher": "U.S. Army Sustainment Command",
+      "title": "Public Safety Advisory: Controlled, Mitigated Detonation of Unstable Lead Azide at Iowa Army Ammunition Plant",
+      "url": "https://www.army.mil/article/297039/public_safety_advisory_controlled_mitigated_detonation_of_unstable_lead_azide_at_iowa_army_ammunition_plant",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "file": "source/army-public-safety-advisory.html",
+      "sha256": "70be0544213bf2a9c5813766c0030c619ddd13a464e7526bcd6a8dc318ef90bc"
+    },
+    {
+      "id": "army_nov15",
+      "kind": "official",
+      "publisher": "U.S. Army Sustainment Command",
+      "title": "IAAAP Public Advisory",
+      "url": "https://www.army.mil/article/296772/iaaap_public_advisory",
+      "published": "2026-11-15",
+      "retrieved": "2026-11-24",
+      "file": "source/army-iaaap-public-advisory.html",
+      "sha256": "84c6946c39e6fcb892c1d0099f601f8e0ab168fe43c9ffc5995228c67ee0dd8e"
+    },
+    {
+      "id": "army_openhouse",
+      "kind": "official",
+      "publisher": "U.S. Army Sustainment Command",
+      "title": "IAAAP hosts open house, shares Lead Azide detonation information",
+      "url": "https://www.army.mil/article/296388",
+      "published": "2026-10-28",
+      "retrieved": "2026-11-24",
+      "file": "source/army-open-house-oct.html",
+      "sha256": "851bd2f2899d2811a897e31ef5851ea066c3675f2657f0ed5dc3fac82be6eaa1"
+    },
+    {
+      "id": "epa_notice",
+      "kind": "official",
+      "publisher": "U.S. Environmental Protection Agency, Region 7",
+      "title": "Public Notice: Iowa Army Ammunition Plant, Middletown, Iowa",
+      "url": "https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-3",
+      "published": "2026-11-16",
+      "retrieved": "2026-11-24",
+      "file": "source/epa-public-notice.html",
+      "sha256": "8370eadbb6d1bd7050d85efab64d261ba38bf1550690694b72c73257a4410bb5"
+    },
+    {
+      "id": "epa_profile",
+      "kind": "official",
+      "publisher": "U.S. Environmental Protection Agency, Region 7",
+      "title": "Site Profile: IAAAP Lead Azide",
+      "url": "https://response.epa.gov/site/site_profile.aspx?site_id=17211",
+      "published": "2026-11",
+      "retrieved": "2026-11-24",
+      "file": "source/epa-osc-site-profile.html",
+      "sha256": "9f7525bf1cf28bf2c5281e80b907370a4523db50fe5c4cdee3362aa45753b34d"
+    },
+    {
+      "id": "epa_letter",
+      "kind": "official",
+      "publisher": "U.S. Environmental Protection Agency, Region 7",
+      "title": "Letter from Regional Administrator Jim Macy to Governor Kim Reynolds",
+      "url": "https://response.epa.gov/sites/17211/files/R7%20Letter%20to%20Governor%20Reynolds.pdf",
+      "published": "2026-11-20",
+      "retrieved": "2026-11-24",
+      "file": "source/epa-letter-to-governor-reynolds.pdf",
+      "sha256": "3ad157d1db33b19b292fc0898c412d12bf5470b9c280703f11e5209bdd8165fd"
+    },
+    {
+      "id": "paper",
+      "kind": "official",
+      "publisher": "U.S. Army, Savanna Army Depot Activity (via DTIC)",
+      "title": "Complexities of Lead Azide (William Shaneyfelt), DDESB Explosives Safety Seminar, DTIC ADP004872",
+      "url": "https://archive.org/details/DTIC_ADP004872",
+      "published": "1984-08-29",
+      "retrieved": "2026-11-24",
+      "file": "source/dtic-adp004872-excerpts.txt",
+      "sha256": "35e159412f6be4a81116d91e8a0fc6128390c83124dfacaafd6f4e0b59af573b"
+    },
+    {
+      "id": "kcrg_how",
+      "kind": "news",
+      "publisher": "KCRG",
+      "title": "How did we get here? Army prepares controlled blast of lead azide stockpile in Iowa",
+      "url": "https://www.kcrg.com/2026/11/24/how-did-we-get-here-army-prepares-controlled-blast-lead-azide-stockpile-iowa/",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/kcrg-how-did-we-get-here.html"
+    },
+    {
+      "id": "kcrg_docs",
+      "kind": "news",
+      "publisher": "KCRG",
+      "title": "Documents show lead azide concerns at Iowa Army Ammunition Plant date back decades",
+      "url": "https://www.kcrg.com/2026/11/24/documents-show-lead-azide-concerns-iowa-army-ammunition-plant-date-back-decades/",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/kcrg-documents-date-back-decades.html"
+    },
+    {
+      "id": "kcrg_march",
+      "kind": "news",
+      "publisher": "KCRG",
+      "title": "Iowa Army Ammunition Plant still on pause for safety reasons",
+      "url": "https://www.kcrg.com/2026/03/19/iowa-army-ammunition-plant-still-pause-safety-reasons/",
+      "published": "2026-03-19",
+      "retrieved": "2026-11-24",
+      "local": "source/news/kcrg-march-still-on-pause.html"
+    },
+    {
+      "id": "kwqc_timeline",
+      "kind": "news",
+      "publisher": "KWQC",
+      "title": "From stockpile to crisis: Critical timeline behind Iowa detonation plans",
+      "url": "https://www.kwqc.com/2026/11/24/stockpile-crisis-critical-timeline-behind-iowa-detonation-plans/",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/kwqc-timeline.html"
+    },
+    {
+      "id": "kwqc_expert",
+      "kind": "news",
+      "publisher": "KWQC",
+      "title": "Expert warns lead from Army detonation in Middletown could pose health risks",
+      "url": "https://www.kwqc.com/2026/11/17/expert-warns-lead-army-detonation-middletown-could-pose-health-risks/",
+      "published": "2026-11-17",
+      "retrieved": "2026-11-24",
+      "local": "source/news/kwqc-expert-warns.html"
+    },
+    {
+      "id": "abc_timeline",
+      "kind": "news",
+      "publisher": "ABC News",
+      "title": "Iowa detonation timeline: What led up to controlled explosion of degraded lead azide",
+      "url": "https://abcnews.com/US/iowa-detonation-timeline-led-controlled-explosion-degraded-lead/story?id=138419343",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/abc-timeline.html"
+    },
+    {
+      "id": "abc_mitigation",
+      "kind": "news",
+      "publisher": "ABC News",
+      "title": "Iowa governor issues emergency proclamation for 3 counties hours before controlled Army munition explosion",
+      "url": "https://abcnews.com/US/us-army-details-mitigation-plans-controlled-iowa-munition/story?id=138410668",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/abc-mitigation-plans.html"
+    },
+    {
+      "id": "ap_wednesday",
+      "kind": "news",
+      "publisher": "Associated Press (via PBS News)",
+      "title": "Army plans to detonate Iowa stockpile on Wednesday, tells public there's no reason to panic",
+      "url": "https://www.pbs.org/newshour/nation/getting-court-approval-u-s-army-to-detonate-degraded-bomb-making-material-in-iowa-on-wednesday",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/pbs-detonate-wednesday.html"
+    },
+    {
+      "id": "ap_whattoknow",
+      "kind": "news",
+      "publisher": "PBS News",
+      "title": "Trump told the Army to pause the detonation of 9,500 pounds of lead azide in Iowa. Here's what to know",
+      "url": "https://www.pbs.org/newshour/nation/trump-told-the-army-to-pause-the-detonation-of-9500-pounds-of-lead-azide-in-iowa-heres-what-to-know",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/pbs-trump-pause-what-to-know.html"
+    },
+    {
+      "id": "ap_brace",
+      "kind": "news",
+      "publisher": "Associated Press (via PBS News)",
+      "title": "Iowans brace for lead dust cloud as Army plans to detonate 5 tons of bomb-making chemicals",
+      "url": "https://www.pbs.org/newshour/nation/iowans-brace-for-lead-dust-cloud-as-army-plans-to-detonate-5-tons-of-bomb-making-chemicals",
+      "published": "2026-11-19",
+      "retrieved": "2026-11-24",
+      "local": "source/news/pbs-iowans-brace.html"
+    },
+    {
+      "id": "ipr_maps",
+      "kind": "news",
+      "publisher": "Iowa Public Radio",
+      "title": "Iowa lead detonation safety tips, public health recommendations, plume maps for Wednesday's detonation",
+      "url": "https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/ipr-safety-tips-plume-maps.html"
+    },
+    {
+      "id": "ipr_residents",
+      "kind": "news",
+      "publisher": "The Midwest Newsroom / Iowa Public Radio",
+      "title": "What Midwest residents need to know about the lead azide detonations planned for this week",
+      "url": "https://www.iowapublicradio.org/ipr-news/2026-11-23/what-midwest-residents-need-to-know-about-the-lead-azide-detonations-planned-for-this-week",
+      "published": "2026-11-23",
+      "retrieved": "2026-11-24",
+      "local": "source/news/ipr-what-residents-need-to-know.html"
+    },
+    {
+      "id": "ipr_reynolds",
+      "kind": "news",
+      "publisher": "Iowa Public Radio",
+      "title": "Army plans to detonate lead azide Wednesday morning, with Reynolds' support",
+      "url": "https://www.iowapublicradio.org/ipr-news/2026-11-24/reynolds-iowa-lead-azide-detonation-army-ammunitions-plant-ernst-grassley-middletown",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/ipr-reynolds-support.html"
+    },
+    {
+      "id": "ipr_contractor",
+      "kind": "news",
+      "publisher": "Iowa Public Radio",
+      "title": "Army chose to blast unstable lead azide days after contractor submitted a chemical treatment plan",
+      "url": "https://www.iowapublicradio.org/environment/2026-11-24/army-blast-unstable-lead-azide-contractor-chemical-treatment-plan",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/ipr-contractor-treatment-plan.html"
+    },
+    {
+      "id": "cbs_maps",
+      "kind": "news",
+      "publisher": "CBS News Chicago",
+      "title": "Maps show Iowa lead dust plume drifting southwest into Missouri Wednesday after detonation, Army shares",
+      "url": "https://www.cbsnews.com/chicago/news/maps-show-how-far-lead-dust-from-about-5-tons-of-iowa-explosives-could-spread/",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/cbs-plume-maps.html"
+    },
+    {
+      "id": "cbs_why",
+      "kind": "news",
+      "publisher": "CBS News",
+      "title": "Why the Army says it needs to detonate unstable, lead-filled explosives in Iowa and what's at risk",
+      "url": "https://www.cbsnews.com/news/lead-azide-detonation-iowa-army-explosives/",
+      "published": "2026-11-24",
+      "retrieved": "2026-11-24",
+      "local": "source/news/cbs-why-army-needs-to-detonate.html"
+    },
+    {
+      "id": "snopes",
+      "kind": "news",
+      "publisher": "Snopes",
+      "title": "Is US Army planning to detonate massive amount of lead azide in Middletown, Iowa?",
+      "url": "https://www.snopes.com/fact-check/lead-azide-detonation-army-iowa/",
+      "published": "2026-11-23",
+      "retrieved": "2026-11-24",
+      "local": "source/news/snopes-fact-check.html"
+    },
+    {
+      "id": "wiki_azide",
+      "kind": "news",
+      "publisher": "Wikipedia",
+      "title": "Lead(II) azide",
+      "url": "https://en.wikipedia.org/wiki/Lead(II)_azide",
+      "published": "n.d.",
+      "retrieved": "2026-11-24",
+      "local": "source/news/wikipedia-lead-azide.html"
+    },
+    {
+      "id": "wiki_minden",
+      "kind": "news",
+      "publisher": "Wikipedia",
+      "title": "Camp Minden",
+      "url": "https://en.wikipedia.org/wiki/Camp_Minden",
+      "published": "n.d.",
+      "retrieved": "2026-11-24",
+      "local": "source/news/wikipedia-camp-minden.html"
+    },
+    {
+      "id": "cbs2_gov",
+      "kind": "news",
+      "publisher": "CBS 2 Iowa (KGAN)",
+      "title": "Governor Kim Reynolds' office, state lawmakers respond to detonation plans",
+      "url": "https://cbs2iowa.com/news/local/governor-kim-reynolds-office-state-lawmakers-respond-to-detonation-plans",
+      "published": "2026-11",
+      "retrieved": "2026-11-24",
+      "check": "search"
+    },
+    {
+      "id": "beef",
+      "kind": "news",
+      "publisher": "Beef Magazine, quoting the Iowa Beef Center at Iowa State University",
+      "title": "Army's planned lead detonation in Iowa poses risks for cattle",
+      "url": "https://www.beefmagazine.com/livestock-management/army-s-planned-lead-detonation-in-iowa-poses-risks-for-cattle",
+      "published": "2026-11",
+      "retrieved": "2026-11-24",
+      "check": "search"
+    }
+  ],
+  "voice": {
+    "engine": "kokoro-onnx",
+    "voice": "am_michael",
+    "speed": 1.04,
+    "lang": "en-us"
+  },
+  "beats": [
+    {
+      "id": "cold-1",
+      "section": "cold",
+      "narration": "Under these mounds of dirt in southeast Iowa, there are sixty-eight barrels.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "MIDDLETOWN, IOWA",
+        "68 BARRELS"
+      ],
+      "claims": [
+        {
+          "claim": "68 drums, more than 9,700 pounds, in earth-covered magazines.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "approximately 68 drums, totaling more than 9,700 pounds net explosive weight, of stored lead azide inside earth-covered magazines"
+        },
+        {
+          "claim": "Two earth-covered bunkers.",
+          "src": "epa_letter",
+          "page": 3,
+          "quote": "The drums are stored in two earth covered magazine (ECM) storage bunkers"
+        }
+      ]
+    },
+    {
+      "id": "cold-2",
+      "section": "cold",
+      "narration": "Inside them is nearly five tons of an explosive so sensitive that, the Army says, slight friction or movement can set it off.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "LEAD AZIDE",
+        "MORE THAN 9,700 LB"
+      ],
+      "claims": [
+        {
+          "claim": "Nearly five tons.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "Nearly five tons of lead azide are set to be detonated"
+        },
+        {
+          "claim": "68 drums, more than 9,700 pounds, in earth-covered magazines.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "approximately 68 drums, totaling more than 9,700 pounds net explosive weight, of stored lead azide inside earth-covered magazines"
+        },
+        {
+          "claim": "Slight friction or movement can set it off.",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "making it vulnerable to accidental detonation from even slight friction or movement"
+        }
+      ]
+    },
+    {
+      "id": "cold-3",
+      "section": "cold",
+      "narration": "It is the country's entire stockpile. And the Army says it cannot be moved.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "THE ENTIRE U.S. STOCKPILE",
+        "CAN'T BE MOVED"
+      ],
+      "claims": [
+        {
+          "claim": "The nation's entire stockpile.",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "plans to detonate the nation's entire stockpile of lead azide in Iowa on Wednesday morning"
+        },
+        {
+          "claim": "The barrels cannot be moved.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "It prevents those barrels from being able to be moved."
+        }
+      ]
+    },
+    {
+      "id": "cold-4",
+      "section": "cold",
+      "narration": "So the plan is to blow it up. Right where it sits. Wednesday morning, nine a.m.",
+      "gap_after": 0.45,
+      "onscreen": [
+        "WEDNESDAY, NOV. 25",
+        "9:00 A.M."
+      ],
+      "claims": [
+        {
+          "claim": "In-place detonation, Nov. 25, about 9 a.m.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "controlled, in-place detonation of degraded, crystallized lead azide at the Iowa Army Ammunition Plant on Wednesday, November 25, 2026, at approximately 9:00 a.m. CST"
+        }
+      ]
+    },
+    {
+      "id": "cold-5",
+      "section": "cold",
+      "narration": "The dust from that blast will have lead in it.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "\"a dust plume that will contain some lead\"",
+        "U.S. ARMY PUBLIC ADVISORY"
+      ],
+      "claims": [
+        {
+          "claim": "The Army's own words.",
+          "src": "army_nov15",
+          "page": 1,
+          "quote": "a dust plume that will contain some lead"
+        }
+      ],
+      "say": "The dust from that blast will have led in it."
+    },
+    {
+      "id": "cold-6",
+      "section": "cold",
+      "narration": "The town next door has been urged to leave. People up to twenty miles away were told to stay inside and shut the windows.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "URGED TO LEAVE",
+        "20 MILES: STAY INDOORS"
+      ],
+      "claims": [
+        {
+          "claim": "Relocation recommended for all of Middletown.",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "FEMA is supporting the recommended relocation for all residents of Middletown, Iowa"
+        },
+        {
+          "claim": "Officials strongly urge people to leave.",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "Local and federal officials strongly urge community members to vacate the evacuation area"
+        },
+        {
+          "claim": "The phone alert: up to 20 miles away, stay indoors.",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "told those up to 20 miles (32 kilometers) away to remain indoors with windows closed"
+        }
+      ]
+    },
+    {
+      "id": "cold-7",
+      "section": "cold",
+      "narration": "And parents were told that when it's over, they should wash down the play equipment.",
+      "gap_after": 0.6,
+      "onscreen": [
+        "WET-CLEAN OUTDOOR PLAY EQUIPMENT, TOYS"
+      ],
+      "claims": [
+        {
+          "claim": "Wet-clean what children touch.",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "wet-clean surfaces that may be contacted by infants or children, including outdoor play equipment, toys, tables and chairs"
+        },
+        {
+          "claim": "EPA's cleaning advice.",
+          "src": "epa_letter",
+          "page": 3,
+          "quote": "Areas of concern should be cleaned with a garden hose, wet rag, or baby wipe."
+        }
+      ]
+    },
+    {
+      "id": "cold-8",
+      "section": "cold",
+      "narration": "How did we get here? This was not a surprise. In 1984, an Army safety officer wrote down exactly how this would go wrong.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "1984"
+      ],
+      "claims": [
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        },
+        {
+          "claim": "The author's job.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Safety Officer,"
+        },
+        {
+          "claim": "The liquid level has to be checked; the alcohol evaporates.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Periodic surveillance is then required both visually to assure adequate liquid level and testing to determine if ethanol evaporation has reduced antifreeze properties."
+        }
+      ],
+      "say": "How did we get here? This was not a surprise. In nineteen eighty-four, an Army safety officer wrote down exactly how this would go wrong."
+    },
+    {
+      "id": "cold-9",
+      "section": "cold",
+      "narration": "And the stuff has been sitting in storage ever since.",
+      "gap_after": 0.7,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "In drums in 1984.",
+          "src": "paper",
+          "page": 1,
+          "quote": "leaving the stockpile of bulk lead azide in deteriorating 55-gallon drums"
+        },
+        {
+          "claim": "Still in barrels in 2026.",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "This March, inspectors looked at the 68 barrels."
+        }
+      ]
+    },
+    {
+      "id": "cold-title",
+      "section": "cold",
+      "narration": "Five tons of neglect.",
+      "gap_after": 1.0,
+      "onscreen": [
+        "FIVE TONS",
+        "OF NEGLECT",
+        "THE ARMY'S LEAD BOMB IN IOWA"
+      ],
+      "claims": [
+        {
+          "claim": "Nearly five tons.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "Nearly five tons of lead azide are set to be detonated"
+        }
+      ]
+    },
+    {
+      "id": "what-1",
+      "section": "what",
+      "narration": "To set off the main explosive in a shell or a bomb, you need a small, violent trigger first. A detonator.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "MAIN CHARGE",
+        "DETONATOR"
+      ],
+      "claims": [
+        {
+          "claim": "Used in detonators to start other explosives.",
+          "src": "wiki_azide",
+          "page": 1,
+          "quote": "It is used in detonators to initiate secondary explosives"
+        },
+        {
+          "claim": "A detonating agent for other explosives.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "an explosive compound used as a detonating agent for other explosives"
+        }
+      ]
+    },
+    {
+      "id": "what-2",
+      "section": "what",
+      "narration": "For about a hundred years, the stuff inside that trigger has been lead azide.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "LEAD AZIDE",
+        "IN U.S. MUNITIONS FOR 100 YEARS"
+      ],
+      "claims": [
+        {
+          "claim": "In use for 100 years.",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "The U.S. started using lead azide 100 years ago to make munitions."
+        }
+      ],
+      "say": "For about a hundred years, the stuff inside that trigger has been led azide."
+    },
+    {
+      "id": "what-3",
+      "section": "what",
+      "narration": "It goes off from heat, from a knock, from friction. That is the whole point of it.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "HEAT",
+        "SHOCK",
+        "FRICTION"
+      ],
+      "claims": [
+        {
+          "claim": "The ATF director's description.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "It's very sensitive to heat, shock, and friction"
+        }
+      ]
+    },
+    {
+      "id": "what-4",
+      "section": "what",
+      "narration": "A weapon only needs a tiny amount. A little cup of it, sealed inside the fuze.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "Miniature cups inside sealed fuzes.",
+          "src": "snopes",
+          "page": 1,
+          "quote": "miniature lead azide and lead styphnate cups inside their sealed fuzes"
+        }
+      ]
+    },
+    {
+      "id": "what-5",
+      "section": "what",
+      "narration": "Now picture that little cup. Then picture sixty-eight barrels.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "68 BARRELS"
+      ],
+      "claims": [
+        {
+          "claim": "68 drums, more than 9,700 pounds, in earth-covered magazines.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "approximately 68 drums, totaling more than 9,700 pounds net explosive weight, of stored lead azide inside earth-covered magazines"
+        }
+      ]
+    },
+    {
+      "id": "what-6",
+      "section": "what",
+      "narration": "And here is the strange part. The military stopped using it about fifteen years ago.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "THE MILITARY MOVED AWAY FROM IT ABOUT 15 YEARS AGO"
+      ],
+      "claims": [
+        {
+          "claim": "The U.S. moved away from it about 15 years ago.",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "It moved away from the chemical about 15 years ago because of how hard it is to store and move."
+        }
+      ]
+    },
+    {
+      "id": "what-7",
+      "section": "what",
+      "narration": "So what is nearly five tons of it still doing in a bunker in Iowa?",
+      "gap_after": 0.8,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "Nearly five tons.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "Nearly five tons of lead azide are set to be detonated"
+        }
+      ]
+    },
+    {
+      "id": "sur-1",
+      "section": "surplus",
+      "narration": "The answer starts in that 1984 paper. It was written by the safety officer at an Army depot in Illinois, and presented to the Defense Department's explosives safety board.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "COMPLEXITIES OF LEAD AZIDE",
+        "SAFETY OFFICER, SAVANNA ARMY DEPOT ACTIVITY",
+        "DDESB EXPLOSIVES SAFETY SEMINAR · 29 AUGUST 1984"
+      ],
+      "claims": [
+        {
+          "claim": "Title.",
+          "src": "paper",
+          "page": 1,
+          "quote": "COMPLEXITIES OF LEAD AZIDE"
+        },
+        {
+          "claim": "The depot.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Savanna Army Depot Activity"
+        },
+        {
+          "claim": "In Illinois.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Savanna, Illinois"
+        },
+        {
+          "claim": "Presented to the DoD Explosives Safety Board's seminar.",
+          "src": "paper",
+          "page": 1,
+          "quote": "DDESB Explosives Safety Seminar"
+        },
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        }
+      ],
+      "say": "The answer starts in that nineteen eighty-four paper. It was written by the safety officer at an Army depot in Illinois, and presented to the Defense Department's explosives safety board."
+    },
+    {
+      "id": "sur-2",
+      "section": "surplus",
+      "narration": "It says the war in Vietnam drove the development of weapons that used, quote, relatively enormous quantities of lead azide.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "Vietnam-era jungle warfare fostered the development of munitions using relatively enormous quantities of lead azide."
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Vietnam-era jungle warfare fostered the development of munitions using relatively enormous quantities of lead azide."
+        }
+      ],
+      "say": "It says the war in Vietnam drove the development of weapons that used, quote, relatively enormous quantities of led azide."
+    },
+    {
+      "id": "sur-3",
+      "section": "surplus",
+      "narration": "But they were so sensitive that many of the people meant to use them did not want to.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "Their sensitivity to detonation caused a reluctance among many users to deploy them"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Their sensitivity to detonation caused a reluctance among many users to deploy them, resulting in a stockpile of both munitions and bulk lead azide."
+        }
+      ]
+    },
+    {
+      "id": "sur-4",
+      "section": "surplus",
+      "narration": "So when the war wound down, the military was left with a vast supply, and almost no demand.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "a vast supply and an extremely small demand"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "The winding down of hostilities left a vast supply and an extremely small demand."
+        }
+      ]
+    },
+    {
+      "id": "sur-5",
+      "section": "surplus",
+      "narration": "They tried to sell it. Nobody bought it.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "Early attempts to sell the stockpiled lead azide were fruitless"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Early attempts to sell the stockpiled lead azide were fruitless"
+        }
+      ]
+    },
+    {
+      "id": "sur-6",
+      "section": "surplus",
+      "narration": "So the Army started destroying it. And then it stopped. The paper says the project was halted with about half the stockpile gone.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "halted after approximately half the stockpile was destroyed"
+      ],
+      "claims": [
+        {
+          "claim": "The Army's disposal project stopped about halfway.",
+          "src": "paper",
+          "page": 1,
+          "quote": "The electrolysis project was halted after approximately half the stockpile was destroyed."
+        }
+      ]
+    },
+    {
+      "id": "sur-7",
+      "section": "surplus",
+      "narration": "The other half stayed in drums. Drums that were already leaking. They were repacked, and the paper says that bought another ten to fifteen years.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "another 10 to 15 years"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "The remaining drums in storage began leaking more frequently due to corrosion and were finally repacked, giving them another 10 to 15 years before they will need repacking again."
+        }
+      ]
+    },
+    {
+      "id": "sur-8",
+      "section": "surplus",
+      "narration": "That was 1984.",
+      "gap_after": 0.9,
+      "onscreen": [
+        "1984"
+      ],
+      "claims": [
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        }
+      ],
+      "say": "That was nineteen eighty-four."
+    },
+    {
+      "id": "sto-1",
+      "section": "storage",
+      "narration": "Here is how you store this stuff. Dry, it is too sensitive to keep. So it is kept wet: in barrels, under liquid, inside concrete bunkers buried in earth.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "EARTH-COVERED MAGAZINE",
+        "REINFORCED CONCRETE",
+        "WATER + ALCOHOL"
+      ],
+      "claims": [
+        {
+          "claim": "Dry lead azide is too sensitive; it is stored under water.",
+          "src": "paper",
+          "page": 1,
+          "quote": "its extreme sensitivity when dry necessitates under water storage"
+        },
+        {
+          "claim": "What an earth-covered magazine is.",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "a reinforced structure made of concrete purpose-built to hold ammunition or explosives"
+        },
+        {
+          "claim": "Kept in ethanol and water.",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "in a bath of ethanol and water meant to keep it stable"
+        }
+      ]
+    },
+    {
+      "id": "sto-2",
+      "section": "storage",
+      "narration": "And the same paper lists what can go wrong.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Long-term storage of lead azide presents some problems."
+        }
+      ]
+    },
+    {
+      "id": "sto-3",
+      "section": "storage",
+      "narration": "First. It has to stay under water.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "KEEP IT UNDER WATER"
+      ],
+      "claims": [
+        {
+          "claim": "Dry lead azide is too sensitive; it is stored under water.",
+          "src": "paper",
+          "page": 1,
+          "quote": "its extreme sensitivity when dry necessitates under water storage"
+        }
+      ]
+    },
+    {
+      "id": "sto-4",
+      "section": "storage",
+      "narration": "Second. If that water freezes, the paper says, it can go off on its own. So alcohol gets added, to keep it from freezing.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "IF THE WATER FREEZES: \"SPONTANEOUS DETONATION\"",
+        "SO ALCOHOL IS ADDED"
+      ],
+      "claims": [
+        {
+          "claim": "Freezing can set it off.",
+          "src": "paper",
+          "page": 1,
+          "quote": "if the water freezes, spontaneous detonation occurs, presumably due to ice crystal formation breaking lead azide crystals"
+        },
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Addition of ethanol to the water is therefore necessary to make a non-freezing mixture."
+        }
+      ]
+    },
+    {
+      "id": "sto-5",
+      "section": "storage",
+      "narration": "Third. Alcohol evaporates. So somebody has to keep checking the level, and keep topping it up.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "ALCOHOL EVAPORATES",
+        "SOMEONE HAS TO KEEP CHECKING THE LEVEL"
+      ],
+      "claims": [
+        {
+          "claim": "The liquid level has to be checked; the alcohol evaporates.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Periodic surveillance is then required both visually to assure adequate liquid level and testing to determine if ethanol evaporation has reduced antifreeze properties."
+        }
+      ]
+    },
+    {
+      "id": "sto-6",
+      "section": "storage",
+      "narration": "And the containers do not last. In 1984 they were steel drums, and the paper says steel rusts through.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "RUST-THROUGH",
+        "1984: IT WAS ALL WRITTEN DOWN"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "the steel 55-gallon packing and storage drum has a limited life due to rust-through, which eventually results in leakage of the ethanol-water mix"
+        },
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        }
+      ],
+      "say": "And the containers do not last. In nineteen eighty-four they were steel drums, and the paper says steel rusts through."
+    },
+    {
+      "id": "sto-7",
+      "section": "storage",
+      "narration": "So this is a material that is only safe for as long as somebody keeps looking after it.",
+      "gap_after": 0.9,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "tl-1",
+      "section": "timeline",
+      "narration": "So let's count the chances there were to deal with it.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "tl-2",
+      "section": "timeline",
+      "narration": "1984. The risks are on paper, and half the stockpile is still in drums.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "1984",
+        "THE RISKS ARE ON PAPER"
+      ],
+      "claims": [
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        },
+        {
+          "claim": "The Army's disposal project stopped about halfway.",
+          "src": "paper",
+          "page": 1,
+          "quote": "The electrolysis project was halted after approximately half the stockpile was destroyed."
+        }
+      ],
+      "say": "nineteen eighty-four. The risks are on paper, and half the stockpile is still in drums."
+    },
+    {
+      "id": "tl-3",
+      "section": "timeline",
+      "narration": "2004. A Defense Department assessment raises concern about an old stockpile of lead azide that has been deteriorating for forty years.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "2004",
+        "A STOCKPILE \"DETERIORATING FOR 40 YEARS\""
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kcrg_docs",
+          "page": 1,
+          "quote": "An environmental assessment from 2004 shows the Department of Defense was concerned about an old stockpile of lead azide that had been deteriorating for 40 years at the plant in Middletown."
+        }
+      ],
+      "say": "2004. A Defense Department assessment raises concern about an old stockpile of led azide that has been deteriorating for forty years."
+    },
+    {
+      "id": "tl-4",
+      "section": "timeline",
+      "narration": "2009. The Army gathers up what is left of the country's lead azide and moves it to one place: the Iowa Army Ammunition Plant, in Middletown. Some of it is already more than sixty years old. It goes into new plastic barrels.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "2009",
+        "THE WHOLE STOCKPILE MOVES TO IOWA",
+        "SOME ALREADY 60+ YEARS OLD"
+      ],
+      "claims": [
+        {
+          "claim": "Consolidated in Iowa.",
+          "src": "kwqc_timeline",
+          "page": 1,
+          "quote": "(about 10,000 pounds, some already 60+ years old) was consolidated from various bases during base realignment and moved to the Iowa Army Ammunition Plant (IAAP)"
+        },
+        {
+          "claim": "Repacked into plastic.",
+          "src": "kwqc_timeline",
+          "page": 1,
+          "quote": "transferred from metal barrels to plastic barrels"
+        },
+        {
+          "claim": "In 2009.",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "The Army moved all of the country’s lead azide to Middletown in 2009."
+        }
+      ],
+      "say": "2009. The Army gathers up what is left of the country's led azide and moves it to one place: the Iowa Army Ammunition Plant, in Middletown. Some of it is already more than sixty years old. It goes into new plastic barrels."
+    },
+    {
+      "id": "tl-5",
+      "section": "timeline",
+      "narration": "Around 2011, the military stops using lead azide.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "2011",
+        "THE MILITARY STOPS USING IT"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kwqc_timeline",
+          "page": 1,
+          "quote": "2011 or earlier: U.S. military moved away from procuring/using lead azide because of sensitivity and storage/handling challenges."
+        }
+      ],
+      "say": "Around 2011, the military stops using led azide."
+    },
+    {
+      "id": "tl-6",
+      "section": "timeline",
+      "narration": "And it keeps the stockpile anyway. In case, officials said this week, it is ever needed again.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "The ATF director's explanation.",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "said it is not uncommon for the Army to stockpile materials in case it could use them again"
+        }
+      ]
+    },
+    {
+      "id": "tl-7",
+      "section": "timeline",
+      "narration": "The routine: an inspection every month, and a top-up of the liquid every September, before winter.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "INSPECTED MONTHLY",
+        "TOPPED UP EVERY SEPTEMBER"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kwqc_timeline",
+          "page": 1,
+          "quote": "Routine schedule: Drums were inspected monthly; annual inspections and water/ethanol refilling occurred in September prior to winter freezing temps."
+        }
+      ]
+    },
+    {
+      "id": "tl-8",
+      "section": "timeline",
+      "narration": "September 2025. According to the government's own court filing, that is the last time the liquid was checked and refilled.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "SEPTEMBER 2025",
+        "\"unchecked and unreplenished since September 2025\"",
+        "GOVERNMENT COURT BRIEF, AS REPORTED BY IOWA PUBLIC RADIO"
+      ],
+      "claims": [
+        {
+          "claim": "A government court brief: the liquid went unchecked and unreplenished from September 2025.",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "The government’s brief in support of this week’s detonation says the water-ethanol mixture used to keep the explosive stable had gone unchecked and unreplenished since September 2025."
+        }
+      ],
+      "say": "September twenty twenty-five. According to the government's own court filing, that is the last time the liquid was checked and refilled."
+    },
+    {
+      "id": "tl-9",
+      "section": "timeline",
+      "narration": "That same month, the company that runs the plant asks an outside firm for a price to get rid of the barrels.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "SEPT. 24, 2025",
+        "PLANT CONTRACTOR ASKS FOR A DISPOSAL QUOTE"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "American Ordnance, the plant contractor that operates the Iowa Army Ammunition Plant, asked MuniRem for a disposal quote on Sept. 24, 2025, according to documents and a timeline shared with IPR by the company."
+        }
+      ]
+    },
+    {
+      "id": "tl-10",
+      "section": "timeline",
+      "narration": "March 11, 2026. An inspection finds the lead azide has crystallized. The next day the Army tells the EPA, and the plant shuts down for eighteen days.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "MARCH 11, 2026",
+        "CRYSTALS FOUND",
+        "PLANT SHUT FOR 18 DAYS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "A routine monitoring inspection on March 11, 2026, found that decades-old, stored lead azide had partially crystallized"
+        },
+        {
+          "claim": "EPA was told the next day.",
+          "src": "epa_letter",
+          "page": 3,
+          "quote": "3/12/2026 -- EPA Region 7 was notified of 68 drums of potentially unstable lead (Pb) azide"
+        },
+        {
+          "claim": "An 18-day shutdown.",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "since the plant closed for an 18-day emergency safety review in March"
+        }
+      ],
+      "say": "March eleventh, twenty twenty-six. An inspection finds the led azide has crystallized. The next day the Army tells the E P A, and the plant shuts down for eighteen days."
+    },
+    {
+      "id": "tl-11",
+      "section": "timeline",
+      "narration": "And the plant's commander tells the public, quote: there is no immediate danger to the public.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "\"There is no immediate danger to the public.\"",
+        "PLANT COMMANDER, MARCH 2026"
+      ],
+      "claims": [
+        {
+          "claim": "Lt. Col. Daniel Nosse, March 2026.",
+          "src": "kcrg_march",
+          "page": 1,
+          "quote": "There is no immediate danger to the public."
+        },
+        {
+          "claim": "The date of KCRG's report.",
+          "src": "snopes",
+          "page": 1,
+          "quote": "19 Mar. 2026"
+        }
+      ]
+    },
+    {
+      "id": "tl-12",
+      "section": "timeline",
+      "narration": "Within two weeks, the Army hires a company to treat the barrels chemically. No blast, no dust cloud. By May, that is dropped, and the Secretary of the Army has chosen detonation.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "MARCH: A CONTRACT TO TREAT IT CHEMICALLY",
+        "MAY: DROPPED. DETONATION CHOSEN."
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "Within two weeks of that March warning, the Army hired MuniRem Environmental after a panel recommended chemical neutralization. But by May 8, the secretary of the Army had chosen to blow up the drums where they stood"
+        },
+        {
+          "claim": "Chemical treatment would avoid the dust.",
+          "src": "ap_whattoknow",
+          "page": 1,
+          "quote": "Chemical neutralization would avoid the plume of dust"
+        },
+        {
+          "claim": "",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "On May 14, the Army told MuniRem it would not exercise the treatment portion of its contract."
+        }
+      ]
+    },
+    {
+      "id": "tl-14",
+      "section": "timeline",
+      "narration": "October 15. The Army holds an open house in Middletown. About 200 people come.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "OCT. 15",
+        "OPEN HOUSE: NEARLY 200 RESIDENTS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "epa_letter",
+          "page": 4,
+          "quote": "10/15/2026 -- The Army held an Open House with nearly 200 residents and community leaders"
+        }
+      ],
+      "say": "October fifteenth. The Army holds an open house in Middletown. About 200 people come."
+    },
+    {
+      "id": "tl-15",
+      "section": "timeline",
+      "narration": "But according to one of Iowa's own senators, those conversations left out how far the lead dust could travel.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "LEFT OUT: HOW FAR THE DUST COULD TRAVEL",
+        "SEN. JONI ERNST"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "Ernst said the Army began discussing disposal with some communities months ago, but those discussions left out how far dust containing lead could travel."
+        }
+      ],
+      "say": "But according to one of Iowa's own senators, those conversations left out how far the led dust could travel."
+    },
+    {
+      "id": "tl-16",
+      "section": "timeline",
+      "narration": "November 13. The EPA signs the permit to blow it up.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "NOV. 13",
+        "EPA PERMIT TO DETONATE"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "epa_notice",
+          "page": 1,
+          "quote": "EPA issued an emergency permit that became effective on November 13, 2026"
+        }
+      ],
+      "say": "November thirteenth. The E P A signs the permit to blow it up."
+    },
+    {
+      "id": "tl-17",
+      "section": "timeline",
+      "narration": "November 15. The Army announces the date, five days out, and publishes the maps. The dust cloud on those maps reaches about 100 miles.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "NOV. 15",
+        "5 DAYS' NOTICE",
+        "PLUME: ABOUT 100 MILES"
+      ],
+      "claims": [
+        {
+          "claim": "The public notice came five days ahead.",
+          "src": "epa_letter",
+          "page": 4,
+          "quote": "11/15/2026 -- Army issued its 5-day advance public notification"
+        },
+        {
+          "claim": "As far as 100 miles.",
+          "src": "ap_whattoknow",
+          "page": 1,
+          "quote": "a plume of dust containing lead particles that could extend as far as 100 miles away"
+        }
+      ],
+      "say": "November fifteenth. The Army announces the date, five days out, and publishes the maps. The dust cloud on those maps reaches about 100 miles."
+    },
+    {
+      "id": "tl-18",
+      "section": "timeline",
+      "narration": "The next day, the governor's office says, is when it learned of the plan. From that public advisory.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "GOVERNOR'S OFFICE: LEARNED FROM THE PUBLIC ADVISORY"
+      ],
+      "claims": [
+        {
+          "claim": "A spokesperson for Gov. Reynolds. The advisory was issued Sunday, Nov. 15.",
+          "src": "cbs2_gov",
+          "page": 1,
+          "quote": "The Office of the Governor became aware of the Iowa Army Ammunition Plant's plan to detonate degraded lead azide on Monday after a public advisory was issued by the U.S. Army"
+        }
+      ]
+    },
+    {
+      "id": "tl-19",
+      "section": "timeline",
+      "narration": "The blast is set for November 20. Then November 23. Then, after a lawsuit, a court order, and a post from the President, November 25. The incoming governor says the decision belongs to the administration.",
+      "gap_after": 0.6,
+      "onscreen": [
+        "NOV. 20",
+        "NOV. 23",
+        "NOV. 25"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "That was the second time it was publicly delayed, after being scheduled for Nov. 20 and Nov. 23."
+        },
+        {
+          "claim": "The final date.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "on Wednesday, November 25, 2026, at approximately 9:00 a.m. CST"
+        },
+        {
+          "claim": "The President's post.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "President Donald Trump says he has ordered the military to hold off on the planned detonation until the federal appeals court and Sand, the incoming Iowa governor, sign off on it."
+        },
+        {
+          "claim": "The court's decision.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "The appeals court denies the environmental group's emergency motion and lifts the administrative stay on the permit, clearing the way for the detonation."
+        },
+        {
+          "claim": "Gov.-elect Rob Sand's position.",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "has said the decision is fully up to the Trump administration"
+        }
+      ],
+      "say": "The blast is set for November twentieth. Then November twenty-third. Then, after a lawsuit, a court order, and a post from the President, November twenty-fifth. The incoming governor says the decision belongs to the administration."
+    },
+    {
+      "id": "tl-21",
+      "section": "timeline",
+      "narration": "Look at that whole line. The warning was written in 1984. The public got the date, and the map, five days ahead.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        },
+        {
+          "claim": "The public notice came five days ahead.",
+          "src": "epa_letter",
+          "page": 4,
+          "quote": "11/15/2026 -- Army issued its 5-day advance public notification"
+        }
+      ],
+      "say": "Look at that whole line. The warning was written in nineteen eighty-four. The public got the date, and the map, five days ahead."
+    },
+    {
+      "id": "tl-22",
+      "section": "timeline",
+      "narration": "One of Iowa's Republican senators said it plainly. These materials should never have been allowed to get to this point.",
+      "gap_after": 0.6,
+      "onscreen": [
+        "\"These materials should never have been allowed to get to this point.\"",
+        "SEN. JONI ERNST (R-IOWA)"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "These materials should never have been allowed to get to this point, and Iowans are right to be frustrated."
+        }
+      ]
+    },
+    {
+      "id": "tl-23",
+      "section": "timeline",
+      "narration": "For decades, the answer was later. Later showed up.",
+      "gap_after": 1.0,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "fail-1",
+      "section": "failure",
+      "narration": "So what happened inside those barrels? The liquid went down.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "THE LIQUID EVAPORATED"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "The ethanol-water bath the lead azide sits in had evaporated, and the explosive had re-crystallized."
+        }
+      ]
+    },
+    {
+      "id": "fail-2",
+      "section": "failure",
+      "narration": "When lead azide dries out, it grows crystals. Long, needle-shaped ones.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "NEEDLE-LIKE CRYSTALS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Pure lead azide occurs as colorless needle-like crystals."
+        },
+        {
+          "claim": "What the inspectors found.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "inspectors identified severe material degradation and crystallization"
+        }
+      ],
+      "say": "When led azide dries out, it grows crystals. Long, needle-shaped ones."
+    },
+    {
+      "id": "fail-3",
+      "section": "failure",
+      "narration": "And the 1984 paper says it in one line. Breaking these crystals is believed to initiate detonation.",
+      "gap_after": 0.6,
+      "onscreen": [
+        "Breaking these crystals is believed to initiate detonation."
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "paper",
+          "page": 1,
+          "quote": "Breaking these crystals is believed to initiate detonation."
+        },
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        }
+      ],
+      "say": "And the nineteen eighty-four paper says it in one line. Breaking these crystals is believed to initiate detonation."
+    },
+    {
+      "id": "fail-4",
+      "section": "failure",
+      "narration": "By this fall, the Army says, crystals had built up on the outside of the barrels. On the lids. On the bolts.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "ON THE LIDS",
+        "ON THE BOLTS"
+      ],
+      "claims": [
+        {
+          "claim": "Col. Aaron Teller.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "We've observed a significant accumulation of crystallized lead azide on the exterior of the barrels, including the barrel lids."
+        },
+        {
+          "claim": "The ATF director.",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "because of the crystallization on each of the bolts on the view ports and on the lids"
+        }
+      ]
+    },
+    {
+      "id": "fail-5",
+      "section": "failure",
+      "narration": "So nobody can open a lid to add liquid. The head of the ATF said just removing one lid could set off that barrel, and then every other barrel in the bunker.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "CAN'T OPEN"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kcrg_how",
+          "page": 1,
+          "quote": "just removing the lid from one of those containers could cause a detonation of that barrel and the sympathetic detonation of each and every barrel inside either one of those magazines"
+        }
+      ],
+      "say": "So nobody can open a lid to add liquid. The head of the A.T.F. said just removing one lid could set off that barrel, and then every other barrel in the bunker."
+    },
+    {
+      "id": "fail-6",
+      "section": "failure",
+      "narration": "They cannot be moved. They cannot be trucked somewhere safer.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "CAN'T MOVE"
+      ],
+      "claims": [
+        {
+          "claim": "The barrels cannot be moved.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "It prevents those barrels from being able to be moved."
+        },
+        {
+          "claim": "Why transport was ruled out.",
+          "src": "epa_letter",
+          "page": 2,
+          "quote": "unacceptable safety risk and a high probability of an uncontrolled detonation"
+        }
+      ]
+    },
+    {
+      "id": "fail-7",
+      "section": "failure",
+      "narration": "And winter is coming. Less liquid means what is left freezes more easily. Freezing is the exact thing the 1984 paper warned about.",
+      "gap_after": 0.6,
+      "onscreen": [
+        "CAN'T WAIT"
+      ],
+      "claims": [
+        {
+          "claim": "Col. Teller, in a court filing.",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "less liquid inside the barrels means the solution is more susceptible to freezing, which increases the risk of an explosive chain reaction"
+        },
+        {
+          "claim": "Freezing can set it off.",
+          "src": "paper",
+          "page": 1,
+          "quote": "if the water freezes, spontaneous detonation occurs, presumably due to ice crystal formation breaking lead azide crystals"
+        },
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        }
+      ],
+      "say": "And winter is coming. Less liquid means what is left freezes more easily. Freezing is the exact thing the nineteen eighty-four paper warned about."
+    },
+    {
+      "id": "fail-8",
+      "section": "failure",
+      "narration": "An engineer who filed a statement for the groups suing over the permit said: stored properly, it should not deteriorate. It only happens when storage is not carefully monitored.",
+      "gap_after": 0.9,
+      "onscreen": [
+        "\"It's only when the conditions of storage are not carefully monitored that it starts to form crystals\"",
+        "DR. RON SAHU, ENVIRONMENTAL ENGINEER"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kcrg_docs",
+          "page": 1,
+          "quote": "Ordinarily, if you store it properly, it should not deteriorate. It should stay for a long long time. It’s only when the conditions of storage are not carefully monitored that it starts to form crystals and things of that sort."
+        },
+        {
+          "claim": "Who he is.",
+          "src": "kcrg_docs",
+          "page": 1,
+          "quote": "Dr. Ron Sahu, a combustion expert and environmental engineer, wrote to the court to supplement environmental groups’ lawsuit against the EPA."
+        }
+      ]
+    },
+    {
+      "id": "dec-1",
+      "section": "decision",
+      "narration": "So here is the plan. Two rapid detonations, inside the bunkers.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "TWO RAPID DETONATIONS"
+      ],
+      "claims": [
+        {
+          "claim": "Two rapid detonations.",
+          "src": "army_nov15",
+          "page": 1,
+          "quote": "two consecutive, rapid detonations"
+        },
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "The lead azide will be detonated in earth-covered magazines"
+        }
+      ]
+    },
+    {
+      "id": "dec-2",
+      "section": "decision",
+      "narration": "Around them: walls of sand-filled barriers two stories high. Water tanks. Foam. Gel blocks. And misters soaking the ground and the air.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "SAND-FILLED BARRIERS, TWO STORIES HIGH",
+        "WATER TANKS",
+        "FOAM",
+        "GEL BLOCKS",
+        "MISTERS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "sand-filled HESCO barriers standing about two stories high"
+        },
+        {
+          "claim": "",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "aqueous foam blocks, two walls of four 16,000-gallon water tanks, and gel blocks adjacent to the bunkers"
+        },
+        {
+          "claim": "",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "High-volume industrial misting units and water sprayers will thoroughly saturate the soil and airspace before and during detonation"
+        }
+      ]
+    },
+    {
+      "id": "dec-3",
+      "section": "decision",
+      "narration": "The Army says its goal is to keep as much of the dust as it can on its own property.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "GOAL: KEEP IT ON THE PLANT"
+      ],
+      "claims": [
+        {
+          "claim": "Acting Army Secretary Adam Telle.",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "Our goal is to keep as much of it as we can here on our Iowa Army Ammunition plant to prevent it from traveling."
+        }
+      ]
+    },
+    {
+      "id": "dec-5",
+      "section": "decision",
+      "narration": "And the Army's argument is simple. Leave it, and it goes off on its own. No warning. No barriers. Nobody evacuated.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "Acting Army Secretary Adam Telle.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "is far preferable to an uncontrolled, spontaneous detonation of that substance"
+        },
+        {
+          "claim": "ATF Director Robert Cekada.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "It's just a matter of time when we have an uncontrolled detonation."
+        }
+      ]
+    },
+    {
+      "id": "dec-6",
+      "section": "decision",
+      "narration": "The general in charge said: inaction is no longer an option.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "\"Inaction is no longer an option.\"",
+        "MAJ. GEN. ERIC SHIRLEY, U.S. ARMY SUSTAINMENT COMMAND"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "\"Inaction is no longer an option,\" said Maj. Gen. Eric Shirley, commanding general, U.S. Army Sustainment Command."
+        }
+      ]
+    },
+    {
+      "id": "dec-7",
+      "section": "decision",
+      "narration": "A federal appeals court agreed. So did Iowa's governor. So did the mayor of Middletown.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "8TH CIRCUIT COURT OF APPEALS",
+        "GOV. KIM REYNOLDS",
+        "MAYOR OF MIDDLETOWN"
+      ],
+      "claims": [
+        {
+          "claim": "From the court's opinion.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "the degraded explosives present a risk of an uncontrolled and unplanned explosion, which would occur without the benefit of the safety measures that the Permit puts in place"
+        },
+        {
+          "claim": "Which court.",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "The 8th U.S. Circuit Court of Appeals temporarily put the Environmental Protection Agency’s permit on hold last week"
+        },
+        {
+          "claim": "",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "Iowa Gov. Kim Reynolds said Tuesday she supports the U.S. Army’s plan to detonate nearly five tons of unstable lead azide"
+        },
+        {
+          "claim": "",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "Middletown Mayor Rodney Johnson said the detonation must take place \"so we can move on with our lives.\""
+        }
+      ]
+    },
+    {
+      "id": "dec-8",
+      "section": "decision",
+      "narration": "And today? They are probably right.",
+      "gap_after": 0.6,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "dec-9",
+      "section": "decision",
+      "narration": "But it is only true today. Because of everything that did not happen before today.",
+      "gap_after": 0.6,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "dec-10",
+      "section": "decision",
+      "narration": "It could have been destroyed while it was stable. The Army was already doing that when the 1984 paper was written. It stopped halfway.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "DESTROY IT WHILE IT IS STABLE"
+      ],
+      "claims": [
+        {
+          "claim": "The Army's disposal project stopped about halfway.",
+          "src": "paper",
+          "page": 1,
+          "quote": "The electrolysis project was halted after approximately half the stockpile was destroyed."
+        },
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        }
+      ],
+      "say": "It could have been destroyed while it was stable. The Army was already doing that when the nineteen eighty-four paper was written. It stopped halfway."
+    },
+    {
+      "id": "dec-11",
+      "section": "decision",
+      "narration": "The Army's own spokesperson calls Middletown an anomaly. Everywhere else, she says, stockpiles like this were eliminated over the last two decades.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "\"AN ANOMALY\"",
+        "ARMY SPOKESPERSON"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "snopes",
+          "page": 1,
+          "quote": "According to Army spokesperson Justine Barati, the stockpile in Middletown is an anomaly."
+        },
+        {
+          "claim": "",
+          "src": "snopes",
+          "page": 1,
+          "quote": "over the past two decades, the Department of Defense has \"systematically conducted demilitarization campaigns to eliminate bulk legacy stores across the industrial base.\""
+        }
+      ]
+    },
+    {
+      "id": "dec-12",
+      "section": "decision",
+      "narration": "It could have been kept wet. That was the whole job.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "KEEP IT WET"
+      ],
+      "claims": [
+        {
+          "claim": "A government court brief: the liquid went unchecked and unreplenished from September 2025.",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "The government’s brief in support of this week’s detonation says the water-ethanol mixture used to keep the explosive stable had gone unchecked and unreplenished since September 2025."
+        },
+        {
+          "claim": "The liquid level has to be checked; the alcohol evaporates.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Periodic surveillance is then required both visually to assure adequate liquid level and testing to determine if ethanol evaporation has reduced antifreeze properties."
+        }
+      ]
+    },
+    {
+      "id": "dec-13",
+      "section": "decision",
+      "narration": "And it could have been treated this spring. By the contractor's account, a review panel recommended exactly that, and the Army hired the contractor to do it.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "TREAT IT THIS SPRING"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "According to a timeline provided by MuniRem, a panel that included Army specialists, Johns Hopkins Applied Physics Laboratory personnel and EPA representatives voted March 19 to recommend chemical neutralization as the safest treatment."
+        },
+        {
+          "claim": "",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "The Army awarded MuniRem a contract March 25"
+        }
+      ]
+    },
+    {
+      "id": "dec-14",
+      "section": "decision",
+      "narration": "The Army says crystals around the lids made opening the barrels too dangerous. What changed between March and May has not been made public.",
+      "gap_after": 0.6,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "The Army's reason.",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "the Army said crystals may have migrated into the drums’ lid assemblies, where friction from opening them could cause an explosion"
+        },
+        {
+          "claim": "What the records do not show.",
+          "src": "ipr_contractor",
+          "page": 1,
+          "quote": "They leave unanswered what changed between the March recommendation and the May decision"
+        }
+      ]
+    },
+    {
+      "id": "dec-15",
+      "section": "decision",
+      "narration": "And communities have changed plans like this before. In Louisiana, in 2014, the plan was to burn fifteen million pounds of old military propellant in the open. With a citizens' group at the table, the EPA switched to a contained system.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "CAMP MINDEN, LOUISIANA",
+        "2014: OPEN BURN PLANNED",
+        "2015: CONTAINED BURN SYSTEM"
+      ],
+      "claims": [
+        {
+          "claim": "The 2014 plan.",
+          "src": "wiki_minden",
+          "page": 1,
+          "quote": "EPA, the Louisiana Department of Environmental Quality and the Army agreed to dispose of explosive M6 propellant by \"open burn\""
+        },
+        {
+          "claim": "When.",
+          "src": "wiki_minden",
+          "page": 1,
+          "quote": "In October, 2014"
+        },
+        {
+          "claim": "How much.",
+          "src": "wiki_minden",
+          "page": 1,
+          "quote": "15 million pounds of M6 propellant"
+        },
+        {
+          "claim": "The change.",
+          "src": "wiki_minden",
+          "page": 1,
+          "quote": "In May 2015, EPA in conjunction with a Citizens' Advisory Group announced, that a contained burn system in the form of an incinerator would be used."
+        }
+      ],
+      "say": "And communities have changed plans like this before. In Louisiana, in 2014, the plan was to burn fifteen million pounds of old military propellant in the open. With a citizens' group at the table, the E P A switched to a contained system."
+    },
+    {
+      "id": "dec-16",
+      "section": "decision",
+      "narration": "That was an easier problem. But those people had months. Here, the map came out five days before the date.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "The public notice came five days ahead.",
+          "src": "epa_letter",
+          "page": 4,
+          "quote": "11/15/2026 -- Army issued its 5-day advance public notification"
+        },
+        {
+          "claim": "Months between the plan and the change.",
+          "src": "wiki_minden",
+          "page": 1,
+          "quote": "In May 2015, EPA in conjunction with a Citizens' Advisory Group announced"
+        }
+      ]
+    },
+    {
+      "id": "dec-17",
+      "section": "decision",
+      "narration": "The window to do this safely was open for decades. It closed because nobody went through it.",
+      "gap_after": 1.0,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "zone-1",
+      "section": "zone",
+      "narration": "So where does the dust go? Wherever the wind is going that morning.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "David Cwiertny, University of Iowa.",
+          "src": "ap_whattoknow",
+          "page": 1,
+          "quote": "said the direction the wind blows will determine where the plume reaches"
+        }
+      ]
+    },
+    {
+      "id": "zone-2",
+      "section": "zone",
+      "narration": "The first maps, for the first date, sent the cloud northeast. About 100 miles.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "FIRST MAPS: NORTHEAST",
+        "ABOUT 100 MILES"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "snopes",
+          "page": 1,
+          "quote": "the blast zone appears to stretch approximately 100 miles northeast from the blast site"
+        },
+        {
+          "claim": "Snopes checked it against the Army's maps.",
+          "src": "snopes",
+          "page": 1,
+          "quote": "We compared this map to maps the Army released ahead of the planned detonations and found they aligned."
+        }
+      ]
+    },
+    {
+      "id": "zone-3",
+      "section": "zone",
+      "narration": "Up the Mississippi, and over it, into Illinois. The Illinois environmental agency said nobody had notified it.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "ILLINOIS EPA: NOT NOTIFIED"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ap_whattoknow",
+          "page": 1,
+          "quote": "The Army's maps modeling where the plume could reach include parts of Illinois"
+        },
+        {
+          "claim": "",
+          "src": "ap_whattoknow",
+          "page": 1,
+          "quote": "officials from Illinois' EPA said they had not been notified about the detonation"
+        }
+      ]
+    },
+    {
+      "id": "zone-4",
+      "section": "zone",
+      "narration": "In Mediapolis, less than twenty miles from the plant, city officials learned where they stood when the first map put them in the middle of it.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "MEDIAPOLIS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ap_brace",
+          "page": 1,
+          "quote": "In Mediapolis, less than 20 miles (32 kilometers) northeast, city officials were approached about allowing soil, water and air testing late last month. But they only learned of their potential exposure on Sunday, when the initial map put them in the center of the dust exposure area."
+        }
+      ],
+      "say": "In Meedy-apolis, less than twenty miles from the plant, city officials learned where they stood when the first map put them in the middle of it."
+    },
+    {
+      "id": "zone-5",
+      "section": "zone",
+      "narration": "Then the date moved. And the wind turned around.",
+      "gap_after": 0.5,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "The wind was out of the southeast on Friday, which would have pushed the plume north if the detonations happened that day."
+        },
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "The wind flipped and was expected to come out of the northwest on Monday."
+        }
+      ]
+    },
+    {
+      "id": "zone-6",
+      "section": "zone",
+      "narration": "The newest maps send the cloud the other way. Southwest, across the corner of Iowa, and into northeast Missouri.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "NEW MAPS: SOUTHWEST",
+        "INTO NORTHEAST MISSOURI"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "show a plume of toxic dust drifting southwest toward northeast Missouri"
+        },
+        {
+          "claim": "",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "By early afternoon, the shaded area stretches far into northeast Missouri, passing Knox City."
+        },
+        {
+          "claim": "",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "it narrows to a band running from the Burlington and Keokuk area toward Macon, Missouri, with Quincy, Illinois, just southeast of it"
+        }
+      ]
+    },
+    {
+      "id": "zone-7",
+      "section": "zone",
+      "narration": "A University of Iowa professor put it like this. People who were worried a few days ago are off the hook. People who thought they would be fine are now right in the path.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "\"...those who thought they were going to be OK are now right in the plume path.\"",
+        "PATRICK O'SHAUGHNESSY, UNIVERSITY OF IOWA"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "So folks that were very concerned even several days ago now are in a sense off the hook, and those who thought they were going to be OK are now right in the plume path,"
+        },
+        {
+          "claim": "Who he is.",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "Patrick O’Shaughnessy, professor of occupational and environmental health at the University of Iowa"
+        }
+      ]
+    },
+    {
+      "id": "zone-8",
+      "section": "zone",
+      "narration": "Same blast. Different people downwind. Decided by the weather on a Wednesday morning.",
+      "gap_after": 0.7,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "zone-9",
+      "section": "zone",
+      "narration": "And remember what these maps are. They are forecasts. How they were built has not been made public. That same professor called them a guesstimate.",
+      "gap_after": 0.9,
+      "onscreen": [
+        "FORECASTS, NOT MEASUREMENTS",
+        "\"It is a guesstimate at this point\""
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "The maps are forecasts and will change with the weather."
+        },
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "the basis for the estimates is not public"
+        },
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "It is a guesstimate at this point"
+        }
+      ]
+    },
+    {
+      "id": "evac-1",
+      "section": "evac",
+      "narration": "Here is who is being helped to leave. Everyone in Middletown, and everyone inside a cone that runs five miles southwest of the plant, with one extra mile on each side.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "RECOMMENDED RELOCATION",
+        "5-MILE CONE",
+        "+1 MILE"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "This defines the evacuation zone as a 5-mile cone extending southwest of IAAAP"
+        },
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "the evacuation extends one mile beyond the dispersion path"
+        },
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "FEMA is supporting the recommended relocation for all residents of Middletown, Iowa"
+        }
+      ]
+    },
+    {
+      "id": "evac-2",
+      "section": "evac",
+      "narration": "It is a recommendation, not an order. FEMA is covering rides, hotel rooms and meals through Friday.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "FEMA: TRANSPORT, HOTELS, MEALS",
+        "THROUGH FRIDAY, NOV. 27"
+      ],
+      "claims": [
+        {
+          "claim": "FEMA's administrator.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "if they choose to relocate, we will offer services"
+        },
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "At this time, lodging will be provided through Friday, November 27"
+        }
+      ],
+      "say": "It is a recommendation, not an order. Feema is covering rides, hotel rooms and meals through Friday."
+    },
+    {
+      "id": "evac-3",
+      "section": "evac",
+      "narration": "Now here is everyone else.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "note"
+    },
+    {
+      "id": "evac-4",
+      "section": "evac",
+      "narration": "Out to twenty miles, the emergency alert on people's phones said: stay indoors, windows closed.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "20 MILES",
+        "STAY INDOORS, WINDOWS CLOSED"
+      ],
+      "claims": [
+        {
+          "claim": "The phone alert: up to 20 miles away, stay indoors.",
+          "src": "ap_wednesday",
+          "page": 1,
+          "quote": "told those up to 20 miles (32 kilometers) away to remain indoors with windows closed"
+        }
+      ]
+    },
+    {
+      "id": "evac-6",
+      "section": "evac",
+      "narration": "The dust maps run a lot farther than that. For people out there, the instructions are: close up the house, keep kids and pets inside, and afterwards, wet-wipe anything a child might touch.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "CLOSE WINDOWS AND DOORS",
+        "KEEP CHILDREN AND PETS INSIDE",
+        "AFTERWARDS: WET-CLEAN WHAT CHILDREN TOUCH"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "closing all windows and doors, setting heating to recirculate (heat can stay on), turning off fans that pull in outside air (e.g., bathroom vents and kitchen exhausts), keeping small children and pets inside"
+        },
+        {
+          "claim": "Wet-clean what children touch.",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "wet-clean surfaces that may be contacted by infants or children, including outdoor play equipment, toys, tables and chairs"
+        },
+        {
+          "claim": "How far the maps reach.",
+          "src": "cbs_maps",
+          "page": 1,
+          "quote": "By early afternoon, the shaded area stretches far into northeast Missouri, passing Knox City."
+        }
+      ]
+    },
+    {
+      "id": "evac-7",
+      "section": "evac",
+      "narration": "Three Iowa counties are under a disaster proclamation. The federal government counts about 350 farms in the path.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "DES MOINES, LEE AND VAN BUREN COUNTIES",
+        "ABOUT 350 FARMS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "abc_mitigation",
+          "page": 1,
+          "quote": "Des Moines, Lee and Van Buren counties are covered by the emergency proclamation"
+        },
+        {
+          "claim": "",
+          "src": "abc_mitigation",
+          "page": 1,
+          "quote": "issued a disaster emergency proclamation for three counties"
+        },
+        {
+          "claim": "USDA: about 350 farms.",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "there are approximately 350 farms that could be impacted"
+        }
+      ]
+    },
+    {
+      "id": "evac-8",
+      "section": "evac",
+      "narration": "The Army says lead levels out there will be well below the point where the EPA requires anyone to act.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "cbs_why",
+          "page": 1,
+          "quote": "the levels will be well below the level at which the EPA requires protective actions"
+        }
+      ],
+      "say": "The Army says led levels out there will be well below the point where the E P A requires anyone to act."
+    },
+    {
+      "id": "evac-9",
+      "section": "evac",
+      "narration": "Maybe so. But look at the gap between the people being helped to leave, and the people being told to stay inside and clean up afterwards. That gap is the part to watch.",
+      "gap_after": 0.9,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "lead-1",
+      "section": "lead",
+      "narration": "Here is why people are this angry about dust. Lead is a neurotoxin. It damages the brain and nervous system, the kidneys, and the heart and blood vessels.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "BRAIN + NERVOUS SYSTEM",
+        "KIDNEYS",
+        "HEART + BLOOD VESSELS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kwqc_expert",
+          "page": 1,
+          "quote": "Lead is a neurotoxin. Exposure can damage the brain and nervous system, kidneys and cardiovascular system."
+        }
+      ],
+      "say": "Here is why people are this angry about dust. Led is a neurotoxin. It damages the brain and nervous system, the kidneys, and the heart and blood vessels."
+    },
+    {
+      "id": "lead-2",
+      "section": "lead",
+      "narration": "The CDC says no amount of lead exposure is safe.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "NO AMOUNT OF LEAD EXPOSURE IS SAFE",
+        "CENTERS FOR DISEASE CONTROL AND PREVENTION"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ap_whattoknow",
+          "page": 1,
+          "quote": "No amount of lead exposure is safe, according to the Centers for Disease Control and Prevention"
+        }
+      ],
+      "say": "The CDC says no amount of led exposure is safe."
+    },
+    {
+      "id": "lead-3",
+      "section": "lead",
+      "narration": "And it hits the smallest people hardest. In small children it can cause permanent brain damage.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "Lead is a neurotoxin that can cause permanent brain damage, especially in babies and small children."
+        }
+      ]
+    },
+    {
+      "id": "lead-4",
+      "section": "lead",
+      "narration": "A University of Iowa professor of environmental health said the most concerning thing is two-year-olds. They touch everything. And then everything goes into their mouth.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "\"...2-year-olds that just have this habit of, right, of touching everything and then everything goes right into their mouth\"",
+        "PATRICK O'SHAUGHNESSY, UNIVERSITY OF IOWA"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "kwqc_expert",
+          "page": 1,
+          "quote": "Maybe the most concerning thing is, say, 2-year-olds that just have this habit of, right, of touching everything and then everything goes right into their mouth, right,"
+        }
+      ]
+    },
+    {
+      "id": "lead-5",
+      "section": "lead",
+      "narration": "So think about the advice to rinse off the playground. Researchers at the same university pointed out the catch. The lead does not go away. It washes into the dirt underneath.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "THE LEAD DOESN'T GO AWAY",
+        "IT WASHES INTO THE DIRT"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "The Army has said rinsing off playground equipment will get rid of lead. But the lead doesn’t go away. Instead, it washes into the dirt"
+        },
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "washed-off lead could still pose a risk to young kids who play in the dirt and put their hands in their mouths"
+        }
+      ],
+      "say": "So think about the advice to rinse off the playground. Researchers at the same university pointed out the catch. The led does not go away. It washes into the dirt underneath."
+    },
+    {
+      "id": "lead-6",
+      "section": "lead",
+      "narration": "Lead does not break down. Whatever lands stays there until somebody removes it.",
+      "gap_after": 0.7,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "It’s an element, so it doesn’t decompose or disappear."
+        },
+        {
+          "claim": "",
+          "src": "kwqc_expert",
+          "page": 1,
+          "quote": "Lead does not break down naturally, meaning contaminated soil and sediment can remain a problem long after the blast."
+        }
+      ],
+      "say": "Led does not break down. Whatever lands stays there until somebody removes it."
+    },
+    {
+      "id": "lead-7",
+      "section": "lead",
+      "narration": "Now, to be fair. The scientists following this do not expect a disaster far from the plant. One of them said that at the far end of the plume, this would be a very small addition to the lead already in the ground.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "\"...a very small addition to the lead that's already naturally occurring.\"",
+        "JEFFREY CATALANO, WASHINGTON UNIVERSITY IN ST. LOUIS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "the more distant part of the plume, from the numbers I’ve seen, if those are correct, the long-term risk is this will be a very small addition to the lead that’s already naturally occurring."
+        },
+        {
+          "claim": "Who he is.",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "Jeffrey Catalano, a professor of earth, environmental and planetary sciences at Washington University in St. Louis"
+        }
+      ],
+      "say": "Now, to be fair. The scientists following this do not expect a disaster far from the plant. One of them said that at the far end of the plume, this would be a very small addition to the led already in the ground."
+    },
+    {
+      "id": "lead-8",
+      "section": "lead",
+      "narration": "But close to the blast, he said, it could be high. And he said he knows of nothing like this ever being done.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "although the lead concentration close to the blast zone could be high"
+        },
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "This is the first I’ve ever heard of lead azide exploding and being released into the air. I don’t know of any other example of this,"
+        }
+      ]
+    },
+    {
+      "id": "lead-9",
+      "section": "lead",
+      "narration": "So the real answer is that nobody knows yet. That is what the sampling is for.",
+      "gap_after": 0.9,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_advisory",
+          "page": 1,
+          "quote": "U.S. Government personnel will return immediately to conduct post-detonation sampling with results published when available."
+        }
+      ]
+    },
+    {
+      "id": "farm-1",
+      "section": "farms",
+      "narration": "This is farm country. And animals cannot follow an evacuation notice.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "USDA: about 350 farms.",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "there are approximately 350 farms that could be impacted"
+        }
+      ]
+    },
+    {
+      "id": "farm-2",
+      "section": "farms",
+      "narration": "The state told farmers: move feed, hay and water tanks indoors, or cover them with a tarp. Keep livestock inside, or somewhere else, until the all-clear.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "MOVE FEED, HAY AND WATER TANKS INDOORS",
+        "OR COVER THEM WITH A TARP",
+        "KEEP LIVESTOCK INDOORS UNTIL THE ALL-CLEAR"
+      ],
+      "claims": [
+        {
+          "claim": "Iowa Department of Agriculture guidance.",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "Move livestock feed, hay bales and portable water tanks indoors to prevent possible contamination. If these livestock supplies cannot be moved, cover them with a tarp."
+        },
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "Keep livestock at an alternate location or indoors until the U.S. Army gives the “all clear” and the air plume has passed by your area."
+        }
+      ]
+    },
+    {
+      "id": "farm-3",
+      "section": "farms",
+      "narration": "Iowa State's beef specialists told producers to pull cattle off pasture and away from ponds, and to watch for lead poisoning. Sudden death. Or, more slowly: weight loss, trouble seeing, trouble breeding.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "SUDDEN DEATH",
+        "GRADUAL WEIGHT LOSS",
+        "VISUAL IMPAIRMENT",
+        "REPRODUCTIVE ISSUES",
+        "IOWA BEEF CENTER, VIA BEEF MAGAZINE"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "beef",
+          "page": 1,
+          "quote": "Signs of acute lead poisoning may include: sudden death, rapid neurological and digestive signs within a few hours to several days after exposure."
+        },
+        {
+          "claim": "",
+          "src": "beef",
+          "page": 1,
+          "quote": "Chronic signs include lack of appetite, gradual weight loss, poor performance, anemia, lethargy, visual impairment and reproductive issues."
+        },
+        {
+          "claim": "",
+          "src": "beef",
+          "page": 1,
+          "quote": "Remove cattle from grazing areas in the impact zone to limit their ingestion of lead."
+        },
+        {
+          "claim": "",
+          "src": "beef",
+          "page": 1,
+          "quote": "Cattle should be removed from pond water drinking areas"
+        }
+      ],
+      "say": "Iowa State's beef specialists told producers to pull cattle off pasture and away from ponds, and to watch for led poisoning. Sudden death. Or, more slowly: weight loss, trouble seeing, trouble breeding."
+    },
+    {
+      "id": "farm-4",
+      "section": "farms",
+      "narration": "And both of them gave farmers the same homework. Take samples now. Write down every expense.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "TAKE BASELINE SAMPLES",
+        "\"Track and record all relevant expenses\""
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "Track and record all relevant expenses incurred in case you need to file a damage claim with the U.S. Army."
+        },
+        {
+          "claim": "",
+          "src": "beef",
+          "page": 1,
+          "quote": "Consider collecting soil, forage and/or blood samples prior to detonation to establish a baseline lead level and post-detonation."
+        }
+      ]
+    },
+    {
+      "id": "farm-5",
+      "section": "farms",
+      "narration": "Read that again. Farmers are being told to build their own evidence file, in case they have to file a claim against the Army.",
+      "gap_after": 0.6,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "farm-6",
+      "section": "farms",
+      "narration": "The Army says it will pay, and clean up any home that tests over its limit at government expense. Iowa's agriculture secretary says farmers must be fully compensated.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "ARMY: CLEANUP \"at complete government expense\"",
+        "STATE: \"Iowans are fully compensated\""
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "environmental remediation teams will remove affected soil, clean surfaces, and restore the property at complete government expense"
+        },
+        {
+          "claim": "Above the Army's soil standard.",
+          "src": "army_announce",
+          "page": 1,
+          "quote": "If any residential property tests above the RCRA-approved standard"
+        },
+        {
+          "claim": "Iowa Secretary of Agriculture Mike Naig.",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "Iowans are fully compensated"
+        }
+      ]
+    },
+    {
+      "id": "farm-7",
+      "section": "farms",
+      "narration": "And to be fair again: that same scientist said he would not expect a measurable increase in lead in next year's corn.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "\"I don't think you would find a measurable increase in lead in next year's corn crop\"",
+        "JEFFREY CATALANO, WASHINGTON UNIVERSITY IN ST. LOUIS"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_residents",
+          "page": 1,
+          "quote": "I don’t think you would find a measurable increase in lead in next year’s corn crop versus this year,"
+        }
+      ],
+      "say": "And to be fair again: that same scientist said he would not expect a measurable increase in led in next year's corn."
+    },
+    {
+      "id": "farm-8",
+      "section": "farms",
+      "narration": "So maybe the farms come through fine. But the state's own agriculture secretary said there are a lot of questions to answer about how we got here. And about how late the state was told.",
+      "gap_after": 1.0,
+      "onscreen": [
+        "\"...a lot of questions that'll need to be answered, ultimately about how did we get here\"",
+        "MIKE NAIG, IOWA SECRETARY OF AGRICULTURE"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "It's unfortunate that we've come to this situation where the detonation is the only option, and I think there's a lot of questions that'll need to be answered, ultimately about how did we get here,"
+        },
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "And certainly, there's been some frustration about the lack of communication or how late that communication came to the state."
+        }
+      ]
+    },
+    {
+      "id": "end-1",
+      "section": "ending",
+      "narration": "This video was finished the night before the blast.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "note"
+    },
+    {
+      "id": "end-2",
+      "section": "ending",
+      "narration": "By the time you are watching, it has probably happened. Two blasts, a few seconds, and a cloud.",
+      "gap_after": 0.35,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "Two rapid detonations.",
+          "src": "army_nov15",
+          "page": 1,
+          "quote": "two consecutive, rapid detonations"
+        },
+        {
+          "claim": "",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "The Army expects the blast to last seconds and the airborne dust to dissipate within about an hour"
+        }
+      ]
+    },
+    {
+      "id": "end-3",
+      "section": "ending",
+      "narration": "What nobody knows yet is where the lead came down. The EPA says its first results will take days. The Army has promised a final map.",
+      "gap_after": 0.6,
+      "onscreen": [
+        "FIRST RESULTS: \"in the days following the detonation\"",
+        "FINAL MAP: PROMISED"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "epa_letter",
+          "page": 3,
+          "quote": "EPA anticipates receiving preliminary dust wipe sampling results from EPA-collected samples in the days following the detonation."
+        },
+        {
+          "claim": "",
+          "src": "epa_letter",
+          "page": 3,
+          "quote": "the Army will issue a final map showing where lead-containing dust has settled"
+        }
+      ],
+      "say": "What nobody knows yet is where the led came down. The E P A says its first results will take days. The Army has promised a final map."
+    },
+    {
+      "id": "end-4",
+      "section": "ending",
+      "narration": "If the numbers come back low, we got lucky. And luck is not a safety plan.",
+      "gap_after": 0.5,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "end-5",
+      "section": "ending",
+      "narration": "If they do not, then decades of later just landed on somebody's farm. Somebody's playground. Somebody's kid.",
+      "gap_after": 0.8,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "end-6",
+      "section": "ending",
+      "narration": "Either way, the Army has now ordered a review of every weapons storage site it has. To make sure, in its words, that something like this never happens again.",
+      "gap_after": 0.35,
+      "onscreen": [
+        "\"...to ensure that something like this never happens again.\"",
+        "ADAM TELLE, ACTING SECRETARY OF THE ARMY"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_reynolds",
+          "page": 1,
+          "quote": "to begin a thorough examination of every such weapon storage facility within the Army's inventory to ensure that something like this never happens again."
+        }
+      ]
+    },
+    {
+      "id": "end-7",
+      "section": "ending",
+      "narration": "Good. But one of the scientists watching this asked the question that should bother everyone. Once we do this, it becomes an option. So how many more times?",
+      "gap_after": 0.8,
+      "onscreen": [
+        "\"...how many more times will we think of doing this and think it's okay now?\"",
+        "PETER THORNE, UNIVERSITY OF IOWA COLLEGE OF PUBLIC HEALTH"
+      ],
+      "claims": [
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "Once we do it, then it becomes considered a viable option for other situations in other places,"
+        },
+        {
+          "claim": "",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "So, we expose Iowans this time, but how many more times will we think of doing this and think it's okay now?"
+        },
+        {
+          "claim": "Who he is.",
+          "src": "ipr_maps",
+          "page": 1,
+          "quote": "Peter Thorne of the UI College of Public Health"
+        }
+      ]
+    },
+    {
+      "id": "end-8",
+      "section": "ending",
+      "narration": "The Army wrote down how this would go wrong in 1984. Keep it wet. Keep checking. Do not trust the drums.",
+      "gap_after": 0.5,
+      "onscreen": [
+        "1984"
+      ],
+      "claims": [
+        {
+          "claim": "The paper's date.",
+          "src": "paper",
+          "page": 1,
+          "quote": "29 August 1984"
+        },
+        {
+          "claim": "Dry lead azide is too sensitive; it is stored under water.",
+          "src": "paper",
+          "page": 1,
+          "quote": "its extreme sensitivity when dry necessitates under water storage"
+        },
+        {
+          "claim": "The liquid level has to be checked; the alcohol evaporates.",
+          "src": "paper",
+          "page": 1,
+          "quote": "Periodic surveillance is then required both visually to assure adequate liquid level and testing to determine if ethanol evaporation has reduced antifreeze properties."
+        }
+      ],
+      "say": "The Army wrote down how this would go wrong in nineteen eighty-four. Keep it wet. Keep checking. Do not trust the drums."
+    },
+    {
+      "id": "end-9",
+      "section": "ending",
+      "narration": "Then it kept nearly five tons of it anyway.",
+      "gap_after": 0.8,
+      "onscreen": [],
+      "claims": [
+        {
+          "claim": "Nearly five tons.",
+          "src": "abc_timeline",
+          "page": 1,
+          "quote": "Nearly five tons of lead azide are set to be detonated"
+        }
+      ]
+    },
+    {
+      "id": "end-10",
+      "section": "ending",
+      "narration": "This was not an accident. This is what happens when a problem belongs to nobody.",
+      "gap_after": 0.9,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "opinion"
+    },
+    {
+      "id": "end-11",
+      "section": "ending",
+      "narration": "We will update this when the results are in.",
+      "gap_after": 0.0,
+      "onscreen": [],
+      "claims": [],
+      "exempt": "note"
+    }
+  ]
+}

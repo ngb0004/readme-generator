@@ -14,6 +14,17 @@ The build fails (exit 1) if any of these is true:
   6. A name on the video's do_not_name list appears anywhere in the script.
   7. (--final) The rendered video is over the runtime limit or the wrong size.
 
+A script may declare "lane": "special" for a video outside the channel's lane (long-form,
+news-pegged, not a workplace-fatality report). Its rules differ in three ways:
+  - sources may come from any publisher, but each still needs a URL. Official documents are
+    saved with the project ("file" + checksum). News articles are quoted, not copied into the
+    repo: a source may name a "local" copy that is kept out of git; when that copy is on this
+    machine its quotes are checked, and when it is not they are reported as not re-checked. A
+    source marked "check": "search" could only be read through search results; its quotes are
+    always reported as not re-checked.
+  - the sections are the ones the script lists in "sections", in that order.
+  - commentary beats are marked "exempt": "opinion" (or "note"). They may not state numbers.
+
 What this does NOT do: judge whether a quote actually supports its claim. That
 is a reading-comprehension call, made when the script is written and
 spot-checked by a human using the generated claim-map.md.
@@ -76,6 +87,7 @@ def normalise(text: str) -> str:
         text = text.replace(a, b)
     text = re.sub(r"-\s*\n\s*", "-", text)   # co-\nworker -> co-worker
     text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s+([.,;:!?])", r"\1", text)   # a link inside a sentence leaves "word ." behind
     return text.strip().lower()
 
 
@@ -118,6 +130,8 @@ def load_pages(doc: Path) -> list[str]:
         raw = doc.read_text(encoding="utf-8", errors="ignore")
         raw = re.sub(r"<script.*?</script>|<style.*?</style>", " ", raw, flags=re.S | re.I)
         return [normalise(htmllib.unescape(re.sub(r"<[^>]+>", " ", raw)))]
+    if doc.suffix.lower() == ".txt":
+        return [normalise(doc.read_text(encoding="utf-8", errors="ignore"))]
     return [normalise(page.extract_text() or "") for page in PdfReader(str(doc)).pages]
 
 
@@ -127,18 +141,34 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
         return {}
     script = json.loads(script_path.read_text())
 
+    special = script.get("lane") == "special"
+
     # 1. Sources --------------------------------------------------------------
     # The first source is the incident report; any others are background documents.
     sources = script.get("sources") or ([{"id": "case", **script["source"]}] if script.get("source") else [])
     gate.check(bool(sources), "script names no source document")
-    docs: dict[str, list[str]] = {}
+    docs: dict[str, list[str] | None] = {}
+    unchecked: set[str] = set()          # special lane: sources whose quotes cannot be re-read on this machine
     for src in sources:
         sid = src.get("id", "?")
         host = urlparse(src.get("url", "")).hostname or ""
-        gate.check(host in APPROVED_HOSTS,
-                   f"[{sid}] source url host '{host}' is not an approved publisher (CSB, OSHA, NIOSH FACE)")
-        pdf = video / src.get("file", "__missing__")
+        if special:
+            gate.check(bool(host), f"[{sid}] source has no url")
+        else:
+            gate.check(host in APPROVED_HOSTS,
+                       f"[{sid}] source url host '{host}' is not an approved publisher (CSB, OSHA, NIOSH FACE)")
         docs[sid] = []
+        if special and not src.get("file"):
+            local = video / src["local"] if src.get("local") else None
+            if local is not None and local.exists():
+                docs[sid] = load_pages(local)
+            elif local is not None or src.get("check") == "search":
+                docs[sid] = None
+                unchecked.add(sid)
+            else:
+                gate.check(False, f"[{sid}] source has no saved file, no local copy and is not marked check=search")
+            continue
+        pdf = video / src.get("file", "__missing__")
         if gate.check(pdf.exists(), f"[{sid}] source document not saved with the project: {pdf}"):
             digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
             gate.check(digest == src.get("sha256"),
@@ -155,10 +185,15 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
         if not order or order[-1] != beat.get("section"):
             order.append(beat.get("section"))
     have = set(order)
-    gate.check(have >= REQUIRED, f"missing section(s): {sorted(REQUIRED - have)}")
-    gate.check(have <= REQUIRED, f"unknown section(s): {sorted(have - REQUIRED)}")
-    gate.check(order[:1] == ["hook"], "the video must open on the hook")
-    gate.check(order[-2:] == ["tribute", "signoff"], "the video must close on the tribute, then the sign-off")
+    if special:
+        wanted = script.get("sections", [])
+        gate.check(bool(wanted), "a special must list its sections")
+        gate.check(order == wanted, f"sections out of order or missing: have {order}, want {wanted}")
+    else:
+        gate.check(have >= REQUIRED, f"missing section(s): {sorted(REQUIRED - have)}")
+        gate.check(have <= REQUIRED, f"unknown section(s): {sorted(have - REQUIRED)}")
+        gate.check(order[:1] == ["hook"], "the video must open on the hook")
+        gate.check(order[-2:] == ["tribute", "signoff"], "the video must close on the tribute, then the sign-off")
 
     banned = [n.lower() for n in script.get("do_not_name", [])]
 
@@ -176,8 +211,8 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
         # 2. Every beat is sourced --------------------------------------------
         exempt = beat.get("exempt")
         if exempt:
-            gate.check(exempt in EXEMPT_ALLOWED and beat.get("section") == exempt,
-                       f"[{bid}] exempt='{exempt}' is not allowed here")
+            ok = exempt in ("opinion", "note") if special else exempt in EXEMPT_ALLOWED and beat.get("section") == exempt
+            gate.check(ok, f"[{bid}] exempt='{exempt}' is not allowed here")
             gate.check(not numbers_in(text, skip_bare_one=True),
                        f"[{bid}] an exempt beat may not state numbers")
             continue
@@ -191,7 +226,11 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
             sid = claim.get("src", default_src)
             pages = docs.get(sid)
             cited += " " + quote
-            if not gate.check(pages is not None, f"[{bid}] claim cites unknown source '{sid}'"):
+            if not gate.check(sid in docs, f"[{bid}] claim cites unknown source '{sid}'"):
+                continue
+            if pages is None:                      # quoted from a source that is not on this machine
+                gate.check(bool(quote), f"[{bid}] claim '{claim.get('claim')}' has no quote")
+                gate.unchecked = getattr(gate, "unchecked", 0) + 1
                 continue
             if not gate.check(bool(quote) and 1 <= page <= len(pages),
                               f"[{bid}] claim '{claim.get('claim')}' has no quote or a bad page ({sid} p.{page})"):
@@ -216,6 +255,8 @@ def verify_script(video: Path, gate: Gate, name: str = "script.json") -> dict:
                 gate.check(n in allowed, f"[thumbnail] number {n:g} is not in the quotes of {thumb['claims_from']}")
             for name in banned:
                 gate.check(name not in text.lower(), f"[thumbnail] names a victim: '{name}'")
+    if unchecked:
+        print(f"  note: {getattr(gate, 'unchecked', 0)} quote(s) not re-checked here (no copy on this machine): {', '.join(sorted(unchecked))}")
     return script
 
 
@@ -230,9 +271,15 @@ def write_claim_map(video: Path, script: dict) -> None:
         "",
     ]
     for src in sources:
-        out.append(f"- **{src['id']}**: {src['publisher']}, *{src['title']}*, no. {src['report_no']} ({src['published']}). "
+        number = f", no. {src['report_no']}" if src.get("report_no") else ""
+        out.append(f"- **{src['id']}**: {src['publisher']}, *{src['title']}*{number} ({src['published']}). "
                    f"<{src['url']}>  ")
-        out.append(f"  Saved copy: `{src['file']}` (sha256 `{src['sha256'][:16]}...`). Page numbers are PDF pages.")
+        if src.get("file"):
+            out.append(f"  Saved copy: `{src['file']}` (sha256 `{src['sha256'][:16]}...`). Page numbers are PDF pages.")
+        elif src.get("check") == "search":
+            out.append(f"  Read through search results only on {src.get('retrieved', '?')}: the page could not be opened from here.")
+        else:
+            out.append(f"  Read on {src.get('retrieved', '?')}. Quoted, not copied into the repository.")
     out.append("")
     default = sources[0]["id"]
     for beat in script["beats"]:
@@ -266,8 +313,9 @@ def verify_render(video: Path, script: dict, gate: Gate) -> None:
     gate.check(len(video_streams) == 1 and len(audio_streams) == 1, "final render needs one video and one audio stream")
     if video_streams:
         v = video_streams[0]
-        gate.check((v["width"], v["height"]) == (1080, 1920),
-                   f"final render is {v['width']}x{v['height']}, expected 1080x1920")
+        size = (int(script.get("width", 1080)), int(script.get("height", 1920)))
+        gate.check((v["width"], v["height"]) == size,
+                   f"final render is {v['width']}x{v['height']}, expected {size[0]}x{size[1]}")
     print(f"  render: {duration:.2f}s of {limit:g}s allowed")
 
 

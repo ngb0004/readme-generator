@@ -22,3 +22,12 @@ videos/*/assets/mix.wav
 
 # Work-in-progress cuts stay out of git (~45 MB each). `git add -f` the one Nick approves.
 videos/*/render/final.mp4
+
+# Long-form specials: same rules as videos/, plus news articles read for a special are quoted,
+# not redistributed. Local copies used by the fact gate stay out of git.
+specials/*/render/frames/
+specials/*/render/video-only.mp4
+specials/*/assets/score.wav
+specials/*/assets/mix.wav
+specials/*/render/final.mp4
+specials/*/source/news/

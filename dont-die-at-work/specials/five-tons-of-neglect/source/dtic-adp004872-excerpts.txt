@@ -1,0 +1,53 @@
+COMPLEXITIES OF LEAD AZIDE
+
+Prepared By:
+Mr. William Shaneyfelt
+Safety Officer,
+Savanna Army Depot Activity
+Savanna, Illinois
+
+Presented at the
+DDESB Explosives Safety Seminar
+Houston, Texas
+29 August 1984
+
+[EXCERPTS. This paper is DTIC accession ADP004872, a component part of "Minutes of the
+Explosives Safety Seminar (21st) Held at Houston, Texas on 28-30 August 1984. Volume 2"
+(ADA152150), pages 1143-1147, approved for public release. The text below was taken from the
+Internet Archive's scan, https://archive.org/details/DTIC_ADP004872, and obvious scanning
+errors in these passages were corrected by hand. Only the passages on history and storage
+that the video quotes are kept here. The rest of section 1, section 4 after its first
+sentence, and sections 5 and 6 are omitted.]
+
+1. GENERAL.
+
+[...] Pure lead azide occurs as colorless needle-like crystals. Breaking these crystals is
+believed to initiate detonation. [...]
+
+2. ACCUMULATION. Vietnam-era jungle warfare fostered the development of munitions using
+relatively enormous quantities of lead azide. Their sensitivity to detonation caused a
+reluctance among many users to deploy them, resulting in a stockpile of both munitions and
+bulk lead azide. The winding down of hostilities left a vast supply and an extremely small
+demand. Mounting environmental regulations limited most open-air detonations to emergency
+destruction of immediately hazardous munitions. All munitions were eventually destroyed,
+leaving the stockpile of bulk lead azide in deteriorating 55-gallon drums.
+
+3. STORAGE. Long-term storage of lead azide presents some problems. Primarily, its extreme
+sensitivity when dry necessitates under water storage. Next, if the water freezes,
+spontaneous detonation occurs, presumably due to ice crystal formation breaking lead azide
+crystals. Addition of ethanol to the water is therefore necessary to make a non-freezing
+mixture. Periodic surveillance is then required both visually to assure adequate liquid
+level and testing to determine if ethanol evaporation has reduced antifreeze properties.
+Finally, the steel 55-gallon packing and storage drum has a limited life due to rust-through,
+which eventually results in leakage of the ethanol-water mix.
+
+4. DISPOSAL RESEARCH. Early attempts to sell the stockpiled lead azide were fruitless, so
+the search for the best nonpolluting disposal method began. [...]
+
+7. UPDATE.
+
+a. The electrolysis project was halted after approximately half the stockpile was destroyed.
+The remaining drums in storage began leaking more frequently due to corrosion and were
+finally repacked, giving them another 10 to 15 years before they will need repacking again.
+A commercial concern is currently interested in procuring the remaining stockpile of bulk
+lead azide from the Army.

@@ -32,8 +32,14 @@ LEAD_IN = 0.10          # silence before the first word: the hook lands almost i
 DEFAULT_GAP = 0.20
 
 
+# Words that sound the same. A beat may respell a word for the voice ("say"): the metal is
+# written "led" so it is not read as the verb, and the recogniser may write either.
+SAME = {"led": "lead"}
+
+
 def key(word: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", word.lower())
+    k = re.sub(r"[^a-z0-9]", "", word.lower())
+    return SAME.get(k, k)
 
 
 def trim(audio: np.ndarray, sr: int, floor_db: float = -42.0, pad: float = 0.025) -> np.ndarray:
