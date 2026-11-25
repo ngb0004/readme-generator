@@ -427,6 +427,8 @@ exists, after spending an hour giving me the access. What to do differently:
   anything back: not the channel, not the status. Ask for a sign-in that can (scope
   `https://www.googleapis.com/auth/youtube`), read the status back, and report that.
   `upload.py` writes the channel's name from the reply into the result.
+  `pipeline/status.py <video folder>` reads the state of every upload back from YouTube; run it
+  after each upload and report what it prints.
 
 How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the repository):
 
@@ -436,8 +438,9 @@ How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the 
   network secret on the cloud environment for `oauth2.googleapis.com`; the proxy adds them to
   token requests and they are never visible in a session.
 - Nick's grant for his channel is made by sending him the consent link (the client ID, that
-  redirect address, scope `https://www.googleapis.com/auth/youtube.upload`, `access_type=offline`,
-  `prompt=consent`). He clicks Allow, lands on the Playground page and pastes its address into the
+  redirect address, scope `https://www.googleapis.com/auth/youtube`, `access_type=offline`,
+  `prompt=select_account consent`). That scope can read, upload, edit and delete; the first
+  grant was upload-only, which is why nothing could be checked that night. He clicks Allow, lands on the Playground page and pastes its address into the
   chat. The `code` in it is exchanged at once at `https://oauth2.googleapis.com/token` and the
   reply is saved to a private file outside the repository; `YT_TOKEN_FILE` points the script at it.
   The code is single-use and dead after the exchange. Never print a token.

@@ -231,5 +231,12 @@ What changed from Nick's draft, and why:
   quoting the old one. Corrected to him at 10:55 UTC. Nick found the six videos himself at about
   11:00 UTC: he has two Google accounts, and the sign-in had been made on his personal one, not
   on the channel he renamed for this. So "another channel" was right and "locked" was wrong.
+- **On the channel (2026-11-25, 11:03 UTC).** Nick signed in again on the channel account
+  ("Moron Mountain", @moronmountainclimber, the channel renamed that night) with a grant that can
+  read. All six were uploaded there and read back from YouTube: the film public at once
+  (https://youtu.be/DSq4t9WdoVY), the Shorts held for 12:00, 12:40, 13:20, 14:00 and 14:40 UTC
+  (ids in `upload-result-short-*.json`). The custom thumbnail was refused again: the channel is
+  not verified. The six copies on the personal account are listed in
+  `uploads-personal-account/`; its film went public at 11:00 UTC. Nick deletes those.
 - **To do after the blast:** switch the title to "Five Tons of Neglect: The Army's Lead Bomb in
   Iowa" and the thumbnail to a calmer one; then the new ending when the EPA's results are out.
