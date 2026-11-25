@@ -34,7 +34,7 @@ NEWS = {"ap_wednesday": "Associated Press via PBS News", "ap_brace": "Associated
 official = [f"{OFFICIAL[s['id']]}\n{s['url']}" for s in script["sources"] if s["kind"] == "official"]
 news = [f"{NEWS.get(s['id'], s['publisher'])}\n{s['url']}" for s in script["sources"] if s["kind"] != "official"]
 
-description = f"""Under mounds of earth in southeast Iowa sit 68 barrels holding more than 9,700 pounds of lead azide, an explosive so sensitive that the Army says it cannot be moved. On Wednesday, November 25, 2026, the Army plans to detonate it where it sits. Its own advisory says the dust will contain lead.
+description = f"""Today, Wednesday, November 25, 2026, at about 9 a.m. Central, the Army plans to detonate 68 barrels of lead azide where they sit in southeast Iowa: more than 9,700 pounds of an explosive so sensitive it cannot be moved. Its own advisory says the dust will contain lead.
 
 Finished the night before the detonation: what lead azide is, why the whole U.S. stockpile ended up in Middletown, what an Army safety officer wrote down in 1984, how the barrels went bad, who was told what and when, where the dust is headed, and what it could mean for families and farms. We will update this when the sampling results are in.
 
@@ -51,10 +51,13 @@ NEWS REPORTING
 Narration is an AI voice. The animation is an explainer, not footage."""
 
 upload = {
-    "title": "Five Tons of Neglect: The Army's Lead Bomb in Iowa",
+    # Until the blast has happened. "Lead dust cloud" is the Associated Press's phrase; the Army's is
+    # "a dust plume that will contain some lead". Switch to title_after once it has gone off.
+    "title": "Lead Dust Cloud Over Iowa and Missouri TODAY: The Army Blows Up 5 Tons of Lead Azide",
+    "title_after": "Five Tons of Neglect: The Army's Lead Bomb in Iowa",
     "description": description,
     "tags": ["lead azide", "Middletown Iowa", "Iowa Army Ammunition Plant", "controlled detonation", "lead dust", "lead exposure",
-             "U.S. Army", "EPA", "Iowa", "Missouri", "Illinois", "explainer"],
+             "U.S. Army", "EPA", "Iowa", "Missouri", "Illinois", "explainer", "Iowa detonation", "lead dust cloud", "plume map"],
     "categoryId": "27",
     "privacyStatus": "private",
     "selfDeclaredMadeForKids": False,
@@ -67,7 +70,8 @@ upload = {
 (video / "upload.json").write_text(json.dumps(upload, indent=2, ensure_ascii=False) + "\n")
 # The same text laid out for pasting into YouTube Studio by hand, until the upload step is built.
 (video / "youtube-upload.txt").write_text(
-    "TITLE (paste into Title)\n\n" + upload["title"]
+    "TITLE (use this until the blast has happened)\n\n" + upload["title"]
+    + "\n\n\nTITLE AFTER THE BLAST (switch to this in YouTube Studio once it has gone off)\n\n" + upload["title_after"]
     + "\n\n\nDESCRIPTION (paste into Description)\n\n" + description
     + "\n\n\nTAGS (paste into Tags, under Show more)\n\n" + ", ".join(upload["tags"]) + "\n")
 print(description)

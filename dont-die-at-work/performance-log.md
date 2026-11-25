@@ -190,4 +190,12 @@ What changed from Nick's draft, and why:
   munition's insides (a builder drawing one was stopped by the model's safety filter).
 - **Voice:** respellings were needed for "lead" (the metal), EPA, FEMA, ATF and years; a trim bug
   that clipped the last consonant of sentences was found and fixed (see CLAUDE.md, Voice).
+- **Title, for the hours before the blast** (Nick, 2026-11-25, 2 a.m.: "upload schedules matter...
+  a bunch of lead is about to fly all over... lead-filled skies today... a huge dust cloud of
+  lead"). His point was right: the title should be about what happens today. Used: "Lead Dust
+  Cloud Over Iowa and Missouri TODAY: The Army Blows Up 5 Tons of Lead Azide". "Lead dust cloud"
+  is the Associated Press's phrase; "lead-filled skies" and "lead falling all over" were not used
+  because the film itself says nobody knows yet where it lands and that little is expected far
+  from the plant. After the blast the title goes back to "Five Tons of Neglect: The Army's Lead
+  Bomb in Iowa". A day-of thumbnail (`render/thumbnail-today.jpg`) carries the date and hour.
 - **Status:** awaiting Nick's review. Where it is published is his call.
