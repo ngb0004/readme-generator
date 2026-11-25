@@ -228,8 +228,8 @@ What changed from Nick's draft, and why:
   YouTube locks uploads from an unaudited API project as private, and sent him the files to upload
   by hand. The lock rule had been withdrawn on 2026-11-02 (YouTube's API description: "Videos
   uploaded from unverified API projects are not restricted to private viewing mode"); I was
-  quoting the old one. Corrected to him at 10:55 UTC. Where the six videos are, and whether each
-  release happened, is still to be confirmed by him in Studio or by reading it back with a
-  sign-in that can read.
+  quoting the old one. Corrected to him at 10:55 UTC. Nick found the six videos himself at about
+  11:00 UTC: he has two Google accounts, and the sign-in had been made on his personal one, not
+  on the channel he renamed for this. So "another channel" was right and "locked" was wrong.
 - **To do after the blast:** switch the title to "Five Tons of Neglect: The Army's Lead Bomb in
   Iowa" and the thumbnail to a calmer one; then the new ending when the EPA's results are out.

@@ -446,8 +446,13 @@ How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the 
   to send Nick the link again: it takes him about thirty seconds. Making it permanent needs the
   app published in Google Cloud (Audience, Publish app) and the refresh token stored by Nick in
   the environment's settings; not done yet.
-- Uploads go to whichever channel Nick picked on the Allow screen. A different channel means a
-  new grant.
+- Uploads go to whichever account Nick picked on the Allow screen. A different channel means a
+  new grant. **He has two Google accounts with a YouTube channel each:** a personal one under his
+  own name, and the channel account (renamed "Peak Moron Investigator" on 2026-11-25). The first
+  grant was made on the personal one, so the film and five Shorts landed there, and he spent
+  hours looking for them on the other. The consent link now carries
+  `prompt=select_account consent`; tell him which account to pick, and read the channel's name
+  back to him before uploading anything.
 - Lesson from that night: a secure card for a secret closes if he sends a chat message while it
   is open. Tell him to fill it in before typing. And ask for screenshots only of pages where the
   secret is hidden; the "client created" box shows it in full.
