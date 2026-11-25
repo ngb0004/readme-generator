@@ -309,6 +309,9 @@ lines written to be spoken (short, contractions, his rewrites). He has not chose
 - **Rules are not a substitute for thinking.** Cut 1 met every rule and was shallow. If the rules
   are producing a bad video, say so before building, not after.
 - His bar for the picture is "top echelon", not "decent". A cut that merely works is not done.
+- **Give him times in his own time zone.** A screenshot of his phone on 2026-11-25 showed 06:10
+  when it was 11:10 UTC, so he is on Eastern time (my inference; he has not said so). All that
+  night I gave him release times in Iowa's Central time, an hour behind his clock.
 
 ## Guardrails
 
