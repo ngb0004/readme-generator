@@ -418,6 +418,14 @@ the middle (`studio/src/lead/Short.tsx`), with the thumbnail's headline above an
 captions below. A Short marked `"day_of"` carries the hour of the event and must go out before
 it. Nick asked for these on 2026-11-25 to get the film traction; none is posted without his say.
 
+`pipeline/shorts.py <video folder> --upload` sends each one with its own `title` and `publish_at`
+from that list: YouTube holds it private and releases it at that time. The description is the
+Short's `blurb` plus a link to the full film (read from `upload-result.json`, so the film goes up
+first). Each upload writes `upload-result-short-<id>.json`. The first five went out forty minutes
+apart, after the film and before the event (Nick: "go, all 5"). The sign-in can only upload: a
+title, a thumbnail or a release time cannot be changed from here afterwards, only by Nick in
+YouTube Studio. So check the title and the time before sending, not after.
+
 ## Not built yet
 
 - **Upload: built on 2026-11-25** (`pipeline/upload.py`; see Upload, above). Still to do: make the
