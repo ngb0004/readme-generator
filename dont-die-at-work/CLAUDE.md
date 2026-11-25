@@ -5,6 +5,33 @@ A YouTube channel. **Goal: 100,000 subscribers.** Everything here serves that on
 Short, animated reconstructions of documented workplace fatalities and serious injuries:
 what happened, why, and how you don't die.
 
+## Start here: one video per session
+
+Nick asked for this on 2026-11-25, after one conversation had carried two videos, an upload
+system and a night of fixes: "every new video is, like, you're a new person... I would just like
+there to be examples and stuff that you're going off of". He is right. A long conversation gets
+summarised again and again and the early detail is lost; what survives is what is written here.
+
+- **One video, one session.** Start a new session for each video, on this repository and the
+  cloud environment "readme-generator - Dont Die at Work" (it holds the network access and the
+  YouTube uploader's secret). Do not carry a second video into the same conversation.
+- **This repository is the memory.** This file is the rulebook and is loaded automatically.
+  `performance-log.md` is what happened to each video. Before a session ends, write what was
+  learned back into both, with Nick's words and the date. Anything left only in the chat is gone.
+- **Work from the examples, not from a blank page.** Read the finished one that matches the job
+  before writing a line, and copy its layout:
+  - a workplace-death Short: `videos/001-valero-nitrogen-duct-tape` (cut 5) and `studio/src/v001`;
+  - a long investigation: `specials/five-tons-of-neglect` (`make_script.py` is the script, with
+    every source) and `studio/src/lead`.
+- **Set the machine up first** (Building a video, below): about ten minutes on a new machine.
+  Films, voice recordings and the voice model are not in git; they are rebuilt.
+- **What a new session needs from Nick:** the topic or his draft; his pass over the baseline
+  script (Working with Nick); a listen before anything is published; and the YouTube sign-in
+  link again (Upload), because the grant file does not travel between machines.
+- **A new session starts from the repository's default branch, `master`.** The channel's work
+  has to be merged there, or a new session finds none of it. On 2026-11-25 all of it was still
+  on one session branch; check, and ask Nick for the merge if it is not done.
+
 ## The lane
 
 - OSHA workplace incidents only. If an idea is not a documented workplace incident, it is rejected.
@@ -151,7 +178,8 @@ hold your breath); a new picture every two to three seconds.
 3. **Verify.** `pipeline/verify.py`. Any unsourced claim fails the build.
 4. **Produce.** Voice, animation, captions, sound, thumbnail.
 5. **Review (optional).** Nick spot-checks before publishing, especially early on.
-6. **Upload** via the YouTube Data API (not built yet; see Not built yet).
+6. **Upload** with `pipeline/upload.py`, then read the result back with `pipeline/status.py`
+   (see Upload).
 7. **Measure** at 48 hours and 7 days.
 8. **Learn.** Write results to `performance-log.md`; choose the next tested variable from it.
 
@@ -454,7 +482,8 @@ How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the 
   the environment's settings; not done yet.
 - Uploads go to whichever account Nick picked on the Allow screen. A different channel means a
   new grant. **He has two Google accounts with a YouTube channel each:** a personal one under his
-  own name, and the channel account (renamed "Peak Moron Investigator" on 2026-11-25). The first
+  own name, and the channel account (YouTube shows it as "Moron Mountain", @moronmountainclimber; he first
+  called it "Peak Moron Investigator"). The first
   grant was made on the personal one, so the film and five Shorts landed there, and he spent
   hours looking for them on the other. The consent link now carries
   `prompt=select_account consent`; tell him which account to pick, and read the channel's name
@@ -476,14 +505,17 @@ it. Nick asked for these on 2026-11-25 to get the film traction; none is posted 
 from that list: YouTube holds it private and releases it at that time. The description is the
 Short's `blurb` plus a link to the full film (read from `upload-result.json`, so the film goes up
 first). Each upload writes `upload-result-short-<id>.json`. The first five went out forty minutes
-apart, after the film and before the event (Nick: "go, all 5"). The sign-in can only upload: a
-title, a thumbnail or a release time cannot be changed from here afterwards, only by Nick in
-YouTube Studio. So check the title and the time before sending, not after.
+apart, after the film and before the event (Nick: "go, all 5"). With the wider sign-in (see
+Upload) a title, a thumbnail or a release time can be changed from here afterwards. Check them
+before sending all the same.
 
 ## Not built yet
 
-- **Upload: built on 2026-11-25** (`pipeline/upload.py`; see Upload, above). Still to do: make the
-  sign-in permanent (it lasts seven days while the Google app is in "Testing").
+- **Upload: built on 2026-11-25** (`pipeline/upload.py`, `pipeline/status.py`; see Upload, above).
+  Still to do: make the sign-in permanent (it lasts seven days while the Google app is in
+  "Testing", and a new machine has none).
+- **A setup script on the cloud environment**, so a new session starts ready to build. Test it
+  from a clean clone first: a script that fails stops every session from starting.
 - **Analytics pull** (YouTube Analytics API): views, CTR, average view duration, retention curve,
   subscribers gained, at 48 h and 7 d, into `videos/<id>/analytics/`.
 - **Long-form** deep dives for the channel itself. The 16:9 stage built for the first special
