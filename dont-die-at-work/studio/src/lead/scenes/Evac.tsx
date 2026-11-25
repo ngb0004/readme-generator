@@ -168,6 +168,7 @@ export const Evac: React.FC<{t: number}> = ({t}) => {
               const along = 3 + u * 62;
               const w = Math.sqrt(Math.max(0, 1 - Math.pow((2 * (along + NEWEST.back)) / (NEWEST.length + NEWEST.back) - 1, 2)));
               const [x, y] = xy(proj, onBand(NEWEST, along, (rnd(i * 7.31) * 2 - 1) * NEWEST.half * w * 0.86));
+              if (y > 790) return null; // the caption owns the bottom of the frame
               return <FarmMark key={i} x={x} y={y} s={0.95} a={k * span(t, c.federal, c.b8 + 1.2, 0.2, 0.6)} />;
             })
           : null}

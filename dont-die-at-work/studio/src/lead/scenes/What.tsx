@@ -20,7 +20,7 @@ const c = {
   b2: at('what-2'),
   azide: word('what-2', 'lead') - 0.15,
   b3: at('what-3'),
-  heat: word('what-3', 'heat') - 0.15,
+  heat: Math.min(word('what-3', 'heat') - 0.15, at('what-3') + 0.4), // the first sign lands with the line, not a second into it
   knock: word('what-3', 'knock') - 0.15,
   friction: word('what-3', 'friction') - 0.15,
   point: word('what-3', 'That') - 0.1,
