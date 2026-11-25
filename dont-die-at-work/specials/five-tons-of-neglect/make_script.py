@@ -526,7 +526,7 @@ script = {
     "labels": {"reconstruction": "ANIMATED EXPLAINER · NOT FOOTAGE", "source": "SOURCE", "commentary": "COMMENTARY", "schematic": "SCHEMATIC · NOT TO SCALE",
                "edition": "FINISHED NOV. 24, 2026, THE NIGHT BEFORE THE DETONATION",
                "schematic_map": "SCHEMATIC OF THE ARMY'S MAPS AS REPORTED · NOT A FORECAST",
-               "sources_title": "SOURCES", "sources_note": "EVERY CLAIM IN THIS VIDEO IS TIED TO A QUOTE FROM ONE OF THESE. FULL LIST AND LINKS IN THE DESCRIPTION.",
+               "sources_title": "SOURCES", "sources_note": "EVERY FACT IN THIS VIDEO IS TIED TO A QUOTE FROM ONE OF THESE. OUR OWN ESTIMATE IS LABELLED AS OURS. FULL LIST AND LINKS IN THE DESCRIPTION.",
                "iowa": "IOWA", "illinois": "ILLINOIS", "missouri": "MISSOURI", "mississippi": "MISSISSIPPI RIVER", "plant": "IOWA ARMY AMMUNITION PLANT",
                "middletown": "MIDDLETOWN", "burlington": "BURLINGTON", "mediapolis": "MEDIAPOLIS", "keokuk": "KEOKUK", "quincy": "QUINCY",
                "knoxCity": "KNOX CITY", "macon": "MACON", "wind": "WIND",
