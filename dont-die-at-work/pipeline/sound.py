@@ -116,14 +116,16 @@ def curve(t: np.ndarray, points: list[tuple[float, float]]) -> np.ndarray:
     return np.interp(t, [p[0] for p in pts], [p[1] for p in pts])
 
 
-def drone(dur: float, points: list[tuple[float, float]]) -> np.ndarray:
-    """Low bed under everything. `points` is its level over time: (seconds, 0..1)."""
+def drone(dur: float, points: list[tuple[float, float]], root: float = 36.71) -> np.ndarray:
+    """Low bed under everything. `points` is its level over time: (seconds, 0..1).
+    `root` is the bottom note in Hz (D1 by default); a long film moves it between sections."""
     t = t_axis(dur)
     out = np.zeros((len(t), 2))
+    k = root / 36.71
     for ch, det in ((0, 1.0), (1, 1.004)):
         s = np.zeros(len(t))
         for f, a, lf in ((36.71, 1.0, 0.07), (55.0, 0.55, 0.11), (73.42, 0.5, 0.05), (110.0, 0.16, 0.09), (146.83, 0.07, 0.13)):
-            s += a * np.sin(2 * np.pi * f * det * t + ch) * (0.72 + 0.28 * np.sin(2 * np.pi * lf * t + f))
+            s += a * np.sin(2 * np.pi * f * k * det * t + ch) * (0.72 + 0.28 * np.sin(2 * np.pi * lf * t + f))
         rumble = lp(rng.standard_normal(len(t)), 90, 3) * 2.2
         out[:, ch] = s * 0.22 + rumble * 0.25
     return out * curve(t, points)[:, None]

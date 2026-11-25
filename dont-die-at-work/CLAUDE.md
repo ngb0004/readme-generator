@@ -11,6 +11,9 @@ what happened, why, and how you don't die.
 - **Approved sources, and no others:** OSHA fatality inspection records, NIOSH FACE reports
   (federal and state), Chemical Safety Board (CSB) investigations.
 - No murders, no politics, no kids' content, no off-topic videos.
+- **Specials** are the one exception: a film outside the lane that Nick asks for by name. They
+  live in `specials/`, are not numbered channel videos, and have their own source rule (see
+  Specials, below). A special does not widen the lane.
 
 ## Hard rules
 
@@ -169,6 +172,8 @@ dont-die-at-work/
     src/engine/           reusable across videos: theme, timing maths, captions, HUD kit
     src/engine2d/         the diagram look: 2D camera, the safety-sign figure rig
     src/v001/             one folder per video: drawing, actors, direction, cards, overlay
+    src/lead/             the first long-form special (16:9): stage, kit, drawings, one file per
+                          scene, and dev/ entries that render one scene on its own
     tools/                stills.mjs (look-dev), frames.mjs (final render), cues.mjs,
                           sheet.py / strip.py (contact sheets for review)
   videos/<nnn>-<slug>/
@@ -181,6 +186,9 @@ dont-die-at-work/
     render/               final.mp4, thumbnail.jpg  (frames/ is never committed; final.mp4 is
                           committed with `git add -f` only once Nick approves the cut: ~45 MB each)
     analytics/            48 h and 7 d pulls go here
+  specials/<slug>/        a long-form film outside the lane; laid out like a video. Not committed:
+                          source/news/ (articles are quoted, not redistributed), assets/voice.wav
+                          (about 78 MB; voice.py rebuilds it) and render/final.mp4 (too big for git)
 ```
 
 ## Building a video
@@ -239,6 +247,14 @@ rewrite the line until it passes. An AI cannot hear the result: **the voice is t
 needs a human ear.** Swapping to a paid voice is a change to `voice.py` only, and counts as a new
 tool (needs Nick's approval).
 
+Some mistakes get past the recogniser, because it hears the wrong word and writes the right one.
+Found on the first special: Kokoro reads the metal "lead" as "leed", says "EPA" and "FEMA" as
+words, and reads "1984" as "nineteen hundred eighty-four". For any word with two readings, any
+acronym and any year, look at the phonemes (`Kokoro(...).tokenizer.phonemize(text)`), and put a
+respelling in the beat's `say` field ("led", "E.P.A.", "nineteen eighty-four"). Captions and
+claims keep using `narration`. `voice.py` also keeps each beat's audio in `assets/.voice-cache/`,
+so a re-run only records the lines that changed.
+
 ## Working with Nick
 
 - **Push back.** Nick asked for this directly (2026-11-21, reviewing the first cut of 001): do not
@@ -272,6 +288,48 @@ tool (needs Nick's approval).
   incident, a clear explanation and a lesson. Vary hooks and visuals within the template; never
   the same script with the names swapped.
 
+## Specials
+
+A special is a long-form film outside the lane, made because Nick asked for that film. The first
+is `specials/five-tons-of-neglect`: the Army's detonation of its lead azide stockpile at
+Middletown, Iowa. Nick handed over a full draft script on 2026-11-24, the night before the blast,
+and said "build this video". Building it as a special and not as channel video 002 was my call
+(it is not a workplace death and there is no OSHA, NIOSH or CSB report); where it gets published
+is his.
+
+What is different for a special (`"lane": "special"` in `script.json`; `verify.py` enforces it):
+
+- **Sources** are official documents and news reporting, each with its URL. Official documents
+  are saved in `source/` with a checksum. News articles are quoted, not redistributed: the copies
+  the gate checks against sit in `source/news/`, which is not committed. A source that could not
+  be fetched at all is marked `"check": "search"`, and the gate reports its quotes as not
+  re-checked. Keep those rare, and tell Nick which lines rest on them.
+- **Every factual line still maps to a verbatim quote**, and the stage names the publisher in the
+  corner while the line plays.
+- **Opinion is allowed, and labelled.** A beat marked `"exempt": "opinion"` carries no claims
+  and no numbers, and the corner reads COMMENTARY while it plays. Nick's draft was written as a
+  "pissed-off citizen"; the anger goes in those lines and the facts stay checkable. The people
+  who disagree with the film's argument get their best point too (here: the scientists who expect
+  little harm far from the plant, and the court, governor and mayor who backed the blast).
+- **Check the draft before building it.** His script is an input like any other idea. The first
+  draft had three facts wrong and several that could not be confirmed (`performance-log.md`).
+- **No forecasts of our own.** For a live event that people may act on, show what the
+  authorities published, say it is a forecast, and draw it as a schematic. A homemade dust map
+  could send someone the wrong way.
+- **Leave out how-to detail for anything dangerous.** The film says what the explosive is and why
+  it went bad. It does not explain how it is made, treated or neutralised.
+- **Say which edition it is.** A film finished before the event says so on screen and in the
+  description, and gets a new ending when the facts are in.
+- **Sections** are whatever the film needs (`"sections"` in `script.json`), not the Short's seven.
+  1920x1080. There is no length target beyond `max_runtime_s`: long is fine, slow is not.
+
+Building one:
+
+```bash
+.venv/bin/python pipeline/build.py specials/five-tons-of-neglect
+(cd studio && DDAWT_ENTRY=src/lead/dev/zone.tsx node tools/stills.mjs LeadDev /tmp/stills 0.5 480s 500s)   # one scene alone
+```
+
 ## Not built yet
 
 - **Upload** (YouTube Data API v3 `videos.insert`). Needs a Google Cloud project and OAuth on the
@@ -279,7 +337,8 @@ tool (needs Nick's approval).
   passes Google's audit, so apply early. Default quota allows only a handful of uploads a day.
 - **Analytics pull** (YouTube Analytics API): views, CTR, average view duration, retention curve,
   subscribers gained, at 48 h and 7 d, into `videos/<id>/analytics/`.
-- **Long-form** deep dives.
+- **Long-form** deep dives for the channel itself. The 16:9 stage built for the first special
+  (`studio/src/lead`) is the place to start.
 
 ## Milestones
 

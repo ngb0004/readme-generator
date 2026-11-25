@@ -35,3 +35,6 @@ specials/*/source/news/
 # Per-beat audio kept by voice.py so a re-run only redoes changed lines
 videos/*/assets/.voice-cache/
 specials/*/assets/.voice-cache/
+
+# A special's narration runs to ~78 MB; voice.py rebuilds it (timings.json is kept).
+specials/*/assets/voice.wav
