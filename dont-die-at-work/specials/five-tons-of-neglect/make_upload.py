@@ -65,5 +65,10 @@ upload = {
               "Edition: " + script["edition"] + ". Upload stays private until Nick has reviewed."),
 }
 (video / "upload.json").write_text(json.dumps(upload, indent=2, ensure_ascii=False) + "\n")
+# The same text laid out for pasting into YouTube Studio by hand, until the upload step is built.
+(video / "youtube-upload.txt").write_text(
+    "TITLE (paste into Title)\n\n" + upload["title"]
+    + "\n\n\nDESCRIPTION (paste into Description)\n\n" + description
+    + "\n\n\nTAGS (paste into Tags, under Show more)\n\n" + ", ".join(upload["tags"]) + "\n")
 print(description)
 print(len(description), "characters (YouTube's limit is 5,000)")

@@ -1,0 +1,92 @@
+TITLE (paste into Title)
+
+Five Tons of Neglect: The Army's Lead Bomb in Iowa
+
+
+DESCRIPTION (paste into Description)
+
+Under mounds of earth in southeast Iowa sit 68 barrels holding more than 9,700 pounds of lead azide, an explosive so sensitive that the Army says it cannot be moved. On Wednesday, November 25, 2026, the Army plans to detonate it where it sits. Its own advisory says the dust will contain lead.
+
+Finished the night before the detonation: what lead azide is, why the whole U.S. stockpile ended up in Middletown, what an Army safety officer wrote down in 1984, how the barrels went bad, who was told what and when, where the dust is headed, and what it could mean for families and farms. We will update this when the sampling results are in.
+
+Every factual line is tied to a quote from a source below; the source is named on screen while the line plays. Lines marked COMMENTARY are opinion. The Army's maps are drawn as schematics of what was reported. "Our own map" is our estimate of where the National Weather Service's forecast wind carries the cloud, hour by hour; it is not an official map and says nothing about lead levels. If you live near Middletown, follow the Army and your county emergency management, not a YouTube video.
+
+0:00 68 barrels under a mound of dirt
+0:52 What lead azide is
+1:27 Why there is a stockpile
+2:16 How it has to be stored
+2:57 Who knew, and when
+5:24 How it went bad
+6:22 The decision to detonate
+7:52 Where the dust goes
+8:52 Our own map
+9:47 Who leaves, who stays
+10:51 Why lead matters
+12:03 The farms
+13:17 What nobody knows yet
+14:26 Sources
+
+OFFICIAL DOCUMENTS
+U.S. Army announcement, Nov. 24, 2026
+https://www.army.mil/article/297069/army_announces_controlled_detonation_of_degraded_explosive_material_at_iowa_army_ammunition_plant
+U.S. Army public safety advisory, Nov. 24, 2026
+https://www.army.mil/article/297039/public_safety_advisory_controlled_mitigated_detonation_of_unstable_lead_azide_at_iowa_army_ammunition_plant
+U.S. Army public advisory, Nov. 15, 2026
+https://www.army.mil/article/296772/iaaap_public_advisory
+U.S. EPA public notice on the emergency permit
+https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-3
+U.S. EPA letter to Gov. Reynolds, Nov. 20, 2026
+https://response.epa.gov/sites/17211/files/R7%20Letter%20to%20Governor%20Reynolds.pdf
+National Weather Service forecast for the plant, issued 6:26 p.m. CST, Nov. 24
+https://api.weather.gov/gridpoints/DVN/45,33
+"Complexities of Lead Azide", U.S. Army safety officer, 1984 (DTIC ADP004872)
+https://archive.org/details/DTIC_ADP004872
+
+NEWS REPORTING
+KCRG
+https://www.kcrg.com/2026/11/24/how-did-we-get-here-army-prepares-controlled-blast-lead-azide-stockpile-iowa/
+KCRG
+https://www.kcrg.com/2026/11/24/documents-show-lead-azide-concerns-iowa-army-ammunition-plant-date-back-decades/
+KCRG
+https://www.kcrg.com/2026/03/19/iowa-army-ammunition-plant-still-pause-safety-reasons/
+KWQC
+https://www.kwqc.com/2026/11/24/stockpile-crisis-critical-timeline-behind-iowa-detonation-plans/
+KWQC
+https://www.kwqc.com/2026/11/17/expert-warns-lead-army-detonation-middletown-could-pose-health-risks/
+ABC News
+https://abcnews.com/US/iowa-detonation-timeline-led-controlled-explosion-degraded-lead/story?id=138419343
+ABC News
+https://abcnews.com/US/us-army-details-mitigation-plans-controlled-iowa-munition/story?id=138410668
+Associated Press via PBS News
+https://www.pbs.org/newshour/nation/getting-court-approval-u-s-army-to-detonate-degraded-bomb-making-material-in-iowa-on-wednesday
+PBS News
+https://www.pbs.org/newshour/nation/trump-told-the-army-to-pause-the-detonation-of-9500-pounds-of-lead-azide-in-iowa-heres-what-to-know
+Associated Press via PBS News
+https://www.pbs.org/newshour/nation/iowans-brace-for-lead-dust-cloud-as-army-plans-to-detonate-5-tons-of-bomb-making-chemicals
+Iowa Public Radio
+https://www.iowapublicradio.org/environment/2026-11-19/army-lead-detonation-public-health-safety-risks
+The Midwest Newsroom / Iowa Public Radio
+https://www.iowapublicradio.org/ipr-news/2026-11-23/what-midwest-residents-need-to-know-about-the-lead-azide-detonations-planned-for-this-week
+Iowa Public Radio
+https://www.iowapublicradio.org/ipr-news/2026-11-24/reynolds-iowa-lead-azide-detonation-army-ammunitions-plant-ernst-grassley-middletown
+Iowa Public Radio
+https://www.iowapublicradio.org/environment/2026-11-24/army-blast-unstable-lead-azide-contractor-chemical-treatment-plan
+CBS News Chicago
+https://www.cbsnews.com/chicago/news/maps-show-how-far-lead-dust-from-about-5-tons-of-iowa-explosives-could-spread/
+CBS News
+https://www.cbsnews.com/news/lead-azide-detonation-iowa-army-explosives/
+Snopes
+https://www.snopes.com/fact-check/lead-azide-detonation-army-iowa/
+Wikipedia
+https://en.wikipedia.org/wiki/Lead(II)_azide
+CBS 2 Iowa
+https://cbs2iowa.com/news/local/governor-kim-reynolds-office-state-lawmakers-respond-to-detonation-plans
+Beef Magazine (Iowa Beef Center)
+https://www.beefmagazine.com/livestock-management/army-s-planned-lead-detonation-in-iowa-poses-risks-for-cattle
+
+Narration is an AI voice. The animation is an explainer, not footage.
+
+
+TAGS (paste into Tags, under Show more)
+
+lead azide, Middletown Iowa, Iowa Army Ammunition Plant, controlled detonation, lead dust, lead exposure, U.S. Army, EPA, Iowa, Missouri, Illinois, explainer
