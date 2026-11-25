@@ -38,10 +38,19 @@ export const Short: React.FC<{id: string}> = ({id}) => {
   const big: React.CSSProperties = {position: 'absolute', left: 0, top: 296, width: SW, textAlign: 'center', fontFamily: FONT.display, fontSize: 226, lineHeight: 1, whiteSpace: 'nowrap'};
   return (
     <AbsoluteFill style={{background: 'linear-gradient(180deg, #0a1322 0%, #05080f 100%)'}}>
-      {/* the headline: the same words as the film's thumbnail */}
-      <div style={{position: 'absolute', left: 0, top: 206, width: SW, textAlign: 'center', fontFamily: FONT.display, fontSize: 92, lineHeight: 1, color: C.white, WebkitTextStroke: '9px #04060a', paintOrder: 'stroke fill'}}>{thumbLine(0)}</div>
-      <div style={{...big, color: '#04060a', WebkitTextStroke: '24px #04060a'}}>{thumbLine(1)}</div>
-      <div style={{...big, ...metal}}>{thumbLine(1)}</div>
+      {/* the headline: the thumbnail's words while the event is still ahead, the film's title otherwise */}
+      {cut.day_of ? (
+        <>
+          <div style={{position: 'absolute', left: 0, top: 206, width: SW, textAlign: 'center', fontFamily: FONT.display, fontSize: 92, lineHeight: 1, color: C.white, WebkitTextStroke: '9px #04060a', paintOrder: 'stroke fill'}}>{thumbLine(0)}</div>
+          <div style={{...big, color: '#04060a', WebkitTextStroke: '24px #04060a'}}>{thumbLine(1)}</div>
+          <div style={{...big, ...metal}}>{thumbLine(1)}</div>
+        </>
+      ) : (
+        <>
+          <div style={{position: 'absolute', left: 0, top: 232, width: SW, textAlign: 'center', fontFamily: FONT.display, fontSize: 150, lineHeight: 1, color: C.white, WebkitTextStroke: '12px #04060a', paintOrder: 'stroke fill'}}>{os('cold-title', 0)}</div>
+          <div style={{position: 'absolute', left: 0, top: 388, width: SW, textAlign: 'center', fontFamily: FONT.display, fontSize: 196, lineHeight: 1, color: C.yellow, WebkitTextStroke: '14px #04060a', paintOrder: 'stroke fill', whiteSpace: 'nowrap'}}>{os('cold-title', 1)}</div>
+        </>
+      )}
 
       {/* the film, as it plays */}
       <div style={{position: 'absolute', left: 0, top: BAND.top, width: SW, height: BAND.h, overflow: 'hidden', background: C.bg, borderTop: `6px solid ${C.yellow}`, borderBottom: `6px solid ${C.yellow}`, boxSizing: 'content-box'}}>

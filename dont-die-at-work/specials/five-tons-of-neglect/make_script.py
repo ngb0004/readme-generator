@@ -557,9 +557,24 @@ script = {
     # Shorts cut from the film (Nick, 2026-11-25). Each runs from one beat to another inside one
     # section, with the narration and picture exactly as in the film. "day_of" adds the hour tag,
     # so it is only for Shorts that go out before the blast.
+    # "publish_at" is when YouTube releases it (UTC). Nick, 2026-11-25: "go, all 5". The two that
+    # say "about to" go first; all five are out before the 9 a.m. Central blast (15:00 UTC).
     "shorts": [
-        {"id": "open", "from": "cold-1", "to": "cold-title", "day_of": True,
-         "title": "The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts"},
+        {"id": "open", "from": "cold-1", "to": "cold-title", "day_of": True, "publish_at": "2026-11-25T12:00:00Z",
+         "title": "The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts",
+         "blurb": "Sixty-eight barrels, nearly five tons of lead azide, and a plan to detonate it where it sits."},
+        {"id": "ours", "from": "our-1", "to": "our-7", "day_of": True, "publish_at": "2026-11-25T12:40:00Z",
+         "title": "We Checked the Army's Lead Dust Map Ourselves #shorts",
+         "blurb": "Where the National Weather Service's forecast wind carries the cloud, hour by hour. Our estimate; not an official map, and not lead levels."},
+        {"id": "lastcheck", "from": "tl-7", "to": "tl-11", "publish_at": "2026-11-25T13:20:00Z",
+         "title": "The Army's Lead Azide Barrels Were Last Topped Up in September 2025 #shorts",
+         "blurb": "The routine was a check every month and a top-up every September. Then it stopped."},
+        {"id": "y1984", "from": "sur-1", "to": "sur-8", "publish_at": "2026-11-25T14:00:00Z",
+         "title": "In 1984 the Army Started Destroying Its Lead Azide. Then It Stopped. #shorts",
+         "blurb": "What an Army safety officer wrote down in 1984 about the stockpile that is being detonated in Iowa."},
+        {"id": "closer", "from": "thanks-1", "to": "thanks-5", "publish_at": "2026-11-25T14:40:00Z",
+         "title": "\"We Are Under Attack\"? No. It's Neglect. #shorts",
+         "blurb": "Why we made a film about the Army's lead azide detonation in Iowa."},
     ],
     "voice": {"engine": "kokoro-onnx", "voice": "am_michael", "speed": 1.08, "lang": "en-us"},
     "beats": beats,

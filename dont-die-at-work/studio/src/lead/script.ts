@@ -12,7 +12,7 @@ export const SCRIPT = script as unknown as {
   sources: Source[];
   beats: ScriptBeat[];
   thumbnail?: {lines: string[]; claims_from: string};
-  shorts?: {id: string; from: string; to: string; day_of?: boolean; title: string}[];
+  shorts?: {id: string; from: string; to: string; day_of?: boolean; publish_at?: string; title: string; blurb?: string}[];
 };
 const BY_ID = Object.fromEntries(SCRIPT.beats.map((b) => [b.id, b])) as Record<string, ScriptBeat>;
 const SRC = Object.fromEntries(SCRIPT.sources.map((s) => [s.id, s])) as Record<string, Source>;

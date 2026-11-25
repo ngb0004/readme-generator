@@ -3,6 +3,7 @@
 
     python pipeline/shorts.py specials/five-tons-of-neglect            # all of them
     python pipeline/shorts.py specials/five-tons-of-neglect open       # just one
+    python pipeline/shorts.py specials/five-tons-of-neglect --upload   # send the built ones (needs YT_TOKEN_FILE)
 
 Each Short is rendered by the studio (composition LeadShort-<id>: the film's own scene in a band,
 headline above, captions below) and gets the film's own sound for that stretch.
@@ -22,13 +23,26 @@ FPS = 30
 
 def main() -> int:
     video = Path(sys.argv[1]).resolve()
-    only = set(sys.argv[2:])
+    upload = "--upload" in sys.argv
+    only = set(a for a in sys.argv[2:] if not a.startswith("--"))
     script = json.loads((video / "script.json").read_text())
     beats = {b["id"]: b for b in json.loads((video / "assets" / "timings.json").read_text())["beats"]}
     out = video / "render" / "shorts"
     out.mkdir(parents=True, exist_ok=True)
     for cut in script.get("shorts", []):
         if only and cut["id"] not in only:
+            continue
+        if upload:
+            film_result = video / "upload-result.json"
+            link = json.loads(film_result.read_text())["watch"] if film_result.exists() else ""
+            description = (f"{cut.get('blurb', '')}\n\nFrom the full film, \"{script['title']}\": {link}\n"
+                           "Every fact is sourced; the list is in the full film's description.\n\n"
+                           "Narration is an AI voice. The animation is an explainer, not footage.")
+            cmd = [sys.executable, "pipeline/upload.py", str(video), "--film", f"render/shorts/{cut['id']}.mp4", "--title", cut["title"],
+                   "--description", description, "--result", f"upload-result-short-{cut['id']}.json"]
+            if cut.get("publish_at"):
+                cmd += ["--publish-at", cut["publish_at"]]
+            subprocess.run(cmd, cwd=ROOT, check=True)
             continue
         # the same arithmetic as studio/src/lead/Short.tsx (shortRange)
         start = max(0.0, beats[cut["from"]]["start"] - 0.3)

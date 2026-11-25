@@ -211,5 +211,16 @@ What changed from Nick's draft, and why:
   before the blast. Video id `PdBNKBscebY`. Nick chose to publish without a listen-through
   ("don't go private fucking send it"), then asked for a release time when people are awake. The
   custom thumbnail did not take: the channel is not verified for custom thumbnails yet.
+- **Shorts.** Nick, after the upload: "we might need to create a bunch of YouTube shorts out of
+  this... Is that a possibility?", then "go, all 5". Five cuts of the film (the film's picture in
+  a band, headline above, big captions below), each held private and released by YouTube before
+  the blast, 2026-11-25, Central time:
+  - 12:00 UTC: The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts (https://youtu.be/cTcFs8wpEbA)
+  - 12:40 UTC: We Checked the Army's Lead Dust Map Ourselves #shorts (https://youtu.be/S1zVkfAmIUI)
+  - 13:20 UTC: The Army's Lead Azide Barrels Were Last Topped Up in September 2025 #shorts (https://youtu.be/lHQiEdmsAkE)
+  - 14:00 UTC: In 1984 the Army Started Destroying Its Lead Azide. Then It Stopped. #shorts (https://youtu.be/NHt_12mVUzM)
+  - 14:40 UTC: "We Are Under Attack"? No. It's Neglect. #shorts (https://youtu.be/pQC49AuIZHY)
+  The first two carry the "about to" headline and the hour; the other three carry the film's
+  title, so they do not date. All link to the full film in the description.
 - **To do after the blast:** switch the title to "Five Tons of Neglect: The Army's Lead Bomb in
   Iowa" and the thumbnail to a calmer one; then the new ending when the EPA's results are out.

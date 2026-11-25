@@ -390,7 +390,42 @@
       "from": "cold-1",
       "to": "cold-title",
       "day_of": true,
-      "title": "The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts"
+      "publish_at": "2026-11-25T12:00:00Z",
+      "title": "The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts",
+      "blurb": "Sixty-eight barrels, nearly five tons of lead azide, and a plan to detonate it where it sits."
+    },
+    {
+      "id": "ours",
+      "from": "our-1",
+      "to": "our-7",
+      "day_of": true,
+      "publish_at": "2026-11-25T12:40:00Z",
+      "title": "We Checked the Army's Lead Dust Map Ourselves #shorts",
+      "blurb": "Where the National Weather Service's forecast wind carries the cloud, hour by hour. Our estimate; not an official map, and not lead levels."
+    },
+    {
+      "id": "lastcheck",
+      "from": "tl-7",
+      "to": "tl-11",
+      "publish_at": "2026-11-25T13:20:00Z",
+      "title": "The Army's Lead Azide Barrels Were Last Topped Up in September 2025 #shorts",
+      "blurb": "The routine was a check every month and a top-up every September. Then it stopped."
+    },
+    {
+      "id": "y1984",
+      "from": "sur-1",
+      "to": "sur-8",
+      "publish_at": "2026-11-25T14:00:00Z",
+      "title": "In 1984 the Army Started Destroying Its Lead Azide. Then It Stopped. #shorts",
+      "blurb": "What an Army safety officer wrote down in 1984 about the stockpile that is being detonated in Iowa."
+    },
+    {
+      "id": "closer",
+      "from": "thanks-1",
+      "to": "thanks-5",
+      "publish_at": "2026-11-25T14:40:00Z",
+      "title": "\"We Are Under Attack\"? No. It's Neglect. #shorts",
+      "blurb": "Why we made a film about the Army's lead azide detonation in Iowa."
     }
   ],
   "voice": {

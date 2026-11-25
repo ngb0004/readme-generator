@@ -60,12 +60,21 @@ def main() -> int:
     ap.add_argument("video", type=Path)
     ap.add_argument("--thumbnail", default=None, help="path under the video folder (default: render/thumbnail.jpg)")
     ap.add_argument("--privacy", default=None, choices=["private", "unlisted", "public"], help="override upload.json")
+    ap.add_argument("--film", default=None, help="another file under the video folder (a Short), instead of render/final.mp4")
+    ap.add_argument("--title", default=None, help="with --film: its title")
+    ap.add_argument("--description", default=None, help="with --film: its description")
+    ap.add_argument("--publish-at", default=None, help="with --film: release time, UTC, like 2026-11-25T12:00:00Z")
+    ap.add_argument("--result", default="upload-result.json", help="where to write the result, under the video folder")
     args = ap.parse_args()
 
     video = args.video.resolve()
     meta = json.loads((video / "upload.json").read_text())
     film = video / "render" / "final.mp4"
     thumb = video / (args.thumbnail or "render/thumbnail.jpg")
+    if args.film:                       # a Short: the film's flags and tags, its own words and time
+        film = video / args.film
+        thumb = video / "no-thumbnail"  # YouTube picks a frame for a Short
+        meta = {**meta, "title": args.title, "description": args.description, "publishAt": args.publish_at}
     token_file = os.environ.get("YT_TOKEN_FILE")
     if not token_file or not Path(token_file).exists():
         sys.exit("UPLOAD FAILED: set YT_TOKEN_FILE to the grant file (see CLAUDE.md, Upload).")
@@ -131,7 +140,7 @@ def main() -> int:
     result = {"id": vid, "watch": f"https://youtu.be/{vid}", "studio": f"https://studio.youtube.com/video/{vid}/edit",
               "privacy": body["status"]["privacyStatus"], "goes_public_at": publish_at, "title": meta["title"], "thumbnail": f"{thumb.name}: {thumb_note}",
               "uploaded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())}
-    (video / "upload-result.json").write_text(json.dumps(result, indent=2) + "\n")
+    (video / args.result).write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
     return 0
 
