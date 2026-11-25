@@ -34,6 +34,9 @@ export const NEWEST: Band = {bearing: 221, length: 100, half: 11, back: 5};
 /** The recommended relocation zone: "a 5-mile cone" southwest of the plant, plus one mile. The angle is not given. */
 export const CONE = {bearing: 221, length: 5, angle: 46, pad: 1};
 
+/** Laid under the map so open water (Lake Michigan, in the wide shots) is water and not a hole. */
+export const Water: React.FC = () => <rect x={0} y={0} width={W} height={H} fill="#081222" />;
+
 export const BASE = '#0d1727';
 export const IOWA = '#111f35';
 export const HILITE = '#1c3152';
@@ -58,14 +61,19 @@ export const onBand = (b: Band, along: number, across = 0): LL => dest(dest(PLAC
 /** The unit vector on screen for a compass bearing (the map is north-up and conformal). */
 export const heading = (bearing: number): XY => [Math.sin((bearing * Math.PI) / 180), -Math.cos((bearing * Math.PI) / 180)];
 
+/** How far a band reaches down its axis and how wide it is as `grow` runs 0..1. At 0 it is a round patch centred on the plant. */
+const shape = (b: Band, grow: number) => {
+  const g = clamp(grow);
+  return {len: b.back + lerp(b.back, b.length, g), half: lerp(b.back, b.half, Math.pow(g, 0.75))};
+};
+
 /**
  * The outline of a band. `grow` runs 0..1: it starts as a round patch over the plant and
  * stretches into the long oval, the way the reported maps step through the day.
  */
 export const bandPath = (proj: GeoProjection, b: Band, grow = 1, o: {inset?: number; wobble?: number; time?: number} = {}) => {
-  const g = clamp(grow);
-  const len = b.back + b.length * g;
-  const half = lerp(Math.min(b.half, b.back * 1.15), b.half, Math.pow(g, 0.75)) * (1 - (o.inset ?? 0));
+  const len = shape(b, grow).len;
+  const half = shape(b, grow).half * (1 - (o.inset ?? 0));
   const n = 44;
   const side = (sign: number) =>
     Array.from({length: n + 1}, (_, i) => {
@@ -94,7 +102,7 @@ export const SoftLayer: React.FC<{blur: number; a?: number; children: React.Reac
 /** The soft body of a band: goes inside a SoftLayer. `live` 1 = the map in force, 0 = a superseded or doubtful one. */
 export const BandFill: React.FC<{proj: GeoProjection; band: Band; grow?: number; a?: number; live?: number}> = ({proj, band, grow = 1, a = 1, live = 1}) => {
   const k = clamp(a);
-  if (k <= 0.003 || grow <= 0) return null;
+  if (k <= 0.003) return null;
   const l = clamp(live);
   return (
     <g opacity={k}>
@@ -111,18 +119,17 @@ export const BandFill: React.FC<{proj: GeoProjection; band: Band; grow?: number;
 export const BandMarks: React.FC<{proj: GeoProjection; band: Band; time: number; grow?: number; a?: number; live?: number; doubt?: number; seed?: number}> = ({proj, band, time, grow = 1, a = 1, live = 1, doubt = 0, seed = 0}) => {
   const k = clamp(a);
   const g = clamp(grow);
-  if (k <= 0.003 || g <= 0) return null;
+  if (k <= 0.003) return null;
   const l = clamp(live);
   const d = clamp(doubt);
   const s = ppm(proj);
-  const len = band.back + band.length * g;
-  const half = lerp(Math.min(band.half, band.back * 1.15), band.half, Math.pow(g, 0.75));
+  const {len, half} = shape(band, g);
   const dash = Math.max(1 - l, d);
   return (
     <g opacity={k}>
       {l > 0.02
-        ? Array.from({length: 110}, (_, i) => {
-            const u = (rnd(i * 1.37 + seed) + time * (0.016 + rnd(i * 2.9) * 0.02)) % 1;
+        ? Array.from({length: Math.round(lerp(26, 110, g))}, (_, i) => {
+            const u = (rnd(i * 1.37 + seed) + time * (0.016 + rnd(i * 2.9) * 0.02) * lerp(4, 1, g)) % 1;
             const w = Math.sqrt(Math.max(0, 1 - Math.pow(2 * u - 1, 2)));
             const across = (rnd(i * 5.3 + seed) * 2 - 1) * half * w * 0.82;
             const [x, y] = xy(proj, onBand(band, -band.back + len * u, across));
@@ -158,8 +165,8 @@ export const WindField: React.FC<{time: number; bearing: number; a?: number}> = 
   );
 };
 
-/** An arrow out of the plant, pointing where the wind is carrying things. `name` is the label at its tip. */
-export const WindHand: React.FC<{proj: GeoProjection; bearing: number; a?: number; len?: number; name: string}> = ({proj, bearing, a = 1, len = 230, name}) => {
+/** An arrow out of the plant, pointing where the wind is carrying things. `name` is the label at its tip, if it has one. */
+export const WindHand: React.FC<{proj: GeoProjection; bearing: number; a?: number; len?: number; name?: string}> = ({proj, bearing, a = 1, len = 230, name}) => {
   const k = clamp(a);
   if (k <= 0.003) return null;
   const [px, py] = xy(proj, PLACE.plant);
@@ -186,9 +193,11 @@ export const WindHand: React.FC<{proj: GeoProjection; bearing: number; a?: numbe
       <polygon points={pts} fill="#04060a" stroke="#04060a" strokeWidth={10} strokeLinejoin="round" />
       <line x1={px + dx * 26} y1={py + dy * 26} x2={tx} y2={ty} stroke={C.white} strokeWidth={9} strokeLinecap="round" />
       <polygon points={pts} fill={C.white} />
-      <text x={lx} y={ly} textAnchor="middle" fontFamily={FONT.mono} fontWeight={700} fontSize={28} letterSpacing="0.2em" fill={C.white} stroke="#04060a" strokeWidth={7} paintOrder="stroke">
-        {name}
-      </text>
+      {name ? (
+        <text x={lx} y={ly} textAnchor="middle" fontFamily={FONT.mono} fontWeight={700} fontSize={28} letterSpacing="0.2em" fill={C.white} stroke="#04060a" strokeWidth={7} paintOrder="stroke">
+          {name}
+        </text>
+      ) : null}
     </g>
   );
 };
@@ -244,16 +253,18 @@ export const conePath = (proj: GeoProjection, reach = 1, pad = 0) => {
     const arc = Array.from({length: 19}, (_, i) => xy(proj, dest(PLACE.plant, CONE.bearing - half + (CONE.angle * i) / 18, len)));
     return 'M ' + [xy(proj, PLACE.plant), ...arc].map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' L ') + ' Z';
   }
-  // the same wedge pushed out by `pad` miles on every side: two edges moved sideways, a wider arc, a rounded back
-  const edge = (sign: number) => {
-    const b = CONE.bearing + sign * half;
-    return [dest(dest(PLACE.plant, b, 0), b + sign * 90, pad), dest(dest(PLACE.plant, b, len), b + sign * 90, pad)];
-  };
-  const arc = Array.from({length: 19}, (_, i) => dest(PLACE.plant, CONE.bearing - half + (CONE.angle * i) / 18, len + pad));
-  const back = Array.from({length: 13}, (_, i) => dest(PLACE.plant, CONE.bearing + half + 90 + ((360 - CONE.angle - 180) * i) / 12, pad));
-  const [l0, l1] = edge(-1);
-  const [r0, r1] = edge(1);
-  const pts = [l0, l1, ...arc, r1, r0, ...back].map((p) => xy(proj, p));
+  // the same wedge with `pad` miles added on every side: the two edges moved outwards, round
+  // corners at their far ends, a wider arc across the front and a round back behind the plant
+  const A = PLACE.plant;
+  const bl = CONE.bearing - half;
+  const br = CONE.bearing + half;
+  const sweep = (centre: LL, from: number, to: number, r: number, n: number) => Array.from({length: n + 1}, (_, i) => dest(centre, from + ((to - from) * i) / n, r));
+  const pts = [
+    ...sweep(dest(A, bl, len), bl - 90, bl, pad, 6),
+    ...sweep(A, bl, br, len + pad, 18),
+    ...sweep(dest(A, br, len), br, br + 90, pad, 6),
+    ...sweep(A, br + 90, bl + 270, pad, 12),
+  ].map((p) => xy(proj, p));
   return 'M ' + pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(' L ') + ' Z';
 };
 
