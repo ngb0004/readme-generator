@@ -98,18 +98,6 @@
       "short": "U.S. ARMY"
     },
     {
-      "id": "army_openhouse",
-      "kind": "official",
-      "publisher": "U.S. Army Sustainment Command",
-      "title": "IAAAP hosts open house, shares Lead Azide detonation information",
-      "url": "https://www.army.mil/article/296388",
-      "published": "2026-10-28",
-      "retrieved": "2026-11-24",
-      "file": "source/army-open-house-oct.html",
-      "sha256": "851bd2f2899d2811a897e31ef5851ea066c3675f2657f0ed5dc3fac82be6eaa1",
-      "short": "U.S. ARMY"
-    },
-    {
       "id": "epa_notice",
       "kind": "official",
       "publisher": "U.S. Environmental Protection Agency, Region 7",
@@ -119,18 +107,6 @@
       "retrieved": "2026-11-24",
       "file": "source/epa-public-notice.html",
       "sha256": "8370eadbb6d1bd7050d85efab64d261ba38bf1550690694b72c73257a4410bb5",
-      "short": "U.S. EPA"
-    },
-    {
-      "id": "epa_profile",
-      "kind": "official",
-      "publisher": "U.S. Environmental Protection Agency, Region 7",
-      "title": "Site Profile: IAAAP Lead Azide",
-      "url": "https://response.epa.gov/site/site_profile.aspx?site_id=17211",
-      "published": "2026-11",
-      "retrieved": "2026-11-24",
-      "file": "source/epa-osc-site-profile.html",
-      "sha256": "9f7525bf1cf28bf2c5281e80b907370a4523db50fe5c4cdee3362aa45753b34d",
       "short": "U.S. EPA"
     },
     {
@@ -353,17 +329,6 @@
       "published": "n.d.",
       "retrieved": "2026-11-24",
       "local": "source/news/wikipedia-lead-azide.html",
-      "short": "WIKIPEDIA"
-    },
-    {
-      "id": "wiki_minden",
-      "kind": "news",
-      "publisher": "Wikipedia",
-      "title": "Camp Minden",
-      "url": "https://en.wikipedia.org/wiki/Camp_Minden",
-      "published": "n.d.",
-      "retrieved": "2026-11-24",
-      "local": "source/news/wikipedia-camp-minden.html",
       "short": "WIKIPEDIA"
     },
     {

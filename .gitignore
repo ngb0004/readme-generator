@@ -1,2 +1,3 @@
 DS_Store/
-node_modules/
+node_modules/# The special's narration is 78 MB; it is rebuilt by pipeline/voice.py (timings.json is kept).
+dont-die-at-work/specials/*/assets/voice.wav
