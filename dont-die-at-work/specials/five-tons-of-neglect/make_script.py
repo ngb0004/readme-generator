@@ -485,9 +485,10 @@ b("end-11", S, "We will update this when the results are in.", [], [], gap=0.75,
 
 # ------------------------------------------------------------------ one more thing
 # Nick, 2026-11-25: the film exists because a reel in his feed put "We are under attack!!" over the
-# emergency alert. He wanted the man's picture and the words "peak moron". The words are in, aimed
-# at the claim and marked as commentary. The picture is not: one frame of the reel is all that was
-# seen, and a frame of someone else's video hands them a takedown. Nobody is pictured or named.
+# emergency alert. He wanted the man's picture and the words "peak moron". Both are in: the frame he
+# supplied is on screen (studio/public/reel/, not kept in git), and the words are spoken about the
+# claim and marked as commentary. The man is not named. The frame carries its own text (the alert,
+# his caption); none of it is typed here.
 S = "thanks"
 b("thanks-1", S, "One more thing. We only went digging because a video in our feed said this: we are under attack.",
   ["\"We are under attack!!\"", "A VIDEO IN OUR FEED"], exempt="note", gap=0.3)

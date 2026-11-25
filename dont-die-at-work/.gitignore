@@ -38,3 +38,6 @@ specials/*/assets/.voice-cache/
 
 # A special's narration runs to ~78 MB; voice.py rebuilds it (timings.json is kept).
 specials/*/assets/voice.wav
+
+# A frame of someone else's video that Nick supplied for a call-out. Used in the film, not kept in git.
+studio/public/reel/

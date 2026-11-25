@@ -340,12 +340,16 @@ What is different for a special (`"lane": "special"` in `script.json`; `verify.p
   real facts". He wants this to be a staple, under a name like "Peak Moron Investigator", and to
   name public figures ("I can investigate Tucker Carlson... and say his name proudly"). How the
   first one handled it: the claim is quoted exactly ("We are under attack!!"), answered with a
-  sourced line, and the insult ("peak moron") is aimed at the claim and marked as commentary.
-  The man who posted it is not pictured or named. That last part was my call, against Nick's
-  request for his picture: only one frame of the reel had been seen, and a frame of someone
-  else's video gives them a takedown form on the day the film matters. My reading of where the
-  line sits: public figures are named and quoted; small accounts are quoted, not shown. Nick has
-  not agreed to that as a rule. The workplace-death videos must not sit under the "moron" name.
+  sourced line, and the insult ("peak moron") is spoken about the claim and marked as commentary.
+  The frame of his reel is on screen with the stamp across it. I had left the picture out twice
+  (a frame of someone else's video gives them a takedown form on the day the film matters, and I
+  had seen only that one frame); Nick overruled it: "I don't give a fuck if it gets pulled, we'll
+  deal with that later, it's part of the channel!... it's a 2 second public image of something he
+  posted, it's fair use." He had seen the reel and the risk is his to take, so it went in. For
+  the next one: when he asks for the person's post on screen, put it on screen, say once what it
+  risks, and move on. The frame he supplies stays out of git (`studio/public/reel/`). The man is
+  not named and nothing is said about him beyond what is in the frame. The workplace-death
+  videos must not sit under the "moron" name.
 - **Say which edition it is.** A film finished before the event says so on screen and in the
   description, and gets a new ending when the facts are in.
 - **Sections** are whatever the film needs (`"sections"` in `script.json`), not the Short's seven.
