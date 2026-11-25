@@ -267,6 +267,14 @@ off". The recogniser cannot catch this (the words are right) and I cannot hear i
 before any render, list the stops inside each beat from `timings.json` and rewrite every line
 where a comma got more than about 0.3 s.
 
+**Nick's verdict on the voice** (2026-11-25, after hearing the first Short): "right now you sound
+like a straight fucking AI... we just have to figure out in the future how to make you sound more
+natural and less AI". Fixing the pauses will not change that: the engine reads flat, with no
+emphasis. What would, in the order I would try them (my ranking, not his decision): Nick reads
+the script into his phone and the picture is timed to his recording; a paid voice, possibly a
+clone of his own, which is a new tool and needs his approval and a key; and with either one,
+lines written to be spoken (short, contractions, his rewrites). He has not chosen.
+
 ## Working with Nick
 
 - **Push back.** Nick asked for this directly (2026-11-21, reviewing the first cut of 001): do not
