@@ -255,6 +255,18 @@ respelling in the beat's `say` field ("led", "E.P.A.", "nineteen eighty-four"). 
 claims keep using `narration`. `voice.py` also keeps each beat's audio in `assets/.voice-cache/`,
 so a re-run only records the lines that changed.
 
+**Pauses.** Nick, on the first Short of the special (2026-11-25): "why do you sometimes have
+these super unnatural pauses?" The engine picks the length of every stop itself, from the
+punctuation. Measured on that film, word to word: 0.40 s between two beats and 0.54 s at a full
+stop inside a beat (medians), which is fine; 0.22 s at a typical comma, but 37 of 116 commas got
+0.35 s or more, as long as the break between two sentences. The worst are the commas around an
+aside: "so sensitive that, [0.40] the Army says, [0.42] slight friction or movement can set it
+off". The recogniser cannot catch this (the words are right) and I cannot hear it, but
+`timings.json` shows it, and I had not looked. So: do not wedge an attribution between two commas
+(put "the Army says" first, last, or in its own sentence); no comma straight after "that"; and
+before any render, list the stops inside each beat from `timings.json` and rewrite every line
+where a comma got more than about 0.3 s.
+
 ## Working with Nick
 
 - **Push back.** Nick asked for this directly (2026-11-21, reviewing the first cut of 001): do not
