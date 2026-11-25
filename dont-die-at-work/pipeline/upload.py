@@ -11,6 +11,13 @@ The film goes up with the privacy set in upload.json. If upload.json has "publis
 2026-11-25T11:00:00Z) and that time is still ahead, YouTube holds it private and releases it at
 that moment by itself.
 
+What this cannot do yet: publish. YouTube locks a video as private when it is uploaded through an
+API project that has not passed YouTube's API audit ("restricted to private viewing mode", from
+the videos.insert reference), whatever privacy or release time is sent, and that lock cannot be
+appealed. Until Nick's project passes the audit, use this to put a file in front of him, and
+have him upload anything public in YouTube Studio. A video id in the reply means YouTube took
+the file; it does not mean anyone will ever see it.
+
 Signing in. No secret lives in this repository:
   - The uploader app (a Google Cloud OAuth client) is saved as a network secret on the cloud
     environment for oauth2.googleapis.com. The environment's proxy adds it to token requests, so
@@ -126,7 +133,8 @@ def main() -> int:
         if r.returncode != 0 or "id" not in reply:
             sys.exit(f"UPLOAD FAILED sending the film: {json.dumps(reply)[:600] or r.stderr.strip()}")
         vid = reply["id"]
-        print(f"uploaded in {time.time() - t0:.0f} s: video id {vid}, status {reply.get('status', {})}")
+        channel = f"{reply.get('snippet', {}).get('channelTitle') or 'unnamed channel'} ({reply.get('snippet', {}).get('channelId', 'id not given')})"
+        print(f"uploaded in {time.time() - t0:.0f} s: video id {vid}, on the channel {channel}, status {reply.get('status', {})}")
 
         # 3. the thumbnail (needs a phone-verified channel; the film is up either way)
         thumb_note = "not sent"
@@ -137,11 +145,12 @@ def main() -> int:
             thumb_note = "set" if r.returncode == 0 and "items" in treply else f"NOT set: {json.dumps(treply.get('error', {}).get('message', treply))[:300]}"
         print(f"thumbnail {thumb.name}: {thumb_note}")
 
-    result = {"id": vid, "watch": f"https://youtu.be/{vid}", "studio": f"https://studio.youtube.com/video/{vid}/edit",
+    result = {"id": vid, "channel": channel, "watch": f"https://youtu.be/{vid}", "studio": f"https://studio.youtube.com/video/{vid}/edit",
               "privacy": body["status"]["privacyStatus"], "goes_public_at": publish_at, "title": meta["title"], "thumbnail": f"{thumb.name}: {thumb_note}",
               "uploaded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())}
     (video / args.result).write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
+    print("NOT PUBLISHED: YouTube keeps uploads from an unaudited API project private. Have Nick confirm it in his Studio, on that channel.")
     return 0
 
 

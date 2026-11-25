@@ -385,6 +385,24 @@ Building one:
 flags from `upload.json`, sets the thumbnail, and writes `upload-result.json`. It uploads as
 Private unless `upload.json` says otherwise: Nick watches it and publishes it himself.
 
+**It cannot publish yet, and its reply proves nothing (2026-11-25).** On the first night I told
+Nick the film and five Shorts were "uploaded and scheduled". He opened Studio and the channel was
+empty. What I had not checked:
+
+- YouTube's reference for the upload call: "All videos uploaded via the videos.insert endpoint
+  from unverified API projects created after 28 July 2020 will be restricted to private viewing
+  mode." Nick's Google project is new and has not been through YouTube's API audit. YouTube's
+  help page adds that a video locked this way cannot be appealed; it has to be uploaded again on
+  the site. So until that audit is passed, anything meant to go public is uploaded by Nick in
+  YouTube Studio: give him the files named with their titles, the description as a text file,
+  and the times.
+- The video lands on whichever channel was chosen on the Allow screen, which need not be the one
+  he has open. `upload.py` now writes the channel's name into the result. Read it back to him.
+- A video id in the reply means YouTube took the file, nothing more. Do not say "scheduled" or
+  "published" until Nick has seen it in his own Studio, or the sign-in can read as well as upload
+  (add the scope `https://www.googleapis.com/auth/youtube.readonly` to the consent link) and the
+  status has been read back.
+
 How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the repository):
 
 - Nick's Google Cloud project is called "Oauth". The YouTube Data API v3 is enabled there, and the
