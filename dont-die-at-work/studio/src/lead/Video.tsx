@@ -22,7 +22,7 @@ import {Scene, Stage, StageOptions} from './Stage';
 import {S} from './timeline';
 
 // One scene per section of script.json, in the script's order.
-const SCENES: Record<string, {Scene: Scene; options: StageOptions}> = {
+export const SCENES: Record<string, {Scene: Scene; options: StageOptions}> = {
   cold: {Scene: Cold, options: cold},
   what: {Scene: What, options: what},
   surplus: {Scene: Surplus, options: surplus},

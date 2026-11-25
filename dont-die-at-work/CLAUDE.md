@@ -278,6 +278,14 @@ so a re-run only records the lines that changed.
   instead. He overruled it, bluntly (2026-11-25, see Specials). The lesson I take from it (my
   reading): when an idea carries a risk, the answer is to do it rigorously and label it, and to
   say exactly which part cannot be done honestly, not to fall back on the official account.
+- **He writes the last draft of the words.** After the first special (2026-11-25): "the script is
+  so hard. Like I almost need to do the talking... You need to give me a baseline script... I'm
+  gonna make it my own a little bit, and then you can clean it up." So: send him the baseline as
+  plain text, one line per row; he rewrites what he wants; then check every changed line against
+  the sources, fix the length, and re-record only those lines. "Ideally, I don't have to do the
+  script every time, but it would make the videos better if I did." Keep his rewrites: they are
+  the best guide to how the next baseline should sound. He has also been offered the option of
+  recording the narration himself (the picture can be timed to his voice); he has not answered.
 - **Rules are not a substitute for thinking.** Cut 1 met every rule and was shallow. If the rules
   are producing a bad video, say so before building, not after.
 - His bar for the picture is "top echelon", not "decent". A cut that merely works is not done.
@@ -400,6 +408,15 @@ How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the 
 - Lesson from that night: a secure card for a secret closes if he sends a chat message while it
   is open. Tell him to fill it in before typing. And ask for screenshots only of pages where the
   secret is hidden; the "client created" box shows it in full.
+
+## Shorts from a film
+
+`pipeline/shorts.py <video folder> [id]` cuts the Shorts listed under `"shorts"` in `script.json`
+out of the finished film: each runs from one beat to another inside one section, with the film's
+own narration, sound and picture. The film is drawn wide, so the picture sits in a band across
+the middle (`studio/src/lead/Short.tsx`), with the thumbnail's headline above and phone-sized
+captions below. A Short marked `"day_of"` carries the hour of the event and must go out before
+it. Nick asked for these on 2026-11-25 to get the film traction; none is posted without his say.
 
 ## Not built yet
 

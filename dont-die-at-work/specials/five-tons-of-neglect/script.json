@@ -67,7 +67,8 @@
     "estimate": "OUR ESTIMATE · NATIONAL WEATHER SERVICE FORECAST",
     "ours_note": "OUR ESTIMATE OF WHERE THE WIND CARRIES IT · NOT AN OFFICIAL MAP · NOT LEAD LEVELS",
     "ours_aloft": "FASTER WIND ABOVE",
-    "ours_ground": "WIND NEAR THE GROUND"
+    "ours_ground": "WIND NEAR THE GROUND",
+    "short_footer": "FULL VIDEO ON THE CHANNEL"
   },
   "sources": [
     {
@@ -383,6 +384,15 @@
     ],
     "claims_from": "cold-5"
   },
+  "shorts": [
+    {
+      "id": "open",
+      "from": "cold-1",
+      "to": "cold-title",
+      "day_of": true,
+      "title": "The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts"
+    }
+  ],
   "voice": {
     "engine": "kokoro-onnx",
     "voice": "am_michael",

@@ -41,3 +41,6 @@ specials/*/assets/voice.wav
 
 # A frame of someone else's video that Nick supplied for a call-out. Used in the film, not kept in git.
 studio/public/reel/
+
+# Shorts cut from a film: rebuilt by pipeline/shorts.py
+specials/*/render/shorts/

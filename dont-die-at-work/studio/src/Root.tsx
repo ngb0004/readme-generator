@@ -1,6 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {FPS, H, LF, W} from './engine/theme';
+import {SH, SHORTS, SW, Short, shortFrames} from './lead/Short';
 import {Thumb as LeadThumb, ThumbRain as LeadThumbRain, ThumbToday as LeadThumbToday} from './lead/Thumb';
 import {DURATION as LEAD_DURATION} from './lead/timeline';
 import {Film as Lead} from './lead/Video';
@@ -17,5 +18,8 @@ export const Root: React.FC = () => (
     <Composition id="LeadThumb" component={LeadThumb} width={LF.W} height={LF.H} fps={FPS} durationInFrames={1} />
     <Composition id="LeadThumbToday" component={LeadThumbToday} width={LF.W} height={LF.H} fps={FPS} durationInFrames={1} />
     <Composition id="LeadThumbRain" component={LeadThumbRain} width={LF.W} height={LF.H} fps={FPS} durationInFrames={1} />
+    {SHORTS.map((cut) => (
+      <Composition key={cut.id} id={`LeadShort-${cut.id}`} component={Short} defaultProps={{id: cut.id}} width={SW} height={SH} fps={FPS} durationInFrames={shortFrames(cut)} />
+    ))}
   </>
 );

@@ -547,12 +547,20 @@ script = {
                "knoxCity": "KNOX CITY", "macon": "MACON", "wind": "WIND",
                "estimate": "OUR ESTIMATE · NATIONAL WEATHER SERVICE FORECAST",
                "ours_note": "OUR ESTIMATE OF WHERE THE WIND CARRIES IT · NOT AN OFFICIAL MAP · NOT LEAD LEVELS",
-               "ours_aloft": "FASTER WIND ABOVE", "ours_ground": "WIND NEAR THE GROUND"},
+               "ours_aloft": "FASTER WIND ABOVE", "ours_ground": "WIND NEAR THE GROUND",
+               "short_footer": "FULL VIDEO ON THE CHANNEL"},
     "sources": sources,
     # Nick, 2026-11-25: "it's raining lead in IOWA today!... show a picture of rain in IOWA but make the
     # rain like lead color". Kept his line and made it true with two words: it has not happened yet
     # ("about to"), and what falls is dust with lead in it ("dust"), which is the Army's own wording.
     "thumbnail": {"lines": ["IT'S ABOUT TO RAIN", "LEAD DUST", "TODAY"], "claims_from": "cold-5"},
+    # Shorts cut from the film (Nick, 2026-11-25). Each runs from one beat to another inside one
+    # section, with the narration and picture exactly as in the film. "day_of" adds the hour tag,
+    # so it is only for Shorts that go out before the blast.
+    "shorts": [
+        {"id": "open", "from": "cold-1", "to": "cold-title", "day_of": True,
+         "title": "The Army Is About to Blow Up 5 Tons of Lead Explosive in Iowa #shorts"},
+    ],
     "voice": {"engine": "kokoro-onnx", "voice": "am_michael", "speed": 1.08, "lang": "en-us"},
     "beats": beats,
 }
