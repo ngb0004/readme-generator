@@ -222,17 +222,14 @@ What changed from Nick's draft, and why:
   - 14:40 UTC: "We Are Under Attack"? No. It's Neglect. #shorts (https://youtu.be/pQC49AuIZHY)
   The first two carry the "about to" headline and the hour; the other three carry the film's
   title, so they do not date. All link to the full film in the description.
-- **The uploads did not reach the channel (found 2026-11-25, about 08:45 UTC).** Nick opened
-  YouTube Studio on the channel (by then renamed "Peak Moron Investigator") and found nothing:
-  no film, no Shorts. Two faults, both mine. First, the API puts a video on whichever channel was
-  picked on Google's Allow screen, the sign-in could only upload, so I could not see which channel
-  that was, and I never asked Nick to confirm the film was in his Studio before telling him it was
-  scheduled. Second, YouTube's own reference for the upload call says that videos sent through an
-  API project that has not passed its audit "will be restricted to private viewing mode", and its
-  help page says such a lock cannot be appealed: the video has to be uploaded again on the site.
-  Our Google project is new and unaudited, so the scheduled releases above would most likely not
-  have happened on any channel. I had not checked that before saying "scheduled". The six ids
-  above are those stray uploads. Fix that night: Nick uploads the same six files in Studio
-  himself (files named with their titles, description and times supplied).
+- **A false alarm of my making (2026-11-25, 08:45 to 10:55 UTC).** Nick opened Studio on the
+  Shorts tab minutes after the upload, saw nothing, and said the film was not there. Without
+  finding out what he was looking at, I told him the six uploads were on another channel and that
+  YouTube locks uploads from an unaudited API project as private, and sent him the files to upload
+  by hand. The lock rule had been withdrawn on 2026-11-02 (YouTube's API description: "Videos
+  uploaded from unverified API projects are not restricted to private viewing mode"); I was
+  quoting the old one. Corrected to him at 10:55 UTC. Where the six videos are, and whether each
+  release happened, is still to be confirmed by him in Studio or by reading it back with a
+  sign-in that can read.
 - **To do after the blast:** switch the title to "Five Tons of Neglect: The Army's Lead Bomb in
   Iowa" and the thumbnail to a calmer one; then the new ending when the EPA's results are out.

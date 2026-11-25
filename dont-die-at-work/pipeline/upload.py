@@ -11,12 +11,9 @@ The film goes up with the privacy set in upload.json. If upload.json has "publis
 2026-11-25T11:00:00Z) and that time is still ahead, YouTube holds it private and releases it at
 that moment by itself.
 
-What this cannot do yet: publish. YouTube locks a video as private when it is uploaded through an
-API project that has not passed YouTube's API audit ("restricted to private viewing mode", from
-the videos.insert reference), whatever privacy or release time is sent, and that lock cannot be
-appealed. Until Nick's project passes the audit, use this to put a file in front of him, and
-have him upload anything public in YouTube Studio. A video id in the reply means YouTube took
-the file; it does not mean anyone will ever see it.
+What the reply does not tell you: a video id means YouTube took the file. With the upload-only
+sign-in nothing can be read back afterwards, so have Nick confirm it in YouTube Studio (Content,
+the Videos tab, Visibility column) before calling anything scheduled or published.
 
 Signing in. No secret lives in this repository:
   - The uploader app (a Google Cloud OAuth client) is saved as a network secret on the cloud
@@ -150,7 +147,7 @@ def main() -> int:
               "uploaded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())}
     (video / args.result).write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
-    print("NOT PUBLISHED: YouTube keeps uploads from an unaudited API project private. Have Nick confirm it in his Studio, on that channel.")
+    print("Not confirmed from here: have Nick look in Studio (Content, Videos tab) on that channel.")
     return 0
 
 

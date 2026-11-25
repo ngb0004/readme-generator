@@ -405,23 +405,28 @@ Building one:
 flags from `upload.json`, sets the thumbnail, and writes `upload-result.json`. It uploads as
 Private unless `upload.json` says otherwise: Nick watches it and publishes it himself.
 
-**It cannot publish yet, and its reply proves nothing (2026-11-25).** On the first night I told
-Nick the film and five Shorts were "uploaded and scheduled". He opened Studio and the channel was
-empty. What I had not checked:
+**Check the rule on the day, and find out what Nick is looking at (2026-11-25).** On the first
+night I told Nick the film and five Shorts were "uploaded and scheduled". He opened Studio on the
+Shorts tab three minutes after the Shorts went up, saw nothing, and said so. I then made it
+worse. From memory and one stale search result I told him that YouTube locks every upload from
+an unaudited API project as private, that the videos were on some other channel, and that he had
+to upload all six files by hand. I had checked none of it. The lock rule was withdrawn on
+2026-11-02: YouTube's own API description says "Videos uploaded from unverified API projects are
+not restricted to private viewing mode." He lost two hours of that night to a rule that no longer
+exists, after spending an hour giving me the access. What to do differently:
 
-- YouTube's reference for the upload call: "All videos uploaded via the videos.insert endpoint
-  from unverified API projects created after 28 July 2020 will be restricted to private viewing
-  mode." Nick's Google project is new and has not been through YouTube's API audit. YouTube's
-  help page adds that a video locked this way cannot be appealed; it has to be uploaded again on
-  the site. So until that audit is passed, anything meant to go public is uploaded by Nick in
-  YouTube Studio: give him the files named with their titles, the description as a text file,
-  and the times.
-- The video lands on whichever channel was chosen on the Allow screen, which need not be the one
-  he has open. `upload.py` now writes the channel's name into the result. Read it back to him.
-- A video id in the reply means YouTube took the file, nothing more. Do not say "scheduled" or
-  "published" until Nick has seen it in his own Studio, or the sign-in can read as well as upload
-  (add the scope `https://www.googleapis.com/auth/youtube.readonly` to the consent link) and the
-  status has been read back.
+- My memory of YouTube's rules is older than the rules. Before telling Nick what YouTube will or
+  will not do, read the live API description
+  (`https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest`, which this environment can
+  fetch) and the revision history, and say which one the statement rests on.
+- When he says "I can't see it", find out what he is looking at before explaining why it failed.
+  Scheduled videos are in Studio, Content, the **Videos** tab, with "Scheduled" in the Visibility
+  column; a new Short can sit there too until YouTube has sorted it. The public channel page
+  shows nothing until the release time, and a private link opens only for the signed-in owner.
+- A video id in the reply means YouTube took the file. The upload-only sign-in cannot read
+  anything back: not the channel, not the status. Ask for a sign-in that can (scope
+  `https://www.googleapis.com/auth/youtube`), read the status back, and report that.
+  `upload.py` writes the channel's name from the reply into the result.
 
 How the sign-in works (set up with Nick on 2026-11-25; nothing secret is in the repository):
 
