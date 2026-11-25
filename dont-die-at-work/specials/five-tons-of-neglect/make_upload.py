@@ -61,6 +61,10 @@ upload = {
              "U.S. Army", "EPA", "Iowa", "Missouri", "Illinois", "explainer", "Iowa detonation", "lead dust cloud", "plume map"],
     "categoryId": "27",
     "privacyStatus": "public",   # Nick, 2026-11-25, before the blast: "don't go private fucking send it"
+    # ...and then: "can't we make the upload time for a good time so people actually watch it". The
+    # people this is for are asleep at 2 a.m.; it is released at 5:00 a.m. Central (11:00 UTC), four
+    # hours before the blast, as the Midwest and the East Coast wake up.
+    "publishAt": "2026-11-25T11:00:00Z",
     "selfDeclaredMadeForKids": False,
     "containsSyntheticMedia": True,
     "notes": ("A long-form special, outside the channel's workplace-incident lane (see CLAUDE.md, Specials). categoryId 27 = Education. "

@@ -7,8 +7,9 @@
 Reads <video>/upload.json (title, description, tags, category, flags) and <video>/render/final.mp4.
 Writes <video>/upload-result.json: the video's id and links. Nothing secret is written there.
 
-The film always goes up as the privacy set in upload.json ("private" unless Nick says otherwise):
-he watches it, then publishes it himself.
+The film goes up with the privacy set in upload.json. If upload.json has "publishAt" (UTC, like
+2026-11-25T11:00:00Z) and that time is still ahead, YouTube holds it private and releases it at
+that moment by itself.
 
 Signing in. No secret lives in this repository:
   - The uploader app (a Google Cloud OAuth client) is saved as a network secret on the cloud
@@ -80,6 +81,13 @@ def main() -> int:
                    "selfDeclaredMadeForKids": bool(meta.get("selfDeclaredMadeForKids", False)),
                    "containsSyntheticMedia": bool(meta.get("containsSyntheticMedia", True))},
     }
+    # A release time: YouTube holds the film private and makes it public by itself at that moment.
+    publish_at = None if args.privacy else meta.get("publishAt")
+    if publish_at and time.strptime(publish_at, "%Y-%m-%dT%H:%M:%SZ") > time.gmtime():
+        body["status"]["privacyStatus"] = "private"
+        body["status"]["publishAt"] = publish_at
+    else:
+        publish_at = None
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
@@ -101,7 +109,8 @@ def main() -> int:
             sys.exit(f"UPLOAD FAILED opening the session: {detail.strip()}")
 
         # 2. send the film
-        print(f"uploading {film.name} ({film.stat().st_size / 1e6:.0f} MB) as {body['status']['privacyStatus']} ...", flush=True)
+        print(f"uploading {film.name} ({film.stat().st_size / 1e6:.0f} MB) as {body['status']['privacyStatus']}"
+              + (f", to go public at {publish_at}" if publish_at else "") + " ...", flush=True)
         t0 = time.time()
         r = curl(["-X", "PUT", where, "-H", f"@{auth}", "-H", "Content-Type: video/mp4", "--upload-file", str(film), "-o", str(tmp / "video.json")], timeout=3600)
         reply = json.loads((tmp / "video.json").read_text() or "{}") if (tmp / "video.json").exists() else {}
@@ -120,7 +129,7 @@ def main() -> int:
         print(f"thumbnail {thumb.name}: {thumb_note}")
 
     result = {"id": vid, "watch": f"https://youtu.be/{vid}", "studio": f"https://studio.youtube.com/video/{vid}/edit",
-              "privacy": body["status"]["privacyStatus"], "title": meta["title"], "thumbnail": f"{thumb.name}: {thumb_note}",
+              "privacy": body["status"]["privacyStatus"], "goes_public_at": publish_at, "title": meta["title"], "thumbnail": f"{thumb.name}: {thumb_note}",
               "uploaded_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())}
     (video / "upload-result.json").write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result, indent=2))
