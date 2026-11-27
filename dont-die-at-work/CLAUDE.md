@@ -28,9 +28,14 @@ summarised again and again and the early detail is lost; what survives is what i
 - **What a new session needs from Nick:** the topic or his draft; his pass over the baseline
   script (Working with Nick); a listen before anything is published; and the YouTube sign-in
   link again (Upload), because the grant file does not travel between machines.
-- **A new session starts from the repository's default branch, `master`.** The channel's work
-  has to be merged there, or a new session finds none of it. On 2026-11-25 all of it was still
-  on one session branch; check, and ask Nick for the merge if it is not done.
+- **A new session starts from its repository's default branch**, so the work has to be on that
+  branch or a new session finds none of it. On 2026-11-27 all of it was still on one session
+  branch of `readme-generator`, which is only where the first chat happened to be opened.
+  **That repository is public: do not merge the channel into its `master`.** I had pushed the
+  rulebook, the log and the unpublished 001 script there for a week without checking (no keys or
+  sign-in codes are in them; I scanned). Nick asked "do i need to create another git repo?"; the
+  answer given was yes, a private one of its own, with this folder as its root. Until that
+  exists, check which repository you are in before pushing anything about Nick or his plans.
 
 ## Where things stand
 
