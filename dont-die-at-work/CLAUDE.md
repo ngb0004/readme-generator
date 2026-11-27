@@ -32,6 +32,27 @@ summarised again and again and the early detail is lost; what survives is what i
   has to be merged there, or a new session finds none of it. On 2026-11-25 all of it was still
   on one session branch; check, and ask Nick for the merge if it is not done.
 
+## Where things stand
+
+Keep this section current: rewrite it before a session ends. It is the first thing a new session
+needs and the first thing to go stale. As of 2026-11-27:
+
+- **The channel** is "Moron Mountain" (@moronmountainclimber), on Nick's channel account, not his
+  personal one. It was verified by phone on 2026-11-25, so custom thumbnails work.
+- **Published there:** the investigation *Five Tons of Neglect* (the edition finished before the
+  blast, 14:58), https://youtu.be/DSq4t9WdoVY, and five Shorts cut from it. Two days on, the
+  film had 5 views and the Shorts none that YouTube counted.
+- **Finished, not published:** video 001, the Valero nitrogen Short (cut 5, 2:53). It is waiting
+  for Nick's review. Which channel the workplace-death videos go on is not decided; they must
+  not sit under a "moron" name (see Specials).
+- **Waiting on Nick:** the film's title and thumbnail still said "about to... TODAY" two days
+  after the blast (he was offered two after-titles); the six copies on his personal channel are
+  his to delete; the voice (he expected ElevenLabs: a key through the secure card, or his own
+  recording); and his review of 001.
+- **Next, each in its own session:** the after-the-blast edition of the film (a new ending from
+  the EPA's results, and a better voice); then the next video, starting from a baseline script
+  for Nick to rewrite (Working with Nick).
+
 ## The lane
 
 - OSHA workplace incidents only. If an idea is not a documented workplace incident, it is rejected.
